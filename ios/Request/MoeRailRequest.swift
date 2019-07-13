@@ -8,11 +8,13 @@
 
 import Foundation
 import Moya
+import Timepiece
 
 enum MoeRailRequest {
     case models
     case stations
     case diagram(train: String)
+    case leftTicket(from: String, to: String, date: Date)
 }
 
 extension MoeRailRequest: TargetType {
@@ -28,6 +30,8 @@ extension MoeRailRequest: TargetType {
             return "stations.ios.json"
         case .diagram(let train):
             return "img/" + train + ".png"
+        case .leftTicket(_, _, _):
+            return "query/leftTicket"
         }
     }
     
@@ -40,12 +44,21 @@ extension MoeRailRequest: TargetType {
     }
     
     var task: Task {
-        return .requestPlain
+        switch self {
+        case .models, .stations, .diagram(_):
+            return .requestPlain
+        case .leftTicket(let from, let to, let date):
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            return .requestParameters(parameters: [
+                "from": from,
+                "to": to,
+                "date": dateFormatter.string(from: date)
+                ], encoding: URLEncoding.default)
+        }
     }
     
     var headers: [String : String]? {
         return nil
     }
-    
-    
 }

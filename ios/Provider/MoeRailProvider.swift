@@ -11,13 +11,14 @@ import Moya
 import SwiftyJSON
 
 class MoeRailProvider {
+    let provider = MoyaProvider<MoeRailRequest>(plugins: [NetworkLoggerPlugin(verbose: true)])
     public func getTrainList() {
-        let provider = MoyaProvider<MoeRailRequest>(plugins: [NetworkLoggerPlugin(verbose: true)])
+        
         provider.request(.models) { result in
             switch result {
             case let .success(data):
                 print("yes")
-                print(provider.manager.session.configuration.httpAdditionalHeaders)
+                //print(provider.manager.session.configuration.httpAdditionalHeaders)
                 print(data.response)
             case let .failure(error):
                 print("no")
@@ -28,20 +29,16 @@ class MoeRailProvider {
         }
     }
     
-    public func getStations(completion: @escaping (StationList) -> ()) {
-        let provider = MoyaProvider<MoeRailRequest>()
-        provider.request(.stations) { result in
+    public func getLeftTicket(from: String, to: String, date: Date) {
+        self.provider.request(.leftTicket(from: from, to: to, date: date)) { (result) in
             switch result {
             case let .success(data):
-                do {
-                    let json = try JSON(data: data.data)
-                    completion(StationList(json))
-                } catch {
-                
-                }
-                
+                let json = try! JSON(data: data.data)
+                let raw = json["data"].array ?? []
+                let tickets: [TrainTicket] = raw.map({TrainTicket($0.string!)})
+                dump(tickets)
             case let .failure(error):
-                print("no")
+                break
             }
         }
     }
