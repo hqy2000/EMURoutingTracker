@@ -57,4 +57,13 @@ internal final class StationProvider {
     internal func search(for keyword: String) -> [Station] {
         return self.stations.filter({$0.pinyin_short.starts(with: keyword.lowercased()) || $0.pinyin_full.starts(with: keyword.lowercased())})
     }
+    
+    internal func getStation(withTelecode telecode: String) -> Station? {
+        let results = self.stations.filter({$0.telecode == telecode})
+        if results.count == 1 {
+            return results[0]
+        } else {
+            return nil
+        }
+    }
 }

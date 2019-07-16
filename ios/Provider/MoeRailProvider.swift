@@ -29,20 +29,6 @@ class MoeRailProvider {
         }
     }
     
-    public func getLeftTicket(from: String, to: String, date: Date) {
-        self.provider.request(.leftTicket(from: from, to: to, date: date)) { (result) in
-            switch result {
-            case let .success(data):
-                let json = try! JSON(data: data.data)
-                let raw = json["data"].array ?? []
-                let tickets: [TrainTicket] = raw.map({TrainTicket($0.string!)})
-                dump(tickets)
-            case let .failure(error):
-                break
-            }
-        }
-    }
-    
     public func getTrainDiagram(forTrain train: String) {
         
     }

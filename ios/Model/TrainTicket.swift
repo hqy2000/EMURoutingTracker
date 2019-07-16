@@ -10,11 +10,14 @@ import Foundation
 import ObjectMapper
 
 class TrainTicket: Codable {
+    let trainId: String
     let trainNumber: String
-    let from: String
-    let to: String
     let origin: String
     let terminal: String
+    let from: String
+    let to: String
+    let fromIndex: String
+    let toIndex: String
     let start: String
     let end: String
     let duration: String
@@ -33,26 +36,36 @@ class TrainTicket: Codable {
     
     init(_ str: String) {
         let details = str.components(separatedBy: "|")
-        self.trainNumber = details[0]
-        self.from = details[1]
-        self.to = details[2]
-        self.origin = details[3]
-        self.terminal = details[4]
-        self.start = details[5]
-        self.end = details[6]
-        self.duration = details[7]
-        self.isSelling = details[8] == "Y"
-        self.stateClassCoach = details[9]
-        self.businessClassCoach = details[10]
-        self.firstClassCoach = details[11]
-        self.secondClassCoach = details[12]
-        self.deluxeSoftSleeper = details[13]
-        self.softSleeper = details[14]
-        self.highSpeedSleeper = details[15]
-        self.hardSleeper = details[16]
-        self.softSeat = details[17]
-        self.hardSeat = details[18]
-        self.noSeat = details[19]
+        self.trainId = details[0]
+        self.trainNumber = details[1]
+        self.origin = details[2]
+        self.terminal = details[3]
+        self.from = details[4]
+        self.fromIndex = details[5]
+        self.to = details[6]
+        self.toIndex = details[7]
+        self.start = details[8]
+        self.end = details[9]
+        self.duration = details[10]
+        self.isSelling = details[11] == "Y"
+        self.stateClassCoach = details[12]
+        self.businessClassCoach = details[13]
+        self.firstClassCoach = details[14]
+        self.secondClassCoach = details[15]
+        self.deluxeSoftSleeper = details[16]
+        self.softSleeper = details[17]
+        self.highSpeedSleeper = details[18]
+        self.hardSleeper = details[19]
+        self.softSeat = details[20]
+        self.hardSeat = details[21]
+        self.noSeat = details[22]
     }
 }
 
+class TrainTicketsWrapper: ImmutableMappable {
+    required init(map: Map) throws {
+        let details: [String] = try map.value("data")
+        self.data = details.map({TrainTicket($0)})
+    }
+    let data: [TrainTicket]
+}

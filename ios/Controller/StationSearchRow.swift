@@ -25,6 +25,7 @@ internal final class StationSearchRow: SelectorRow<PushSelectorCell<Station>>, R
     }
     
     override public func prepare(for segue: UIStoryboardSegue) {
+        super.prepare(for: segue)
         if let viewController = segue.destination as? StationSearchController {
             viewController.onDismissCallback = { vc in
                 vc.navigationController?.popViewController(animated: true)

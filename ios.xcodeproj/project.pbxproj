@@ -14,16 +14,25 @@
 		780BD5EB22DA28F2008139F0 /* TicketQueryReusltController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780BD5EA22DA28F2008139F0 /* TicketQueryReusltController.swift */; };
 		780D059E22D4395C00A5E9B3 /* HeadersPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D059D22D4395C00A5E9B3 /* HeadersPlugin.swift */; };
 		780D05A022D43C2900A5E9B3 /* TrainList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D059F22D43C2900A5E9B3 /* TrainList.swift */; };
+		780D417F22DAFCAF0021E6BF /* AbstractProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D417E22DAFCAF0021E6BF /* AbstractProvider.swift */; };
+		780D418122DAFED50021E6BF /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D418022DAFED50021E6BF /* ApiResponse.swift */; };
+		780D418322DB17290021E6BF /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D418222DB17290021E6BF /* RequestError.swift */; };
+		780D418522DB184E0021E6BF /* CRProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D418422DB184E0021E6BF /* CRProvider.swift */; };
+		780D418822DB18960021E6BF /* CRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D418722DB18960021E6BF /* CRRequest.swift */; };
+		780D418A22DB2D120021E6BF /* TrainListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D418922DB2D120021E6BF /* TrainListController.swift */; };
 		780D549F22D49E0B00FAB0E9 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D549E22D49E0B00FAB0E9 /* Station.swift */; };
 		780D54A422D4AB7F00FAB0E9 /* DiagramSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D54A322D4AB7F00FAB0E9 /* DiagramSearchController.swift */; };
 		781BE74122D61A2400655BFD /* StationSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BE74022D61A2400655BFD /* StationSearchController.swift */; };
 		781BE74322D6274300655BFD /* StationSearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BE74222D6274300655BFD /* StationSearchRow.swift */; };
 		782B902222D9E17A0024DD0D /* TrainTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782B902122D9E17A0024DD0D /* TrainTicket.swift */; };
+		782BC4EE22DE0B1E00769D41 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BC4ED22DE0B1E00769D41 /* DefaultsKeys.swift */; };
+		782BC4F022DE0F4D00769D41 /* TrainSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BC4EF22DE0F4D00769D41 /* TrainSchedule.swift */; };
+		782BC4F222DE170900769D41 /* TrainDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BC4F122DE170900769D41 /* TrainDetailController.swift */; };
 		78CBCC3A22D37FA00027B916 /* MoeRailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBCC3922D37FA00027B916 /* MoeRailRequest.swift */; };
 		78CBCC3C22D380E80027B916 /* DynamicTrackingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBCC3B22D380E80027B916 /* DynamicTrackingRequest.swift */; };
 		78CBCC3F22D383B40027B916 /* MoeRailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBCC3E22D383B40027B916 /* MoeRailProvider.swift */; };
 		78FC255822D2423D00C5922E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FC255722D2423D00C5922E /* AppDelegate.swift */; };
-		78FC255A22D2423D00C5922E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FC255922D2423D00C5922E /* ViewController.swift */; };
+		78FC255A22D2423D00C5922E /* QueryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FC255922D2423D00C5922E /* QueryController.swift */; };
 		78FC255D22D2423D00C5922E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FC255B22D2423D00C5922E /* Main.storyboard */; };
 		78FC255F22D2423E00C5922E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78FC255E22D2423E00C5922E /* Assets.xcassets */; };
 		78FC256222D2423E00C5922E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FC256022D2423E00C5922E /* LaunchScreen.storyboard */; };
@@ -56,17 +65,26 @@
 		780BD5EA22DA28F2008139F0 /* TicketQueryReusltController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketQueryReusltController.swift; sourceTree = "<group>"; };
 		780D059D22D4395C00A5E9B3 /* HeadersPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersPlugin.swift; sourceTree = "<group>"; };
 		780D059F22D43C2900A5E9B3 /* TrainList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainList.swift; sourceTree = "<group>"; };
+		780D417E22DAFCAF0021E6BF /* AbstractProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractProvider.swift; sourceTree = "<group>"; };
+		780D418022DAFED50021E6BF /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		780D418222DB17290021E6BF /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		780D418422DB184E0021E6BF /* CRProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRProvider.swift; sourceTree = "<group>"; };
+		780D418722DB18960021E6BF /* CRRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRRequest.swift; sourceTree = "<group>"; };
+		780D418922DB2D120021E6BF /* TrainListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainListController.swift; sourceTree = "<group>"; };
 		780D549E22D49E0B00FAB0E9 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		780D54A322D4AB7F00FAB0E9 /* DiagramSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagramSearchController.swift; sourceTree = "<group>"; };
 		781BE74022D61A2400655BFD /* StationSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSearchController.swift; sourceTree = "<group>"; };
 		781BE74222D6274300655BFD /* StationSearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSearchRow.swift; sourceTree = "<group>"; };
 		782B902122D9E17A0024DD0D /* TrainTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTicket.swift; sourceTree = "<group>"; };
+		782BC4ED22DE0B1E00769D41 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
+		782BC4EF22DE0F4D00769D41 /* TrainSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainSchedule.swift; sourceTree = "<group>"; };
+		782BC4F122DE170900769D41 /* TrainDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailController.swift; sourceTree = "<group>"; };
 		78CBCC3922D37FA00027B916 /* MoeRailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoeRailRequest.swift; sourceTree = "<group>"; };
 		78CBCC3B22D380E80027B916 /* DynamicTrackingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTrackingRequest.swift; sourceTree = "<group>"; };
 		78CBCC3E22D383B40027B916 /* MoeRailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoeRailProvider.swift; sourceTree = "<group>"; };
 		78FC255422D2423D00C5922E /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FC255722D2423D00C5922E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		78FC255922D2423D00C5922E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		78FC255922D2423D00C5922E /* QueryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryController.swift; sourceTree = "<group>"; };
 		78FC255C22D2423D00C5922E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78FC255E22D2423E00C5922E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78FC256122D2423E00C5922E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -126,13 +144,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		780D418622DB186F0021E6BF /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				780D417E22DAFCAF0021E6BF /* AbstractProvider.swift */,
+				780D418222DB17290021E6BF /* RequestError.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		780D54A222D4AB6E00FAB0E9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				78FC255922D2423D00C5922E /* QueryController.swift */,
 				780D54A322D4AB7F00FAB0E9 /* DiagramSearchController.swift */,
 				781BE74022D61A2400655BFD /* StationSearchController.swift */,
 				781BE74222D6274300655BFD /* StationSearchRow.swift */,
 				780BD5EA22DA28F2008139F0 /* TicketQueryReusltController.swift */,
+				780D418922DB2D120021E6BF /* TrainListController.swift */,
+				782BC4F122DE170900769D41 /* TrainDetailController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -142,6 +172,7 @@
 			children = (
 				78CBCC3922D37FA00027B916 /* MoeRailRequest.swift */,
 				78CBCC3B22D380E80027B916 /* DynamicTrackingRequest.swift */,
+				780D418722DB18960021E6BF /* CRRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -151,6 +182,7 @@
 			children = (
 				78CBCC3E22D383B40027B916 /* MoeRailProvider.swift */,
 				780BD5E822DA1848008139F0 /* StationProvider.swift */,
+				780D418422DB184E0021E6BF /* CRProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -161,6 +193,9 @@
 				780D059F22D43C2900A5E9B3 /* TrainList.swift */,
 				780D549E22D49E0B00FAB0E9 /* Station.swift */,
 				782B902122D9E17A0024DD0D /* TrainTicket.swift */,
+				780D418022DAFED50021E6BF /* ApiResponse.swift */,
+				782BC4ED22DE0B1E00769D41 /* DefaultsKeys.swift */,
+				782BC4EF22DE0F4D00769D41 /* TrainSchedule.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,12 +225,12 @@
 		78FC255622D2423D00C5922E /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				780D418622DB186F0021E6BF /* Library */,
 				780D54A222D4AB6E00FAB0E9 /* Controller */,
 				78CBCC4022D383EB0027B916 /* Model */,
 				78CBCC3D22D383A60027B916 /* Provider */,
 				78CBCC3822D37F120027B916 /* Request */,
 				78FC255722D2423D00C5922E /* AppDelegate.swift */,
-				78FC255922D2423D00C5922E /* ViewController.swift */,
 				78FC255B22D2423D00C5922E /* Main.storyboard */,
 				78FC255E22D2423E00C5922E /* Assets.xcassets */,
 				78FC256022D2423E00C5922E /* LaunchScreen.storyboard */,
@@ -455,18 +490,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				78CBCC3C22D380E80027B916 /* DynamicTrackingRequest.swift in Sources */,
-				78FC255A22D2423D00C5922E /* ViewController.swift in Sources */,
+				78FC255A22D2423D00C5922E /* QueryController.swift in Sources */,
 				781BE74122D61A2400655BFD /* StationSearchController.swift in Sources */,
 				780BD5EB22DA28F2008139F0 /* TicketQueryReusltController.swift in Sources */,
+				782BC4EE22DE0B1E00769D41 /* DefaultsKeys.swift in Sources */,
 				781BE74322D6274300655BFD /* StationSearchRow.swift in Sources */,
+				780D418122DAFED50021E6BF /* ApiResponse.swift in Sources */,
+				780D418A22DB2D120021E6BF /* TrainListController.swift in Sources */,
 				780D549F22D49E0B00FAB0E9 /* Station.swift in Sources */,
 				78CBCC3F22D383B40027B916 /* MoeRailProvider.swift in Sources */,
+				780D417F22DAFCAF0021E6BF /* AbstractProvider.swift in Sources */,
 				780D059E22D4395C00A5E9B3 /* HeadersPlugin.swift in Sources */,
 				780BD5E922DA1848008139F0 /* StationProvider.swift in Sources */,
+				780D418522DB184E0021E6BF /* CRProvider.swift in Sources */,
 				780D05A022D43C2900A5E9B3 /* TrainList.swift in Sources */,
+				782BC4F022DE0F4D00769D41 /* TrainSchedule.swift in Sources */,
 				78CBCC3A22D37FA00027B916 /* MoeRailRequest.swift in Sources */,
+				782BC4F222DE170900769D41 /* TrainDetailController.swift in Sources */,
 				78FC255822D2423D00C5922E /* AppDelegate.swift in Sources */,
 				782B902222D9E17A0024DD0D /* TrainTicket.swift in Sources */,
+				780D418322DB17290021E6BF /* RequestError.swift in Sources */,
+				780D418822DB18960021E6BF /* CRRequest.swift in Sources */,
 				780D54A422D4AB7F00FAB0E9 /* DiagramSearchController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
