@@ -9,27 +9,30 @@
 import UIKit
 import Eureka
 
-class QueryController: FormViewController {
+class QueryController: FormViewController, UISearchBarDelegate {
+    
     let provider = CRProvider()
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         form +++ Section("交路信息")
             <<< TextRow() { row in
-                row.title = "车次"
-                row.placeholder = "G1"
+                row.placeholder = "车次，车型，或是车架号"
                 row.tag = "train"
             }
             <<< DateRow() {
                 $0.title = "日期"
                 $0.value = Date()
                 $0.tag = "train_date"
+                $0.hidden = true
             }
             <<< ButtonRow() {
-                $0.title = "查询"
+                $0.title = "综合查询"
                 $0.onCellSelection({ (_, _) in
-                    self.performSegue(withIdentifier: "showTrainDetailController", sender: nil)
+                   self.performSegue(withIdentifier: "showTrainDetailController", sender: nil)
                 })
             }
+    
             +++ Section("车次信息")
             <<< StationSearchRow() {
                 $0.title = "起点"
@@ -45,9 +48,8 @@ class QueryController: FormViewController {
                 $0.tag = "date"
             }
             <<< ButtonRow() {
-                $0.title = "查询"
+                $0.title = "批量查询"
                 $0.onCellSelection({ (_, _) in
-                  
                     self.performSegue(withIdentifier: "showTrainListController", sender: nil)
                 })
             }
@@ -86,5 +88,6 @@ class QueryController: FormViewController {
             controller.date = dateRow.value
         }
     }
+    
 }
 

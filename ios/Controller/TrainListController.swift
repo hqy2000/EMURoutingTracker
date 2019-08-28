@@ -40,10 +40,10 @@ class TrainListController: UITableViewController {
             let from = self.from,
             let to = self.to,
             let date = self.date {
-            self.navigationItem.prompt = "\(self.from?.name ?? "") - \(self.to?.name ?? "")"
+            self.title = "\(self.from?.name ?? "") - \(self.to?.name ?? "")"
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
-            self.title = dateFormatter.string(from: date)
+            self.navigationItem.prompt = dateFormatter.string(from: date)
             self.moeRailProvider = MoeRailProvider({ (_) in
                 self.tableView.reloadData()
             })
@@ -95,6 +95,8 @@ class TrainListController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? TrainDetailController {
             controller.train = self.list[self.selected].trainNumber
+            self.provider?.schedules = []
+            controller.provider = self.provider
         }
     }
     

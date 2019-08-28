@@ -26,6 +26,7 @@
 		781BE74322D6274300655BFD /* StationSearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BE74222D6274300655BFD /* StationSearchRow.swift */; };
 		781F46702316A3D700A9BA8A /* TrainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F466F2316A3D700A9BA8A /* TrainModel.swift */; };
 		781F46722316A6C400A9BA8A /* DynamicTrackingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F46712316A6C400A9BA8A /* DynamicTrackingProvider.swift */; };
+		781F46742316EE0900A9BA8A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F46732316EE0900A9BA8A /* TabBarController.swift */; };
 		782B902222D9E17A0024DD0D /* TrainTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782B902122D9E17A0024DD0D /* TrainTicket.swift */; };
 		782BC4EE22DE0B1E00769D41 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BC4ED22DE0B1E00769D41 /* DefaultsKeys.swift */; };
 		782BC4F022DE0F4D00769D41 /* TrainSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BC4EF22DE0F4D00769D41 /* TrainSchedule.swift */; };
@@ -79,6 +80,7 @@
 		781BE74222D6274300655BFD /* StationSearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSearchRow.swift; sourceTree = "<group>"; };
 		781F466F2316A3D700A9BA8A /* TrainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainModel.swift; sourceTree = "<group>"; };
 		781F46712316A6C400A9BA8A /* DynamicTrackingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTrackingProvider.swift; sourceTree = "<group>"; };
+		781F46732316EE0900A9BA8A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		782B902122D9E17A0024DD0D /* TrainTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTicket.swift; sourceTree = "<group>"; };
 		782BC4ED22DE0B1E00769D41 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		782BC4EF22DE0F4D00769D41 /* TrainSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainSchedule.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				780BD5EA22DA28F2008139F0 /* TicketQueryReusltController.swift */,
 				780D418922DB2D120021E6BF /* TrainListController.swift */,
 				782BC4F122DE170900769D41 /* TrainDetailController.swift */,
+				781F46732316EE0900A9BA8A /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78CBCC3C22D380E80027B916 /* DynamicTrackingRequest.swift in Sources */,
+				781F46742316EE0900A9BA8A /* TabBarController.swift in Sources */,
 				78FC255A22D2423D00C5922E /* QueryController.swift in Sources */,
 				781F46702316A3D700A9BA8A /* TrainModel.swift in Sources */,
 				781BE74122D61A2400655BFD /* StationSearchController.swift in Sources */,

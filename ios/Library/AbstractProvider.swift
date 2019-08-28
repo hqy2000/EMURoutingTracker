@@ -21,8 +21,15 @@ class AbstractProvider<T: TargetType> {
                 do {
                     let json = try JSON(data: response.data)
                     if (response.statusCode == 200) {
-                        let value = R(JSON: json.dictionaryObject!)!
-                        success(value)
+                        if let object = json.dictionaryObject {
+                            let value = R(JSON: object)!
+                            success(value)
+                        } else {
+                            dump(json.rawString())
+                            let value = R(JSONString: json.rawString()!)!
+                            success(value)
+                        }
+                        
                     } else {
                         let value = try ApiResponse<DataWrapper<String>>(JSON: json.dictionaryObject!)
                         let error = RequestError(message: value.data.value, code: value.code)
