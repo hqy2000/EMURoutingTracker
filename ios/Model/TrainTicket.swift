@@ -60,6 +60,41 @@ class TrainTicket: Codable {
         self.hardSeat = details[21]
         self.noSeat = details[22]
     }
+    
+    public func getAvailableSeating() -> [String] {
+        var available: [String] = []
+        if self.businessClassCoach != "" {
+            available.append("商务座：\(self.businessClassCoach)")
+        }
+        if self.stateClassCoach != "" {
+            available.append("特等座：\(self.stateClassCoach)")
+        }
+        if self.firstClassCoach != "" {
+            available.append("一等座：\(self.firstClassCoach)")
+        }
+        if self.secondClassCoach != "" {
+            available.append("二等座：\(self.secondClassCoach)")
+        }
+        if self.hardSeat != "" {
+            available.append("硬座：\(self.hardSeat)")
+        }
+        if self.softSeat != "" {
+            available.append("软座：\(self.softSeat)")
+        }
+        if self.hardSleeper != "" {
+            available.append("硬卧/一等卧：\(self.hardSleeper)")
+        }
+        if self.softSleeper != "" {
+            available.append("软卧/二等卧：\(self.softSleeper)")
+        }
+        if self.deluxeSoftSleeper != "" {
+            available.append("高级软卧：\(self.deluxeSoftSleeper)")
+        }
+        if self.noSeat != "" {
+            available.append("无座：\(self.noSeat)")
+        }
+        return available
+    }
 }
 
 class TrainTicketsWrapper: ImmutableMappable {

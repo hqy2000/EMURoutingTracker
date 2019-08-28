@@ -22,17 +22,31 @@ class TrainDiagramCell: UITableViewCell {
 class TrainDetailController: UITableViewController {
     var provider: CRProvider? = nil
     var train: String? = nil
-    var date: Date? = nil
+    var date: Date? = Date()
     
     var list: [TrainSchedule] {
         return provider?.schedules ?? []
     }
     
     override func viewDidLoad() {
-        if let provider = self.provider, let train = self.train, let date = self.date {
-            provider.getTrainDetail(withTrainNumber: train, date: date) {
-                self.tableView.reloadData()
-                self.title = train + " " + provider.schedules.first?.station_name ?? "" + " - " + provider.schedules.last?.station_name ?? ""
+        if let provider = self.provider {
+            provider.getTrainDetail(withTrainNumber: self.train ?? "", date: self.date ?? Date()) { message in
+                if let message = message {
+                    let alert = UIAlertController(title: "错误", message: message, preferredStyle: .alert)
+                    let action = UIAlertAction(title: "好的", style: .default, handler: { (_) in
+                       alert.dismiss(animated: true, completion: nil)
+                        self.navigationController?.popViewController(animated: true)
+                        
+                    })
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+          
+                } else {
+                    self.tableView.reloadData()
+                    let from = self.provider?.schedules.first?.station_name ?? ""
+                    let to = self.provider?.schedules.last?.station_name ?? ""
+                    self.title = (self.train ?? "") + " " + from + " - " + to
+                }
             }
         }
     }

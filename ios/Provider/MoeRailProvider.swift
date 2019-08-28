@@ -9,27 +9,47 @@
 import Foundation
 import Moya
 import SwiftyJSON
+import Cache
 
-class MoeRailProvider {
-    let provider = MoyaProvider<MoeRailRequest>(plugins: [NetworkLoggerPlugin(verbose: true)])
-    public func getTrainList() {
+class MoeRailProvider: AbstractProvider<MoeRailRequest> {
+    private let listStorage: Storage<TrainList>
+    internal var trainList: TrainList? = nil
+    private let onDataRefresh: (String?) -> ()
+    
+    internal init(_ completion: @escaping (String?) -> ()) {
+        guard let hybridStorage = try? HybridStorage(memoryStorage: MemoryStorage(config: MemoryConfig(expiry: .never, countLimit: 10, totalCostLimit: 10)), diskStorage: DiskStorage(config: DiskConfig(name: "TrainList"), transformer: TransformerFactory.forCodable(ofType: TrainList.self))) else { fatalError() }
+        let listStorage: Storage<TrainList> = Storage(hybridStorage: hybridStorage)
+        self.listStorage = listStorage
+        self.onDataRefresh = completion
+        super.init()
         
-        provider.request(.models) { result in
-            switch result {
-            case let .success(data):
-                print("yes")
-                //print(provider.manager.session.configuration.httpAdditionalHeaders)
-                print(data.response)
-            case let .failure(error):
-                print("no")
-                print(error)
-                break
-                
+        self.getTrainList()
+    }
+    
+    internal func getTrainList() {
+        if self.trainList == nil {
+            if let trainList = try? self.listStorage.object(forKey: "trainList") {
+                self.trainList = trainList
+                self.onDataRefresh(nil)
             }
+            self.requestStatic(target: .models, type: TrainList.self, success: { result in
+                do {
+                    try self.listStorage.setObject(result, forKey: "trainList")
+                    self.trainList = result
+                    self.onDataRefresh(nil)
+                } catch {
+                    self.onDataRefresh("数据错误")
+                }
+                
+            })
         }
     }
     
-    public func getTrainDiagram(forTrain train: String) {
-        
+    internal func getTrainModel(_ train: String) -> String? {
+        if let trainList = self.trainList {
+            return trainList.getModel(train)
+        } else {
+            return nil
+        }
     }
 }

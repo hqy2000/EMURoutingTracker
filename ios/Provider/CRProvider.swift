@@ -12,6 +12,7 @@ class CRProvider: AbstractProvider<CRRequest> {
     let stationProvider = StationProvider({_ in})
     var tickets: [TrainTicket] = []
     var schedules: [TrainSchedule] = []
+    
     public func getTrainList(from: String, to: String, date: Date, completion: @escaping () -> Void) {
         self.request(target: .leftTicket(from: from, to: to, date: date), type: TrainTicketsWrapper.self, success: { (list) in
             self.tickets = list.data
@@ -19,11 +20,11 @@ class CRProvider: AbstractProvider<CRRequest> {
         })
     }
     
-    public func getTrainDetail(withTrainNumber trainNumber: String, date: Date, completion: @escaping () -> Void) {
+    public func getTrainDetail(withTrainNumber trainNumber: String, date: Date, completion: @escaping (String?) -> Void) {
         self.request(target: .search(train: trainNumber, date: date), type: DataWrapper<String>.self, success: { detail in
-            self.getTrainDetail(withTrainNo: detail.value, date: date, completion: completion)
+            self.getTrainDetail(withTrainNo: detail.value, date: date, completion: {completion(nil)})
         }, failure: {error in
-            debugPrint(error)
+            completion(error.localizedDescription)
         })
     }
     
@@ -33,8 +34,4 @@ class CRProvider: AbstractProvider<CRRequest> {
             completion()
         })
     }
-    
-    
-    
-
 }

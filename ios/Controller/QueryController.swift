@@ -51,6 +51,7 @@ class QueryController: FormViewController {
                     self.performSegue(withIdentifier: "showTrainListController", sender: nil)
                 })
             }
+            /*
             +++ Section("车站信息")
             <<< StationSearchRow() {
                 $0.title = "车站"
@@ -61,6 +62,7 @@ class QueryController: FormViewController {
             <<< ButtonRow() {
                 $0.title = "查询"
             }
+            */
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

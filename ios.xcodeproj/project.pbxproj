@@ -24,6 +24,8 @@
 		780D54A422D4AB7F00FAB0E9 /* DiagramSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780D54A322D4AB7F00FAB0E9 /* DiagramSearchController.swift */; };
 		781BE74122D61A2400655BFD /* StationSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BE74022D61A2400655BFD /* StationSearchController.swift */; };
 		781BE74322D6274300655BFD /* StationSearchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BE74222D6274300655BFD /* StationSearchRow.swift */; };
+		781F46702316A3D700A9BA8A /* TrainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F466F2316A3D700A9BA8A /* TrainModel.swift */; };
+		781F46722316A6C400A9BA8A /* DynamicTrackingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F46712316A6C400A9BA8A /* DynamicTrackingProvider.swift */; };
 		782B902222D9E17A0024DD0D /* TrainTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782B902122D9E17A0024DD0D /* TrainTicket.swift */; };
 		782BC4EE22DE0B1E00769D41 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BC4ED22DE0B1E00769D41 /* DefaultsKeys.swift */; };
 		782BC4F022DE0F4D00769D41 /* TrainSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BC4EF22DE0F4D00769D41 /* TrainSchedule.swift */; };
@@ -75,6 +77,8 @@
 		780D54A322D4AB7F00FAB0E9 /* DiagramSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagramSearchController.swift; sourceTree = "<group>"; };
 		781BE74022D61A2400655BFD /* StationSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSearchController.swift; sourceTree = "<group>"; };
 		781BE74222D6274300655BFD /* StationSearchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSearchRow.swift; sourceTree = "<group>"; };
+		781F466F2316A3D700A9BA8A /* TrainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainModel.swift; sourceTree = "<group>"; };
+		781F46712316A6C400A9BA8A /* DynamicTrackingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTrackingProvider.swift; sourceTree = "<group>"; };
 		782B902122D9E17A0024DD0D /* TrainTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTicket.swift; sourceTree = "<group>"; };
 		782BC4ED22DE0B1E00769D41 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		782BC4EF22DE0F4D00769D41 /* TrainSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainSchedule.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				78CBCC3E22D383B40027B916 /* MoeRailProvider.swift */,
 				780BD5E822DA1848008139F0 /* StationProvider.swift */,
 				780D418422DB184E0021E6BF /* CRProvider.swift */,
+				781F46712316A6C400A9BA8A /* DynamicTrackingProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				780D418022DAFED50021E6BF /* ApiResponse.swift */,
 				782BC4ED22DE0B1E00769D41 /* DefaultsKeys.swift */,
 				782BC4EF22DE0F4D00769D41 /* TrainSchedule.swift */,
+				781F466F2316A3D700A9BA8A /* TrainModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -491,11 +497,13 @@
 			files = (
 				78CBCC3C22D380E80027B916 /* DynamicTrackingRequest.swift in Sources */,
 				78FC255A22D2423D00C5922E /* QueryController.swift in Sources */,
+				781F46702316A3D700A9BA8A /* TrainModel.swift in Sources */,
 				781BE74122D61A2400655BFD /* StationSearchController.swift in Sources */,
 				780BD5EB22DA28F2008139F0 /* TicketQueryReusltController.swift in Sources */,
 				782BC4EE22DE0B1E00769D41 /* DefaultsKeys.swift in Sources */,
 				781BE74322D6274300655BFD /* StationSearchRow.swift in Sources */,
 				780D418122DAFED50021E6BF /* ApiResponse.swift in Sources */,
+				781F46722316A6C400A9BA8A /* DynamicTrackingProvider.swift in Sources */,
 				780D418A22DB2D120021E6BF /* TrainListController.swift in Sources */,
 				780D549F22D49E0B00FAB0E9 /* Station.swift in Sources */,
 				78CBCC3F22D383B40027B916 /* MoeRailProvider.swift in Sources */,
