@@ -14,6 +14,7 @@ class CRProvider: AbstractProvider<CRRequest> {
     var schedules: [TrainSchedule] = []
     
     public func getTrainList(from: String, to: String, date: Date, completion: @escaping () -> Void) {
+        self.tickets = []
         self.request(target: .leftTicket(from: from, to: to, date: date), type: TrainTicketsWrapper.self, success: { (list) in
             self.tickets = list.data
             completion()
@@ -30,7 +31,7 @@ class CRProvider: AbstractProvider<CRRequest> {
     }
     
     public func getTrainDetail(withTrainNo trainNo: String, date: Date, completion: @escaping () -> Void) {
-        
+        self.schedules = []
         self.request(target: .queryTrainInfo(train: trainNo, date: date), type: ListWrapper<TrainSchedule>.self, success: { (schedules) in
             self.schedules = schedules.data
             completion()

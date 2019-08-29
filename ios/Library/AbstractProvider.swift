@@ -12,7 +12,7 @@ import ObjectMapper
 import SwiftyJSON
 
 class AbstractProvider<T: TargetType> {
-    let provider = MoyaProvider<T>(plugins: [NetworkLoggerPlugin()])
+    let provider = MoyaProvider<T>(plugins: [/*NetworkLoggerPlugin()*/])
     
     internal func requestStatic<R: BaseMappable> (target: T, type: R.Type, success: @escaping (R) -> Void, failure: ((Error) -> Void)? = nil) {
         provider.request(target) { (result) in

@@ -15,10 +15,9 @@ target 'ios' do
   pod 'SwiftyJSON'
   pod 'ObjectMapper'
   pod 'SwiftyUserDefaults'
-  pod 'Timepiece'
-  pod 'SwiftDate'
   pod 'SDWebImage'
   pod 'Eureka'
+  pod 'Sentry'
 
   target 'iosTests' do
     inherit! :search_paths
