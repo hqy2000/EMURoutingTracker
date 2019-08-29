@@ -25,8 +25,9 @@ class AbstractProvider<T: TargetType> {
                             let value = R(JSON: object)!
                             success(value)
                         } else {
-                            dump(json.rawString())
-                            let value = R(JSONString: json.rawString()!)!
+                            var wrapper = JSON()
+                            wrapper["data"] = json
+                            let value = R(JSONString: wrapper.rawString()!)!
                             success(value)
                         }
                         

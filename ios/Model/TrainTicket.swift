@@ -82,10 +82,10 @@ class TrainTicket: Codable {
             available.append("软座：\(self.softSeat)")
         }
         if self.hardSleeper != "" {
-            available.append("硬卧/一等卧：\(self.hardSleeper)")
+            available.append("硬卧：\(self.hardSleeper)")
         }
         if self.softSleeper != "" {
-            available.append("软卧/二等卧：\(self.softSleeper)")
+            available.append("软卧：\(self.softSleeper)")
         }
         if self.deluxeSoftSleeper != "" {
             available.append("高级软卧：\(self.deluxeSoftSleeper)")

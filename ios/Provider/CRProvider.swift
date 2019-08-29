@@ -21,6 +21,7 @@ class CRProvider: AbstractProvider<CRRequest> {
     }
     
     public func getTrainDetail(withTrainNumber trainNumber: String, date: Date, completion: @escaping (String?) -> Void) {
+        self.schedules = []
         self.request(target: .search(train: trainNumber, date: date), type: DataWrapper<String>.self, success: { detail in
             self.getTrainDetail(withTrainNo: detail.value, date: date, completion: {completion(nil)})
         }, failure: {error in
@@ -29,6 +30,7 @@ class CRProvider: AbstractProvider<CRRequest> {
     }
     
     public func getTrainDetail(withTrainNo trainNo: String, date: Date, completion: @escaping () -> Void) {
+        
         self.request(target: .queryTrainInfo(train: trainNo, date: date), type: ListWrapper<TrainSchedule>.self, success: { (schedules) in
             self.schedules = schedules.data
             completion()

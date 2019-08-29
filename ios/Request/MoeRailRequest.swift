@@ -14,7 +14,7 @@ enum MoeRailRequest {
     case models
     case stations
     case diagram(train: String)
-    
+    case version
 }
 
 extension MoeRailRequest: TargetType {
@@ -30,6 +30,8 @@ extension MoeRailRequest: TargetType {
             return "stations.ios.json"
         case .diagram(let train):
             return "img/" + train + ".png"
+        case .version:
+            return "device/version"
         }
     }
     

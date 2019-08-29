@@ -46,12 +46,21 @@ internal final class StationProvider {
                     self.onDataRefresh(error.errorDescription)
                 }
             }
+            if let stations = try? self.storage.object(forKey: "stations") {
+                self.stations = stations
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    self.onDataRefresh(nil)
+                }
+            }
         } else {
             if let stations = try? self.storage.object(forKey: "stations") {
                 self.stations = stations
                 self.onDataRefresh(nil)
             }
+            
         }
+        
+        
     }
     
     internal func search(for keyword: String) -> [Station] {

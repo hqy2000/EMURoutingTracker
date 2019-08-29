@@ -12,12 +12,17 @@ import Eureka
 class QueryController: FormViewController, UISearchBarDelegate {
     
     let provider = CRProvider()
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        // self.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+    }
   
     override func viewDidLoad() {
         super.viewDidLoad()
         form +++ Section("交路信息")
             <<< TextRow() { row in
-                row.placeholder = "车次，车型，或是车架号"
+                row.placeholder = "车次，车型，或是车组号"
                 row.tag = "train"
             }
             <<< DateRow() {
@@ -84,7 +89,7 @@ class QueryController: FormViewController, UISearchBarDelegate {
             let dateRow: DateRow = self.form.rowBy(tag: "train_date")!
             
             controller.provider = self.provider
-            controller.train = trainRow.value
+            controller.train = trainRow.value?.uppercased()
             controller.date = dateRow.value
         }
     }

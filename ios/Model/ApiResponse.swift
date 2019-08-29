@@ -22,8 +22,8 @@ class ApiResponse<T: BaseMappable>: ImmutableMappable {
             self.data = try map.value("data")
         }
     }
-    let code:Int
-    let data:T
+    let code: Int
+    let data: T
 }
 
 class ListWrapper<T: ImmutableMappable>: ImmutableMappable {
@@ -32,6 +32,7 @@ class ListWrapper<T: ImmutableMappable>: ImmutableMappable {
     }
     let data: [T]
 }
+
 
 class DataWrapper<T>: ImmutableMappable {
     required init(map: Map) throws {
