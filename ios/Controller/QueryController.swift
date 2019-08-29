@@ -12,6 +12,7 @@ import Eureka
 class QueryController: FormViewController, UISearchBarDelegate {
     
     let provider = CRProvider()
+    let moeProvider = MoeRailProvider({_ in})
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

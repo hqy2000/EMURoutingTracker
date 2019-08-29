@@ -10,6 +10,7 @@ import Foundation
 import Moya
 import SwiftyJSON
 import Cache
+import SwiftyUserDefaults
 
 class MoeRailProvider: AbstractProvider<MoeRailRequest> {
     private let listStorage: Storage<TrainList>
@@ -22,8 +23,15 @@ class MoeRailProvider: AbstractProvider<MoeRailRequest> {
         self.listStorage = listStorage
         self.onDataRefresh = completion
         super.init()
-        
+        self.getVersion()
         self.getTrainList()
+    }
+    
+    internal func getVersion() {
+        self.request(target: MoeRailRequest.version, type: Version.self, success: { (version) in
+            Defaults[.stationDatabaseVersion] = version.stationDatabase
+            Defaults[.trainDatabaseVersion] = version.trainDatabase
+        })
     }
     
     internal func getTrainList() {

@@ -32,6 +32,7 @@
 		782BC4F022DE0F4D00769D41 /* TrainSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BC4EF22DE0F4D00769D41 /* TrainSchedule.swift */; };
 		782BC4F222DE170900769D41 /* TrainDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BC4F122DE170900769D41 /* TrainDetailController.swift */; };
 		789032E623181CF600BE26D5 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789032E523181CF600BE26D5 /* SettingController.swift */; };
+		789CE9C623184351007574E7 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CE9C523184351007574E7 /* Version.swift */; };
 		78CBCC3A22D37FA00027B916 /* MoeRailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBCC3922D37FA00027B916 /* MoeRailRequest.swift */; };
 		78CBCC3C22D380E80027B916 /* DynamicTrackingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBCC3B22D380E80027B916 /* DynamicTrackingRequest.swift */; };
 		78CBCC3F22D383B40027B916 /* MoeRailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBCC3E22D383B40027B916 /* MoeRailProvider.swift */; };
@@ -87,6 +88,7 @@
 		782BC4EF22DE0F4D00769D41 /* TrainSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainSchedule.swift; sourceTree = "<group>"; };
 		782BC4F122DE170900769D41 /* TrainDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailController.swift; sourceTree = "<group>"; };
 		789032E523181CF600BE26D5 /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		789CE9C523184351007574E7 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		78CBCC3922D37FA00027B916 /* MoeRailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoeRailRequest.swift; sourceTree = "<group>"; };
 		78CBCC3B22D380E80027B916 /* DynamicTrackingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTrackingRequest.swift; sourceTree = "<group>"; };
 		78CBCC3E22D383B40027B916 /* MoeRailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoeRailProvider.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				780D418022DAFED50021E6BF /* ApiResponse.swift */,
 				782BC4EF22DE0F4D00769D41 /* TrainSchedule.swift */,
 				781F466F2316A3D700A9BA8A /* TrainModel.swift */,
+				789CE9C523184351007574E7 /* Version.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				780D059E22D4395C00A5E9B3 /* HeadersPlugin.swift in Sources */,
 				780BD5E922DA1848008139F0 /* StationProvider.swift in Sources */,
 				780D418522DB184E0021E6BF /* CRProvider.swift in Sources */,
+				789CE9C623184351007574E7 /* Version.swift in Sources */,
 				780D05A022D43C2900A5E9B3 /* TrainList.swift in Sources */,
 				782BC4F022DE0F4D00769D41 /* TrainSchedule.swift in Sources */,
 				78CBCC3A22D37FA00027B916 /* MoeRailRequest.swift in Sources */,

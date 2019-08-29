@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--查询-->
+        <!--动车组交路查询-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="QueryController" customModule="ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="动车组交路查询" id="BYZ-38-t0r" customClass="QueryController" customModule="ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,6 @@
             <objects>
                 <tabBarController id="EJU-qW-MxX" customClass="TabBarController" customModule="ios" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="qzu-T6-mLf"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cyo-X2-UsB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -52,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="-1584" y="-743"/>
         </scene>
-        <!--设置-->
+        <!--动车组交路查询-->
         <scene sceneID="nGJ-3f-wmM">
             <objects>
-                <viewController id="MU5-pw-v98" customClass="SettingController" customModule="ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="动车组交路查询" id="MU5-pw-v98" customClass="SettingController" customModule="ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fPL-Ig-SWV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,15 +70,15 @@
             </objects>
             <point key="canvasLocation" x="-749" y="-68"/>
         </scene>
-        <!--View Controller-->
+        <!--开源组件许可证-->
         <scene sceneID="Fdl-Cd-m01">
             <objects>
-                <viewController id="bTO-QM-fCv" sceneMemberID="viewController">
+                <viewController title="开源组件许可证" id="bTO-QM-fCv" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0bW-Qn-2oe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Le5-2A-rOa">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Le5-2A-rOa">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
@@ -91,6 +90,8 @@
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops/>
                                             </paragraphStyle>
+                                            <integer key="NSUnderline" value="1"/>
+                                            <color key="NSUnderlineColor" red="1" green="1" blue="0.99985000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
@@ -657,6 +658,6 @@ SOFTWARE.</mutableString>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pkk-vQ-9bM"/>
+        <segue reference="6jD-1f-Fyr"/>
     </inferredMetricsTieBreakers>
 </document>
