@@ -18,6 +18,8 @@ target 'ios' do
   pod 'SDWebImage'
   pod 'Eureka'
   pod 'Sentry'
+  pod 'JGProgressHUD'
+  pod 'SwiftIconFont'
 
   target 'iosTests' do
     inherit! :search_paths

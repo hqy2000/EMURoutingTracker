@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
+import SwiftIconFont
 
 class TabBarController: UITabBarController, UISearchBarDelegate {
-
+    
 }

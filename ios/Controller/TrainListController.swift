@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import JGProgressHUD
 
 class TrainDetailCell: UITableViewCell {
     
@@ -47,8 +48,22 @@ class TrainListController: UITableViewController {
             self.moeRailProvider = MoeRailProvider({ (_) in
                 self.tableView.reloadData()
             })
-            provider.getTrainList(from: from.telecode, to: to.telecode, date: date) {
-                self.tableView.reloadData()
+            
+            let hud = JGProgressHUD(style: .dark)
+            hud.textLabel.text = "加载中"
+            hud.show(in: self.navigationController!.view)
+            
+            provider.getTrainList(from: from.telecode, to: to.telecode, date: date) { error in
+                hud.dismiss()
+                if let error = error {
+                    let alert = UIAlertController(title: "错误", message: error, preferredStyle: .alert)
+                    let action = UIAlertAction(title: "好的", style: .default, handler: { (_) in
+                        alert.dismiss(animated: true, completion: nil)
+                        self.navigationController?.popViewController(animated: true)
+                    })
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
         }
     }

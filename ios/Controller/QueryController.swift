@@ -8,6 +8,7 @@
 
 import UIKit
 import Eureka
+import SwiftIconFont
 
 class QueryController: FormViewController, UISearchBarDelegate {
     
@@ -16,7 +17,7 @@ class QueryController: FormViewController, UISearchBarDelegate {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        // self.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        self.tabBarItem.icon(from: .fontAwesome, code: "search", iconColor: .blue, imageSize: CGSize(width: 20, height: 20), ofSize: 20)
     }
   
     override func viewDidLoad() {

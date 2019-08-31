@@ -13,28 +13,32 @@ class CRProvider: AbstractProvider<CRRequest> {
     var tickets: [TrainTicket] = []
     var schedules: [TrainSchedule] = []
     
-    public func getTrainList(from: String, to: String, date: Date, completion: @escaping () -> Void) {
+    public func getTrainList(from: String, to: String, date: Date, completion: @escaping (String?) -> Void) {
         self.tickets = []
         self.request(target: .leftTicket(from: from, to: to, date: date), type: TrainTicketsWrapper.self, success: { (list) in
             self.tickets = list.data
-            completion()
+            completion(nil)
+        }, failure: {error in
+            completion(error.localizedDescription)
         })
     }
     
     public func getTrainDetail(withTrainNumber trainNumber: String, date: Date, completion: @escaping (String?) -> Void) {
         self.schedules = []
         self.request(target: .search(train: trainNumber, date: date), type: DataWrapper<String>.self, success: { detail in
-            self.getTrainDetail(withTrainNo: detail.value, date: date, completion: {completion(nil)})
+            self.getTrainDetail(withTrainNo: detail.value, date: date, completion: {error in completion(error)})
         }, failure: {error in
             completion(error.localizedDescription)
         })
     }
     
-    public func getTrainDetail(withTrainNo trainNo: String, date: Date, completion: @escaping () -> Void) {
+    public func getTrainDetail(withTrainNo trainNo: String, date: Date, completion: @escaping (String?) -> Void) {
         self.schedules = []
         self.request(target: .queryTrainInfo(train: trainNo, date: date), type: ListWrapper<TrainSchedule>.self, success: { (schedules) in
             self.schedules = schedules.data
-            completion()
+            completion(nil)
+        }, failure: {error in
+            completion(error.localizedDescription)
         })
     }
 }

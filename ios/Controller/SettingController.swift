@@ -12,9 +12,15 @@ import SwiftyUserDefaults
 import SafariServices
 
 class SettingController: FormViewController {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.tabBarItem.icon(from: .fontAwesome, code: "cog", iconColor: .blue, imageSize: CGSize(width: 20, height: 20), ofSize: 20)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        form +++ Section("版本")
+        form +++ Section("缓存")
             <<< LabelRow() {
                 $0.title = "车站信息：" + Defaults[.stationDatabaseVersion]
             }
@@ -40,13 +46,7 @@ class SettingController: FormViewController {
                     UIApplication.shared.openURL(URL(string: "https://github.com/Arnie97")!)
                 })
             }
-            +++ Section("其他")
-            <<< ButtonRow() {
-                $0.title = "开源组件许可证"
-                $0.onCellSelection({ (_, _) in
-                    self.performSegue(withIdentifier: "showOpenSourceLicense", sender: nil)
-                })
-            }
+            +++ Section("网页版")
             <<< ButtonRow() {
                 $0.title = "https://moerail.ml"
                 $0.onCellSelection({ (_, _) in
@@ -60,7 +60,13 @@ class SettingController: FormViewController {
                         $0.onCellSelection({ (_, _) in
                             UIApplication.shared.openURL(URL(string: "https://github.com/hqy2000")!)
                         })
-                
-        }
+            }
+            +++ Section("其他")
+            <<< ButtonRow() {
+                $0.title = "开源组件许可证"
+                $0.onCellSelection({ (_, _) in
+                    self.performSegue(withIdentifier: "showOpenSourceLicense", sender: nil)
+                })
+            }
     }
 }

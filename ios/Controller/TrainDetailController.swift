@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import JGProgressHUD
+import QuickLook
+import SafariServices
 
 class TrainScheduleCell: UITableViewCell {
     @IBOutlet weak var stationNameLabel: UILabel!
@@ -24,6 +27,7 @@ class TrainDetailController: UITableViewController {
     var trackingProvider = DynamicTrackingProvider()
     var train: String? = nil
     var date: Date? = Date()
+    let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
     
     var list: [TrainSchedule] {
         return provider?.schedules ?? []
@@ -41,18 +45,34 @@ class TrainDetailController: UITableViewController {
         return [hasDiagram, hasTracking, hasSchedule]
     }
     
+    var pending = 2 {
+        didSet {
+            if pending == 0 {
+                self.activityIndicator.stopAnimating()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
+        let barButton = UIBarButtonItem(customView: self.activityIndicator)
+        self.activityIndicator.color = .gray
+        self.navigationItem.setRightBarButton(barButton, animated: true)
+        activityIndicator.startAnimating()
+        
         self.trackingProvider.getTrackingRecord(keyword: train ?? "", completion: {
+            self.pending -= 1
             if self.models.count == 0 {
                 self.hasTracking = false
             }
-            self.tableView.reloadData()}
-        )
+            self.tableView.reloadData()
+        })
+        
         self.title = self.train
+        
         if let provider = self.provider {
             provider.getTrainDetail(withTrainNumber: self.train ?? "", date: self.date ?? Date()) { message in
+                self.pending -= 1
                 if let message = message {
-                    
                     if message != "车次不正确" {
                         let alert = UIAlertController(title: "错误", message: message, preferredStyle: .alert)
                         let action = UIAlertAction(title: "好的", style: .default, handler: { (_) in
@@ -172,6 +192,7 @@ class TrainDetailController: UITableViewController {
         if indexPath.section == 1 {
             let alert = UIAlertController(title: "请选择", message: nil, preferredStyle: .actionSheet)
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "trainDetailController") as! TrainDetailController
+            controller.provider = self.provider
             
             let emu = UIAlertAction(title: self.models[indexPath.row].emu, style: .default) { (_) in
                 controller.train = self.models[indexPath.row].emu
@@ -200,7 +221,16 @@ class TrainDetailController: UITableViewController {
             
             self.present(alert, animated: true)
             
+        } else if indexPath.section == 0 {
+            let controller = SFSafariViewController(url: URL(string: "https://moerail.ml")!.appendingPathComponent("img").appendingPathComponent(self.train! + ".png"))
+            self.present(controller, animated: true)
         }
     }
     
 }
+
+/*
+extension TrainDetailController: QLPreviewControllerDataSource {
+    
+}
+ */

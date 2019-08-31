@@ -10,6 +10,6 @@ import Foundation
 import SwiftyUserDefaults
 
 extension DefaultsKeys {
-    static let stationDatabaseVersion = DefaultsKey<String>("station_database", defaultValue: "0000-00-00")
-    static let trainDatabaseVersion = DefaultsKey<String>("train_database", defaultValue: "0000-00-00")
+    static let stationDatabaseVersion = DefaultsKey<String>("station_database", defaultValue: "未找到本地缓存")
+    static let trainDatabaseVersion = DefaultsKey<String>("train_database", defaultValue: "未找到本地缓存")
 }
