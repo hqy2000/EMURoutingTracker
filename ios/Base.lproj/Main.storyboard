@@ -277,7 +277,7 @@ Licensed under the MIT License
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 Copyright (c) 2015 Sentry
 Licensed under the MIT License
 
@@ -297,7 +297,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</mutableString>
+SOFTWARE.</string>
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <font key="NSFont" size="12" name="HelveticaNeue"/>
@@ -372,7 +372,7 @@ SOFTWARE.</mutableString>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="南京南" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNO-JQ-pp6">
                                                     <rect key="frame" x="0.0" y="0.0" width="269" height="46"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

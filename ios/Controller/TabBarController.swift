@@ -11,5 +11,7 @@ import UIKit
 import SwiftIconFont
 
 class TabBarController: UITabBarController, UISearchBarDelegate {
-    
+    override func viewDidLoad() {
+        self.navigationItem.title = "动车组交路查询"
+    }
 }

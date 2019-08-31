@@ -64,6 +64,7 @@ class TrainListController: UITableViewController {
                     alert.addAction(action)
                     self.present(alert, animated: true, completion: nil)
                 }
+                self.tableView.reloadData()
             }
         }
     }

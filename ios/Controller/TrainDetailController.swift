@@ -11,6 +11,7 @@ import UIKit
 import JGProgressHUD
 import QuickLook
 import SafariServices
+import SDWebImage
 
 class TrainScheduleCell: UITableViewCell {
     @IBOutlet weak var stationNameLabel: UILabel!
@@ -74,17 +75,16 @@ class TrainDetailController: UITableViewController {
                 self.pending -= 1
                 if let message = message {
                     if message != "车次不正确" {
-                        let alert = UIAlertController(title: "错误", message: message, preferredStyle: .alert)
+                        let alert = UIAlertController(title: "时刻表加载错误", message: message, preferredStyle: .alert)
                         let action = UIAlertAction(title: "好的", style: .default, handler: { (_) in
                             alert.dismiss(animated: true, completion: nil)
                             // self.navigationController?.popViewController(animated: true)
                         })
                         alert.addAction(action)
                         self.present(alert, animated: true, completion: nil)
-                    } else {
-                        self.hasSchedule = false
-                        self.tableView.reloadData()
                     }
+                    self.hasSchedule = false
+                    self.tableView.reloadData()
                     
                     
                 } else {
@@ -126,7 +126,17 @@ class TrainDetailController: UITableViewController {
     private func getDiagramCell(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "trainDiagramCell") as! TrainDiagramCell
         cell.diagramView.sd_setImage(with: URL(string: "https://emu.nfls.io")!.appendingPathComponent("img").appendingPathComponent(self.train! + ".png"), completed: { (_, error, _, _) in
-            if (error != nil) {
+            if let error = error as? SDWebImageError, error.code != SDWebImageError.invalidDownloadOperation {
+                if error.code == SDWebImageError.invalidDownloadStatusCode, let code = error.userInfo[SDWebImageErrorDownloadStatusCodeKey] as? Int, code != 404 {
+                    let alert = UIAlertController(title: "交路表加载错误", message: "服务器错误：\(code)，请稍后再试。", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "好的", style: .default, handler: { (_) in
+                        alert.dismiss(animated: true, completion: nil)
+                        // self.navigationController?.popViewController(animated: true)
+                    })
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
                 self.hasDiagram = false
                 self.tableView.reloadData()
             }

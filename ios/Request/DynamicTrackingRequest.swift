@@ -16,7 +16,7 @@ enum DynamicTrackingRequest {
 
 extension DynamicTrackingRequest: TargetType {
     var baseURL: URL {
-        return URL(string: "https://mpmp.ml/")!
+        return URL(string: "https://api.moerail.ml/")!
     }
     
     var path: String {
