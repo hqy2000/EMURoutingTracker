@@ -15,7 +15,7 @@ class CRProvider: AbstractProvider<CRRequest> {
     
     public func getTrainList(from: String, to: String, date: Date, completion: @escaping (String?) -> Void) {
         self.tickets = []
-        self.request(target: .leftTicket(from: from, to: to, date: date), type: TrainTicketsWrapper.self, success: { (list) in
+        self.request(target: .leftTicket(from: from, to: to, date: date), type: ListWrapper<TrainTicket>.self, success: { (list) in
             self.tickets = list.data
             completion(nil)
         }, failure: {error in
@@ -25,20 +25,23 @@ class CRProvider: AbstractProvider<CRRequest> {
     
     public func getTrainDetail(withTrainNumber trainNumber: String, date: Date, completion: @escaping (String?) -> Void) {
         self.schedules = []
-        self.request(target: .search(train: trainNumber, date: date), type: DataWrapper<String>.self, success: { detail in
-            self.getTrainDetail(withTrainNo: detail.value, date: date, completion: {error in completion(error)})
-        }, failure: {error in
-            completion(error.localizedDescription)
-        })
-    }
-    
-    public func getTrainDetail(withTrainNo trainNo: String, date: Date, completion: @escaping (String?) -> Void) {
-        self.schedules = []
-        self.request(target: .queryTrainInfo(train: trainNo, date: date), type: ListWrapper<TrainSchedule>.self, success: { (schedules) in
+        self.request(target: .queryByTrainNumber(train: trainNumber, date: date), type: ListWrapper<TrainSchedule>.self, success: { schedules in
             self.schedules = schedules.data
             completion(nil)
         }, failure: {error in
             completion(error.localizedDescription)
         })
     }
+    
+    /*
+    public func getTrainDetail(withTrainNo trainNo: String, date: Date, completion: @escaping (String?) -> Void) {
+        self.schedules = []
+        self.request(target: .queryByTrainNo(train: trainNo, date: date), type: ListWrapper<TrainSchedule>.self, success: { (schedules) in
+            self.schedules = schedules.data
+            completion(nil)
+        }, failure: {error in
+            completion(error.localizedDescription)
+        })
+    }
+ */
 }

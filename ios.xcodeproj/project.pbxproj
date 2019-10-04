@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0885AF398334605D156950A4 /* Pods_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F0E93A2E9B3C85EE9B8625 /* Pods_iosUITests.framework */; };
 		0B870848298361EAEBB6FE2B /* Pods_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94E7B854A351C6ED73F9E25 /* Pods_iosTests.framework */; };
+		51317124234710CE008EC9D0 /* 12306Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51317123234710CE008EC9D0 /* 12306Request.swift */; };
 		73389BE416C0EBD011B3CCC3 /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A857AB0E614FF53223154E07 /* Pods_ios.framework */; };
 		780BD5E922DA1848008139F0 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780BD5E822DA1848008139F0 /* StationProvider.swift */; };
 		780BD5EB22DA28F2008139F0 /* TrainModelListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780BD5EA22DA28F2008139F0 /* TrainModelListController.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		0B0E782FA18F5073CE174311 /* Pods-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-iosTests/Pods-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2DD90AEBF9BDDA04402371D8 /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		51317123234710CE008EC9D0 /* 12306Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 12306Request.swift; sourceTree = "<group>"; };
 		569697DBDA60D762AB40D36B /* Pods-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosTests.release.xcconfig"; path = "Target Support Files/Pods-iosTests/Pods-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		780BD5E822DA1848008139F0 /* StationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationProvider.swift; sourceTree = "<group>"; };
 		780BD5EA22DA28F2008139F0 /* TrainModelListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainModelListController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				78CBCC3922D37FA00027B916 /* MoeRailRequest.swift */,
 				78CBCC3B22D380E80027B916 /* DynamicTrackingRequest.swift */,
 				780D418722DB18960021E6BF /* CRRequest.swift */,
+				51317123234710CE008EC9D0 /* 12306Request.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				782BC4F222DE170900769D41 /* TrainDetailController.swift in Sources */,
 				78FC255822D2423D00C5922E /* AppDelegate.swift in Sources */,
 				782B902222D9E17A0024DD0D /* TrainTicket.swift in Sources */,
+				51317124234710CE008EC9D0 /* 12306Request.swift in Sources */,
 				780D418322DB17290021E6BF /* RequestError.swift in Sources */,
 				780D418822DB18960021E6BF /* CRRequest.swift in Sources */,
 				780D54A422D4AB7F00FAB0E9 /* DiagramSearchController.swift in Sources */,
@@ -712,6 +716,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -719,10 +724,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -732,6 +738,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -739,11 +746,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

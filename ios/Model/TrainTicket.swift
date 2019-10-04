@@ -9,98 +9,97 @@
 import Foundation
 import ObjectMapper
 
-class TrainTicket: Codable {
-    let trainId: String
+class TrainTicket: ImmutableMappable, Codable {
+    let trainNo: String
     let trainNumber: String
-    let origin: String
-    let terminal: String
-    let from: String
-    let to: String
-    let fromIndex: String
-    let toIndex: String
-    let start: String
-    let end: String
+    let startStationTelecode: String
+    let startStationName: String
+    let endStationTelecode: String
+    let endStationName: String
+    let fromStationName: String
+    let fromStationTelecode: String
+    let toStationTelecode: String
+    let toStationName: String
+    let startTime: String
+    let arriveTime: String
+    let dayDifference: String
     let duration: String
-    let isSelling: Bool
-    let stateClassCoach: String
-    let businessClassCoach: String
-    let firstClassCoach: String
-    let secondClassCoach: String
-    let deluxeSoftSleeper: String
-    let softSleeper: String
-    let highSpeedSleeper: String
-    let hardSleeper: String
-    let softSeat: String
-    let hardSeat: String
-    let noSeat: String
+
+    let trainSeatFeature: String
+    let softSleeper: String // 软卧 rw
+    let softSeat: String // 软座 rz
+    let stateClassCoach: String // 特等座 tz
+    let noSeat: String // 无座 wz
+    let hardSleeper: String // 硬卧 yw
+    let hardSeat: String // 硬座 yz
+    let firstClassCoach: String // 一等座 zy
+    let secondClassCoach: String // 二等座 ze
+    let businessClassCoach: String // 商务座 swz
+    let emuSleeper: String // 动卧 srrb
     
-    init(_ str: String) {
-        let details = str.components(separatedBy: "|")
-        self.trainId = details[0]
-        self.trainNumber = details[1]
-        self.origin = details[2]
-        self.terminal = details[3]
-        self.from = details[4]
-        self.fromIndex = details[5]
-        self.to = details[6]
-        self.toIndex = details[7]
-        self.start = details[8]
-        self.end = details[9]
-        self.duration = details[10]
-        self.isSelling = details[11] == "Y"
-        self.stateClassCoach = details[12]
-        self.businessClassCoach = details[13]
-        self.firstClassCoach = details[14]
-        self.secondClassCoach = details[15]
-        self.deluxeSoftSleeper = details[16]
-        self.softSleeper = details[17]
-        self.highSpeedSleeper = details[18]
-        self.hardSleeper = details[19]
-        self.softSeat = details[20]
-        self.hardSeat = details[21]
-        self.noSeat = details[22]
+    required init(map: Map) throws {
+        self.trainNo = try map.value("train_no")
+        self.trainNumber = try map.value("station_train_code")
+        
+        self.startStationTelecode = try map.value("start_station_telecode")
+        self.startStationName = try map.value("start_station_name")
+        self.endStationTelecode = try map.value("end_station_telecode")
+        self.endStationName = try map.value("end_station_name")
+        self.fromStationTelecode = try map.value("from_station_telecode")
+        self.fromStationName = try map.value("from_station_name")
+        self.toStationTelecode = try map.value("to_station_telecode")
+        self.toStationName = try map.value("to_station_name")
+        
+        self.startTime = try map.value("start_time")
+        self.arriveTime = try map.value("arrive_time")
+        self.dayDifference = try map.value("day_difference")
+        self.duration = try map.value("lishi")
+        
+        self.trainSeatFeature = try map.value("train_seat_feature")
+        self.softSleeper = try map.value("rw_num")
+        self.softSeat = try map.value("rz_num")
+        self.stateClassCoach = try map.value("tz_num")
+        self.noSeat = try map.value("wz_num")
+        self.hardSleeper = try map.value("yw_num")
+        self.hardSeat = try map.value("yz_num")
+        self.firstClassCoach = try map.value("zy_num")
+        self.secondClassCoach = try map.value("ze_num")
+        self.businessClassCoach = try map.value("swz_num")
+        self.emuSleeper = try map.value("srrb_num")
     }
     
     public func getAvailableSeating() -> [String] {
         var available: [String] = []
-        if self.businessClassCoach != "" {
+        if self.businessClassCoach != "--" {
             available.append("商务座：\(self.businessClassCoach)")
         }
-        if self.stateClassCoach != "" {
+        if self.stateClassCoach != "--" {
             available.append("特等座：\(self.stateClassCoach)")
         }
-        if self.firstClassCoach != "" {
+        if self.firstClassCoach != "--" {
             available.append("一等座：\(self.firstClassCoach)")
         }
-        if self.secondClassCoach != "" {
+        if self.secondClassCoach != "--" {
             available.append("二等座：\(self.secondClassCoach)")
         }
-        if self.hardSeat != "" {
+        if self.hardSeat != "--" {
             available.append("硬座：\(self.hardSeat)")
         }
-        if self.softSeat != "" {
+        if self.softSeat != "--" {
             available.append("软座：\(self.softSeat)")
         }
-        if self.hardSleeper != "" {
+        if self.hardSleeper != "--" {
             available.append("硬卧：\(self.hardSleeper)")
         }
-        if self.softSleeper != "" {
+        if self.softSleeper != "--" {
             available.append("软卧：\(self.softSleeper)")
         }
-        if self.deluxeSoftSleeper != "" {
-            available.append("高级软卧：\(self.deluxeSoftSleeper)")
-        }
-        if self.noSeat != "" {
+        if self.noSeat != "--" {
             available.append("无座：\(self.noSeat)")
+        }
+        if self.emuSleeper != "--" {
+            available.append("动卧：\(self.noSeat)")
         }
         return available
     }
-}
-
-class TrainTicketsWrapper: ImmutableMappable {
-    required init(map: Map) throws {
-        let details: [String] = try map.value("data")
-        self.data = details.map({TrainTicket($0)})
-    }
-    let data: [TrainTicket]
 }

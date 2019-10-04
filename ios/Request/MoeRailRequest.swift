@@ -31,6 +31,7 @@ extension MoeRailRequest: TargetType {
             return "img/" + train + ".png"
         case .version:
             return "device/version"
+            
         }
     }
     

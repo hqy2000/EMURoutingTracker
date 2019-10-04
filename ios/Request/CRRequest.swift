@@ -13,8 +13,7 @@ enum CRRequest {
     case leftTicket(from: String, to: String, date: Date)
     case queryByTrainNo(train: String, from: String, to: String, date: Date)
     case czxx(station: String, date: Date)
-    case queryTrainInfo(train: String, date: Date)
-    case search(train: String, date: Date)
+    case queryByTrainNumber(train: String, date: Date)
 }
 
 extension CRRequest: TargetType {
@@ -57,12 +56,7 @@ extension CRRequest: TargetType {
                 "station": station,
                 "date": dateFormatter.string(from: date)
                 ], encoding: URLEncoding.default)
-        case .queryTrainInfo(let train, let date):
-            return .requestParameters(parameters: [
-                "train": train,
-                "date": dateFormatter.string(from: date)
-                ], encoding: URLEncoding.default)
-        case .search(let train, let date):
+        case .queryByTrainNumber(let train, let date):
             return .requestParameters(parameters: [
                 "train": train,
                 "date": dateFormatter.string(from: date)
@@ -74,6 +68,4 @@ extension CRRequest: TargetType {
     var headers: [String : String]? {
         return nil
     }
-    
-    
 }

@@ -11,6 +11,7 @@ import Moya
 
 enum DynamicTrackingRequest {
     case train(keyword: String)
+    case trains(keywords: [String])
     case emu(keyword: String)
 }
 
@@ -22,7 +23,11 @@ extension DynamicTrackingRequest: TargetType {
     var path: String {
         switch self {
         case .train(let keyword):
-            return "train/\(keyword)"
+            return "train/" + keyword
+        case .trains(let keywords):
+            return "train/" + keywords.reduce("", { prev, current in
+                return prev + "," + current
+            })
         case .emu(let keyword):
             return "emu/\(keyword)"
         }

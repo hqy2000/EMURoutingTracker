@@ -26,7 +26,7 @@ class TrainDetailCell: UITableViewCell {
 
 class TrainListController: UITableViewController {
     var provider: CRProvider? = nil
-    var moeRailProvider: MoeRailProvider? = nil
+    var dynamicTrackingProvider: DynamicTrackingProvider = DynamicTrackingProvider()
     var from: Station? = nil
     var to: Station? = nil
     var date: Date? = nil
@@ -45,9 +45,6 @@ class TrainListController: UITableViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
             self.navigationItem.prompt = dateFormatter.string(from: date)
-            self.moeRailProvider = MoeRailProvider({ (_) in
-                self.tableView.reloadData()
-            })
             
             let hud = JGProgressHUD(style: .dark)
             hud.textLabel.text = "加载中"
@@ -63,6 +60,10 @@ class TrainListController: UITableViewController {
                     })
                     alert.addAction(action)
                     self.present(alert, animated: true, completion: nil)
+                } else {
+                    self.dynamicTrackingProvider.getTrackingRecords(keywords: self.list.map({$0.trainNumber}), completion: {
+                        self.tableView.reloadData()
+                    })
                 }
                 self.tableView.reloadData()
             }
@@ -75,13 +76,16 @@ class TrainListController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "trainDetailCell", for: indexPath) as! TrainDetailCell
-        cell.beginTimeLabel.text = self.list[indexPath.row].start
-        cell.endTimeLabel.text = self.list[indexPath.row].end
-        cell.toStationLabel.text = self.provider!.stationProvider.getStation(withTelecode: self.list[indexPath.row].to)?.name ?? ""
-        cell.fromStationLabel.text = self.provider!.stationProvider.getStation(withTelecode: self.list[indexPath.row].from)?.name ?? ""
+        cell.beginTimeLabel.text = self.list[indexPath.row].startTime
+        cell.endTimeLabel.text = self.list[indexPath.row].arriveTime
+        cell.toStationLabel.text = self.provider!.stationProvider.getStation(withTelecode: self.list[indexPath.row].toStationName)?.name ?? ""
+        cell.fromStationLabel.text = self.provider!.stationProvider.getStation(withTelecode: self.list[indexPath.row].fromStationName)?.name ?? ""
         cell.trainNumberLabel.text = self.list[indexPath.row].trainNumber
-        if let model = self.moeRailProvider!.getTrainModel(self.list[indexPath.row].trainNumber) {
-            cell.trainModelLabel.text = model
+        let result = self.dynamicTrackingProvider.batch.filter { (model) -> Bool in
+            return model.train == self.list[indexPath.row].trainNumber
+        }
+        if result.count == 1 {
+            cell.trainModelLabel.text = result[0].emu
         } else {
             cell.trainModelLabel.text = "暂无数据"
         }

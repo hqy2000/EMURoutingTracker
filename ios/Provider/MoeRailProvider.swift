@@ -53,6 +53,9 @@ class MoeRailProvider: AbstractProvider<MoeRailRequest> {
         }
     }
     
+    internal func getModelList() {
+    }
+    
     internal func getTrainModel(_ train: String) -> String? {
         if let trainList = self.trainList {
             return trainList.getModel(train)
