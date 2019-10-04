@@ -90,6 +90,16 @@ class QueryController: FormViewController, UISearchBarDelegate {
             let trainRow: TextRow = self.form.rowBy(tag: "train")!
             let dateRow: DateRow = self.form.rowBy(tag: "train_date")!
             
+            if trainRow.value == nil || trainRow.value == "" {
+                let alert = UIAlertController(title: "错误", message: "查询内容为空", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "好的", style: .default) { (_) in
+                    alert.dismiss(animated: true, completion: nil)
+                }
+                alert.addAction(ok)
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            
             controller.provider = self.provider
             controller.train = trainRow.value?.uppercased()
             controller.date = dateRow.value

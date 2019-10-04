@@ -60,13 +60,22 @@ class TrainDetailController: UITableViewController {
         self.navigationItem.setRightBarButton(barButton, animated: true)
         activityIndicator.startAnimating()
         
-        self.trackingProvider.getTrackingRecord(keyword: train ?? "", completion: {
-            self.pending -= 1
-            if self.models.count == 0 {
-                self.hasTracking = false
-            }
+        if ((train ?? "").contains("K") || (train ?? "").contains("Z") || (train ?? "").contains("T")) {
+            self.hasTracking = false
             self.tableView.reloadData()
-        })
+            self.pending -= 1
+        } else {
+            self.trackingProvider.getTrackingRecord(keyword: train ?? "", completion: {
+                self.pending -= 1
+                if self.models.count == 0 {
+                    self.hasTracking = false
+                }
+                self.tableView.reloadData()
+            })
+        }
+        
+        
+        
         
         self.title = self.train
         
@@ -125,24 +134,30 @@ class TrainDetailController: UITableViewController {
     
     private func getDiagramCell(cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "trainDiagramCell") as! TrainDiagramCell
-        cell.diagramView.sd_setImage(with: URL(string: "https://emu.nfls.io")!.appendingPathComponent("img").appendingPathComponent(self.train! + ".png"), completed: { (_, error, _, _) in
-            if let error = error as? SDWebImageError, error.code != SDWebImageError.invalidDownloadOperation {
-                if error.code == SDWebImageError.invalidDownloadStatusCode, let code = error.userInfo[SDWebImageErrorDownloadStatusCodeKey] as? Int, code != 404 {
-                    let alert = UIAlertController(title: "交路表加载错误", message: "服务器错误：\(code)，请稍后再试。", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "好的", style: .default, handler: { (_) in
-                        alert.dismiss(animated: true, completion: nil)
-                        // self.navigationController?.popViewController(animated: true)
-                    })
-                    alert.addAction(action)
-                    self.present(alert, animated: true, completion: nil)
+        if (!self.train!.starts(with: "G") && !self.train!.starts(with: "D")) {
+            self.hasDiagram = false
+            self.tableView.reloadData()
+        } else {
+            cell.diagramView.sd_setImage(with: URL(string: "https://emu.nfls.io")!.appendingPathComponent("img").appendingPathComponent(self.train! + ".png"), completed: { (_, error, _, _) in
+                if let error = error as? SDWebImageError, error.code != SDWebImageError.invalidDownloadOperation {
+                    if error.code == SDWebImageError.invalidDownloadStatusCode, let code = error.userInfo[SDWebImageErrorDownloadStatusCodeKey] as? Int, code != 404 {
+                        let alert = UIAlertController(title: "交路表加载错误", message: "服务器错误：\(code)，请稍后再试。", preferredStyle: .alert)
+                        let action = UIAlertAction(title: "好的", style: .default, handler: { (_) in
+                            alert.dismiss(animated: true, completion: nil)
+                            // self.navigationController?.popViewController(animated: true)
+                        })
+                        alert.addAction(action)
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    
+                    self.hasDiagram = false
+                    self.tableView.reloadData()
                 }
-                
-                self.hasDiagram = false
-                self.tableView.reloadData()
-            }
-        })
+            })
+        }
         return cell
     }
+    
     
     private func getTrackingCell(cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "trainModelCell") as! UITableViewCell
