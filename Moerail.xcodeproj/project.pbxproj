@@ -12,6 +12,7 @@
 		512D6D1D234D147600748A49 /* TrainEmuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D6D1C234D147600748A49 /* TrainEmuCell.swift */; };
 		512D6D1F234D854100748A49 /* TrainEmuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 512D6D1E234D854100748A49 /* TrainEmuCell.xib */; };
 		512D6D22234D87CF00748A49 /* cn-crh2.png in Resources */ = {isa = PBXBuildFile; fileRef = 512D6D21234D87CF00748A49 /* cn-crh2.png */; };
+		51F3DED3234DB30A00A25A22 /* TrainTicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51F3DED2234DB30A00A25A22 /* TrainTicketCell.xib */; };
 		59B6EA31FAF93BDC0522F51F /* Pods_MoerailTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A4E1A276BFCD60E9EC39BC /* Pods_MoerailTests.framework */; };
 		780BD5E922DA1848008139F0 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780BD5E822DA1848008139F0 /* StationProvider.swift */; };
 		780BD5EB22DA28F2008139F0 /* TrainModelListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780BD5EA22DA28F2008139F0 /* TrainModelListController.swift */; };
@@ -76,6 +77,7 @@
 		512D6D1C234D147600748A49 /* TrainEmuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainEmuCell.swift; sourceTree = "<group>"; };
 		512D6D1E234D854100748A49 /* TrainEmuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainEmuCell.xib; sourceTree = "<group>"; };
 		512D6D21234D87CF00748A49 /* cn-crh2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cn-crh2.png"; sourceTree = "<group>"; };
+		51F3DED2234DB30A00A25A22 /* TrainTicketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainTicketCell.xib; sourceTree = "<group>"; };
 		569697DBDA60D762AB40D36B /* Pods-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosTests.release.xcconfig"; path = "Target Support Files/Pods-iosTests/Pods-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		5761C1C64FCA0D197F3EDF51 /* Pods-MoerailTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoerailTests.debug.xcconfig"; path = "Target Support Files/Pods-MoerailTests/Pods-MoerailTests.debug.xcconfig"; sourceTree = "<group>"; };
 		72A4E1A276BFCD60E9EC39BC /* Pods_MoerailTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoerailTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +181,7 @@
 			children = (
 				512D6D1C234D147600748A49 /* TrainEmuCell.swift */,
 				512D6D1E234D854100748A49 /* TrainEmuCell.xib */,
+				51F3DED2234DB30A00A25A22 /* TrainTicketCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				512D6D1F234D854100748A49 /* TrainEmuCell.xib in Resources */,
 				78FC255F22D2423E00C5922E /* Assets.xcassets in Resources */,
 				78FC255D22D2423D00C5922E /* Main.storyboard in Resources */,
+				51F3DED3234DB30A00A25A22 /* TrainTicketCell.xib in Resources */,
 				512D6D22234D87CF00748A49 /* cn-crh2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
