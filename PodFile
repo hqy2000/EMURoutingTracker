@@ -2,9 +2,9 @@
 # source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '9.3'
 
-target 'ios' do
+target 'Moerail' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   
@@ -21,12 +21,12 @@ target 'ios' do
   pod 'JGProgressHUD'
   pod 'SwiftIconFont'
 
-  target 'iosTests' do
+  target 'MoerailTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'iosUITests' do
+  target 'MoerailUITests' do
     inherit! :search_paths
     # Pods for testing
   end
