@@ -37,6 +37,8 @@ class TrainTicketCell: UITableViewCell {
             self.emu.layer.backgroundColor = UIColor(red: 161.0/255.0, green: 110.0/255.0, blue: 37.0/255.0, alpha: 1).cgColor
         } else if emu.starts(with: "CR200") {
             self.emu.layer.backgroundColor = UIColor(red: 42.0/255.0, green: 163.0/255.0, blue: 50.0/255.0, alpha: 1).cgColor
+        } else if emu.starts(with: "MTR"){
+            self.emu.layer.backgroundColor = UIColor(red: 196.0/255.0, green: 30.0/255.0, blue: 58.0/255.0, alpha: 1).cgColor
         } else {
             self.emu.layer.backgroundColor = UIColor(red: 30.0/255.0, green: 58.0/255.0, blue: 145.0/255.0, alpha: 1).cgColor
         }
@@ -66,6 +68,8 @@ class TrainTicketCell: UITableViewCell {
         case _ where emu.starts(with: "CRH2G"),
              _ where emu.starts(with: "CRH2H"):
             filename = "cn-crh2g"
+        case _ where emu.starts(with: "CRH2"):
+            filename = "cn-crh2"
         case _ where emu.starts(with: "CRH380B"):
             filename = "cn-crh380b"
         case _ where emu.starts(with: "CRH380C"):
@@ -84,6 +88,8 @@ class TrainTicketCell: UITableViewCell {
             filename = "cn-crh6f"
         case _ where emu.starts(with: "CRH6"):
             filename = "cn-crh6"
+        case _ where emu.starts(with: "MTR"):
+            filename = "hk-mtr380a"
         default:
             filename = "cn-hxn5"
         }
