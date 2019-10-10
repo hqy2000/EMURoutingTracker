@@ -16,7 +16,7 @@ class TrainEmuCell: UITableViewCell {
     @IBOutlet weak var subtitle: UILabel!
     @IBOutlet weak var remark: UILabel!
     
-    private func setLogo(emu: String) {
-       
+    public func setLogo(emu: String) {
+        self.logo.image = TrainTicketCell.getImage(emu)
     }
 }

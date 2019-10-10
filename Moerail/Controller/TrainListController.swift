@@ -41,6 +41,8 @@ class TrainListController: UITableViewController {
             let from = self.from,
             let to = self.to,
             let date = self.date {
+            
+            self.tableView.register(UINib(nibName: "TrainTicketCell", bundle: Bundle.main), forCellReuseIdentifier: "ticketCell")
             self.title = "\(self.from?.name ?? "") - \(self.to?.name ?? "")"
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -75,20 +77,23 @@ class TrainListController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "trainDetailCell", for: indexPath) as! TrainDetailCell
-        cell.beginTimeLabel.text = self.list[indexPath.row].startTime
-        cell.endTimeLabel.text = self.list[indexPath.row].arriveTime
-        cell.toStationLabel.text = self.provider!.stationProvider.getStation(withTelecode: self.list[indexPath.row].toStationName)?.name ?? ""
-        cell.fromStationLabel.text = self.provider!.stationProvider.getStation(withTelecode: self.list[indexPath.row].fromStationName)?.name ?? ""
-        cell.trainNumberLabel.text = self.list[indexPath.row].trainNumber
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ticketCell", for: indexPath) as! TrainTicketCell
+        cell.startTime.text = self.list[indexPath.row].startTime
+        cell.endTime.text = self.list[indexPath.row].arriveTime
+        cell.endStation.text = self.list[indexPath.row].toStationName
+        cell.startStation.text = self.list[indexPath.row].fromStationName
+        cell.train.text = self.list[indexPath.row].trainNumber
         let result = self.dynamicTrackingProvider.batch.filter { (model) -> Bool in
             return model.train == self.list[indexPath.row].trainNumber
         }
         if result.count == 1 {
-            cell.trainModelLabel.text = result[0].emu
-        } else {
-            cell.trainModelLabel.text = "暂无数据"
+            cell.setEmu(result[0].emu)
+            cell.emu.isHidden = false
+        } else if self.dynamicTrackingProvider.batch.count > 0 {
+            cell.setEmu("暂无数据")
+            cell.emu.isHidden = true
         }
+        /*
         for (index, element) in self.list[indexPath.row].getAvailableSeating().enumerated() {
             switch index {
             case 0:
@@ -104,6 +109,7 @@ class TrainListController: UITableViewController {
             }
         }
         // cell.accessoryType = .disclosureIndicator
+         */
         return cell
     }
     

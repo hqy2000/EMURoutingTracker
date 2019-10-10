@@ -196,6 +196,7 @@ class TrainDetailController: UITableViewController {
         cell.title.text = self.models[indexPath.row].emu
         cell.subtitle?.text = self.models[indexPath.row].train
         cell.remark.text = self.models[indexPath.row].date
+        cell.setLogo(emu: self.models[indexPath.row].emu)
         return cell
     }
     
