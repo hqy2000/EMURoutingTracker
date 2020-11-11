@@ -21,7 +21,14 @@ struct MoerailView: View {
                                 Text(emu.train)
                                     .font(Font.body.monospacedDigit())
                                 Spacer()
-                                Text("\(emu.timetable.first?.station ?? "") ⇀ \(emu.timetable.last?.station ?? "")")
+                                if emu.timetable.first?.station != nil {
+                                    Text("\(emu.timetable.first?.station ?? "") ⇀ \(emu.timetable.last?.station ?? "")")
+                                } else {
+                                    ProgressView()
+                                }
+                                
+                            }.onTapGesture {
+                                self.moerailData.getTrackingRecord(keyword: emu.singleTrain)
                             }
                         }
                     }
@@ -35,6 +42,8 @@ struct MoerailView: View {
                         Spacer()
                         Text(emu.date)
                             .font(Font.caption.monospacedDigit())
+                    }.onTapGesture {
+                        self.moerailData.getTrackingRecord(keyword: emu.emu)
                     }
                 }
             } else if moerailData.mode == .multipleEmus {
@@ -45,6 +54,9 @@ struct MoerailView: View {
                                 Image("CRH2A")
                                 Text(emu.emu)
                                     .font(Font.body.monospacedDigit())
+                                    .onTapGesture {
+                                        self.moerailData.getTrackingRecord(keyword: emu.emu)
+                                    }
                                 Spacer()
                                 VStack(spacing: 4) {
                                     HStack {
@@ -56,6 +68,8 @@ struct MoerailView: View {
                                         Spacer()
                                         Text("\(emu.timetable.first?.station ?? "") ⇀ \(emu.timetable.last?.station ?? "")").font(Font.caption2)
                                     }
+                                }.onTapGesture {
+                                    self.moerailData.getTrackingRecord(keyword: emu.singleTrain)
                                 }
                                 
                             }
@@ -79,13 +93,15 @@ struct MoerailView: View {
                 } else {
                     HStack {
                         Image("CRH2A")
-                        Text("CRH2A 2001").font(.headline)
+                        Text(moerailData.query).font(.headline)
                     }
                 }
                 
             }
         }
-        //.navigationBarItems(leading: )
+        .navigationBarItems(trailing: Button("Done") {
+            
+        })
         
     }
 }

@@ -35,6 +35,7 @@ class MoerailData: ObservableObject {
 
     public func getTrackingRecord(keyword: String) {
         self.query = keyword
+        self.mode = .loading
         if (keyword.starts(with: "C") && !keyword.starts(with: "CR")) || keyword.starts(with: "G") || keyword.starts(with: "D") {
             self.moerailProvider.request(target: .train(keyword: keyword), type: [EMU].self, success: { results in
                 self.emuList = results
