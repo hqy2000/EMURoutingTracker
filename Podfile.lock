@@ -7,24 +7,16 @@ PODS:
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
-  - ObjectMapper (4.2.0)
-  - SDWebImage (5.9.4):
-    - SDWebImage/Core (= 5.9.4)
-  - SDWebImage/Core (5.9.4)
-  - Sentry (6.0.7):
-    - Sentry/Core (= 6.0.7)
-  - Sentry/Core (6.0.7)
-  - SwiftyJSON (5.0.0)
+  - Sentry (6.0.8):
+    - Sentry/Core (= 6.0.8)
+  - Sentry/Core (6.0.8)
   - SwiftyUserDefaults (5.0.0)
 
 DEPENDENCIES:
   - AlamofireNetworkActivityIndicator
   - Cache
   - Moya
-  - ObjectMapper
-  - SDWebImage
   - Sentry
-  - SwiftyJSON
   - SwiftyUserDefaults
 
 SPEC REPOS:
@@ -33,10 +25,7 @@ SPEC REPOS:
     - AlamofireNetworkActivityIndicator
     - Cache
     - Moya
-    - ObjectMapper
-    - SDWebImage
     - Sentry
-    - SwiftyJSON
     - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
@@ -44,12 +33,9 @@ SPEC CHECKSUMS:
   AlamofireNetworkActivityIndicator: 6564782bd7b9e6c430ae67d9277af01907b01ca4
   Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
-  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
-  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
-  Sentry: e2c691627ae1dc0029acebbd1b0b4af4df12af73
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Sentry: 6ab9f44a413dec7ebf5e82b166048afb5f60b895
   SwiftyUserDefaults: 33fcb42bd1feb53a37d873feb62c82967db5f7f6
 
-PODFILE CHECKSUM: 375b69b7fa12e5d6ca62f2f1cbca37786436d004
+PODFILE CHECKSUM: b7170edb3287558729ab97a4ab71771abc2e4aad
 
 COCOAPODS: 1.8.4

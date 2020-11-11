@@ -9,10 +9,6 @@ target 'chinaemu' do
   pod 'Moya'
   pod 'AlamofireNetworkActivityIndicator'
   pod 'Cache'
-  pod 'SwiftyJSON'
-  pod 'ObjectMapper'
   pod 'SwiftyUserDefaults'
-  pod 'SDWebImage'
   pod 'Sentry'
-
 end
