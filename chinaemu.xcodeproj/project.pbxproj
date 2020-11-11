@@ -10,7 +10,7 @@
 		518DFA302557E3E200B29703 /* MoerailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA2F2557E3E200B29703 /* MoerailRequest.swift */; };
 		518DFA3525581C2000B29703 /* EMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3425581C2000B29703 /* EMU.swift */; };
 		518DFA3B25581CD300B29703 /* MoerailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3A25581CD300B29703 /* MoerailData.swift */; };
-		518DFA3E25581D7A00B29703 /* AbstractData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3D25581D7A00B29703 /* AbstractData.swift */; };
+		518DFA3E25581D7A00B29703 /* AbstractProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3D25581D7A00B29703 /* AbstractProvider.swift */; };
 		518DFA43255832B800B29703 /* MoerailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA42255832B800B29703 /* MoerailView.swift */; };
 		518DFA4F255A97ED00B29703 /* CRData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA4E255A97ED00B29703 /* CRData.swift */; };
 		518DFA52255A97FB00B29703 /* CRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA51255A97FB00B29703 /* CRRequest.swift */; };
@@ -21,6 +21,7 @@
 		51EFCC4425273DE200EA9D54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFCC4325273DE200EA9D54 /* ContentView.swift */; };
 		51EFCC4625273DE200EA9D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4525273DE200EA9D54 /* Assets.xcassets */; };
 		51EFCC4925273DE200EA9D54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4825273DE200EA9D54 /* Preview Assets.xcassets */; };
+		51FF3529255C07C300EC6B8A /* TimetableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF3528255C07C300EC6B8A /* TimetableProvider.swift */; };
 		BA8185EA8F8A902BA66E3DFA /* Pods_chinaemu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84F1E3D8D1155B8A2CC8B0F /* Pods_chinaemu.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +30,7 @@
 		518DFA2F2557E3E200B29703 /* MoerailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoerailRequest.swift; sourceTree = "<group>"; };
 		518DFA3425581C2000B29703 /* EMU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMU.swift; sourceTree = "<group>"; };
 		518DFA3A25581CD300B29703 /* MoerailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoerailData.swift; sourceTree = "<group>"; };
-		518DFA3D25581D7A00B29703 /* AbstractData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractData.swift; sourceTree = "<group>"; };
+		518DFA3D25581D7A00B29703 /* AbstractProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractProvider.swift; sourceTree = "<group>"; };
 		518DFA42255832B800B29703 /* MoerailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoerailView.swift; sourceTree = "<group>"; };
 		518DFA472558332D00B29703 /* chinaemu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = chinaemu.entitlements; sourceTree = "<group>"; };
 		518DFA4E255A97ED00B29703 /* CRData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRData.swift; sourceTree = "<group>"; };
@@ -37,13 +38,13 @@
 		518DFA54255A9F3C00B29703 /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
 		518DFA57255A9FEE00B29703 /* CRResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRResponse.swift; sourceTree = "<group>"; };
 		518DFA5A255AEC0000B29703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		518DFA78255AECE800B29703 /* chinaemu copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "chinaemu copy-Info.plist"; path = "/Users/qingyanghu/Documents/chinaemu/chinaemu copy-Info.plist"; sourceTree = "<absolute>"; };
 		51EFCC3E25273DE200EA9D54 /* chinaemu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chinaemu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51EFCC4125273DE200EA9D54 /* chinaemuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chinaemuApp.swift; sourceTree = "<group>"; };
 		51EFCC4325273DE200EA9D54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		51EFCC4525273DE200EA9D54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51EFCC4825273DE200EA9D54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51EFCC4A25273DE200EA9D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51FF3528255C07C300EC6B8A /* TimetableProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableProvider.swift; sourceTree = "<group>"; };
 		91C7A24E24E46B3C39F8A8EB /* Pods-chinaemu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chinaemu.debug.xcconfig"; path = "Target Support Files/Pods-chinaemu/Pods-chinaemu.debug.xcconfig"; sourceTree = "<group>"; };
 		C84F1E3D8D1155B8A2CC8B0F /* Pods_chinaemu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chinaemu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,7 +83,6 @@
 		518DFA3925581CC500B29703 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				518DFA3D25581D7A00B29703 /* AbstractData.swift */,
 				518DFA3A25581CD300B29703 /* MoerailData.swift */,
 				518DFA4E255A97ED00B29703 /* CRData.swift */,
 			);
@@ -104,7 +104,6 @@
 				51EFCC3F25273DE200EA9D54 /* Products */,
 				5313E480D042225F5514ECD0 /* Pods */,
 				7CD611A66570102CFA262B40 /* Frameworks */,
-				518DFA78255AECE800B29703 /* chinaemu copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +118,7 @@
 		51EFCC4025273DE200EA9D54 /* chinaemu */ = {
 			isa = PBXGroup;
 			children = (
+				51FF3527255C07AF00EC6B8A /* Provider */,
 				518DFA472558332D00B29703 /* chinaemu.entitlements */,
 				518DFA412558229500B29703 /* View */,
 				518DFA3925581CC500B29703 /* Data */,
@@ -140,6 +140,15 @@
 				51EFCC4825273DE200EA9D54 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		51FF3527255C07AF00EC6B8A /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				518DFA3D25581D7A00B29703 /* AbstractProvider.swift */,
+				51FF3528255C07C300EC6B8A /* TimetableProvider.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		5313E480D042225F5514ECD0 /* Pods */ = {
@@ -275,7 +284,7 @@
 				518DFA5B255AEC0000B29703 /* AppDelegate.swift in Sources */,
 				518DFA3B25581CD300B29703 /* MoerailData.swift in Sources */,
 				518DFA55255A9F3C00B29703 /* Timetable.swift in Sources */,
-				518DFA3E25581D7A00B29703 /* AbstractData.swift in Sources */,
+				518DFA3E25581D7A00B29703 /* AbstractProvider.swift in Sources */,
 				518DFA52255A97FB00B29703 /* CRRequest.swift in Sources */,
 				518DFA58255A9FEE00B29703 /* CRResponse.swift in Sources */,
 				518DFA3525581C2000B29703 /* EMU.swift in Sources */,
@@ -284,6 +293,7 @@
 				51EFCC4225273DE200EA9D54 /* chinaemuApp.swift in Sources */,
 				518DFA4F255A97ED00B29703 /* CRData.swift in Sources */,
 				518DFA302557E3E200B29703 /* MoerailRequest.swift in Sources */,
+				51FF3529255C07C300EC6B8A /* TimetableProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

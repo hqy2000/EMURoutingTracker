@@ -7,10 +7,8 @@
 
 import Foundation
 import Moya
-import ObjectMapper
-import SwiftyJSON
 
-class AbstractData<T: TargetType> {
+class AbstractProvider<T: TargetType> {
     let provider = MoyaProvider<T>(plugins: [NetworkLoggerPlugin()])
     
     internal func request<R: Codable> (target: T, type: R.Type, success: @escaping (R) -> Void, failure: ((Error) -> Void)? = nil) {

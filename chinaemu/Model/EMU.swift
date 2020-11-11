@@ -14,7 +14,11 @@ struct EMU: Codable, Identifiable {
     
     let emu: String
     let train: String
+    var singleTrain: String {
+        return  String(train.prefix(train.firstIndex(of: "/")?.encodedOffset ?? train.count))
+    }
     let date: String
+    var timetable: [Timetable] = []
     
     var image: String {
         var filename = ""
