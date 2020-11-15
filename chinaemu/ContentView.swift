@@ -13,6 +13,7 @@ struct ContentView: View {
         NavigationView {
             MoerailView()
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
