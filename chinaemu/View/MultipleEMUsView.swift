@@ -15,7 +15,7 @@ struct MultipleEMUsView: View {
                 Section(header: Text(key)) {
                     ForEach(moerailData.groupByDay[key] ?? [], id: \.id) { emu in
                         HStack {
-                            Image("CRH2A")
+                            Image(emu.image)
                             Text(emu.emu)
                                 .font(Font.body.monospacedDigit())
                                 .onTapGesture {

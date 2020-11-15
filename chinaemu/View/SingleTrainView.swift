@@ -13,7 +13,7 @@ struct SingleTrainView: View {
         List {
             ForEach(moerailData.emuList, id: \.id) { emu in
                 HStack {
-                    Image("CRH2A")
+                    Image(emu.image)
                     Text(emu.emu)
                         .font(Font.body.monospacedDigit())
                     Spacer()
@@ -24,17 +24,15 @@ struct SingleTrainView: View {
                 }
             }
         }
-        .listStyle(GroupedListStyle())
+        .listStyle(PlainListStyle())
         .toolbar {
             ToolbarItem(placement: .principal) {
-                HStack {
+                VStack {
                     if self.moerailData.emuList.first?.timetable.first?.station != nil {
-                        Text(self.moerailData.query + " \(self.moerailData.emuList.first?.timetable.first?.station ?? "") ⇀ \(self.moerailData.emuList.first?.timetable.last?.station ?? "")").font(.headline)
+                        Text("\(self.moerailData.query)").font(.headline)
+                        Text("\(self.moerailData.emuList.first?.timetable.first?.station ?? "") ⇀ \(self.moerailData.emuList.first?.timetable.last?.station ?? "")").font(.caption2)
                     } else {
-                        VStack {
-                            Text(self.moerailData.query)
-                            ProgressView()
-                        }
+                        Text(self.moerailData.query).font(.headline)
                     }
                 }
             }

@@ -18,6 +18,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         SentrySDK.start { options in
             options.dsn = "https://85987290d32948b7a5434c6604a8d283@sentry.io/1545955"
+            options.debug = true
         }
                         
         

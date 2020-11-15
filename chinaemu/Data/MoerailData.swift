@@ -17,6 +17,7 @@ class MoerailData: ObservableObject {
     @Published var emuList = [EMU]()
     @Published var mode: Mode = .empty
     @Published var query = ""
+    @Published var showEmptyAlert = false
     
     enum Mode {
         case empty
@@ -34,6 +35,7 @@ class MoerailData: ObservableObject {
 //    }
 
     public func getTrackingRecord(keyword: String) {
+        TimetableProvider.shared.cancelAll()
         self.query = keyword
         self.mode = .empty
         if (keyword.trimmingCharacters(in: .whitespaces).isEmpty) {
@@ -41,24 +43,32 @@ class MoerailData: ObservableObject {
         } else if (keyword.starts(with: "C") && !keyword.starts(with: "CR")) || keyword.starts(with: "G") || keyword.starts(with: "D") {
             self.moerailProvider.request(target: .train(keyword: keyword), type: [EMU].self, success: { results in
                 self.emuList = results
+                self.showEmptyAlert = results.isEmpty
+                
                 for (index, emu) in self.emuList.enumerated() {
                     TimetableProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (timetable) in
-                        self.emuList[index].timetable = timetable
+                        if self.emuList.count > index {
+                            self.emuList[index].timetable = timetable
+                        }
                     }
                 }
                 self.mode = .singleTrain
             })
             
         } else {
+            self.emuList = []
             self.moerailProvider.request(target: .emu(keyword: keyword), type: [EMU].self, success: { results in
                 self.emuList = results
+                self.showEmptyAlert = results.isEmpty
                 
                 for (index, emu) in self.emuList.enumerated() {
                     if index > 0 && self.emuList[index].emu != self.emuList[index - 1].emu {
                         self.mode = .multipleEmus
                     }
                     TimetableProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (timetable) in
-                        self.emuList[index].timetable = timetable
+                        if self.emuList.count > index {
+                            self.emuList[index].timetable = timetable
+                        }
                     }
                 }
                 

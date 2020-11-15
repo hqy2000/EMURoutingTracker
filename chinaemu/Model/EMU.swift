@@ -24,46 +24,46 @@ struct EMU: Codable, Identifiable {
         var filename = ""
         switch emu {
         case _ where emu.starts(with: "CR400A"):
-            filename = "cn-cr400a"
+            return "CR400A"
         case _ where emu.starts(with: "CR400B"):
-            filename = "cn-cr400b"
+            return "CR400B"
         case _ where emu.starts(with: "CR200J"):
-            filename = "cn-cr200j"
+            return "CR200J"
         case _ where emu.starts(with: "CRH1E"):
-            filename = "cn-crh1e"
+            return "CRH1E"
         case _ where emu.starts(with: "CRH1"):
-            filename = "cn-crh1"
+            filename = "CRH1"
         case _ where emu.starts(with: "CRH2B"):
-            filename = "cn-crh2b"
+            filename = "CRH2B"
         case _ where emu.starts(with: "CRH2C"):
-            filename = "cn-crh2c"
+            filename = "CRH2C"
         case _ where emu.starts(with: "CRH2G"),
              _ where emu.starts(with: "CRH2H"):
-            filename = "cn-crh2g"
+            filename = "CRH2G"
         case _ where emu.starts(with: "CRH2"):
-            filename = "cn-crh2"
+            filename = "CRH2"
         case _ where emu.starts(with: "CRH380B"):
-            filename = "cn-crh380b"
+            filename = "CRH380B"
         case _ where emu.starts(with: "CRH380C"):
-            filename = "cn-crh380c"
+            filename = "CRH380C"
         case _ where emu.starts(with: "CRH380D"):
-            filename = "cn-crh380d"
+            filename = "CRH380D"
         case _ where emu.starts(with: "CRH380"):
-            filename = "cn-crh380"
+            filename = "CRH380"
         case _ where emu.starts(with: "CRH3A"):
-            filename = "cn-crh3a"
+            filename = "CRH3A"
         case _ where emu.starts(with: "CRH3"):
-            filename = "cn-crh3"
+            filename = "CRH3"
         case _ where emu.starts(with: "CRH5"):
-            filename = "cn-crh5"
+            filename = "CRH5"
         case _ where emu.starts(with: "CRH6F"):
-            filename = "cn-crh6f"
+            filename = "CRH6F"
         case _ where emu.starts(with: "CRH6"):
-            filename = "cn-crh6"
+            filename = "CRH6"
         case _ where emu.starts(with: "MTR"):
-            filename = "hk-mtr380a"
+            filename = "MTR"
         default:
-            filename = "cn-hxn5"
+            filename = "CRH2"
         }
         return filename
     }

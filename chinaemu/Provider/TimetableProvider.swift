@@ -7,6 +7,7 @@
 
 import Foundation
 import Cache
+import Sentry
 
 internal class TimetableProvider: AbstractProvider<CRRequest> {
     public static let shared = TimetableProvider()
@@ -44,6 +45,10 @@ internal class TimetableProvider: AbstractProvider<CRRequest> {
         }
     }
     
+    public func cancelAll() {
+        self.queue = []
+    }
+    
     private func execute(train: String, date: String, completion: @escaping ([Timetable]) -> Void) {
         debugPrint("[Timetable Queue] Remain count: \(self.queue.count).")
         self.request(target: .train(trainNo: train, date: date), type: CRResponse<CRDataWrapper<[Timetable]>>.self) { (timetable) in
@@ -53,7 +58,7 @@ internal class TimetableProvider: AbstractProvider<CRRequest> {
             self.lock = false
             self.run()
         } failure: { error in
-            
+            debugPrint("Error with: \(train).")
             self.lock = false
             self.run()
         }

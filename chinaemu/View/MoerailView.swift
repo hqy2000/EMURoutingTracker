@@ -9,12 +9,11 @@ import SwiftUI
 
 struct MoerailView: View {
     @ObservedObject var moerailData = MoerailData()
-    @State var query = "G2"
     
     var body: some View {
         HStack {
             if moerailData.mode == .empty || moerailData.emuList.isEmpty {
-                EmptyView()
+                EmptyView().environmentObject(moerailData)
             } else if moerailData.mode == .singleEmu {
                 SingleEMUView().environmentObject(moerailData)
             } else if moerailData.mode == .singleTrain {
@@ -22,9 +21,7 @@ struct MoerailView: View {
             } else if moerailData.mode == .multipleEmus {
                 MultipleEMUsView().environmentObject(moerailData)
             }
-        }.onAppear(perform: {
-            self.moerailData.getTrackingRecord(keyword: "G3")
-        })
+        }
         .navigationBarTitleDisplayMode(.inline)
     }
 }

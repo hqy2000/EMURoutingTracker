@@ -23,7 +23,6 @@ struct SingleEMUView: View {
                             } else {
                                 ProgressView()
                             }
-                            
                         }.onTapGesture {
                             self.moerailData.getTrackingRecord(keyword: emu.singleTrain)
                         }
@@ -35,7 +34,7 @@ struct SingleEMUView: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack {
-                    Image("CRH2A")
+                    Image(moerailData.emuList.first?.image ?? "")
                     Text(moerailData.query).font(.headline)
                 }
             }
