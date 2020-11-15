@@ -45,6 +45,7 @@ internal class TimetableProvider: AbstractProvider<CRRequest> {
     }
     
     private func execute(train: String, date: String, completion: @escaping ([Timetable]) -> Void) {
+        debugPrint("[Timetable Queue] Remain count: \(self.queue.count).")
         self.request(target: .train(trainNo: train, date: date), type: CRResponse<CRDataWrapper<[Timetable]>>.self) { (timetable) in
             try? self.storage.setObject(timetable.data.data, forKey: train + date)
             completion(timetable.data.data)

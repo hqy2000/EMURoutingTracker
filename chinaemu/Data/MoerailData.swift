@@ -15,11 +15,11 @@ class MoerailData: ObservableObject {
     let crProvider = AbstractProvider<CRRequest>();
     
     @Published var emuList = [EMU]()
-    @Published var mode: Mode = .loading
+    @Published var mode: Mode = .empty
     @Published var query = ""
     
     enum Mode {
-        case loading
+        case empty
         case singleTrain
         case singleEmu
         case multipleEmus
@@ -35,8 +35,10 @@ class MoerailData: ObservableObject {
 
     public func getTrackingRecord(keyword: String) {
         self.query = keyword
-        self.mode = .loading
-        if (keyword.starts(with: "C") && !keyword.starts(with: "CR")) || keyword.starts(with: "G") || keyword.starts(with: "D") {
+        self.mode = .empty
+        if (keyword.trimmingCharacters(in: .whitespaces).isEmpty) {
+            self.emuList = []
+        } else if (keyword.starts(with: "C") && !keyword.starts(with: "CR")) || keyword.starts(with: "G") || keyword.starts(with: "D") {
             self.moerailProvider.request(target: .train(keyword: keyword), type: [EMU].self, success: { results in
                 self.emuList = results
                 for (index, emu) in self.emuList.enumerated() {
@@ -60,7 +62,7 @@ class MoerailData: ObservableObject {
                     }
                 }
                 
-                if self.mode == .loading {
+                if self.mode == .empty {
                     self.mode = .singleEmu
                 }
             })

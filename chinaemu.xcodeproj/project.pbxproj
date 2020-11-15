@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510CC5EC2560C8DC00853E56 /* SingleEMUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5EB2560C8DC00853E56 /* SingleEMUView.swift */; };
+		510CC5EF2560C9D100853E56 /* SingleTrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5EE2560C9D100853E56 /* SingleTrainView.swift */; };
+		510CC5F22560C9F300853E56 /* MultipleEMUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F12560C9F300853E56 /* MultipleEMUsView.swift */; };
+		510CC5F52560CC9A00853E56 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F42560CC9A00853E56 /* EmptyView.swift */; };
 		518DFA302557E3E200B29703 /* MoerailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA2F2557E3E200B29703 /* MoerailRequest.swift */; };
 		518DFA3525581C2000B29703 /* EMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3425581C2000B29703 /* EMU.swift */; };
 		518DFA3B25581CD300B29703 /* MoerailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3A25581CD300B29703 /* MoerailData.swift */; };
@@ -27,6 +31,10 @@
 
 /* Begin PBXFileReference section */
 		435AFF417935338C557353ED /* Pods-chinaemu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chinaemu.release.xcconfig"; path = "Target Support Files/Pods-chinaemu/Pods-chinaemu.release.xcconfig"; sourceTree = "<group>"; };
+		510CC5EB2560C8DC00853E56 /* SingleEMUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEMUView.swift; sourceTree = "<group>"; };
+		510CC5EE2560C9D100853E56 /* SingleTrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTrainView.swift; sourceTree = "<group>"; };
+		510CC5F12560C9F300853E56 /* MultipleEMUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleEMUsView.swift; sourceTree = "<group>"; };
+		510CC5F42560CC9A00853E56 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		518DFA2F2557E3E200B29703 /* MoerailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoerailRequest.swift; sourceTree = "<group>"; };
 		518DFA3425581C2000B29703 /* EMU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMU.swift; sourceTree = "<group>"; };
 		518DFA3A25581CD300B29703 /* MoerailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoerailData.swift; sourceTree = "<group>"; };
@@ -93,6 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				518DFA42255832B800B29703 /* MoerailView.swift */,
+				510CC5EB2560C8DC00853E56 /* SingleEMUView.swift */,
+				510CC5EE2560C9D100853E56 /* SingleTrainView.swift */,
+				510CC5F12560C9F300853E56 /* MultipleEMUsView.swift */,
+				510CC5F42560CC9A00853E56 /* EmptyView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,14 +295,18 @@
 			files = (
 				518DFA5B255AEC0000B29703 /* AppDelegate.swift in Sources */,
 				518DFA3B25581CD300B29703 /* MoerailData.swift in Sources */,
+				510CC5F22560C9F300853E56 /* MultipleEMUsView.swift in Sources */,
 				518DFA55255A9F3C00B29703 /* Timetable.swift in Sources */,
 				518DFA3E25581D7A00B29703 /* AbstractProvider.swift in Sources */,
 				518DFA52255A97FB00B29703 /* CRRequest.swift in Sources */,
 				518DFA58255A9FEE00B29703 /* CRResponse.swift in Sources */,
+				510CC5F52560CC9A00853E56 /* EmptyView.swift in Sources */,
 				518DFA3525581C2000B29703 /* EMU.swift in Sources */,
 				518DFA43255832B800B29703 /* MoerailView.swift in Sources */,
+				510CC5EC2560C8DC00853E56 /* SingleEMUView.swift in Sources */,
 				51EFCC4425273DE200EA9D54 /* ContentView.swift in Sources */,
 				51EFCC4225273DE200EA9D54 /* chinaemuApp.swift in Sources */,
+				510CC5EF2560C9D100853E56 /* SingleTrainView.swift in Sources */,
 				518DFA4F255A97ED00B29703 /* CRData.swift in Sources */,
 				518DFA302557E3E200B29703 /* MoerailRequest.swift in Sources */,
 				51FF3529255C07C300EC6B8A /* TimetableProvider.swift in Sources */,
@@ -424,6 +440,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
@@ -433,11 +450,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = moe.hqy.chinaemu;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ioe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -449,6 +467,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
@@ -458,11 +477,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = moe.hqy.chinaemu;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ioe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
