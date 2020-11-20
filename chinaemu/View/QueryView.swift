@@ -25,6 +25,9 @@ struct QueryView: View {
                         }).frame(width: 70)
                 }
             }
+            .onAppear(perform: {
+                StationProvider.shared.get()
+            })
 //            Section(header: Text("发着查询")) {
 //                HStack {
 //                    VStack {

@@ -7,10 +7,12 @@
 
 import Foundation
 import Cache
+import JavaScriptCore
+import Sentry
 
 internal class StationProvider: AbstractProvider<CRRequest> {
     public static let shared = StationProvider()
-    private let stations: [Station] = []
+    public private(set) var stations: [Station] = []
     
     override private init() {
         super.init()
@@ -18,8 +20,25 @@ internal class StationProvider: AbstractProvider<CRRequest> {
     }
 
     internal func get() {
-        self.request(target: .stations, type: String.self) { (result) in
-            print(result)
+        self.requestRaw(target: .stations) { (result) in
+            let context = JSContext()
+            context?.evaluateScript(result)
+            if let raw = context?.objectForKeyedSubscript("station_names")?.toString() {
+                let stations: [Station] = raw.split(separator: "@").map { (raw) in
+                    let info = raw.split(separator: "|")
+                    if info.count < 5 {
+                        
+                        print("Station name is having some issues: \(raw).")
+                        return Station(name: "", code: "", pinyin: "", abbreviation: "")
+                    } else {
+                        return Station(name: String(info[1]), code: String(info[2]), pinyin: String(info[3]), abbreviation: String(info[4]))
+                    }
+                    
+                }
+                self.stations = stations
+            } else {
+                dump(result)
+            }
         }
     }
 }
