@@ -26,6 +26,8 @@
 		518DFA55255A9F3C00B29703 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA54255A9F3C00B29703 /* Timetable.swift */; };
 		518DFA58255A9FEE00B29703 /* CRResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA57255A9FEE00B29703 /* CRResponse.swift */; };
 		518DFA5B255AEC0000B29703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA5A255AEC0000B29703 /* AppDelegate.swift */; };
+		51E2087C25678BA5001D91D2 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2087B25678BA5001D91D2 /* StationProvider.swift */; };
+		51E2087F25678BC5001D91D2 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2087E25678BC5001D91D2 /* Station.swift */; };
 		51E27DB22561143E00B22289 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DB12561143E00B22289 /* UserDefaults.swift */; };
 		51E27DBA2561163000B22289 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DB92561163000B22289 /* FavoritesView.swift */; };
 		51E27DC1256116D100B22289 /* EMUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DC0256116D100B22289 /* EMUView.swift */; };
@@ -59,6 +61,8 @@
 		518DFA54255A9F3C00B29703 /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
 		518DFA57255A9FEE00B29703 /* CRResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRResponse.swift; sourceTree = "<group>"; };
 		518DFA5A255AEC0000B29703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		51E2087B25678BA5001D91D2 /* StationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationProvider.swift; sourceTree = "<group>"; };
+		51E2087E25678BC5001D91D2 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		51E27DB12561143E00B22289 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		51E27DB92561163000B22289 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		51E27DC0256116D100B22289 /* EMUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMUView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				518DFA3425581C2000B29703 /* EMU.swift */,
 				518DFA54255A9F3C00B29703 /* Timetable.swift */,
 				518DFA57255A9FEE00B29703 /* CRResponse.swift */,
+				51E2087E25678BC5001D91D2 /* Station.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				518DFA3D25581D7A00B29703 /* AbstractProvider.swift */,
 				51FF3528255C07C300EC6B8A /* TimetableProvider.swift */,
 				518B98922567664A005FBB54 /* FavoritesProvider.swift */,
+				51E2087B25678BA5001D91D2 /* StationProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 				518DFA55255A9F3C00B29703 /* Timetable.swift in Sources */,
 				518DFA3E25581D7A00B29703 /* AbstractProvider.swift in Sources */,
 				518DFA52255A97FB00B29703 /* CRRequest.swift in Sources */,
+				51E2087C25678BA5001D91D2 /* StationProvider.swift in Sources */,
 				518DFA58255A9FEE00B29703 /* CRResponse.swift in Sources */,
 				518B988725675DC3005FBB54 /* TrainView.swift in Sources */,
 				510CC5F52560CC9A00853E56 /* EmptyView.swift in Sources */,
@@ -351,6 +358,7 @@
 				510CC5EC2560C8DC00853E56 /* SingleEMUListView.swift in Sources */,
 				51EFCC4425273DE200EA9D54 /* ContentView.swift in Sources */,
 				51EFCC4225273DE200EA9D54 /* chinaemuApp.swift in Sources */,
+				51E2087F25678BC5001D91D2 /* Station.swift in Sources */,
 				510CC5EF2560C9D100853E56 /* SingleTrainListView.swift in Sources */,
 				51E27DB22561143E00B22289 /* UserDefaults.swift in Sources */,
 				518B988A25675E07005FBB54 /* GeneralView.swift in Sources */,
@@ -488,7 +496,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
@@ -498,7 +506,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -515,7 +523,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
@@ -525,7 +533,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

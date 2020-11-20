@@ -10,23 +10,11 @@ import SwiftUI
 struct EmptyView: View {
     @State var query = ""
     @EnvironmentObject var moerailData: MoerailData
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         HStack {
             
-        }.alert(isPresented: $moerailData.showEmptyAlert, content: {
-            Alert(title: Text("搜索结果为空"), message: Text("可能尚未支持您想要查询车组所归属的路局。"), dismissButton: Alert.Button.default(Text("OK"), action: {
-                
-                    self.presentationMode.wrappedValue.dismiss()
-                
-            }))
-        }).alert(isPresented: $moerailData.showServerErrorAlert, content: {
-            Alert(title: Text("服务器错误"), message: Text("错误代码：503 Service Unavailable。请稍后再试。"), dismissButton: Alert.Button.default(Text("OK"), action: {
-                
-                    self.presentationMode.wrappedValue.dismiss()
-                
-            }))
-        })
+        }
     }
 }
 

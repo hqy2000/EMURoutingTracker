@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MoerailView: View {
     @ObservedObject var moerailData = MoerailData()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let query: String
     init(_ query: String = "") {
         self.query = query
@@ -26,6 +27,13 @@ struct MoerailView: View {
                 MultipleEMUsListView().environmentObject(moerailData)
             }
         }
+        .alert(isPresented: $moerailData.showEmptyAlert, content: {
+            Alert(title: Text("搜索结果为空"), message: Text("可能尚未支持您想要查询车组所归属的路局。"), dismissButton: Alert.Button.default(Text("OK"), action: {
+                
+                    self.presentationMode.wrappedValue.dismiss()
+                
+            }))
+        })
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: {
             self.moerailData.getTrackingRecord(keyword: query)

@@ -11,6 +11,8 @@ import Moya
 @frozen
 enum CRRequest {
     case train(trainNo: String, date: String)
+    case stations
+    case leftTicket(from: String, to: String, date: String)
 }
 
 extension CRRequest: TargetType {
@@ -22,6 +24,10 @@ extension CRRequest: TargetType {
         switch self {
         case .train(_,_):
             return "kfzmpt/queryTrainInfo/query/"
+        case .stations:
+            return "kfzmpt/resources/js/framework/station_name.js"
+        case .leftTicket(_, _, _):
+            return "kfzmpt/lcxxcx/query"
         }
     }
     
@@ -40,12 +46,18 @@ extension CRRequest: TargetType {
                 "leftTicketDTO.train_no": trainNo,
                 "leftTicketDTO.train_date": date
             ], encoding: URLEncoding.default)
+        case .stations:
+            return .requestPlain
+        case .leftTicket(let from, let to, let date):
+            return .requestParameters(parameters: [
+                "queryDate": date,
+                "from_station": from,
+                "to_station": to
+            ], encoding: URLEncoding.default)
         }
     }
     
     var headers: [String : String]? {
         return ["User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36"]
     }
-    
-    
 }

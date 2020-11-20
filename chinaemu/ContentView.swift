@@ -13,9 +13,17 @@ struct ContentView: View {
         NavigationView {
             TabView {
                 QueryView()
-                    .tabItem { Text("查询") }
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "magnifyingglass")
+                            Text("查询")
+                        }
+                    }
                 FavoritesView()
-                    .tabItem { Text("收藏") }
+                    .tabItem {
+                        Image(systemName: "bookmark")
+                        Text("收藏")
+                    }
             }.navigationTitle("动车组交路查询")
             
         }

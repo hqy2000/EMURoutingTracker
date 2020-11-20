@@ -76,10 +76,11 @@ class MoerailData: ObservableObject {
                     self.mode = .singleEmu
                 }
             } failure: { (error) in
-                dump(error)
+                self.mode = .empty
                 if let error = error as? NetworkError {
                     if error.code == 503 {
-                        self.showServerErrorAlert = true
+                        // self.showServerErrorAlert = true
+                        self.showEmptyAlert = true
                     } else {
                         self.showEmptyAlert = true
                     }

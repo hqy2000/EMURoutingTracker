@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SingleTrainListView: View {
     @EnvironmentObject var moerailData: MoerailData
+    @State var overrideState: Bool? = nil
     var body: some View {
         List {
             ForEach(moerailData.emuList, id: \.id) { emu in
@@ -31,14 +32,25 @@ struct SingleTrainListView: View {
         .navigationBarItems(trailing: Button(action: {
             if !FavoritesProvider.shared.contains(train: self.moerailData.emuList.first?.train ?? "") {
                 FavoritesProvider.shared.add(train: self.moerailData.emuList.first?.train ?? "")
+                overrideState = true
             } else {
                 FavoritesProvider.shared.delete(train: self.moerailData.emuList.first?.train ?? "")
+                overrideState = false
             }
         }, label: {
-            if !FavoritesProvider.shared.contains(train: self.moerailData.emuList.first?.train ?? "") {
-                Image(systemName: "star")
+        
+            if let state = self.overrideState {
+                if !state {
+                    Image(systemName: "star")
+                } else {
+                    Image(systemName: "star.fill")
+                }
             } else {
-                Image(systemName: "star.fill")
+                if !FavoritesProvider.shared.contains(train: self.moerailData.emuList.first?.train ?? "") {
+                    Image(systemName: "star")
+                } else {
+                    Image(systemName: "star.fill")
+                }
             }
             
         }))

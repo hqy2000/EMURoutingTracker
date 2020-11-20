@@ -13,6 +13,7 @@ class FavoritesData: ObservableObject {
     let moerailProvider = AbstractProvider<MoerailRequest>();
     //@State var favoriteEMUs: [EMU] = []
     @Published var favoriteTrains: [EMU] = []
+    private var lastRefresh: Date? = nil
     
     init() {
         self.refresh()
@@ -24,7 +25,12 @@ class FavoritesData: ObservableObject {
                 return EMU(emu: "", train: favorite.name, date: "")
             })
         }
-        
+        // Avoid 503 issues.
+        if lastRefresh != nil && Date().timeIntervalSince(lastRefresh!) < 15.0 {
+            print("Too frequent, skip this request.")
+            return
+        }
+        lastRefresh = Date()
         moerailProvider.request(target: .trains(keywords: FavoritesProvider.shared.favoriteTrains.map({ favorite in
             return favorite.name
         })), type: [EMU].self) { (result) in

@@ -9,9 +9,10 @@ import SwiftUI
 
 struct FavoritesView: View {
     @ObservedObject var favoritesData = FavoritesData()
+    
     var body: some View {
         List {
-            Section(header: Text("车次")) {
+            Section(header: Text("车次"), footer: Text("您可以在查询时收藏某一特定车次（如G2），被关注的车次会在这里显示最新的运用信息。")) {
                 ForEach(favoritesData.favoriteTrains, id: \.self) { emu in
                     GeneralView(emu)
                 }
