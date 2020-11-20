@@ -20,6 +20,12 @@ struct EmptyView: View {
                     self.presentationMode.wrappedValue.dismiss()
                 
             }))
+        }).alert(isPresented: $moerailData.showServerErrorAlert, content: {
+            Alert(title: Text("服务器错误"), message: Text("错误代码：503 Service Unavailable。请稍后再试。"), dismissButton: Alert.Button.default(Text("OK"), action: {
+                
+                    self.presentationMode.wrappedValue.dismiss()
+                
+            }))
         })
     }
 }

@@ -28,7 +28,20 @@ struct SingleTrainListView: View {
                 }
             }
         }
-
+        .navigationBarItems(trailing: Button(action: {
+            if !FavoritesProvider.shared.contains(train: self.moerailData.emuList.first?.train ?? "") {
+                FavoritesProvider.shared.add(train: self.moerailData.emuList.first?.train ?? "")
+            } else {
+                FavoritesProvider.shared.delete(train: self.moerailData.emuList.first?.train ?? "")
+            }
+        }, label: {
+            if !FavoritesProvider.shared.contains(train: self.moerailData.emuList.first?.train ?? "") {
+                Image(systemName: "star")
+            } else {
+                Image(systemName: "star.fill")
+            }
+            
+        }))
     }
 }
 

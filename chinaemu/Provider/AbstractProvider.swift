@@ -28,7 +28,7 @@ class AbstractProvider<T: TargetType> {
                 } else {
                     debugPrint(response.request?.url?.absoluteString ?? "Empty URL")
                     debugPrint("Status Code: \(response.statusCode)")
-                    failure?(NetworkError(response.statusCode, response.request?.url?.absoluteString ?? "Empty URL"))
+                    failure?(NetworkError(response.statusCode, response.request?.url?.absoluteString ?? "Empty URL", String(data: response.data, encoding: .utf8) ?? "Empty Content"))
                 }
             case let .failure(error):
                 debugPrint(error)
@@ -41,8 +41,10 @@ class AbstractProvider<T: TargetType> {
 struct NetworkError: LocalizedError {
     let code: Int
     let title: String
-    init(_ code: Int, _ title: String) {
+    let content: String
+    init(_ code: Int, _ title: String, _ content: String) {
         self.code = code
         self.title = title
+        self.content = content
     }
 }

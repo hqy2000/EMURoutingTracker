@@ -20,7 +20,7 @@ internal class FavoritesProvider {
     private init() {}
     
     public func contains(train: String) -> Bool {
-        if !Defaults.favoriteTrains.contains(where: {$0.name == train}) {
+        if Defaults.favoriteTrains.contains(where: {$0.name == train}) {
             return true
         } else {
             return false

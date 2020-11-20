@@ -17,6 +17,9 @@ struct FavoritesView: View {
                 }
             }
         }.listStyle(InsetGroupedListStyle())
+        .onAppear(perform: {
+            self.favoritesData.refresh()
+        })
     }
 }
 

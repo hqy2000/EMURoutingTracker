@@ -18,6 +18,7 @@ class MoerailData: ObservableObject {
     @Published var mode: Mode = .empty
     @Published var query = ""
     @Published var showEmptyAlert = false
+    @Published var showServerErrorAlert = false
     
     enum Mode {
         case empty
@@ -75,7 +76,17 @@ class MoerailData: ObservableObject {
                     self.mode = .singleEmu
                 }
             } failure: { (error) in
-                self.showEmptyAlert = true
+                dump(error)
+                if let error = error as? NetworkError {
+                    if error.code == 503 {
+                        self.showServerErrorAlert = true
+                    } else {
+                        self.showEmptyAlert = true
+                    }
+                } else {
+                    self.showEmptyAlert = true
+                }
+                
             }
         }
        

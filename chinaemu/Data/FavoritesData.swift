@@ -12,13 +12,19 @@ import SwiftyUserDefaults
 class FavoritesData: ObservableObject {
     let moerailProvider = AbstractProvider<MoerailRequest>();
     //@State var favoriteEMUs: [EMU] = []
-    @State var favoriteTrains: [EMU] = []
+    @Published var favoriteTrains: [EMU] = []
     
     init() {
         self.refresh()
     }
     
-    private func refresh() {
+    public func refresh() {
+        if self.favoriteTrains.isEmpty {
+            self.favoriteTrains = FavoritesProvider.shared.favoriteTrains.map({ (favorite) in
+                return EMU(emu: "", train: favorite.name, date: "")
+            })
+        }
+        
         moerailProvider.request(target: .trains(keywords: FavoritesProvider.shared.favoriteTrains.map({ favorite in
             return favorite.name
         })), type: [EMU].self) { (result) in
