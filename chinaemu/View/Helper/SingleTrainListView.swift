@@ -7,21 +7,12 @@
 
 import SwiftUI
 
-struct SingleTrainView: View {
+struct SingleTrainListView: View {
     @EnvironmentObject var moerailData: MoerailData
     var body: some View {
         List {
             ForEach(moerailData.emuList, id: \.id) { emu in
-                HStack {
-                    Image(emu.image)
-                    Text(emu.emu)
-                        .font(Font.body.monospacedDigit())
-                    Spacer()
-                    Text(emu.date)
-                        .font(Font.caption.monospacedDigit())
-                }.onTapGesture {
-                    self.moerailData.getTrackingRecord(keyword: emu.emu)
-                }
+                TrainView(emu)
             }
         }
         .listStyle(PlainListStyle())
@@ -37,14 +28,12 @@ struct SingleTrainView: View {
                 }
             }
         }
-        .navigationBarItems(trailing: Button("完成") {
-            self.moerailData.getTrackingRecord(keyword: "")
-        })
+
     }
 }
 
 struct SingleTrainView_Previews: PreviewProvider {
     static var previews: some View {
-        SingleTrainView()
+        SingleTrainListView()
     }
 }

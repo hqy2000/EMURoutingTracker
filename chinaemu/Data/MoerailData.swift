@@ -30,18 +30,15 @@ class MoerailData: ObservableObject {
         return Dictionary(grouping: self.emuList, by: { $0.date })
     }
     
-//    var groupByWeek: [String: [EMU]] {
-//
-//    }
-
     public func getTrackingRecord(keyword: String) {
         TimetableProvider.shared.cancelAll()
         self.query = keyword
         self.mode = .empty
         if (keyword.trimmingCharacters(in: .whitespaces).isEmpty) {
             self.emuList = []
+            self.showEmptyAlert = true
         } else if (keyword.starts(with: "C") && !keyword.starts(with: "CR")) || keyword.starts(with: "G") || keyword.starts(with: "D") {
-            self.moerailProvider.request(target: .train(keyword: keyword), type: [EMU].self, success: { results in
+            self.moerailProvider.request(target: .train(keyword: keyword), type: [EMU].self) { results in
                 self.emuList = results
                 self.showEmptyAlert = results.isEmpty
                 
@@ -53,11 +50,13 @@ class MoerailData: ObservableObject {
                     }
                 }
                 self.mode = .singleTrain
-            })
+            } failure: { (error) in
+                self.showEmptyAlert = true
+            }
             
         } else {
             self.emuList = []
-            self.moerailProvider.request(target: .emu(keyword: keyword), type: [EMU].self, success: { results in
+            self.moerailProvider.request(target: .emu(keyword: keyword), type: [EMU].self) { results in
                 self.emuList = results
                 self.showEmptyAlert = results.isEmpty
                 
@@ -75,7 +74,9 @@ class MoerailData: ObservableObject {
                 if self.mode == .empty {
                     self.mode = .singleEmu
                 }
-            })
+            } failure: { (error) in
+                self.showEmptyAlert = true
+            }
         }
        
     }

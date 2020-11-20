@@ -11,7 +11,13 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            MoerailView()
+            TabView {
+                QueryView()
+                    .tabItem { Text("查询") }
+                FavoritesView()
+                    .tabItem { Text("收藏") }
+            }.navigationTitle("动车组交路查询")
+            
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

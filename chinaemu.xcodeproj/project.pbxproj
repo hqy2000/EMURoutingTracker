@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		510CC5EC2560C8DC00853E56 /* SingleEMUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5EB2560C8DC00853E56 /* SingleEMUView.swift */; };
-		510CC5EF2560C9D100853E56 /* SingleTrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5EE2560C9D100853E56 /* SingleTrainView.swift */; };
-		510CC5F22560C9F300853E56 /* MultipleEMUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F12560C9F300853E56 /* MultipleEMUsView.swift */; };
+		510CC5EC2560C8DC00853E56 /* SingleEMUListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5EB2560C8DC00853E56 /* SingleEMUListView.swift */; };
+		510CC5EF2560C9D100853E56 /* SingleTrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5EE2560C9D100853E56 /* SingleTrainListView.swift */; };
+		510CC5F22560C9F300853E56 /* MultipleEMUsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F12560C9F300853E56 /* MultipleEMUsListView.swift */; };
 		510CC5F52560CC9A00853E56 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F42560CC9A00853E56 /* EmptyView.swift */; };
+		518B988725675DC3005FBB54 /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988625675DC3005FBB54 /* TrainView.swift */; };
+		518B988A25675E07005FBB54 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988925675E07005FBB54 /* GeneralView.swift */; };
+		518B988D2567655A005FBB54 /* FavoritesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988C2567655A005FBB54 /* FavoritesData.swift */; };
+		518B98932567664A005FBB54 /* FavoritesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B98922567664A005FBB54 /* FavoritesProvider.swift */; };
+		518B989F25676ED5005FBB54 /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B989E25676ED5005FBB54 /* QueryView.swift */; };
 		518DFA302557E3E200B29703 /* MoerailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA2F2557E3E200B29703 /* MoerailRequest.swift */; };
 		518DFA3525581C2000B29703 /* EMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3425581C2000B29703 /* EMU.swift */; };
 		518DFA3B25581CD300B29703 /* MoerailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3A25581CD300B29703 /* MoerailData.swift */; };
@@ -21,6 +26,9 @@
 		518DFA55255A9F3C00B29703 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA54255A9F3C00B29703 /* Timetable.swift */; };
 		518DFA58255A9FEE00B29703 /* CRResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA57255A9FEE00B29703 /* CRResponse.swift */; };
 		518DFA5B255AEC0000B29703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA5A255AEC0000B29703 /* AppDelegate.swift */; };
+		51E27DB22561143E00B22289 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DB12561143E00B22289 /* UserDefaults.swift */; };
+		51E27DBA2561163000B22289 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DB92561163000B22289 /* FavoritesView.swift */; };
+		51E27DC1256116D100B22289 /* EMUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DC0256116D100B22289 /* EMUView.swift */; };
 		51EFCC4225273DE200EA9D54 /* chinaemuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFCC4125273DE200EA9D54 /* chinaemuApp.swift */; };
 		51EFCC4425273DE200EA9D54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFCC4325273DE200EA9D54 /* ContentView.swift */; };
 		51EFCC4625273DE200EA9D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4525273DE200EA9D54 /* Assets.xcassets */; };
@@ -31,10 +39,15 @@
 
 /* Begin PBXFileReference section */
 		435AFF417935338C557353ED /* Pods-chinaemu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chinaemu.release.xcconfig"; path = "Target Support Files/Pods-chinaemu/Pods-chinaemu.release.xcconfig"; sourceTree = "<group>"; };
-		510CC5EB2560C8DC00853E56 /* SingleEMUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEMUView.swift; sourceTree = "<group>"; };
-		510CC5EE2560C9D100853E56 /* SingleTrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTrainView.swift; sourceTree = "<group>"; };
-		510CC5F12560C9F300853E56 /* MultipleEMUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleEMUsView.swift; sourceTree = "<group>"; };
+		510CC5EB2560C8DC00853E56 /* SingleEMUListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEMUListView.swift; sourceTree = "<group>"; };
+		510CC5EE2560C9D100853E56 /* SingleTrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTrainListView.swift; sourceTree = "<group>"; };
+		510CC5F12560C9F300853E56 /* MultipleEMUsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleEMUsListView.swift; sourceTree = "<group>"; };
 		510CC5F42560CC9A00853E56 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		518B988625675DC3005FBB54 /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
+		518B988925675E07005FBB54 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
+		518B988C2567655A005FBB54 /* FavoritesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesData.swift; sourceTree = "<group>"; };
+		518B98922567664A005FBB54 /* FavoritesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesProvider.swift; sourceTree = "<group>"; };
+		518B989E25676ED5005FBB54 /* QueryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
 		518DFA2F2557E3E200B29703 /* MoerailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoerailRequest.swift; sourceTree = "<group>"; };
 		518DFA3425581C2000B29703 /* EMU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMU.swift; sourceTree = "<group>"; };
 		518DFA3A25581CD300B29703 /* MoerailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoerailData.swift; sourceTree = "<group>"; };
@@ -46,6 +59,9 @@
 		518DFA54255A9F3C00B29703 /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
 		518DFA57255A9FEE00B29703 /* CRResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRResponse.swift; sourceTree = "<group>"; };
 		518DFA5A255AEC0000B29703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		51E27DB12561143E00B22289 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		51E27DB92561163000B22289 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		51E27DC0256116D100B22289 /* EMUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMUView.swift; sourceTree = "<group>"; };
 		51EFCC3E25273DE200EA9D54 /* chinaemu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chinaemu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51EFCC4125273DE200EA9D54 /* chinaemuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chinaemuApp.swift; sourceTree = "<group>"; };
 		51EFCC4325273DE200EA9D54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +107,7 @@
 		518DFA3925581CC500B29703 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				518B988C2567655A005FBB54 /* FavoritesData.swift */,
 				518DFA3A25581CD300B29703 /* MoerailData.swift */,
 				518DFA4E255A97ED00B29703 /* CRData.swift */,
 			);
@@ -100,13 +117,34 @@
 		518DFA412558229500B29703 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				51E27DBF256116BE00B22289 /* Helper */,
 				518DFA42255832B800B29703 /* MoerailView.swift */,
-				510CC5EB2560C8DC00853E56 /* SingleEMUView.swift */,
-				510CC5EE2560C9D100853E56 /* SingleTrainView.swift */,
-				510CC5F12560C9F300853E56 /* MultipleEMUsView.swift */,
-				510CC5F42560CC9A00853E56 /* EmptyView.swift */,
+				518B989E25676ED5005FBB54 /* QueryView.swift */,
+				51E27DB92561163000B22289 /* FavoritesView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		51E27DB02561142E00B22289 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				51E27DB12561143E00B22289 /* UserDefaults.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		51E27DBF256116BE00B22289 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				510CC5EB2560C8DC00853E56 /* SingleEMUListView.swift */,
+				510CC5EE2560C9D100853E56 /* SingleTrainListView.swift */,
+				510CC5F12560C9F300853E56 /* MultipleEMUsListView.swift */,
+				510CC5F42560CC9A00853E56 /* EmptyView.swift */,
+				51E27DC0256116D100B22289 /* EMUView.swift */,
+				518B988625675DC3005FBB54 /* TrainView.swift */,
+				518B988925675E07005FBB54 /* GeneralView.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		51EFCC3525273DE200EA9D54 = {
@@ -130,6 +168,7 @@
 		51EFCC4025273DE200EA9D54 /* chinaemu */ = {
 			isa = PBXGroup;
 			children = (
+				51E27DB02561142E00B22289 /* Util */,
 				51FF3527255C07AF00EC6B8A /* Provider */,
 				518DFA472558332D00B29703 /* chinaemu.entitlements */,
 				518DFA412558229500B29703 /* View */,
@@ -159,6 +198,7 @@
 			children = (
 				518DFA3D25581D7A00B29703 /* AbstractProvider.swift */,
 				51FF3528255C07C300EC6B8A /* TimetableProvider.swift */,
+				518B98922567664A005FBB54 /* FavoritesProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -293,23 +333,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				518B98932567664A005FBB54 /* FavoritesProvider.swift in Sources */,
 				518DFA5B255AEC0000B29703 /* AppDelegate.swift in Sources */,
 				518DFA3B25581CD300B29703 /* MoerailData.swift in Sources */,
-				510CC5F22560C9F300853E56 /* MultipleEMUsView.swift in Sources */,
+				510CC5F22560C9F300853E56 /* MultipleEMUsListView.swift in Sources */,
 				518DFA55255A9F3C00B29703 /* Timetable.swift in Sources */,
 				518DFA3E25581D7A00B29703 /* AbstractProvider.swift in Sources */,
 				518DFA52255A97FB00B29703 /* CRRequest.swift in Sources */,
 				518DFA58255A9FEE00B29703 /* CRResponse.swift in Sources */,
+				518B988725675DC3005FBB54 /* TrainView.swift in Sources */,
 				510CC5F52560CC9A00853E56 /* EmptyView.swift in Sources */,
 				518DFA3525581C2000B29703 /* EMU.swift in Sources */,
+				518B989F25676ED5005FBB54 /* QueryView.swift in Sources */,
 				518DFA43255832B800B29703 /* MoerailView.swift in Sources */,
-				510CC5EC2560C8DC00853E56 /* SingleEMUView.swift in Sources */,
+				51E27DC1256116D100B22289 /* EMUView.swift in Sources */,
+				518B988D2567655A005FBB54 /* FavoritesData.swift in Sources */,
+				510CC5EC2560C8DC00853E56 /* SingleEMUListView.swift in Sources */,
 				51EFCC4425273DE200EA9D54 /* ContentView.swift in Sources */,
 				51EFCC4225273DE200EA9D54 /* chinaemuApp.swift in Sources */,
-				510CC5EF2560C9D100853E56 /* SingleTrainView.swift in Sources */,
+				510CC5EF2560C9D100853E56 /* SingleTrainListView.swift in Sources */,
+				51E27DB22561143E00B22289 /* UserDefaults.swift in Sources */,
+				518B988A25675E07005FBB54 /* GeneralView.swift in Sources */,
 				518DFA4F255A97ED00B29703 /* CRData.swift in Sources */,
 				518DFA302557E3E200B29703 /* MoerailRequest.swift in Sources */,
 				51FF3529255C07C300EC6B8A /* TimetableProvider.swift in Sources */,
+				51E27DBA2561163000B22289 /* FavoritesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

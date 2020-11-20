@@ -15,25 +15,21 @@ class AbstractProvider<T: TargetType> {
         provider.request(target) { (result) in
             switch result {
             case let .success(response):
-                do {
-                    if (response.statusCode == 200) {
-                        do {
-                            let decoder = JSONDecoder()
-                            let result = try decoder.decode(R.self, from: response.data)
-                            success(result)
-                        } catch {
-                            debugPrint(error.localizedDescription)
-                            failure?(error)
-                        }
-
-                    } else {
-                        debugPrint("Request failed \(response.statusCode).")
+                if (response.statusCode == 200) {
+                    do {
+                        let decoder = JSONDecoder()
+                        let result = try decoder.decode(R.self, from: response.data)
+                        success(result)
+                    } catch {
+                        debugPrint(error.localizedDescription)
+                        failure?(error)
                     }
-                } catch let error {
-                    debugPrint(error)
-                    failure?(error)
+
+                } else {
+                    debugPrint(response.request?.url?.absoluteString ?? "Empty URL")
+                    debugPrint("Status Code: \(response.statusCode)")
+                    failure?(NetworkError(response.statusCode, response.request?.url?.absoluteString ?? "Empty URL"))
                 }
-                break
             case let .failure(error):
                 debugPrint(error)
                 failure?(error)
@@ -42,3 +38,11 @@ class AbstractProvider<T: TargetType> {
     }
 }
 
+struct NetworkError: LocalizedError {
+    let code: Int
+    let title: String
+    init(_ code: Int, _ title: String) {
+        self.code = code
+        self.title = title
+    }
+}

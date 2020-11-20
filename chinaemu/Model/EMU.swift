@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct EMU: Codable, Identifiable {
+struct EMU: Codable, Hashable, Identifiable {
     var id: Int {
-        return (emu + train + date).hash
+        return (emu + train + date + (timetable.first?.station ?? "")).hash
     }
     
     let emu: String
@@ -73,5 +73,9 @@ struct EMU: Codable, Identifiable {
         case emu = "emu_no"
         case train = "train_no"
         case date = "date"
+    }
+    
+    static func == (lhs: EMU, rhs: EMU) -> Bool {
+        return lhs.hashValue == rhs.hashValue
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Timetable: Codable {
+struct Timetable: Codable, Hashable {
     let arrival: String
     let departure: String
     let station: String
