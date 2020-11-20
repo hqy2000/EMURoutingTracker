@@ -9,17 +9,18 @@ import Foundation
 import Cache
 import JavaScriptCore
 import Sentry
+import SwiftUI
 
-internal class StationProvider: AbstractProvider<CRRequest> {
+internal class StationProvider: AbstractProvider<CRRequest>, ObservableObject {
     public static let shared = StationProvider()
-    public private(set) var stations: [Station] = []
+    @Published public private(set) var stations: [Station] = []
     
     override private init() {
         super.init()
         self.get()
     }
 
-    internal func get() {
+    private func get() {
         self.requestRaw(target: .stations) { (result) in
             let context = JSContext()
             context?.evaluateScript(result)
@@ -33,8 +34,8 @@ internal class StationProvider: AbstractProvider<CRRequest> {
                     } else {
                         return Station(name: String(info[1]), code: String(info[2]), pinyin: String(info[3]), abbreviation: String(info[4]))
                     }
-                    
                 }
+                debugPrint("Station list ready.")
                 self.stations = stations
             } else {
                 dump(result)

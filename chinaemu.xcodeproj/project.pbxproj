@@ -28,6 +28,7 @@
 		518DFA5B255AEC0000B29703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA5A255AEC0000B29703 /* AppDelegate.swift */; };
 		51E2087C25678BA5001D91D2 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2087B25678BA5001D91D2 /* StationProvider.swift */; };
 		51E2087F25678BC5001D91D2 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2087E25678BC5001D91D2 /* Station.swift */; };
+		51E20883256797EB001D91D2 /* LeftTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E20882256797EB001D91D2 /* LeftTicket.swift */; };
 		51E27DB22561143E00B22289 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DB12561143E00B22289 /* UserDefaults.swift */; };
 		51E27DBA2561163000B22289 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DB92561163000B22289 /* FavoritesView.swift */; };
 		51E27DC1256116D100B22289 /* EMUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DC0256116D100B22289 /* EMUView.swift */; };
@@ -63,6 +64,7 @@
 		518DFA5A255AEC0000B29703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51E2087B25678BA5001D91D2 /* StationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationProvider.swift; sourceTree = "<group>"; };
 		51E2087E25678BC5001D91D2 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		51E20882256797EB001D91D2 /* LeftTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftTicket.swift; sourceTree = "<group>"; };
 		51E27DB12561143E00B22289 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		51E27DB92561163000B22289 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		51E27DC0256116D100B22289 /* EMUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMUView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				518DFA54255A9F3C00B29703 /* Timetable.swift */,
 				518DFA57255A9FEE00B29703 /* CRResponse.swift */,
 				51E2087E25678BC5001D91D2 /* Station.swift */,
+				51E20882256797EB001D91D2 /* LeftTicket.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				51E2087C25678BA5001D91D2 /* StationProvider.swift in Sources */,
 				518DFA58255A9FEE00B29703 /* CRResponse.swift in Sources */,
 				518B988725675DC3005FBB54 /* TrainView.swift in Sources */,
+				51E20883256797EB001D91D2 /* LeftTicket.swift in Sources */,
 				510CC5F52560CC9A00853E56 /* EmptyView.swift in Sources */,
 				518DFA3525581C2000B29703 /* EMU.swift in Sources */,
 				518B989F25676ED5005FBB54 /* QueryView.swift in Sources */,

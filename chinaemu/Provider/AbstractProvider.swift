@@ -22,6 +22,8 @@ class AbstractProvider<T: TargetType> {
                         success(result)
                         
                     } catch {
+                        debugPrint(response.request?.url?.absoluteString ?? "Empty URL")
+                        debugPrint(String(data: response.data, encoding: .utf8))
                         debugPrint(error.localizedDescription)
                         failure?(error)
                     }

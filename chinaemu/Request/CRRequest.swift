@@ -26,8 +26,8 @@ extension CRRequest: TargetType {
             return "kfzmpt/queryTrainInfo/query/"
         case .stations:
             return "kfzmpt/resources/js/framework/station_name.js"
-        case .leftTicket(_, _, _):
-            return "kfzmpt/lcxxcx/query"
+        case .leftTicket(let from, let to, let date):
+            return "kfzmpt/lcxxcx/query?purpose_codes=ADULT&queryDate=\(date)&from_station=\(from)&to_station=\(to)"
         }
     }
     
@@ -48,12 +48,8 @@ extension CRRequest: TargetType {
             ], encoding: URLEncoding.default)
         case .stations:
             return .requestPlain
-        case .leftTicket(let from, let to, let date):
-            return .requestParameters(parameters: [
-                "queryDate": date,
-                "from_station": from,
-                "to_station": to
-            ], encoding: URLEncoding.default)
+        case .leftTicket(_, _, _):
+            return .requestPlain
         }
     }
     
