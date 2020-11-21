@@ -17,7 +17,8 @@ struct FavoritesView: View {
                     GeneralView(emu)
                 }
             }
-        }.listStyle(InsetGroupedListStyle())
+        }
+        .listStyle(InsetGroupedListStyle())
         .onAppear(perform: {
             self.favoritesData.refresh()
         })
