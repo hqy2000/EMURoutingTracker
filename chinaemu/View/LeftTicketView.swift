@@ -45,6 +45,21 @@ struct LeftTicketView: View {
                 }
             }
             
+            if let emu = emu {
+                NavigationLink(
+                    destination: MoerailView(emu.emu),
+                    tag: 1,
+                    selection: $activeLink) {}
+                    .frame(width: 0)
+                    .hidden()
+                
+                NavigationLink(
+                    destination: MoerailView(emu.train),
+                    tag: 2,
+                    selection: $activeLink) {}
+                    .frame(width: 0)
+                    .hidden()
+            }
             
             
             VStack(alignment: .leading) {

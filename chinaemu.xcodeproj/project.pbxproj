@@ -11,10 +11,6 @@
 		510CC5EF2560C9D100853E56 /* SingleTrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5EE2560C9D100853E56 /* SingleTrainListView.swift */; };
 		510CC5F22560C9F300853E56 /* MultipleEMUsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F12560C9F300853E56 /* MultipleEMUsListView.swift */; };
 		510CC5F52560CC9A00853E56 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F42560CC9A00853E56 /* EmptyView.swift */; };
-		5144910D2567EA3500D199EB /* ios_quickEMUApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144910C2567EA3500D199EB /* ios_quickEMUApp.swift */; };
-		5144910F2567EA3500D199EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144910E2567EA3500D199EB /* ContentView.swift */; };
-		514491112567EA3600D199EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514491102567EA3600D199EB /* Assets.xcassets */; };
-		514491142567EA3600D199EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514491132567EA3600D199EB /* Preview Assets.xcassets */; };
 		514491192567EA3600D199EB /* ios-quickEMU.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 5144910A2567EA3500D199EB /* ios-quickEMU.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		518B988725675DC3005FBB54 /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988625675DC3005FBB54 /* TrainView.swift */; };
 		518B988A25675E07005FBB54 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988925675E07005FBB54 /* GeneralView.swift */; };
@@ -47,16 +43,6 @@
 		BA8185EA8F8A902BA66E3DFA /* Pods_chinaemu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84F1E3D8D1155B8A2CC8B0F /* Pods_chinaemu.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		514491172567EA3600D199EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 51EFCC3625273DE200EA9D54 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 514491092567EA3500D199EB;
-			remoteInfo = "ios-quickEMU";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		5144911A2567EA3600D199EB /* Embed App Clips */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -77,13 +63,7 @@
 		510CC5EE2560C9D100853E56 /* SingleTrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTrainListView.swift; sourceTree = "<group>"; };
 		510CC5F12560C9F300853E56 /* MultipleEMUsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleEMUsListView.swift; sourceTree = "<group>"; };
 		510CC5F42560CC9A00853E56 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
-		5144910A2567EA3500D199EB /* ios-quickEMU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-quickEMU.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5144910C2567EA3500D199EB /* ios_quickEMUApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_quickEMUApp.swift; sourceTree = "<group>"; };
-		5144910E2567EA3500D199EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		514491102567EA3600D199EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		514491132567EA3600D199EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		514491152567EA3600D199EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		514491162567EA3600D199EB /* ios_quickEMU.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ios_quickEMU.entitlements; sourceTree = "<group>"; };
+		5144910A2567EA3500D199EB /* ios-quickEMU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "ios-quickEMU.app"; path = "/Users/qingyanghu/Documents/Github/moerail-ios/build/Debug-iphoneos/ios-quickEMU.app"; sourceTree = "<absolute>"; };
 		518B988625675DC3005FBB54 /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
 		518B988925675E07005FBB54 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		518B988C2567655A005FBB54 /* FavoritesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesData.swift; sourceTree = "<group>"; };
@@ -120,13 +100,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		514491072567EA3500D199EB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		51EFCC3B25273DE200EA9D54 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -138,25 +111,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5144910B2567EA3500D199EB /* ios-quickEMU */ = {
+		518001AB25691384003624A5 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				5144910C2567EA3500D199EB /* ios_quickEMUApp.swift */,
-				5144910E2567EA3500D199EB /* ContentView.swift */,
-				514491102567EA3600D199EB /* Assets.xcassets */,
-				514491152567EA3600D199EB /* Info.plist */,
-				514491162567EA3600D199EB /* ios_quickEMU.entitlements */,
-				514491122567EA3600D199EB /* Preview Content */,
+				5144910A2567EA3500D199EB /* ios-quickEMU.app */,
 			);
-			path = "ios-quickEMU";
-			sourceTree = "<group>";
-		};
-		514491122567EA3600D199EB /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				514491132567EA3600D199EB /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		518DFA2E2557E3D300B29703 /* Request */ = {
@@ -229,10 +189,10 @@
 			isa = PBXGroup;
 			children = (
 				51EFCC4025273DE200EA9D54 /* chinaemu */,
-				5144910B2567EA3500D199EB /* ios-quickEMU */,
 				51EFCC3F25273DE200EA9D54 /* Products */,
 				5313E480D042225F5514ECD0 /* Pods */,
 				7CD611A66570102CFA262B40 /* Frameworks */,
+				518001AB25691384003624A5 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				51EFCC3E25273DE200EA9D54 /* chinaemu.app */,
-				5144910A2567EA3500D199EB /* ios-quickEMU.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -304,23 +263,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		514491092567EA3500D199EB /* ios-quickEMU */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5144911D2567EA3600D199EB /* Build configuration list for PBXNativeTarget "ios-quickEMU" */;
-			buildPhases = (
-				514491062567EA3500D199EB /* Sources */,
-				514491072567EA3500D199EB /* Frameworks */,
-				514491082567EA3500D199EB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ios-quickEMU";
-			productName = "ios-quickEMU";
-			productReference = 5144910A2567EA3500D199EB /* ios-quickEMU.app */;
-			productType = "com.apple.product-type.application.on-demand-install-capable";
-		};
 		51EFCC3D25273DE200EA9D54 /* chinaemu */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51EFCC4D25273DE200EA9D54 /* Build configuration list for PBXNativeTarget "chinaemu" */;
@@ -335,7 +277,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				514491182567EA3600D199EB /* PBXTargetDependency */,
 			);
 			name = chinaemu;
 			productName = chinaemu;
@@ -351,9 +292,6 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
-					514491092567EA3500D199EB = {
-						CreatedOnToolsVersion = 12.2;
-					};
 					51EFCC3D25273DE200EA9D54 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -373,21 +311,11 @@
 			projectRoot = "";
 			targets = (
 				51EFCC3D25273DE200EA9D54 /* chinaemu */,
-				514491092567EA3500D199EB /* ios-quickEMU */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		514491082567EA3500D199EB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				514491142567EA3600D199EB /* Preview Assets.xcassets in Resources */,
-				514491112567EA3600D199EB /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		51EFCC3C25273DE200EA9D54 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -442,15 +370,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		514491062567EA3500D199EB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5144910F2567EA3500D199EB /* ContentView.swift in Sources */,
-				5144910D2567EA3500D199EB /* ios_quickEMUApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		51EFCC3A25273DE200EA9D54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -490,61 +409,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		514491182567EA3600D199EB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 514491092567EA3500D199EB /* ios-quickEMU */;
-			targetProxy = 514491172567EA3600D199EB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		5144911B2567EA3600D199EB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "ios-quickEMU/ios_quickEMU.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"ios-quickEMU/Preview Content\"";
-				DEVELOPMENT_TEAM = K2P3533G4D;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "ios-quickEMU/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.Clip;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		5144911C2567EA3600D199EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "ios-quickEMU/ios_quickEMU.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"ios-quickEMU/Preview Content\"";
-				DEVELOPMENT_TEAM = K2P3533G4D;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "ios-quickEMU/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.Clip;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		51EFCC4B25273DE200EA9D54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -670,7 +535,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
@@ -680,7 +545,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -698,7 +563,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
@@ -708,7 +573,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 2.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -720,15 +585,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5144911D2567EA3600D199EB /* Build configuration list for PBXNativeTarget "ios-quickEMU" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5144911B2567EA3600D199EB /* Debug */,
-				5144911C2567EA3600D199EB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		51EFCC3925273DE200EA9D54 /* Build configuration list for PBXProject "chinaemu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

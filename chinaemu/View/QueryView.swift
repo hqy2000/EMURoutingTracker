@@ -10,8 +10,8 @@ import SwiftUI
 
 struct QueryView: View {
     @State var query = ""
-    @State var departure = ""
-    @State var arrival = ""
+    @State var departure = "BJP"
+    @State var arrival = "SHH"
     @State var date = Date()
     @ObservedObject var provider = StationProvider.shared
     var body: some View {
@@ -50,7 +50,7 @@ struct QueryView: View {
                     }.navigationTitle("目的地选择")
                 }
                 DatePicker("出发日期", selection: $date, displayedComponents: .date)
-                NavigationLink("查询", destination: LeftTicketsView())
+                NavigationLink("查询", destination: LeftTicketsView(departure: self.departure, arrival: self.arrival, date: self.date))
                 
             }
         }.listStyle(InsetGroupedListStyle())

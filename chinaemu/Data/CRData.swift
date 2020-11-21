@@ -14,6 +14,7 @@ class CRData: ObservableObject {
     let moeRailProvider = AbstractProvider<MoerailRequest>();
     @Published var leftTickets: [LeftTicket] = []
     @Published var emus: [EMU] = []
+    
     public func getLeftTickets(from: String, to: String, date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
