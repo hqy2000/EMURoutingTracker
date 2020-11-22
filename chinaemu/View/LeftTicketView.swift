@@ -84,9 +84,9 @@ struct LeftTicketView: View {
                     
             }.frame(width: 100)
             
-        }.popover(isPresented: $showDetails, content: {
+        }.popover(isPresented: $showDetails, arrowEdge: .bottom, content: {
             List {
-                Section(header: Text("\(leftTicket.trainNo) 余票信息")) {
+                Section(header: Text("\(leftTicket.trainNo) 余票信息（仅供参考）")) {
                     HStack {
                         Text("商务座")
                         Spacer()
@@ -108,13 +108,33 @@ struct LeftTicketView: View {
                         Text(leftTicket.secondClass)
                     }
                     HStack {
+                        Text("软座")
+                        Spacer()
+                        Text(leftTicket.softSeat)
+                    }
+                    HStack {
+                        Text("硬座")
+                        Spacer()
+                        Text(leftTicket.hardSeat)
+                    }
+                    HStack {
+                        Text("软卧")
+                        Spacer()
+                        Text(leftTicket.softSleeper)
+                    }
+                    HStack {
+                        Text("硬卧")
+                        Spacer()
+                        Text(leftTicket.hardSleeper)
+                    }
+                    HStack {
                         Text("无座")
                         Spacer()
                         Text(leftTicket.noSeat)
                     }
                 }
             }
-        }).onTapGesture {
+        }).onLongPressGesture {
             self.showDetails = true
         }
     }

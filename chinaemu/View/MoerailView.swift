@@ -12,6 +12,7 @@ struct MoerailView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let query: String
     init(_ query: String = "") {
+        let query = query.uppercased()
         self.query = query
     }
     

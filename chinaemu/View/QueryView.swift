@@ -17,7 +17,7 @@ struct QueryView: View {
     var body: some View {
         List {
             Section(header: Text("车组号/车次查询")) {
-                TextField("CRH2A2001", text: $query)
+                TextField("G2/380/CRH2A2001", text: $query).keyboardType(.asciiCapable)
                 NavigationLink(
                     destination: MoerailView(query),
                     label: {

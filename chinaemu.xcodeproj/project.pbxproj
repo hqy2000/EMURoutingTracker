@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,6 @@
 		510CC5EF2560C9D100853E56 /* SingleTrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5EE2560C9D100853E56 /* SingleTrainListView.swift */; };
 		510CC5F22560C9F300853E56 /* MultipleEMUsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F12560C9F300853E56 /* MultipleEMUsListView.swift */; };
 		510CC5F52560CC9A00853E56 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F42560CC9A00853E56 /* EmptyView.swift */; };
-		514491192567EA3600D199EB /* ios-quickEMU.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 5144910A2567EA3500D199EB /* ios-quickEMU.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		518B988725675DC3005FBB54 /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988625675DC3005FBB54 /* TrainView.swift */; };
 		518B988A25675E07005FBB54 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988925675E07005FBB54 /* GeneralView.swift */; };
 		518B988D2567655A005FBB54 /* FavoritesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988C2567655A005FBB54 /* FavoritesData.swift */; };
@@ -42,20 +41,6 @@
 		51FF3529255C07C300EC6B8A /* TimetableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF3528255C07C300EC6B8A /* TimetableProvider.swift */; };
 		BA8185EA8F8A902BA66E3DFA /* Pods_chinaemu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84F1E3D8D1155B8A2CC8B0F /* Pods_chinaemu.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		5144911A2567EA3600D199EB /* Embed App Clips */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
-			dstSubfolderSpec = 16;
-			files = (
-				514491192567EA3600D199EB /* ios-quickEMU.app in Embed App Clips */,
-			);
-			name = "Embed App Clips";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		435AFF417935338C557353ED /* Pods-chinaemu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chinaemu.release.xcconfig"; path = "Target Support Files/Pods-chinaemu/Pods-chinaemu.release.xcconfig"; sourceTree = "<group>"; };
@@ -272,7 +257,6 @@
 				51EFCC3B25273DE200EA9D54 /* Frameworks */,
 				51EFCC3C25273DE200EA9D54 /* Resources */,
 				97F48056F6AD74ED3E93CFA5 /* [CP] Embed Pods Frameworks */,
-				5144911A2567EA3600D199EB /* Embed App Clips */,
 			);
 			buildRules = (
 			);
@@ -535,7 +519,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
@@ -563,7 +547,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
