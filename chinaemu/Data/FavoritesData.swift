@@ -11,7 +11,7 @@ import SwiftyUserDefaults
 
 class FavoritesData: ObservableObject {
     let moerailProvider = AbstractProvider<MoerailRequest>();
-    //@State var favoriteEMUs: [EMU] = []
+    @Published var favoriteEMUs: [EMU] = []
     @Published var favoriteTrains: [EMU] = []
     private var lastRefresh: Date? = nil
     
@@ -25,12 +25,20 @@ class FavoritesData: ObservableObject {
                 return EMU(emu: "", train: favorite.name, date: "")
             })
         }
+        
+        if self.favoriteEMUs.isEmpty {
+            self.favoriteEMUs = FavoritesProvider.shared.favoriteEMUs.map({ (favorite) in
+                return EMU(emu: favorite.name, train: "", date: "")
+            })
+        }
+        
         // Avoid 503 issues.
         if lastRefresh != nil && Date().timeIntervalSince(lastRefresh!) < 15.0 {
             print("Too frequent, skip this request.")
             return
         }
         lastRefresh = Date()
+        
         moerailProvider.request(target: .trains(keywords: FavoritesProvider.shared.favoriteTrains.map({ favorite in
             return favorite.name
         })), type: [EMU].self) { (result) in
@@ -43,5 +51,19 @@ class FavoritesData: ObservableObject {
         } failure: { (error) in
             print(error)
         }
+        
+        moerailProvider.request(target: .emus(keywords: FavoritesProvider.shared.favoriteEMUs.map({ favorite in
+            return favorite.name
+        })), type: [EMU].self) { (result) in
+            self.favoriteEMUs = result
+            for (index, emu) in result.enumerated() {
+                TimetableProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (timetable) in
+                    self.favoriteEMUs[index].timetable = timetable
+                }
+            }
+        } failure: { (error) in
+            print(error)
+        }
+        
     }
 }

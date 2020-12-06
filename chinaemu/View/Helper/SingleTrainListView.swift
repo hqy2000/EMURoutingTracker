@@ -30,15 +30,14 @@ struct SingleTrainListView: View {
             }
         }
         .navigationBarItems(trailing: Button(action: {
-            if !FavoritesProvider.shared.contains(train: self.moerailData.emuList.first?.train ?? "") {
-                FavoritesProvider.shared.add(train: self.moerailData.emuList.first?.train ?? "")
+            if !FavoritesProvider.shared.contains(train: self.moerailData.emuList.first?.singleTrain ?? "") {
+                FavoritesProvider.shared.add(train: self.moerailData.emuList.first?.singleTrain ?? "")
                 overrideState = true
             } else {
-                FavoritesProvider.shared.delete(train: self.moerailData.emuList.first?.train ?? "")
+                FavoritesProvider.shared.delete(train: self.moerailData.emuList.first?.singleTrain ?? "")
                 overrideState = false
             }
         }, label: {
-        
             if let state = self.overrideState {
                 if !state {
                     Image(systemName: "star")
@@ -46,7 +45,7 @@ struct SingleTrainListView: View {
                     Image(systemName: "star.fill")
                 }
             } else {
-                if !FavoritesProvider.shared.contains(train: self.moerailData.emuList.first?.train ?? "") {
+                if !FavoritesProvider.shared.contains(train: self.moerailData.emuList.first?.singleTrain ?? "") {
                     Image(systemName: "star")
                 } else {
                     Image(systemName: "star.fill")

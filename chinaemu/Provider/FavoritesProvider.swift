@@ -45,5 +45,31 @@ internal class FavoritesProvider {
         }
     }
 
+    public func contains(emu: String) -> Bool {
+        if Defaults.favoriteEMUs.contains(where: {$0.name == emu}) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    @discardableResult public func add(emu: String) -> Bool {
+        if !self.contains(emu: emu) {
+            Defaults.favoriteEMUs.append(Favorite(emu))
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    @discardableResult public func delete(emu: String) -> Bool {
+        if let index = Defaults.favoriteEMUs.firstIndex(where: {$0.name == emu}) {
+            Defaults.favoriteEMUs.remove(at: index)
+            return true
+        } else {
+            return false
+        }
+    }
+
 
 }

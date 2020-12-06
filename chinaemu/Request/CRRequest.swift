@@ -14,6 +14,7 @@ enum CRRequest {
     case train(trainNo: String, date: String)
     case stations
     case leftTicket(from: String, to: String, date: String)
+    case station(name: String, code: String, date: String)
 }
 
 extension CRRequest: TargetType {
@@ -29,6 +30,8 @@ extension CRRequest: TargetType {
             return "kfzmpt/resources/js/framework/station_name.js"
         case .leftTicket(_, _, _):
             return "kfzmpt/lcxxcx/query"
+        case .station(_, _, _):
+            return "kfzmpt/czxx/query"
         }
     }
     
@@ -55,6 +58,13 @@ extension CRRequest: TargetType {
                 "2from_station": from,
                 "3to_station": to,
                 "0purpose_codes": "ADULT"
+            ], encoding: CRURLEncoding())
+        case .station(let name, let code, let date):
+            return .requestParameters(parameters: [
+                "0train_start_date": date,
+                "1train_station_name": name,
+                "2train_station_code": code,
+                "3randCode": ""
             ], encoding: CRURLEncoding())
         }
         

@@ -13,6 +13,7 @@ enum MoerailRequest {
     case train(keyword: String)
     case trains(keywords: [String])
     case emu(keyword: String)
+    case emus(keywords: [String])
 }
 
 extension MoerailRequest: TargetType {
@@ -30,6 +31,10 @@ extension MoerailRequest: TargetType {
             })
         case .emu(let keyword):
             return "emu/\(keyword)"
+        case .emus(let keywords):
+            return "emu/" + keywords.reduce("", { prev, current in
+                return prev + "," + current
+            })
         }
     }
     
