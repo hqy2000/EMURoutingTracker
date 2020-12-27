@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.4.0)
+  - Alamofire (5.4.1)
   - AlamofireNetworkActivityIndicator (3.1.0):
     - Alamofire (~> 5.1)
   - Cache (6.0.0)
@@ -7,9 +7,10 @@ PODS:
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
-  - Sentry (6.0.8):
-    - Sentry/Core (= 6.0.8)
-  - Sentry/Core (6.0.8)
+  - Sentry (6.0.12):
+    - Sentry/Core (= 6.0.12)
+  - Sentry/Core (6.0.12)
+  - SFSafeSymbols (2.1.1)
   - SwiftyUserDefaults (5.0.0)
 
 DEPENDENCIES:
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - Cache
   - Moya
   - Sentry
+  - SFSafeSymbols
   - SwiftyUserDefaults
 
 SPEC REPOS:
@@ -26,16 +28,18 @@ SPEC REPOS:
     - Cache
     - Moya
     - Sentry
+    - SFSafeSymbols
     - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
-  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   AlamofireNetworkActivityIndicator: 6564782bd7b9e6c430ae67d9277af01907b01ca4
   Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
-  Sentry: 6ab9f44a413dec7ebf5e82b166048afb5f60b895
+  Sentry: 8ffcfe3416e0a58b90bb1ae319e8e8a13022a03e
+  SFSafeSymbols: a59c8be7723dc03e4b73069de3f879368dd2835a
   SwiftyUserDefaults: 33fcb42bd1feb53a37d873feb62c82967db5f7f6
 
-PODFILE CHECKSUM: b7170edb3287558729ab97a4ab71771abc2e4aad
+PODFILE CHECKSUM: 8578ae4867b03af86c398b6ec571fca6253a94cb
 
 COCOAPODS: 1.8.4

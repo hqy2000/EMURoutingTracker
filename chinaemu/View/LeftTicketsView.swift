@@ -21,7 +21,7 @@ struct LeftTicketsView: View {
     var body: some View {
         List {
             ForEach(crData.leftTickets, id: \.id) { (leftTicket) in
-                LeftTicketView(leftTicket, crData.emus.first(where: {$0.train == leftTicket.trainNo}))
+                LeftTicketView(leftTicket.leftTicket, crData.emus.first(where: {$0.train == leftTicket.leftTicket.trainNo}))
             }
         }.onAppear(perform: {
             if self.crData.leftTickets.isEmpty {

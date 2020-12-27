@@ -14,6 +14,7 @@ enum MoerailRequest {
     case trains(keywords: [String])
     case emu(keyword: String)
     case emus(keywords: [String])
+    case qr(emu: String, url: String)
 }
 
 extension MoerailRequest: TargetType {
@@ -35,11 +36,19 @@ extension MoerailRequest: TargetType {
             return "emu/" + keywords.reduce("", { prev, current in
                 return prev + "," + current
             })
+        case .qr(let emu, _):
+            return "emu/\(emu)/qr"
         }
+        
     }
     
     var method: Moya.Method {
-        return .get
+        switch self {
+        case .qr(_, _):
+            return .post
+        default:
+            return .get
+        }
     }
     
     var sampleData: Data {
@@ -47,7 +56,14 @@ extension MoerailRequest: TargetType {
     }
     
     var task: Task {
-        return .requestPlain
+        switch self {
+        case .qr(_, let url):
+            return .requestParameters(parameters: [
+                "url": url
+            ], encoding: JSONEncoding.default)
+        default:
+            return .requestPlain
+        }
     }
     
     var headers: [String : String]? {

@@ -11,4 +11,6 @@ target 'chinaemu' do
   pod 'Cache'
   pod 'SwiftyUserDefaults'
   pod 'Sentry'
+  pod 'SFSafeSymbols'
+
 end

@@ -48,6 +48,13 @@
 		518DFA55255A9F3C00B29703 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA54255A9F3C00B29703 /* Timetable.swift */; };
 		518DFA58255A9FEE00B29703 /* CRResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA57255A9FEE00B29703 /* CRResponse.swift */; };
 		518DFA5B255AEC0000B29703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA5A255AEC0000B29703 /* AppDelegate.swift */; };
+		5191F2D1259880D400BC648C /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5191F2D0259880D400BC648C /* ImagePickerView.swift */; };
+		5191F2D8259881F700BC648C /* CodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5191F2D7259881F700BC648C /* CodeScannerView.swift */; };
+		5191F2E8259890F100BC648C /* EMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3425581C2000B29703 /* EMU.swift */; };
+		5191F2EE2598911600BC648C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DB92561163000B22289 /* FavoritesView.swift */; };
+		5191F2EF2598911600BC648C /* FavoritesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988C2567655A005FBB54 /* FavoritesData.swift */; };
+		5191F2F52598912600BC648C /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988925675E07005FBB54 /* GeneralView.swift */; };
+		5191F2FB2598916200BC648C /* FavoritesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B98922567664A005FBB54 /* FavoritesProvider.swift */; };
 		51E2087C25678BA5001D91D2 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2087B25678BA5001D91D2 /* StationProvider.swift */; };
 		51E2087F25678BC5001D91D2 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2087E25678BC5001D91D2 /* Station.swift */; };
 		51E20883256797EB001D91D2 /* LeftTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E20882256797EB001D91D2 /* LeftTicket.swift */; };
@@ -193,6 +200,8 @@
 		518DFA54255A9F3C00B29703 /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
 		518DFA57255A9FEE00B29703 /* CRResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRResponse.swift; sourceTree = "<group>"; };
 		518DFA5A255AEC0000B29703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5191F2D0259880D400BC648C /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		5191F2D7259881F700BC648C /* CodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeScannerView.swift; sourceTree = "<group>"; };
 		51E2087B25678BA5001D91D2 /* StationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationProvider.swift; sourceTree = "<group>"; };
 		51E2087E25678BC5001D91D2 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		51E20882256797EB001D91D2 /* LeftTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftTicket.swift; sourceTree = "<group>"; };
@@ -241,6 +250,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA8185EA8F8A902BA66E3DFA /* Pods_chinaemu.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EB24C6B007082688DEB435B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,10 +374,18 @@
 				518DFA42255832B800B29703 /* MoerailView.swift */,
 				518B989E25676ED5005FBB54 /* QueryView.swift */,
 				51E27DB92561163000B22289 /* FavoritesView.swift */,
-				51E208852567D90C001D91D2 /* LeftTicketView.swift */,
 				51E208882567E3F5001D91D2 /* LeftTicketsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5191F2CF259880AA00BC648C /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				5191F2D0259880D400BC648C /* ImagePickerView.swift */,
+				5191F2D7259881F700BC648C /* CodeScannerView.swift */,
+			);
+			path = ThirdParty;
 			sourceTree = "<group>";
 		};
 		51E27DB02561142E00B22289 /* Util */ = {
@@ -375,6 +399,7 @@
 		51E27DBF256116BE00B22289 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				51E208852567D90C001D91D2 /* LeftTicketView.swift */,
 				510CC5EB2560C8DC00853E56 /* SingleEMUListView.swift */,
 				510CC5EE2560C9D100853E56 /* SingleTrainListView.swift */,
 				510CC5F12560C9F300853E56 /* MultipleEMUsListView.swift */,
@@ -417,6 +442,7 @@
 		51EFCC4025273DE200EA9D54 /* chinaemu */ = {
 			isa = PBXGroup;
 			children = (
+				5191F2CF259880AA00BC648C /* ThirdParty */,
 				51E27DB02561142E00B22289 /* Util */,
 				51FF3527255C07AF00EC6B8A /* Provider */,
 				518DFA472558332D00B29703 /* chinaemu.entitlements */,
@@ -515,6 +541,7 @@
 			buildPhases = (
 				518001F1256A15AB003624A5 /* Resources */,
 				51800218256A15AD003624A5 /* Embed App Extensions */,
+				9EB24C6B007082688DEB435B /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -709,6 +736,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5191F2FB2598916200BC648C /* FavoritesProvider.swift in Sources */,
+				5191F2F52598912600BC648C /* GeneralView.swift in Sources */,
+				5191F2EE2598911600BC648C /* FavoritesView.swift in Sources */,
+				5191F2EF2598911600BC648C /* FavoritesData.swift in Sources */,
+				5191F2E8259890F100BC648C /* EMU.swift in Sources */,
 				518001CA256A1551003624A5 /* widget.intentdefinition in Sources */,
 				518001C5256A1550003624A5 /* widget.swift in Sources */,
 			);
@@ -741,6 +773,7 @@
 			files = (
 				518B98932567664A005FBB54 /* FavoritesProvider.swift in Sources */,
 				518DFA5B255AEC0000B29703 /* AppDelegate.swift in Sources */,
+				5191F2D8259881F700BC648C /* CodeScannerView.swift in Sources */,
 				518DFA3B25581CD300B29703 /* MoerailData.swift in Sources */,
 				510CC5F22560C9F300853E56 /* MultipleEMUsListView.swift in Sources */,
 				518DFA55255A9F3C00B29703 /* Timetable.swift in Sources */,
@@ -751,6 +784,7 @@
 				518DFA58255A9FEE00B29703 /* CRResponse.swift in Sources */,
 				518B988725675DC3005FBB54 /* TrainView.swift in Sources */,
 				51E20883256797EB001D91D2 /* LeftTicket.swift in Sources */,
+				5191F2D1259880D400BC648C /* ImagePickerView.swift in Sources */,
 				510CC5F52560CC9A00853E56 /* EmptyView.swift in Sources */,
 				51E208892567E3F5001D91D2 /* LeftTicketsView.swift in Sources */,
 				518DFA3525581C2000B29703 /* EMU.swift in Sources */,

@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 class AbstractProvider<T: TargetType> {
-    let provider = MoyaProvider<T>(plugins: [])
+    let provider = MoyaProvider<T>(plugins: [NetworkLoggerPlugin()])
     
     internal func request<R: Codable> (target: T, type: R.Type, success: @escaping (R) -> Void, failure: ((Error) -> Void)? = nil) {
         provider.request(target) { (result) in

@@ -7,6 +7,18 @@
 
 import Foundation
 
+struct LeftTicketInfo: Codable, Hashable, Identifiable {
+    var id: String {
+        return leftTicket.id
+    }
+    
+    let leftTicket: LeftTicket
+    
+    enum CodingKeys: String, CodingKey {
+        case leftTicket = "queryLeftNewDTO"
+    }
+}
+
 struct LeftTicket: Codable, Hashable, Identifiable {
     var id: String {
         return trainNo

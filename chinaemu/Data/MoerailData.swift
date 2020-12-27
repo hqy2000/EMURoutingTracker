@@ -15,13 +15,14 @@ class MoerailData: ObservableObject {
     let crProvider = AbstractProvider<CRRequest>();
     
     @Published var emuList = [EMU]()
-    @Published var mode: Mode = .empty
+    @Published var mode: Mode = .loading
     @Published var query = ""
-    @Published var showEmptyAlert = false
-    @Published var showServerErrorAlert = false
-    
+    @Published var errorMessage = ""
+
     enum Mode {
+        case loading
         case empty
+        case error
         case singleTrain
         case singleEmu
         case multipleEmus
@@ -31,18 +32,22 @@ class MoerailData: ObservableObject {
         return Dictionary(grouping: self.emuList, by: { $0.date })
     }
     
+    public func postTrackingURL(url: String) {
+        self.moerailProvider.request(target: .qr(emu: self.query, url: url), type: [EMU].self) { (results) in
+            dump(results)
+        }
+    }
+    
     public func getTrackingRecord(keyword: String) {
         TimetableProvider.shared.cancelAll()
         self.query = keyword
-        self.mode = .empty
+        self.mode = .loading
         if (keyword.trimmingCharacters(in: .whitespaces).isEmpty) {
             self.emuList = []
-            self.showEmptyAlert = true
+            self.mode = .empty
         } else if (keyword.starts(with: "C") && !keyword.starts(with: "CR")) || keyword.starts(with: "G") || keyword.starts(with: "D") {
             self.moerailProvider.request(target: .train(keyword: keyword), type: [EMU].self) { results in
                 self.emuList = results
-                self.showEmptyAlert = results.isEmpty
-                
                 for (index, emu) in self.emuList.enumerated() {
                     TimetableProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (timetable) in
                         if self.emuList.count > index {
@@ -50,16 +55,20 @@ class MoerailData: ObservableObject {
                         }
                     }
                 }
-                self.mode = .singleTrain
+                
+                if self.emuList.isEmpty {
+                    self.mode = .empty
+                } else {
+                    self.mode = .singleTrain
+                }
             } failure: { (error) in
-                self.showEmptyAlert = true
+                self.handleError(error)
             }
             
         } else {
             self.emuList = []
             self.moerailProvider.request(target: .emu(keyword: keyword), type: [EMU].self) { results in
                 self.emuList = results
-                self.showEmptyAlert = results.isEmpty
                 
                 for (index, emu) in self.emuList.enumerated() {
                     if index > 0 && self.emuList[index].emu != self.emuList[index - 1].emu {
@@ -72,24 +81,30 @@ class MoerailData: ObservableObject {
                     }
                 }
                 
-                if self.mode == .empty {
+                if self.emuList.isEmpty {
+                    self.mode = .empty
+                } else if self.mode == .loading {
                     self.mode = .singleEmu
                 }
             } failure: { (error) in
-                self.mode = .empty
-                if let error = error as? NetworkError {
-                    if error.code == 503 {
-                        // self.showServerErrorAlert = true
-                        self.showEmptyAlert = true
-                    } else {
-                        self.showEmptyAlert = true
-                    }
-                } else {
-                    self.showEmptyAlert = true
-                }
-                
+                self.handleError(error)
             }
         }
-       
     }
+    
+    public func handleError(_ error: Error) {
+        self.mode = .error
+        if let error = error as? NetworkError {
+            if error.code == 503 {
+                self.errorMessage = "服务暂时不可用，请稍后再试"
+            } else if error.code == 404 {
+                self.errorMessage = "找不到URL，请检查输入是否正确"
+            } else {
+                self.errorMessage = error.localizedDescription
+            }
+        } else {
+            self.errorMessage = error.localizedDescription
+        }
+    }
+       
 }

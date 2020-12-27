@@ -13,7 +13,7 @@ import Alamofire
 enum CRRequest {
     case train(trainNo: String, date: String)
     case stations
-    case leftTicket(from: String, to: String, date: String)
+    case leftTicketPrice(from: String, to: String, date: String)
     case station(name: String, code: String, date: String)
 }
 
@@ -28,8 +28,8 @@ extension CRRequest: TargetType {
             return "kfzmpt/queryTrainInfo/query/"
         case .stations:
             return "kfzmpt/resources/js/framework/station_name.js"
-        case .leftTicket(_, _, _):
-            return "kfzmpt/lcxxcx/query"
+        case .leftTicketPrice(_, _, _):
+            return "kfzmpt/leftTicketPrice/query"
         case .station(_, _, _):
             return "kfzmpt/czxx/query"
         }
@@ -52,13 +52,14 @@ extension CRRequest: TargetType {
             ], encoding: URLEncoding.default)
         case .stations:
             return .requestPlain
-        case .leftTicket(let from, let to, let date):
+        case .leftTicketPrice(let from, let to, let date):
             return .requestParameters(parameters: [
-                "1queryDate": date,
-                "2from_station": from,
-                "3to_station": to,
-                "0purpose_codes": "ADULT"
-            ], encoding: CRURLEncoding())
+                "leftTicketDTO.train_date": date,
+                "leftTicketDTO.from_station": from,
+                "leftTicketDTO.to_station": to,
+                "leftTicketDTO.ticket_type": 1,
+                "randCode": ""
+            ], encoding: URLEncoding.default)
         case .station(let name, let code, let date):
             return .requestParameters(parameters: [
                 "0train_start_date": date,
