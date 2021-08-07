@@ -1,16 +1,26 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'chinaemu' do
+def shared_pods
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for chinaemu
   pod 'Moya'
-  pod 'AlamofireNetworkActivityIndicator'
+  #pod 'AlamofireNetworkActivityIndicator'
   pod 'Cache'
   pod 'SwiftyUserDefaults'
   pod 'Sentry'
-  pod 'SFSafeSymbols'
+  #pod 'SFSafeSymbols'
 
+end
+
+target 'chinaemu' do
+  shared_pods
+  pod 'AlamofireNetworkActivityIndicator'
+  pod 'SFSafeSymbols'
+end
+
+target 'chinaemuWidgetExtension' do
+  shared_pods
 end

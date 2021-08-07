@@ -29,7 +29,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>扫描点餐二维码需要使用到您的相机。</string>
+	<string>我们需要使用您的相机扫描二维码。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>上传点餐二维码需要访问您的相册。</string>
 	<key>UIApplicationSceneManifest</key>

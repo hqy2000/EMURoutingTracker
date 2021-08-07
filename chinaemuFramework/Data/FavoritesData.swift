@@ -19,7 +19,18 @@ class FavoritesData: ObservableObject {
         self.refresh()
     }
     
-    public func refresh() {
+    private func completionCheck(count: inout Int, completion: (() -> Void)?) {
+        DispatchQueue.global().sync {
+            count -= 1
+            print(count)
+            if count == 0 {
+                completion?()
+            }
+        }
+    }
+    
+    public func refresh(completion: (() -> Void)? = nil) {
+        var taskCount = 2
         if self.favoriteTrains.isEmpty {
             self.favoriteTrains = FavoritesProvider.shared.favoriteTrains.map({ (favorite) in
                 return EMU(emu: "", train: favorite.name, date: "")
@@ -49,9 +60,13 @@ class FavoritesData: ObservableObject {
                         self.favoriteTrains[index].timetable = timetable
                     }
                 }
+                self.completionCheck(count: &taskCount, completion: completion)
             } failure: { (error) in
                 print(error)
+                self.completionCheck(count: &taskCount, completion: completion)
             }
+        } else {
+            self.completionCheck(count: &taskCount, completion: completion)
         }
        
         
@@ -65,11 +80,13 @@ class FavoritesData: ObservableObject {
                         self.favoriteEMUs[index].timetable = timetable
                     }
                 }
+                self.completionCheck(count: &taskCount, completion: completion)
             } failure: { (error) in
                 print(error)
+                self.completionCheck(count: &taskCount, completion: completion)
             }
+        } else {
+            self.completionCheck(count: &taskCount, completion: completion)
         }
-        
-        
     }
 }
