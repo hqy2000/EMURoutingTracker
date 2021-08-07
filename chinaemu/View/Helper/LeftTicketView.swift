@@ -20,6 +20,7 @@ struct LeftTicketView: View {
     
     var body: some View {
         HStack {
+            Image(emu?.image ?? "").resizable().scaledToFit().frame(width: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             VStack(alignment: .leading) {
                 Text(leftTicket.trainNo)
                     .font(Font.title3.monospacedDigit())
@@ -29,11 +30,13 @@ struct LeftTicketView: View {
                     }
                 if !leftTicket.isEMU {
                     Text("非动车组")
+                        .foregroundColor(.gray)
                         .font(Font.caption)
-                }else if let emu = emu {
+                } else if let emu = emu {
                     HStack {
                         Text(emu.emu)
                             .lineLimit(1)
+                            .foregroundColor(emu.color)
                             .fixedSize()
                             .font(Font.caption.monospacedDigit())
                             .onTapGesture {
@@ -68,7 +71,7 @@ struct LeftTicketView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Text(leftTicket.departureTime)
                     .font(Font.callout.monospacedDigit())
-            }.frame(width: 100)
+            }.frame(width: 90)
             
             Spacer()
             Image(systemName: "arrow.right")
@@ -81,7 +84,7 @@ struct LeftTicketView: View {
                 Text(leftTicket.arrivalTime)
                     .font(Font.callout.monospacedDigit())
                     .fixedSize()
-            }.frame(width: 100)
+            }.frame(width: 90)
         }
     }
 }

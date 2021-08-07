@@ -11,20 +11,24 @@ import SFSafeSymbols
 struct EmptyView: View {
     @State var query = ""
     @State var showSheet = false
-    @State var showSuccess = false
+    @State var showResultAlert = false
     @State var showActionSheet = false
+    @State var reportResult: String? = nil
     @State var isCamera = false
     @EnvironmentObject var moerailData: MoerailData
     
     var body: some View {
         VStack(spacing: 10) {
             switch moerailData.mode {
-            case .empty:
+            case .emptyEmu:
                 Image(systemSymbol: .tram).resizable().aspectRatio(contentMode: .fit).frame(width: 30, height: 30, alignment: .center)
                 Text("暂未收录\"\(moerailData.query)\"").foregroundColor(.gray)
                 Button("上报相关信息") {
                     self.showActionSheet = true
                 }
+            case .emptyTrain:
+                Image(systemSymbol: .tram).resizable().aspectRatio(contentMode: .fit).frame(width: 30, height: 30, alignment: .center)
+                Text("暂未收录\"\(moerailData.query)\"\n可尝试搜索相关车组号").foregroundColor(.gray).multilineTextAlignment(.center)
             case .error:
                 Image(systemSymbol: .multiply).resizable().aspectRatio(contentMode: .fit).frame(width: 30, height: 30, alignment: .center)
                 Text(moerailData.errorMessage).foregroundColor(.gray)
@@ -55,10 +59,12 @@ struct EmptyView: View {
                     switch result {
                     case .success(let code):
                         moerailData.postTrackingURL(url: code) {
-                            self.showSuccess = true
+                            self.showResultAlert = true
+                            self.reportResult = nil
                         }
                     case .failure(let error):
-                        print(error.localizedDescription)
+                        self.showResultAlert = true
+                        self.reportResult = error.localizedDescription
                 }}
             } else {
                 ImagePickerView(sourceType: .photoLibrary) { image in
@@ -78,10 +84,14 @@ struct EmptyView: View {
                             for case let row as CIQRCodeFeature in features {
                                 if let message = row.messageString {
                                     moerailData.postTrackingURL(url: message) {
-                                        self.showSuccess = true
+                                        self.showResultAlert = true
+                                        self.reportResult =  nil
                                     }
                                 }
                             }
+                        } else {
+                            self.reportResult = "未能识别到二维码，请重新选择照片。"
+                            self.showResultAlert = true
                         }
                     }
                     
@@ -90,8 +100,8 @@ struct EmptyView: View {
             }
             
         }
-        .alert(isPresented: $showSuccess, content: {
-            Alert(title: Text("上报成功"), message: Text("感谢您的支持，我们将尽快根据您反馈的信息，更新我们的数据！"), dismissButton: .default(Text("OK")))
+        .alert(isPresented: $showResultAlert, content: {
+            Alert(title: Text(self.reportResult == nil ? "上报成功" : "上报失败"), message: Text(self.reportResult ?? "感谢您的支持，我们将尽快根据您反馈的信息，更新我们的数据！"), dismissButton: .default(Text("OK")))
         })
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct EMU: Codable, Hashable, Identifiable {
     var id: Int {
@@ -27,6 +28,10 @@ struct EMU: Codable, Hashable, Identifiable {
             return "CR400A"
         case _ where emu.starts(with: "CR400B"):
             return "CR400B"
+        case _ where emu.starts(with: "CR300A"):
+            return "CR300A"
+        case _ where emu.starts(with: "CR300B"):
+            return "CR300B"
         case _ where emu.starts(with: "CR200J"):
             return "CR200J"
         case _ where emu.starts(with: "CRH1E"):
@@ -66,6 +71,19 @@ struct EMU: Codable, Hashable, Identifiable {
             filename = "CRH2"
         }
         return filename
+    }
+    
+    var color: Color {
+        switch emu {
+        case let str where str.starts(with: "CR200"):
+            return .green
+        case let str where str.starts(with: "CRH"):
+            return .blue
+        case let str where str.starts(with: "CR400B") || str.starts(with: "CR300B"):
+            return .orange
+        default:
+            return .red
+        }
     }
     
     

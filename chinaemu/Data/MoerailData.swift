@@ -21,7 +21,8 @@ class MoerailData: ObservableObject {
 
     enum Mode {
         case loading
-        case empty
+        case emptyTrain
+        case emptyEmu
         case error
         case singleTrain
         case singleEmu
@@ -46,7 +47,7 @@ class MoerailData: ObservableObject {
         self.mode = .loading
         if (keyword.trimmingCharacters(in: .whitespaces).isEmpty) {
             self.emuList = []
-            self.mode = .empty
+            self.mode = .emptyTrain
         } else if (keyword.starts(with: "C") && !keyword.starts(with: "CR")) || keyword.starts(with: "G") || keyword.starts(with: "D") {
             self.moerailProvider.request(target: .train(keyword: keyword), type: [EMU].self) { results in
                 self.emuList = results
@@ -59,7 +60,7 @@ class MoerailData: ObservableObject {
                 }
                 
                 if self.emuList.isEmpty {
-                    self.mode = .empty
+                    self.mode = .emptyTrain
                 } else {
                     self.mode = .singleTrain
                 }
@@ -84,7 +85,7 @@ class MoerailData: ObservableObject {
                 }
                 
                 if self.emuList.isEmpty {
-                    self.mode = .empty
+                    self.mode = .emptyEmu
                 } else if self.mode == .loading {
                     self.mode = .singleEmu
                 }

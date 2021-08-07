@@ -18,44 +18,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         SentrySDK.start { options in
             options.dsn = "https://85987290d32948b7a5434c6604a8d283@sentry.io/1545955"
-            options.debug = true
         }
-                        
-        
-//        BGTaskScheduler.shared.register(forTaskWithIdentifier: "moe.hqy.chinaemu.push", using: nil) { task in
-//            print("Refresh")
-//            dump(task)
-//             self.handleAppRefresh(task: task as! BGAppRefreshTask)
-//        }
-//        self.scheduleAppRefresh()
-        
         return true
     }
-    
-//    func scheduleAppRefresh() {
-//       let request = BGAppRefreshTaskRequest(identifier: "moe.hqy.chinaemu.push")
-//       // Fetch no earlier than 15 minutes from now
-//       request.earliestBeginDate = Date(timeIntervalSinceNow: 30)
-//            
-//       do {
-//          try BGTaskScheduler.shared.submit(request)
-//       } catch {
-//          print("Could not schedule app refresh: \(error)")
-//       }
-//    }
-//    
-//    func handleAppRefresh(task: BGAppRefreshTask) {
-//        // Schedule a new refresh task
-//        scheduleAppRefresh()
-//        
-//        let content = UNMutableNotificationContent()
-//        content.title = "G2已发车"
-//        content.body = "使用车组：CRH2A2001"
-//        let notification = UNNotificationRequest(identifier: "push", content: content, trigger: nil)
-//        UNUserNotificationCenter.current().add(notification) { (error) in
-//            print(error)
-//        }
-//        task.setTaskCompleted(success: true)
-//     }
-
 }
