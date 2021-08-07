@@ -44,7 +44,13 @@ struct LeftTicketView: View {
                             }
                     }
                 } else {
-                    // ProgressView().frame(width: 5, height: 5, alignment: .leading)
+                    HStack {
+                        Text("未知")
+                            .lineLimit(1)
+                            .foregroundColor(.gray)
+                            .fixedSize()
+                            .font(Font.caption.monospacedDigit())
+                    }
                 }
             }
             

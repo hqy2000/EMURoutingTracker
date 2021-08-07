@@ -11,28 +11,7 @@
 		510CC5EF2560C9D100853E56 /* SingleTrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5EE2560C9D100853E56 /* SingleTrainListView.swift */; };
 		510CC5F22560C9F300853E56 /* MultipleEMUsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F12560C9F300853E56 /* MultipleEMUsListView.swift */; };
 		510CC5F52560CC9A00853E56 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F42560CC9A00853E56 /* EmptyView.swift */; };
-		518001C0256A1550003624A5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518001BF256A1550003624A5 /* WidgetKit.framework */; };
-		518001C2256A1550003624A5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518001C1256A1550003624A5 /* SwiftUI.framework */; };
-		518001C5256A1550003624A5 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518001C4256A1550003624A5 /* widget.swift */; };
-		518001C8256A1551003624A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 518001C7256A1551003624A5 /* Assets.xcassets */; };
-		518001CA256A1551003624A5 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 518001C6256A1550003624A5 /* widget.intentdefinition */; };
 		518001CB256A1551003624A5 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 518001C6256A1550003624A5 /* widget.intentdefinition */; };
-		518001CE256A1551003624A5 /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 518001BE256A1550003624A5 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		518001DD256A1579003624A5 /* clipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518001DC256A1579003624A5 /* clipApp.swift */; };
-		518001DF256A1579003624A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518001DE256A1579003624A5 /* ContentView.swift */; };
-		518001E1256A157A003624A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 518001E0256A157A003624A5 /* Assets.xcassets */; };
-		518001E4256A157A003624A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 518001E3256A157A003624A5 /* Preview Assets.xcassets */; };
-		518001E9256A157A003624A5 /* clip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 518001DA256A1579003624A5 /* clip.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		518001F6256A15AC003624A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 518001F5256A15AC003624A5 /* Assets.xcassets */; };
-		518001FD256A15AC003624A5 /* watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 518001FC256A15AC003624A5 /* watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		51800202256A15AC003624A5 /* chinaemuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51800201256A15AC003624A5 /* chinaemuApp.swift */; };
-		51800204256A15AC003624A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51800203256A15AC003624A5 /* ContentView.swift */; };
-		51800206256A15AC003624A5 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51800205256A15AC003624A5 /* NotificationController.swift */; };
-		51800208256A15AC003624A5 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51800207256A15AC003624A5 /* NotificationView.swift */; };
-		5180020A256A15AC003624A5 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51800209256A15AC003624A5 /* ComplicationController.swift */; };
-		5180020C256A15AD003624A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5180020B256A15AD003624A5 /* Assets.xcassets */; };
-		5180020F256A15AD003624A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5180020E256A15AD003624A5 /* Preview Assets.xcassets */; };
-		51800214256A15AD003624A5 /* watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 518001F3256A15AB003624A5 /* watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		518B988725675DC3005FBB54 /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988625675DC3005FBB54 /* TrainView.swift */; };
 		518B988A25675E07005FBB54 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988925675E07005FBB54 /* GeneralView.swift */; };
 		518B988D2567655A005FBB54 /* FavoritesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988C2567655A005FBB54 /* FavoritesData.swift */; };
@@ -48,13 +27,6 @@
 		518DFA55255A9F3C00B29703 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA54255A9F3C00B29703 /* Timetable.swift */; };
 		518DFA58255A9FEE00B29703 /* CRResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA57255A9FEE00B29703 /* CRResponse.swift */; };
 		518DFA5B255AEC0000B29703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA5A255AEC0000B29703 /* AppDelegate.swift */; };
-		5191F2D1259880D400BC648C /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5191F2D0259880D400BC648C /* ImagePickerView.swift */; };
-		5191F2D8259881F700BC648C /* CodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5191F2D7259881F700BC648C /* CodeScannerView.swift */; };
-		5191F2E8259890F100BC648C /* EMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3425581C2000B29703 /* EMU.swift */; };
-		5191F2EE2598911600BC648C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DB92561163000B22289 /* FavoritesView.swift */; };
-		5191F2EF2598911600BC648C /* FavoritesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988C2567655A005FBB54 /* FavoritesData.swift */; };
-		5191F2F52598912600BC648C /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988925675E07005FBB54 /* GeneralView.swift */; };
-		5191F2FB2598916200BC648C /* FavoritesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B98922567664A005FBB54 /* FavoritesProvider.swift */; };
 		51E2087C25678BA5001D91D2 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2087B25678BA5001D91D2 /* StationProvider.swift */; };
 		51E2087F25678BC5001D91D2 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2087E25678BC5001D91D2 /* Station.swift */; };
 		51E20883256797EB001D91D2 /* LeftTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E20882256797EB001D91D2 /* LeftTicket.swift */; };
@@ -67,87 +39,12 @@
 		51EFCC4425273DE200EA9D54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFCC4325273DE200EA9D54 /* ContentView.swift */; };
 		51EFCC4625273DE200EA9D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4525273DE200EA9D54 /* Assets.xcassets */; };
 		51EFCC4925273DE200EA9D54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4825273DE200EA9D54 /* Preview Assets.xcassets */; };
+		51FAEC5F26BE840100A84AC8 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAEC5E26BE840100A84AC8 /* SearchListView.swift */; };
+		51FAEC6426BEADFB00A84AC8 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 51FAEC6326BEADFB00A84AC8 /* CodeScanner */; };
+		51FAEC6726BEB1BC00A84AC8 /* ImagePickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 51FAEC6626BEB1BC00A84AC8 /* ImagePickerView */; };
 		51FF3529255C07C300EC6B8A /* TimetableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF3528255C07C300EC6B8A /* TimetableProvider.swift */; };
 		BA8185EA8F8A902BA66E3DFA /* Pods_chinaemu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84F1E3D8D1155B8A2CC8B0F /* Pods_chinaemu.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		518001CC256A1551003624A5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 51EFCC3625273DE200EA9D54 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 518001BD256A1550003624A5;
-			remoteInfo = widgetExtension;
-		};
-		518001E7256A157A003624A5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 51EFCC3625273DE200EA9D54 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 518001D9256A1579003624A5;
-			remoteInfo = clip;
-		};
-		518001FE256A15AC003624A5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 51EFCC3625273DE200EA9D54 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 518001FB256A15AC003624A5;
-			remoteInfo = "watch Extension";
-		};
-		51800212256A15AD003624A5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 51EFCC3625273DE200EA9D54 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 518001F2256A15AB003624A5;
-			remoteInfo = watch;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		518001D3256A1551003624A5 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				518001CE256A1551003624A5 /* widgetExtension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		518001ED256A157A003624A5 /* Embed App Clips */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
-			dstSubfolderSpec = 16;
-			files = (
-				518001E9256A157A003624A5 /* clip.app in Embed App Clips */,
-			);
-			name = "Embed App Clips";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		51800218256A15AD003624A5 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				518001FD256A15AC003624A5 /* watch Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5180021C256A15AD003624A5 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				51800214256A15AD003624A5 /* watch.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		435AFF417935338C557353ED /* Pods-chinaemu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chinaemu.release.xcconfig"; path = "Target Support Files/Pods-chinaemu/Pods-chinaemu.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,7 +53,6 @@
 		510CC5F12560C9F300853E56 /* MultipleEMUsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleEMUsListView.swift; sourceTree = "<group>"; };
 		510CC5F42560CC9A00853E56 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		5144910A2567EA3500D199EB /* ios-quickEMU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "ios-quickEMU.app"; path = "/Users/qingyanghu/Documents/Github/moerail-ios/build/Debug-iphoneos/ios-quickEMU.app"; sourceTree = "<absolute>"; };
-		518001BE256A1550003624A5 /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		518001BF256A1550003624A5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		518001C1256A1550003624A5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		518001C4256A1550003624A5 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
@@ -164,26 +60,6 @@
 		518001C7256A1551003624A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		518001C9256A1551003624A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		518001CF256A1551003624A5 /* widgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widgetExtension.entitlements; sourceTree = "<group>"; };
-		518001DA256A1579003624A5 /* clip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clip.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		518001DC256A1579003624A5 /* clipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clipApp.swift; sourceTree = "<group>"; };
-		518001DE256A1579003624A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		518001E0256A157A003624A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		518001E3256A157A003624A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		518001E5256A157A003624A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		518001E6256A157A003624A5 /* clip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = clip.entitlements; sourceTree = "<group>"; };
-		518001F3256A15AB003624A5 /* watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		518001F5256A15AC003624A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		518001F7256A15AC003624A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		518001FC256A15AC003624A5 /* watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		51800201256A15AC003624A5 /* chinaemuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chinaemuApp.swift; sourceTree = "<group>"; };
-		51800203256A15AC003624A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		51800205256A15AC003624A5 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		51800207256A15AC003624A5 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
-		51800209256A15AC003624A5 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
-		5180020B256A15AD003624A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5180020E256A15AD003624A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		51800210256A15AD003624A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		51800211256A15AD003624A5 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		518B988625675DC3005FBB54 /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
 		518B988925675E07005FBB54 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		518B988C2567655A005FBB54 /* FavoritesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesData.swift; sourceTree = "<group>"; };
@@ -200,8 +76,6 @@
 		518DFA54255A9F3C00B29703 /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
 		518DFA57255A9FEE00B29703 /* CRResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRResponse.swift; sourceTree = "<group>"; };
 		518DFA5A255AEC0000B29703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5191F2D0259880D400BC648C /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
-		5191F2D7259881F700BC648C /* CodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeScannerView.swift; sourceTree = "<group>"; };
 		51E2087B25678BA5001D91D2 /* StationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationProvider.swift; sourceTree = "<group>"; };
 		51E2087E25678BC5001D91D2 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		51E20882256797EB001D91D2 /* LeftTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftTicket.swift; sourceTree = "<group>"; };
@@ -216,47 +90,20 @@
 		51EFCC4525273DE200EA9D54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51EFCC4825273DE200EA9D54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51EFCC4A25273DE200EA9D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51FAEC5E26BE840100A84AC8 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 		51FF3528255C07C300EC6B8A /* TimetableProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableProvider.swift; sourceTree = "<group>"; };
 		91C7A24E24E46B3C39F8A8EB /* Pods-chinaemu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chinaemu.debug.xcconfig"; path = "Target Support Files/Pods-chinaemu/Pods-chinaemu.debug.xcconfig"; sourceTree = "<group>"; };
 		C84F1E3D8D1155B8A2CC8B0F /* Pods_chinaemu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chinaemu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		518001BB256A1550003624A5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				518001C2256A1550003624A5 /* SwiftUI.framework in Frameworks */,
-				518001C0256A1550003624A5 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		518001D7256A1579003624A5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		518001F9256A15AC003624A5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		51EFCC3B25273DE200EA9D54 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51FAEC6726BEB1BC00A84AC8 /* ImagePickerView in Frameworks */,
+				51FAEC6426BEADFB00A84AC8 /* CodeScanner in Frameworks */,
 				BA8185EA8F8A902BA66E3DFA /* Pods_chinaemu.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9EB24C6B007082688DEB435B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,60 +127,6 @@
 				518001C9256A1551003624A5 /* Info.plist */,
 			);
 			path = widget;
-			sourceTree = "<group>";
-		};
-		518001DB256A1579003624A5 /* clip */ = {
-			isa = PBXGroup;
-			children = (
-				518001DC256A1579003624A5 /* clipApp.swift */,
-				518001DE256A1579003624A5 /* ContentView.swift */,
-				518001E0256A157A003624A5 /* Assets.xcassets */,
-				518001E5256A157A003624A5 /* Info.plist */,
-				518001E6256A157A003624A5 /* clip.entitlements */,
-				518001E2256A157A003624A5 /* Preview Content */,
-			);
-			path = clip;
-			sourceTree = "<group>";
-		};
-		518001E2256A157A003624A5 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				518001E3256A157A003624A5 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		518001F4256A15AB003624A5 /* watch */ = {
-			isa = PBXGroup;
-			children = (
-				518001F5256A15AC003624A5 /* Assets.xcassets */,
-				518001F7256A15AC003624A5 /* Info.plist */,
-			);
-			path = watch;
-			sourceTree = "<group>";
-		};
-		51800200256A15AC003624A5 /* watch Extension */ = {
-			isa = PBXGroup;
-			children = (
-				51800201256A15AC003624A5 /* chinaemuApp.swift */,
-				51800203256A15AC003624A5 /* ContentView.swift */,
-				51800205256A15AC003624A5 /* NotificationController.swift */,
-				51800207256A15AC003624A5 /* NotificationView.swift */,
-				51800209256A15AC003624A5 /* ComplicationController.swift */,
-				5180020B256A15AD003624A5 /* Assets.xcassets */,
-				51800210256A15AD003624A5 /* Info.plist */,
-				51800211256A15AD003624A5 /* PushNotificationPayload.apns */,
-				5180020D256A15AD003624A5 /* Preview Content */,
-			);
-			path = "watch Extension";
-			sourceTree = "<group>";
-		};
-		5180020D256A15AD003624A5 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				5180020E256A15AD003624A5 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		518DFA2E2557E3D300B29703 /* Request */ = {
@@ -379,15 +172,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		5191F2CF259880AA00BC648C /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-				5191F2D0259880D400BC648C /* ImagePickerView.swift */,
-				5191F2D7259881F700BC648C /* CodeScannerView.swift */,
-			);
-			path = ThirdParty;
-			sourceTree = "<group>";
-		};
 		51E27DB02561142E00B22289 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,6 +191,7 @@
 				51E27DC0256116D100B22289 /* EMUView.swift */,
 				518B988625675DC3005FBB54 /* TrainView.swift */,
 				518B988925675E07005FBB54 /* GeneralView.swift */,
+				51FAEC5E26BE840100A84AC8 /* SearchListView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -417,9 +202,6 @@
 				518001CF256A1551003624A5 /* widgetExtension.entitlements */,
 				51EFCC4025273DE200EA9D54 /* chinaemu */,
 				518001C3256A1550003624A5 /* widget */,
-				518001DB256A1579003624A5 /* clip */,
-				518001F4256A15AB003624A5 /* watch */,
-				51800200256A15AC003624A5 /* watch Extension */,
 				51EFCC3F25273DE200EA9D54 /* Products */,
 				5313E480D042225F5514ECD0 /* Pods */,
 				7CD611A66570102CFA262B40 /* Frameworks */,
@@ -431,10 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				51EFCC3E25273DE200EA9D54 /* chinaemu.app */,
-				518001BE256A1550003624A5 /* widgetExtension.appex */,
-				518001DA256A1579003624A5 /* clip.app */,
-				518001F3256A15AB003624A5 /* watch.app */,
-				518001FC256A15AC003624A5 /* watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -442,7 +220,6 @@
 		51EFCC4025273DE200EA9D54 /* chinaemu */ = {
 			isa = PBXGroup;
 			children = (
-				5191F2CF259880AA00BC648C /* ThirdParty */,
 				51E27DB02561142E00B22289 /* Util */,
 				51FF3527255C07AF00EC6B8A /* Provider */,
 				518DFA472558332D00B29703 /* chinaemu.entitlements */,
@@ -501,75 +278,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		518001BD256A1550003624A5 /* widgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 518001D0256A1551003624A5 /* Build configuration list for PBXNativeTarget "widgetExtension" */;
-			buildPhases = (
-				518001BA256A1550003624A5 /* Sources */,
-				518001BB256A1550003624A5 /* Frameworks */,
-				518001BC256A1550003624A5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = widgetExtension;
-			productName = widgetExtension;
-			productReference = 518001BE256A1550003624A5 /* widgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		518001D9256A1579003624A5 /* clip */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 518001EA256A157A003624A5 /* Build configuration list for PBXNativeTarget "clip" */;
-			buildPhases = (
-				518001D6256A1579003624A5 /* Sources */,
-				518001D7256A1579003624A5 /* Frameworks */,
-				518001D8256A1579003624A5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = clip;
-			productName = clip;
-			productReference = 518001DA256A1579003624A5 /* clip.app */;
-			productType = "com.apple.product-type.application.on-demand-install-capable";
-		};
-		518001F2256A15AB003624A5 /* watch */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 51800219256A15AD003624A5 /* Build configuration list for PBXNativeTarget "watch" */;
-			buildPhases = (
-				518001F1256A15AB003624A5 /* Resources */,
-				51800218256A15AD003624A5 /* Embed App Extensions */,
-				9EB24C6B007082688DEB435B /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				518001FF256A15AC003624A5 /* PBXTargetDependency */,
-			);
-			name = watch;
-			productName = watch;
-			productReference = 518001F3256A15AB003624A5 /* watch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		518001FB256A15AC003624A5 /* watch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 51800215256A15AD003624A5 /* Build configuration list for PBXNativeTarget "watch Extension" */;
-			buildPhases = (
-				518001F8256A15AC003624A5 /* Sources */,
-				518001F9256A15AC003624A5 /* Frameworks */,
-				518001FA256A15AC003624A5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "watch Extension";
-			productName = "watch Extension";
-			productReference = 518001FC256A15AC003624A5 /* watch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 		51EFCC3D25273DE200EA9D54 /* chinaemu */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51EFCC4D25273DE200EA9D54 /* Build configuration list for PBXNativeTarget "chinaemu" */;
@@ -579,18 +287,16 @@
 				51EFCC3B25273DE200EA9D54 /* Frameworks */,
 				51EFCC3C25273DE200EA9D54 /* Resources */,
 				97F48056F6AD74ED3E93CFA5 /* [CP] Embed Pods Frameworks */,
-				518001D3256A1551003624A5 /* Embed App Extensions */,
-				518001ED256A157A003624A5 /* Embed App Clips */,
-				5180021C256A15AD003624A5 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				518001CD256A1551003624A5 /* PBXTargetDependency */,
-				518001E8256A157A003624A5 /* PBXTargetDependency */,
-				51800213256A15AD003624A5 /* PBXTargetDependency */,
 			);
 			name = chinaemu;
+			packageProductDependencies = (
+				51FAEC6326BEADFB00A84AC8 /* CodeScanner */,
+				51FAEC6626BEB1BC00A84AC8 /* ImagePickerView */,
+			);
 			productName = chinaemu;
 			productReference = 51EFCC3E25273DE200EA9D54 /* chinaemu.app */;
 			productType = "com.apple.product-type.application";
@@ -604,18 +310,6 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
-					518001BD256A1550003624A5 = {
-						CreatedOnToolsVersion = 12.2;
-					};
-					518001D9256A1579003624A5 = {
-						CreatedOnToolsVersion = 12.2;
-					};
-					518001F2256A15AB003624A5 = {
-						CreatedOnToolsVersion = 12.2;
-					};
-					518001FB256A15AC003624A5 = {
-						CreatedOnToolsVersion = 12.2;
-					};
 					51EFCC3D25273DE200EA9D54 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -630,54 +324,20 @@
 				Base,
 			);
 			mainGroup = 51EFCC3525273DE200EA9D54;
+			packageReferences = (
+				51FAEC6226BEADFB00A84AC8 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				51FAEC6526BEB1BC00A84AC8 /* XCRemoteSwiftPackageReference "ImagePickerView" */,
+			);
 			productRefGroup = 51EFCC3F25273DE200EA9D54 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				51EFCC3D25273DE200EA9D54 /* chinaemu */,
-				518001BD256A1550003624A5 /* widgetExtension */,
-				518001D9256A1579003624A5 /* clip */,
-				518001F2256A15AB003624A5 /* watch */,
-				518001FB256A15AC003624A5 /* watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		518001BC256A1550003624A5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				518001C8256A1551003624A5 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		518001D8256A1579003624A5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				518001E4256A157A003624A5 /* Preview Assets.xcassets in Resources */,
-				518001E1256A157A003624A5 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		518001F1256A15AB003624A5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				518001F6256A15AC003624A5 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		518001FA256A15AC003624A5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5180020F256A15AD003624A5 /* Preview Assets.xcassets in Resources */,
-				5180020C256A15AD003624A5 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		51EFCC3C25273DE200EA9D54 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -732,48 +392,12 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		518001BA256A1550003624A5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5191F2FB2598916200BC648C /* FavoritesProvider.swift in Sources */,
-				5191F2F52598912600BC648C /* GeneralView.swift in Sources */,
-				5191F2EE2598911600BC648C /* FavoritesView.swift in Sources */,
-				5191F2EF2598911600BC648C /* FavoritesData.swift in Sources */,
-				5191F2E8259890F100BC648C /* EMU.swift in Sources */,
-				518001CA256A1551003624A5 /* widget.intentdefinition in Sources */,
-				518001C5256A1550003624A5 /* widget.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		518001D6256A1579003624A5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				518001DF256A1579003624A5 /* ContentView.swift in Sources */,
-				518001DD256A1579003624A5 /* clipApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		518001F8256A15AC003624A5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				51800206256A15AC003624A5 /* NotificationController.swift in Sources */,
-				51800204256A15AC003624A5 /* ContentView.swift in Sources */,
-				5180020A256A15AC003624A5 /* ComplicationController.swift in Sources */,
-				51800202256A15AC003624A5 /* chinaemuApp.swift in Sources */,
-				51800208256A15AC003624A5 /* NotificationView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		51EFCC3A25273DE200EA9D54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				518B98932567664A005FBB54 /* FavoritesProvider.swift in Sources */,
 				518DFA5B255AEC0000B29703 /* AppDelegate.swift in Sources */,
-				5191F2D8259881F700BC648C /* CodeScannerView.swift in Sources */,
 				518DFA3B25581CD300B29703 /* MoerailData.swift in Sources */,
 				510CC5F22560C9F300853E56 /* MultipleEMUsListView.swift in Sources */,
 				518DFA55255A9F3C00B29703 /* Timetable.swift in Sources */,
@@ -784,13 +408,13 @@
 				518DFA58255A9FEE00B29703 /* CRResponse.swift in Sources */,
 				518B988725675DC3005FBB54 /* TrainView.swift in Sources */,
 				51E20883256797EB001D91D2 /* LeftTicket.swift in Sources */,
-				5191F2D1259880D400BC648C /* ImagePickerView.swift in Sources */,
 				510CC5F52560CC9A00853E56 /* EmptyView.swift in Sources */,
 				51E208892567E3F5001D91D2 /* LeftTicketsView.swift in Sources */,
 				518DFA3525581C2000B29703 /* EMU.swift in Sources */,
 				518B989F25676ED5005FBB54 /* QueryView.swift in Sources */,
 				518DFA43255832B800B29703 /* MoerailView.swift in Sources */,
 				51E27DC1256116D100B22289 /* EMUView.swift in Sources */,
+				51FAEC5F26BE840100A84AC8 /* SearchListView.swift in Sources */,
 				518B988D2567655A005FBB54 /* FavoritesData.swift in Sources */,
 				510CC5EC2560C8DC00853E56 /* SingleEMUListView.swift in Sources */,
 				51EFCC4425273DE200EA9D54 /* ContentView.swift in Sources */,
@@ -809,228 +433,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		518001CD256A1551003624A5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 518001BD256A1550003624A5 /* widgetExtension */;
-			targetProxy = 518001CC256A1551003624A5 /* PBXContainerItemProxy */;
-		};
-		518001E8256A157A003624A5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 518001D9256A1579003624A5 /* clip */;
-			targetProxy = 518001E7256A157A003624A5 /* PBXContainerItemProxy */;
-		};
-		518001FF256A15AC003624A5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 518001FB256A15AC003624A5 /* watch Extension */;
-			targetProxy = 518001FE256A15AC003624A5 /* PBXContainerItemProxy */;
-		};
-		51800213256A15AD003624A5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 518001F2256A15AB003624A5 /* watch */;
-			targetProxy = 51800212256A15AD003624A5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		518001D1256A1551003624A5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = widgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
-				DEVELOPMENT_TEAM = K2P3533G4D;
-				INFOPLIST_FILE = widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 2.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		518001D2256A1551003624A5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = widgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
-				DEVELOPMENT_TEAM = K2P3533G4D;
-				INFOPLIST_FILE = widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 2.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		518001EB256A157A003624A5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = clip/clip.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
-				DEVELOPMENT_ASSET_PATHS = "\"clip/Preview Content\"";
-				DEVELOPMENT_TEAM = K2P3533G4D;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = clip/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 2.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.Clip;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		518001EC256A157A003624A5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = clip/clip.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
-				DEVELOPMENT_ASSET_PATHS = "\"clip/Preview Content\"";
-				DEVELOPMENT_TEAM = K2P3533G4D;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = clip/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 2.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.Clip;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		51800216256A15AD003624A5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
-				DEVELOPMENT_ASSET_PATHS = "\"watch Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = K2P3533G4D;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 2.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
-			};
-			name = Debug;
-		};
-		51800217256A15AD003624A5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
-				DEVELOPMENT_ASSET_PATHS = "\"watch Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = K2P3533G4D;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 2.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
-			};
-			name = Release;
-		};
-		5180021A256A15AD003624A5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
-				DEVELOPMENT_TEAM = K2P3533G4D;
-				IBSC_MODULE = watch_Extension;
-				INFOPLIST_FILE = watch/Info.plist;
-				MARKETING_VERSION = 2.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
-			};
-			name = Debug;
-		};
-		5180021B256A15AD003624A5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
-				DEVELOPMENT_TEAM = K2P3533G4D;
-				IBSC_MODULE = watch_Extension;
-				INFOPLIST_FILE = watch/Info.plist;
-				MARKETING_VERSION = 2.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
-			};
-			name = Release;
-		};
 		51EFCC4B25273DE200EA9D54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1156,17 +559,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = chinaemu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -1184,17 +587,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = chinaemu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -1206,42 +609,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		518001D0256A1551003624A5 /* Build configuration list for PBXNativeTarget "widgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				518001D1256A1551003624A5 /* Debug */,
-				518001D2256A1551003624A5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		518001EA256A157A003624A5 /* Build configuration list for PBXNativeTarget "clip" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				518001EB256A157A003624A5 /* Debug */,
-				518001EC256A157A003624A5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		51800215256A15AD003624A5 /* Build configuration list for PBXNativeTarget "watch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				51800216256A15AD003624A5 /* Debug */,
-				51800217256A15AD003624A5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		51800219256A15AD003624A5 /* Build configuration list for PBXNativeTarget "watch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5180021A256A15AD003624A5 /* Debug */,
-				5180021B256A15AD003624A5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		51EFCC3925273DE200EA9D54 /* Build configuration list for PBXProject "chinaemu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1261,6 +628,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		51FAEC6226BEADFB00A84AC8 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:twostraws/CodeScanner.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		51FAEC6526BEB1BC00A84AC8 /* XCRemoteSwiftPackageReference "ImagePickerView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:ralfebert/ImagePickerView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		51FAEC6326BEADFB00A84AC8 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51FAEC6226BEADFB00A84AC8 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+		51FAEC6626BEB1BC00A84AC8 /* ImagePickerView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51FAEC6526BEB1BC00A84AC8 /* XCRemoteSwiftPackageReference "ImagePickerView" */;
+			productName = ImagePickerView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 51EFCC3625273DE200EA9D54 /* Project object */;
 }

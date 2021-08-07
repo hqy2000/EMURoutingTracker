@@ -7,6 +7,9 @@
 
 import SwiftUI
 import SFSafeSymbols
+import CodeScanner
+import AVFoundation
+import ImagePickerView
 
 struct EmptyView: View {
     @State var query = ""
@@ -41,10 +44,19 @@ struct EmptyView: View {
         }.actionSheet(isPresented: $showActionSheet, content: {
             ActionSheet(title: Text("请上传对应列车内的点餐二维码"), buttons: [
                 .default(Text("扫描二维码")) {
-                    self.showSheet = true
-                    self.isCamera = true
+                    AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
+                            if response {
+                                self.showSheet = true
+                                self.isCamera = true
+                            } else {
+                                self.reportResult = "您没有开启相机权限，请至 系统设置 - 隐私 中开启。"
+                                self.showResultAlert = true
+                            }
+                        }
+                  
                 },
                 .default(Text("从相册中选择")) {
+                    
                     self.showSheet = true
                     self.isCamera = false
                 },
@@ -84,15 +96,21 @@ struct EmptyView: View {
                             for case let row as CIQRCodeFeature in features {
                                 if let message = row.messageString {
                                     moerailData.postTrackingURL(url: message) {
-                                        self.showResultAlert = true
                                         self.reportResult =  nil
+                                        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+                                            self.showResultAlert = true
+                                        }
                                     }
                                 }
                             }
                         } else {
                             self.reportResult = "未能识别到二维码，请重新选择照片。"
-                            self.showResultAlert = true
+                            DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+                                self.showResultAlert = true
+                            }
                         }
+                        
+                        
                     }
                     
                 }
@@ -101,7 +119,7 @@ struct EmptyView: View {
             
         }
         .alert(isPresented: $showResultAlert, content: {
-            Alert(title: Text(self.reportResult == nil ? "上报成功" : "上报失败"), message: Text(self.reportResult ?? "感谢您的支持，我们将尽快根据您反馈的信息，更新我们的数据！"), dismissButton: .default(Text("OK")))
+            Alert(title: Text(self.reportResult == nil ? "上报成功" : "上报失败"), message: Text(self.reportResult ?? "感谢您的支持，我们将尽快根据您反馈的信息，更新我们的数据！"), dismissButton: .default(Text("好的")))
         })
     }
 }

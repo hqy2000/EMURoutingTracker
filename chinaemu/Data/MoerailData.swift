@@ -101,7 +101,7 @@ class MoerailData: ObservableObject {
             if error.code == 503 {
                 self.errorMessage = "服务暂时不可用，请稍后再试"
             } else if error.code == 404 {
-                self.errorMessage = "找不到URL，请检查输入是否正确"
+                self.errorMessage = "\"\(query)\"不是一个正确的车次或车组。"
             } else {
                 self.errorMessage = error.localizedDescription
             }

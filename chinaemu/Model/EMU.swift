@@ -24,48 +24,48 @@ struct EMU: Codable, Hashable, Identifiable {
     var image: String {
         var filename = ""
         switch emu {
-        case _ where emu.starts(with: "CR400A"):
+        case _ where emu.contains("CR400A"):
             return "CR400A"
-        case _ where emu.starts(with: "CR400B"):
+        case _ where emu.contains("CR400B"):
             return "CR400B"
-        case _ where emu.starts(with: "CR300A"):
+        case _ where emu.contains("CR300A"):
             return "CR300A"
-        case _ where emu.starts(with: "CR300B"):
+        case _ where emu.contains("CR300B"):
             return "CR300B"
-        case _ where emu.starts(with: "CR200J"):
+        case _ where emu.contains("CR200J"):
             return "CR200J"
-        case _ where emu.starts(with: "CRH1E"):
+        case _ where emu.contains("CRH1E"):
             return "CRH1E"
-        case _ where emu.starts(with: "CRH1"):
+        case _ where emu.contains("CRH1"):
             filename = "CRH1"
-        case _ where emu.starts(with: "CRH2B"):
+        case _ where emu.contains("CRH2B"):
             filename = "CRH2B"
-        case _ where emu.starts(with: "CRH2C"):
+        case _ where emu.contains("CRH2C"):
             filename = "CRH2C"
-        case _ where emu.starts(with: "CRH2G"),
-             _ where emu.starts(with: "CRH2H"):
+        case _ where emu.contains("CRH2G"),
+             _ where emu.contains("CRH2H"):
             filename = "CRH2G"
-        case _ where emu.starts(with: "CRH2"):
+        case _ where emu.contains("CRH2"):
             filename = "CRH2"
-        case _ where emu.starts(with: "CRH380B"):
+        case _ where emu.contains("CRH380B"):
             filename = "CRH380B"
-        case _ where emu.starts(with: "CRH380C"):
+        case _ where emu.contains("CRH380C"):
             filename = "CRH380C"
-        case _ where emu.starts(with: "CRH380D"):
+        case _ where emu.contains("CRH380D"):
             filename = "CRH380D"
-        case _ where emu.starts(with: "CRH380"):
+        case _ where emu.contains("CRH380"):
             filename = "CRH380"
-        case _ where emu.starts(with: "CRH3A"):
+        case _ where emu.contains("CRH3A"):
             filename = "CRH3A"
-        case _ where emu.starts(with: "CRH3"):
+        case _ where emu.contains("CRH3"):
             filename = "CRH3"
-        case _ where emu.starts(with: "CRH5"):
+        case _ where emu.contains("CRH5"):
             filename = "CRH5"
-        case _ where emu.starts(with: "CRH6F"):
+        case _ where emu.contains("CRH6F"):
             filename = "CRH6F"
-        case _ where emu.starts(with: "CRH6"):
+        case _ where emu.contains("CRH6"):
             filename = "CRH6"
-        case _ where emu.starts(with: "MTR"):
+        case _ where emu.contains("MTR"):
             filename = "MTR"
         default:
             filename = "CRH2"
@@ -75,11 +75,11 @@ struct EMU: Codable, Hashable, Identifiable {
     
     var color: Color {
         switch emu {
-        case let str where str.starts(with: "CR200"):
+        case let str where str.contains("CR200"):
             return .green
-        case let str where str.starts(with: "CRH"):
+        case let str where str.contains("CRH"):
             return .blue
-        case let str where str.starts(with: "CR400B") || str.starts(with: "CR300B"):
+        case let str where str.contains("CR400B") || str.contains("CR300B"):
             return .orange
         default:
             return .red
