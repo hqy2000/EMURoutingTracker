@@ -7,12 +7,13 @@
 
 import Foundation
 import SwiftUI
+import SwiftyUserDefaults
 
 struct QueryView: View {
     @State var query = ""
-    @State var departure: Station = Station(name: "北京", code: "BJP", pinyin: "beijing", abbreviation: "bj")
-    @State var arrival: Station = Station(name: "上海", code: "SHH", pinyin: "shanghai", abbreviation: "sh")
-    @State var date = Date()
+    @State var departure: Station = Defaults[\.lastDeparture]
+    @State var arrival: Station = Defaults[\.lastArrival]
+    @State var date = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
     @ObservedObject var provider = StationProvider.shared
     var body: some View {
         List {
@@ -27,6 +28,7 @@ struct QueryView: View {
             Section(header: Text("发着查询")) {
                 NavigationLink(
                     destination: SearchListView(provider.stations, completion: { station in
+                        Defaults[\.lastDeparture] = station
                         self.departure = station
                     }),
                     label: {
@@ -38,6 +40,7 @@ struct QueryView: View {
                     })
                 NavigationLink(
                     destination: SearchListView(provider.stations, completion: { station in
+                        Defaults[\.lastArrival] = station
                         self.arrival = station
                     }),
                     label: {
@@ -48,31 +51,6 @@ struct QueryView: View {
                         }
                        
                     })
-//
-//                Picker("出发地", selection: $departure) {
-//                    ForEach(provider.stations, id: \.code) { station in
-//                        HStack {
-//                            VStack(alignment: .leading) {
-//                                Text(station.name)
-//                                Text(station.pinyin).font(.caption2)
-//                            }
-//                            Spacer()
-//                            Text(station.code).font(.system(.body, design: .monospaced))
-//                        }
-//                    }.navigationTitle("出发地选择")
-//                }
-//                Picker("目的地", selection: $arrival) {
-//                    ForEach(provider.stations, id: \.code) { station in
-//                        HStack {
-//                            VStack(alignment: .leading) {
-//                                Text(station.name)
-//                                Text(station.pinyin).font(.caption2)
-//                            }
-//                            Spacer()
-//                            Text(station.code).font(.system(.body, design: .monospaced))
-//                        }
-//                    }.navigationTitle("目的地选择")
-//                }
                 DatePicker("出发日期", selection: $date, displayedComponents: .date)
                 NavigationLink("查询", destination: LeftTicketsView(departure: self.departure.code, arrival: self.arrival.code, date: self.date))
                 

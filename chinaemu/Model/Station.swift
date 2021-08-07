@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftyUserDefaults
 
-struct Station: Codable {
+struct Station: Codable, DefaultsSerializable {
     let name: String
     let code: String
     let pinyin: String
