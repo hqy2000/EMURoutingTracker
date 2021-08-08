@@ -30,7 +30,7 @@ internal class TimetableProvider: AbstractProvider<CRRequest> {
 
     internal func get(forTrain train: String, onDate date: String, completion: @escaping ([Timetable]) -> Void) {
         do {
-            completion(try storage.object(forKey: train + date))
+            completion(try storage.object(forKey: train))
         } catch {
             self.queue.append((train, date, completion))
             self.run()
@@ -38,33 +38,45 @@ internal class TimetableProvider: AbstractProvider<CRRequest> {
     }
     
     private func run() {
-        if !lock && queue.count > 0{
-            lock = true
-            self.execute(train: queue.first!.0, date: queue.first!.1, completion: queue.first!.2)
-            self.queue.removeFirst()
+        DispatchQueue.global().sync {
+            if !lock && queue.count > 0{
+                lock = true
+                let top = self.queue.removeFirst()
+                self.execute(train: top.0, date: top.1, completion: top.2)
+                
+            }
         }
     }
     
     public func cancelAll() {
-        self.queue = []
+        DispatchQueue.global().sync {
+            self.queue = []
+        }
     }
     
     private func execute(train: String, date: String, completion: @escaping ([Timetable]) -> Void) {
-        debugPrint("[Timetabke Queue] \(train) @ \(date)")
+        debugPrint("[Timetable Queue] \(train) @ \(date)")
         debugPrint("[Timetable Queue] Remain count: \(self.queue.count).")
-        if let timetable = try? storage.object(forKey: train + date) {
+        if let timetable = try? storage.object(forKey: train) {
             completion(timetable)
+            DispatchQueue.global().sync {
+                self.lock = false
+                self.run()
+            }
         } else {
             self.request(target: .train(trainNo: train, date: date), type: CRResponse<CRDataWrapper<[Timetable]>>.self) { (timetable) in
-                try? self.storage.setObject(timetable.data.data, forKey: train + date)
+                try? self.storage.setObject(timetable.data.data, forKey: train, expiry: .date(Date().addingTimeInterval(60 * 60 * 24 * 2)))
                 completion(timetable.data.data)
-                
-                self.lock = false
-                self.run()
+                DispatchQueue.global().sync {
+                    self.lock = false
+                    self.run()
+                }
             } failure: { error in
                 debugPrint("Error with: \(train).")
-                self.lock = false
-                self.run()
+                DispatchQueue.global().sync {
+                    self.lock = false
+                    self.run()
+                }
             }
         }
         
