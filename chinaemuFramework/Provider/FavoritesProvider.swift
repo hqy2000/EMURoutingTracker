@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftyUserDefaults
+import WidgetKit
 
 internal class FavoritesProvider {
     public static let shared = FavoritesProvider()
@@ -30,6 +31,7 @@ internal class FavoritesProvider {
     @discardableResult public func add(train: String) -> Bool {
         if !self.contains(train: train) {
             Defaults.favoriteTrains.append(Favorite(train))
+            WidgetCenter.shared.reloadAllTimelines()
             return true
         } else {
             return false
@@ -39,6 +41,7 @@ internal class FavoritesProvider {
     @discardableResult public func delete(train: String) -> Bool {
         if let index = Defaults.favoriteTrains.firstIndex(where: {$0.name == train}) {
             Defaults.favoriteTrains.remove(at: index)
+            WidgetCenter.shared.reloadAllTimelines()
             return true
         } else {
             return false
@@ -56,6 +59,7 @@ internal class FavoritesProvider {
     @discardableResult public func add(emu: String) -> Bool {
         if !self.contains(emu: emu) {
             Defaults.favoriteEMUs.append(Favorite(emu))
+            WidgetCenter.shared.reloadAllTimelines()
             return true
         } else {
             return false
@@ -65,6 +69,7 @@ internal class FavoritesProvider {
     @discardableResult public func delete(emu: String) -> Bool {
         if let index = Defaults.favoriteEMUs.firstIndex(where: {$0.name == emu}) {
             Defaults.favoriteEMUs.remove(at: index)
+            WidgetCenter.shared.reloadAllTimelines()
             return true
         } else {
             return false

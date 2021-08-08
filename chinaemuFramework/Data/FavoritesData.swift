@@ -46,6 +46,7 @@ class FavoritesData: ObservableObject {
         // Avoid 503 issues.
         if lastRefresh != nil && Date().timeIntervalSince(lastRefresh!) < 15.0 {
             print("Too frequent, skip this request.")
+            completion?()
             return
         }
         lastRefresh = Date()
@@ -55,9 +56,11 @@ class FavoritesData: ObservableObject {
                 return favorite.name
             })), type: [EMU].self) { (result) in
                 self.favoriteTrains = result
-                for (index, emu) in result.enumerated() {
-                    TimetableProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (timetable) in
-                        self.favoriteTrains[index].timetable = timetable
+                if completion == nil {
+                    for (index, emu) in result.enumerated() {
+                        TimetableProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (timetable) in
+                            self.favoriteTrains[index].timetable = timetable
+                        }
                     }
                 }
                 self.completionCheck(count: &taskCount, completion: completion)
@@ -75,9 +78,11 @@ class FavoritesData: ObservableObject {
                 return favorite.name
             })), type: [EMU].self) { (result) in
                 self.favoriteEMUs = result
-                for (index, emu) in result.enumerated() {
-                    TimetableProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (timetable) in
-                        self.favoriteEMUs[index].timetable = timetable
+                if completion == nil {
+                    for (index, emu) in result.enumerated() {
+                        TimetableProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (timetable) in
+                            self.favoriteEMUs[index].timetable = timetable
+                        }
                     }
                 }
                 self.completionCheck(count: &taskCount, completion: completion)

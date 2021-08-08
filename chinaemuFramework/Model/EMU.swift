@@ -90,6 +90,10 @@ struct EMU: Codable, Hashable, Identifiable {
         return self.emu.starts(with: "CRH") ? self.emu.replacingOccurrences(of: "CRH", with: "") : self.emu.replacingOccurrences(of: "CR", with: "")
     }
     
+    var shortTrain: String {
+        return self.train.contains("/") ? String(self.train[..<self.train.firstIndex(of: "/")!]) : self.train
+    }
+    
     
     enum CodingKeys: String, CodingKey {
         case emu = "emu_no"
