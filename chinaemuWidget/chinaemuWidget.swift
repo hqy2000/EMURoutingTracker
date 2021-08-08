@@ -64,7 +64,7 @@ struct WidgetSingleColumnEntryView : View {
                     ForEach(entry.favoriteEmus.prefix(4), id: \.self) { emu in
                         TrainView(emu)
                     }
-                }.padding(7)
+                }.padding(8)
             }
         }
         
@@ -81,11 +81,11 @@ struct EMUView: View {
     }
     var body: some View {
         HStack {
-            Text(emu.emu)
+            Text(emu.shortName)
                 .foregroundColor(emu.color)
                 .font(.system(.caption2, design: .monospaced))
             Spacer()
-            Image(emu.image).resizable().scaledToFit().frame(height: 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding(.leading, 1).padding(.trailing, -5)
+            Image(emu.image).resizable().scaledToFit().frame(height: 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding(.leading, 1).padding(.trailing, -6)
             Text(emu.shortTrain)
                 .font(.system(.caption2, design: .monospaced))
         }
@@ -100,11 +100,11 @@ struct TrainView: View {
     }
     var body: some View {
         HStack {
-            Image(emu.image).resizable().scaledToFit().frame(height: 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding(.leading, 1).padding(.trailing, -5)
+            Image(emu.image).resizable().scaledToFit().frame(height: 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding(.leading, 1).padding(.trailing, -6)
             Text(emu.shortTrain)
                 .font(.system(.caption2, design: .monospaced))
             Spacer()
-            Text(emu.emu)
+            Text(emu.shortName)
                 .foregroundColor(emu.color)
                 .font(.system(.caption2, design: .monospaced))
         }
