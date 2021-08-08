@@ -26,3 +26,18 @@ struct Favorite: Codable, Hashable, DefaultsSerializable {
 }
 
 var Defaults = DefaultsAdapter<DefaultsKeys>(defaults: UserDefaults(suiteName: "group.me.njliner.chinaemu")!, keyStore: .init())
+
+class UserDefaultsMigrater {
+    static public func migrate() {
+        var oldDefaults = DefaultsAdapter<DefaultsKeys>(defaults: UserDefaults.standard, keyStore: .init())
+        if !oldDefaults[\.favoriteEMUs].isEmpty {
+            Defaults[\.favoriteEMUs] = oldDefaults[\.favoriteEMUs]
+            oldDefaults[\.favoriteEMUs] = []
+        }
+        if !oldDefaults[\.favoriteTrains].isEmpty {
+            Defaults[\.favoriteTrains] = oldDefaults[\.favoriteTrains]
+            oldDefaults[\.favoriteTrains] = []
+        }
+    }
+}
+

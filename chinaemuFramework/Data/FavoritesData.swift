@@ -44,7 +44,7 @@ class FavoritesData: ObservableObject {
         }
         
         // Avoid 503 issues.
-        if lastRefresh != nil && Date().timeIntervalSince(lastRefresh!) < 15.0 {
+        if lastRefresh != nil && Date().timeIntervalSince(lastRefresh!) < 15.0 && completion == nil {
             print("Too frequent, skip this request.")
             completion?()
             return

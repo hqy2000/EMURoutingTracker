@@ -79,9 +79,9 @@ struct LeftTicketView: View {
                     .font(.system(.callout, design: .monospaced))
             }.frame(width: 90)
             
-            Spacer()
+            Spacer(minLength: 3)
             Image(systemName: "arrow.right")
-            Spacer()
+            Spacer(minLength: 3)
             VStack(alignment: .trailing) {
                 Text(leftTicket.arrivalStation)
                     .font(.callout)

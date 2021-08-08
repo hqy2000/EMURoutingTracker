@@ -39,7 +39,7 @@ struct GeneralView: View {
                     self.activeLink = 1
                 }
     
-            Spacer()
+            Spacer(minLength: 0)
             VStack(spacing: 4) {
                 HStack {
                     Spacer()

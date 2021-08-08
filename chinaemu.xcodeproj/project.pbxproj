@@ -53,7 +53,6 @@
 		51FAEC9A26BEB90400A84AC8 /* chinaemuFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51FAEC8526BEB90400A84AC8 /* chinaemuFramework.framework */; };
 		51FAEC9B26BEB90400A84AC8 /* chinaemuFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 51FAEC8526BEB90400A84AC8 /* chinaemuFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51FAECA326BEBA9500A84AC8 /* chinaemuFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51FAEC8526BEB90400A84AC8 /* chinaemuFramework.framework */; };
-		51FAECA426BEBA9500A84AC8 /* chinaemuFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 51FAEC8526BEB90400A84AC8 /* chinaemuFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51FAECAA26BEBB9C00A84AC8 /* FavoritesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B98922567664A005FBB54 /* FavoritesProvider.swift */; };
 		51FAECAB26BEBBA300A84AC8 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2087B25678BA5001D91D2 /* StationProvider.swift */; };
 		51FAECAC26BEBBA600A84AC8 /* TimetableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF3528255C07C300EC6B8A /* TimetableProvider.swift */; };
@@ -131,17 +130,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				51FAEC9B26BEB90400A84AC8 /* chinaemuFramework.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		51FAECA726BEBA9500A84AC8 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				51FAECA426BEBA9500A84AC8 /* chinaemuFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,7 +477,6 @@
 				51FAEC6826BEB7D500A84AC8 /* Sources */,
 				51FAEC6926BEB7D500A84AC8 /* Frameworks */,
 				51FAEC6A26BEB7D500A84AC8 /* Resources */,
-				51FAECA726BEBA9500A84AC8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -974,7 +961,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = chinaemuWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 51;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				INFOPLIST_FILE = chinaemuWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1001,7 +988,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = chinaemuWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 51;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				INFOPLIST_FILE = chinaemuWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
