@@ -23,7 +23,7 @@ struct LeftTicketView: View {
             Image(emu?.image ?? "").resizable().scaledToFit().frame(width: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             VStack(alignment: .leading) {
                 Text(leftTicket.trainNo)
-                    .font(Font.title3.monospacedDigit())
+                    .font(.system(.title3, design: .monospaced))
                     .frame(width: 100, alignment: .leading)
                     .onTapGesture {
                         self.activeLink = 2
@@ -38,7 +38,7 @@ struct LeftTicketView: View {
                             .lineLimit(1)
                             .foregroundColor(emu.color)
                             .fixedSize()
-                            .font(Font.caption.monospacedDigit())
+                            .font(.system(.caption, design: .monospaced))
                             .onTapGesture {
                                 self.activeLink = 1
                             }
@@ -49,7 +49,7 @@ struct LeftTicketView: View {
                             .lineLimit(1)
                             .foregroundColor(.gray)
                             .fixedSize()
-                            .font(Font.caption.monospacedDigit())
+                            .font(.system(.caption, design: .monospaced))
                     }
                 }
             }
@@ -76,7 +76,7 @@ struct LeftTicketView: View {
                     .font(.callout)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Text(leftTicket.departureTime)
-                    .font(Font.callout.monospacedDigit())
+                    .font(.system(.callout, design: .monospaced))
             }.frame(width: 90)
             
             Spacer()
@@ -88,7 +88,7 @@ struct LeftTicketView: View {
                     .fixedSize()
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 Text(leftTicket.arrivalTime)
-                    .font(Font.callout.monospacedDigit())
+                    .font(.system(.callout, design: .monospaced))
                     .fixedSize()
             }.frame(width: 90)
         }

@@ -40,14 +40,12 @@
 		51EFCC4625273DE200EA9D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4525273DE200EA9D54 /* Assets.xcassets */; };
 		51EFCC4925273DE200EA9D54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4825273DE200EA9D54 /* Preview Assets.xcassets */; };
 		51FAEC5F26BE840100A84AC8 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAEC5E26BE840100A84AC8 /* SearchListView.swift */; };
-		51FAEC6426BEADFB00A84AC8 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 51FAEC6326BEADFB00A84AC8 /* SwiftPackageProductDependency */; };
-		51FAEC6726BEB1BC00A84AC8 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 51FAEC6626BEB1BC00A84AC8 /* SwiftPackageProductDependency */; };
+		51FAEC6426BEADFB00A84AC8 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 51FAEC6326BEADFB00A84AC8 /* CodeScanner */; };
+		51FAEC6726BEB1BC00A84AC8 /* ImagePickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 51FAEC6626BEB1BC00A84AC8 /* ImagePickerView */; };
 		51FAEC6D26BEB7D500A84AC8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518001BF256A1550003624A5 /* WidgetKit.framework */; };
 		51FAEC6E26BEB7D500A84AC8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518001C1256A1550003624A5 /* SwiftUI.framework */; };
 		51FAEC7126BEB7D500A84AC8 /* chinaemuWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAEC7026BEB7D500A84AC8 /* chinaemuWidget.swift */; };
 		51FAEC7426BEB7D600A84AC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51FAEC7326BEB7D600A84AC8 /* Assets.xcassets */; };
-		51FAEC7626BEB7D600A84AC8 /* chinaemuWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 51FAEC7226BEB7D500A84AC8 /* chinaemuWidget.intentdefinition */; };
-		51FAEC7726BEB7D600A84AC8 /* chinaemuWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 51FAEC7226BEB7D500A84AC8 /* chinaemuWidget.intentdefinition */; };
 		51FAEC7A26BEB7D600A84AC8 /* chinaemuWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 51FAEC6C26BEB7D500A84AC8 /* chinaemuWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		51FAEC8E26BEB90400A84AC8 /* chinaemuFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51FAEC8526BEB90400A84AC8 /* chinaemuFramework.framework */; };
 		51FAEC9526BEB90400A84AC8 /* chinaemuFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAEC9426BEB90400A84AC8 /* chinaemuFrameworkTests.swift */; };
@@ -71,6 +69,7 @@
 		51FAECB626BEBBBC00A84AC8 /* CRResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA57255A9FEE00B29703 /* CRResponse.swift */; };
 		51FAECB726BEBBBF00A84AC8 /* MoerailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA2F2557E3E200B29703 /* MoerailRequest.swift */; };
 		51FAECB826BEBBBF00A84AC8 /* CRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA51255A97FB00B29703 /* CRRequest.swift */; };
+		51FAECBA26BFB87800A84AC8 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAECB926BFB87800A84AC8 /* AboutView.swift */; };
 		51FF3529255C07C300EC6B8A /* TimetableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF3528255C07C300EC6B8A /* TimetableProvider.swift */; };
 		BA8185EA8F8A902BA66E3DFA /* Pods_chinaemu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84F1E3D8D1155B8A2CC8B0F /* Pods_chinaemu.framework */; };
 /* End PBXBuildFile section */
@@ -192,7 +191,6 @@
 		51FAEC5E26BE840100A84AC8 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 		51FAEC6C26BEB7D500A84AC8 /* chinaemuWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = chinaemuWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		51FAEC7026BEB7D500A84AC8 /* chinaemuWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chinaemuWidget.swift; sourceTree = "<group>"; };
-		51FAEC7226BEB7D500A84AC8 /* chinaemuWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = chinaemuWidget.intentdefinition; sourceTree = "<group>"; };
 		51FAEC7326BEB7D600A84AC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51FAEC7526BEB7D600A84AC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51FAEC7B26BEB7D600A84AC8 /* chinaemuWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = chinaemuWidgetExtension.entitlements; sourceTree = "<group>"; };
@@ -202,6 +200,7 @@
 		51FAEC8D26BEB90400A84AC8 /* chinaemuFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chinaemuFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51FAEC9426BEB90400A84AC8 /* chinaemuFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chinaemuFrameworkTests.swift; sourceTree = "<group>"; };
 		51FAEC9626BEB90400A84AC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51FAECB926BFB87800A84AC8 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		51FF3528255C07C300EC6B8A /* TimetableProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableProvider.swift; sourceTree = "<group>"; };
 		91C7A24E24E46B3C39F8A8EB /* Pods-chinaemu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chinaemu.debug.xcconfig"; path = "Target Support Files/Pods-chinaemu/Pods-chinaemu.debug.xcconfig"; sourceTree = "<group>"; };
 		B1675CF3307EAC9C36FCBEBE /* Pods-chinaemuWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chinaemuWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-chinaemuWidgetExtension/Pods-chinaemuWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -214,8 +213,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51FAEC6726BEB1BC00A84AC8 /* BuildFile in Frameworks */,
-				51FAEC6426BEADFB00A84AC8 /* BuildFile in Frameworks */,
+				51FAEC6726BEB1BC00A84AC8 /* ImagePickerView in Frameworks */,
+				51FAEC6426BEADFB00A84AC8 /* CodeScanner in Frameworks */,
 				BA8185EA8F8A902BA66E3DFA /* Pods_chinaemu.framework in Frameworks */,
 				51FAEC9A26BEB90400A84AC8 /* chinaemuFramework.framework in Frameworks */,
 			);
@@ -297,6 +296,7 @@
 				518B989E25676ED5005FBB54 /* QueryView.swift */,
 				51E27DB92561163000B22289 /* FavoritesView.swift */,
 				51E208882567E3F5001D91D2 /* LeftTicketsView.swift */,
+				51FAECB926BFB87800A84AC8 /* AboutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -378,7 +378,6 @@
 			isa = PBXGroup;
 			children = (
 				51FAEC7026BEB7D500A84AC8 /* chinaemuWidget.swift */,
-				51FAEC7226BEB7D500A84AC8 /* chinaemuWidget.intentdefinition */,
 				51FAEC7326BEB7D600A84AC8 /* Assets.xcassets */,
 				51FAEC7526BEB7D600A84AC8 /* Info.plist */,
 			);
@@ -475,8 +474,8 @@
 			);
 			name = chinaemu;
 			packageProductDependencies = (
-				51FAEC6326BEADFB00A84AC8 /* SwiftPackageProductDependency */,
-				51FAEC6626BEB1BC00A84AC8 /* SwiftPackageProductDependency */,
+				51FAEC6326BEADFB00A84AC8 /* CodeScanner */,
+				51FAEC6626BEB1BC00A84AC8 /* ImagePickerView */,
 			);
 			productName = chinaemu;
 			productReference = 51EFCC3E25273DE200EA9D54 /* chinaemu.app */;
@@ -573,8 +572,8 @@
 			);
 			mainGroup = 51EFCC3525273DE200EA9D54;
 			packageReferences = (
-				51FAEC6226BEADFB00A84AC8 /* RemoteSwiftPackageReference */,
-				51FAEC6526BEB1BC00A84AC8 /* RemoteSwiftPackageReference */,
+				51FAEC6226BEADFB00A84AC8 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				51FAEC6526BEB1BC00A84AC8 /* XCRemoteSwiftPackageReference "ImagePickerView" */,
 			);
 			productRefGroup = 51EFCC3F25273DE200EA9D54 /* Products */;
 			projectDirPath = "";
@@ -691,6 +690,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51FAECBA26BFB87800A84AC8 /* AboutView.swift in Sources */,
 				518B98932567664A005FBB54 /* FavoritesProvider.swift in Sources */,
 				518DFA5B255AEC0000B29703 /* AppDelegate.swift in Sources */,
 				518DFA3B25581CD300B29703 /* MoerailData.swift in Sources */,
@@ -720,7 +720,6 @@
 				518B988A25675E07005FBB54 /* GeneralView.swift in Sources */,
 				518DFA4F255A97ED00B29703 /* CRData.swift in Sources */,
 				518DFA302557E3E200B29703 /* MoerailRequest.swift in Sources */,
-				51FAEC7726BEB7D600A84AC8 /* chinaemuWidget.intentdefinition in Sources */,
 				51FF3529255C07C300EC6B8A /* TimetableProvider.swift in Sources */,
 				51E27DBA2561163000B22289 /* FavoritesView.swift in Sources */,
 			);
@@ -735,7 +734,6 @@
 				51FAECAA26BEBB9C00A84AC8 /* FavoritesProvider.swift in Sources */,
 				51FAECB026BEBBB100A84AC8 /* CRData.swift in Sources */,
 				51FAECAB26BEBBA300A84AC8 /* StationProvider.swift in Sources */,
-				51FAEC7626BEB7D600A84AC8 /* chinaemuWidget.intentdefinition in Sources */,
 				51FAECB426BEBBBC00A84AC8 /* EMU.swift in Sources */,
 				51FAECB526BEBBBC00A84AC8 /* Station.swift in Sources */,
 				51FAECB126BEBBB400A84AC8 /* FavoritesData.swift in Sources */,
@@ -921,7 +919,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 41;
+				CURRENT_PROJECT_VERSION = 50;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
@@ -931,7 +929,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.0;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -949,7 +947,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 41;
+				CURRENT_PROJECT_VERSION = 50;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
@@ -959,7 +957,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.0;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -976,14 +974,16 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = chinaemuWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 50;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				INFOPLIST_FILE = chinaemuWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.chinaemuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1001,14 +1001,16 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = chinaemuWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 50;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				INFOPLIST_FILE = chinaemuWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.chinaemuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1021,8 +1023,9 @@
 		51FAEC9D26BEB90400A84AC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 50;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1030,12 +1033,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = chinaemuFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.hqy.chinaemuFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1049,8 +1053,9 @@
 		51FAEC9E26BEB90400A84AC8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 50;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1058,12 +1063,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = chinaemuFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.hqy.chinaemuFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1167,7 +1173,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		51FAEC6226BEADFB00A84AC8 /* RemoteSwiftPackageReference */ = {
+		51FAEC6226BEADFB00A84AC8 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:twostraws/CodeScanner.git";
 			requirement = {
@@ -1175,7 +1181,7 @@
 				kind = branch;
 			};
 		};
-		51FAEC6526BEB1BC00A84AC8 /* RemoteSwiftPackageReference */ = {
+		51FAEC6526BEB1BC00A84AC8 /* XCRemoteSwiftPackageReference "ImagePickerView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:ralfebert/ImagePickerView.git";
 			requirement = {
@@ -1186,14 +1192,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		51FAEC6326BEADFB00A84AC8 /* SwiftPackageProductDependency */ = {
+		51FAEC6326BEADFB00A84AC8 /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 51FAEC6226BEADFB00A84AC8 /* RemoteSwiftPackageReference */;
+			package = 51FAEC6226BEADFB00A84AC8 /* XCRemoteSwiftPackageReference "CodeScanner" */;
 			productName = CodeScanner;
 		};
-		51FAEC6626BEB1BC00A84AC8 /* SwiftPackageProductDependency */ = {
+		51FAEC6626BEB1BC00A84AC8 /* ImagePickerView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 51FAEC6526BEB1BC00A84AC8 /* RemoteSwiftPackageReference */;
+			package = 51FAEC6526BEB1BC00A84AC8 /* XCRemoteSwiftPackageReference "ImagePickerView" */;
 			productName = ImagePickerView;
 		};
 /* End XCSwiftPackageProductDependency section */

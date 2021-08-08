@@ -63,7 +63,7 @@ struct SearchListView: View {
                             HStack {
                                 VStack(alignment: .leading) {
                                     Text(station.name)
-                                    Text(station.pinyin).font(.caption2)
+                                    Text(station.pinyin).font(.system(.caption2, design: .monospaced))
                                 }
                                 Spacer()
                                 Text(station.code).font(.system(.body, design: .monospaced))

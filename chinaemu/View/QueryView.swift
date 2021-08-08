@@ -56,6 +56,7 @@ struct QueryView: View {
                 
             }
         }.listStyle(InsetGroupedListStyle())
+       
         
     }
 }

@@ -24,6 +24,11 @@ struct ContentView: View {
                         Image(systemName: "bookmark")
                         Text("收藏")
                     }
+                AboutView()
+                    .tabItem {
+                        Image(systemName: "info")
+                        Text("更多")
+                    }
             }.navigationTitle("动车组交路查询")
             
         }

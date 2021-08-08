@@ -24,3 +24,5 @@ struct Favorite: Codable, Hashable, DefaultsSerializable {
         self.isPushEnabled = false
     }
 }
+
+var Defaults = DefaultsAdapter<DefaultsKeys>(defaults: UserDefaults(suiteName: "group.me.njliner.chinaemu")!, keyStore: .init())

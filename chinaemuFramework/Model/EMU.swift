@@ -86,6 +86,10 @@ struct EMU: Codable, Hashable, Identifiable {
         }
     }
     
+    var shortName: String {
+        return self.emu.starts(with: "CRH") ? self.emu.replacingOccurrences(of: "CRH", with: "") : self.emu.replacingOccurrences(of: "CR", with: "")
+    }
+    
     
     enum CodingKeys: String, CodingKey {
         case emu = "emu_no"

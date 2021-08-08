@@ -33,7 +33,8 @@ struct GeneralView: View {
             
             Image(emu.image)
             Text(emu.emu)
-                .font(Font.body.monospacedDigit())
+                .foregroundColor(emu.color)
+                .font(.system(.body, design: .monospaced))
                 .onTapGesture {
                     self.activeLink = 1
                 }
@@ -43,11 +44,11 @@ struct GeneralView: View {
                 HStack {
                     Spacer()
                     Text(emu.train)
-                        .font(Font.callout)
+                        .font(.system(.callout, design: .monospaced))
                 }
                 HStack {
                     Spacer()
-                    Text("\(emu.timetable.first?.station ?? "") ⇀ \(emu.timetable.last?.station ?? "")").font(Font.caption2)
+                    Text("\(emu.timetable.first?.station ?? "") ⇀ \(emu.timetable.last?.station ?? "")").font(.system(.caption2, design: .monospaced))
                 }
             }.onTapGesture {
                 self.activeLink = 2

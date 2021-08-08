@@ -25,7 +25,8 @@ struct TrainView: View {
                 .hidden()
             Image(emu.image)
             Text(emu.emu)
-                .font(Font.body.monospacedDigit())
+                .foregroundColor(emu.color)
+                .font(.system(.body, design: .monospaced))
                 .onTapGesture {
                     self.activeLink = 1
                 }

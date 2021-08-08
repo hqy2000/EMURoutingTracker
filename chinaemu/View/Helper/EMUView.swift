@@ -24,7 +24,8 @@ struct EMUView: View {
                 .frame(width: 0)
                 .hidden()
             Text(emu.train)
-                .font(Font.body.monospacedDigit())
+                .foregroundColor(emu.color)
+                .font(.system(.body, design: .monospaced))
                 .onTapGesture {
                     self.activeLink = 1
                 }
