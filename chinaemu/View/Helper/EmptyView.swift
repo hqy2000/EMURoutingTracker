@@ -7,9 +7,11 @@
 
 import SwiftUI
 import SFSafeSymbols
-import CodeScanner
 import AVFoundation
+#if !targetEnvironment(macCatalyst)
+import CodeScanner
 import ImagePickerView
+#endif
 
 struct EmptyView: View {
     @State var query = ""
@@ -26,9 +28,11 @@ struct EmptyView: View {
             case .emptyEmu:
                 Image(systemSymbol: .tram).resizable().aspectRatio(contentMode: .fit).frame(width: 30, height: 30, alignment: .center)
                 Text("暂未收录\"\(moerailData.query)\"").foregroundColor(.gray)
+                #if !targetEnvironment(macCatalyst)
                 Button("上报相关信息") {
                     self.showActionSheet = true
                 }
+                #endif
             case .emptyTrain:
                 Image(systemSymbol: .tram).resizable().aspectRatio(contentMode: .fit).frame(width: 30, height: 30, alignment: .center)
                 Text("暂未收录\"\(moerailData.query)\"\n可尝试搜索相关车组号").foregroundColor(.gray).multilineTextAlignment(.center)
@@ -65,57 +69,59 @@ struct EmptyView: View {
                 }
             ])
         }).sheet(isPresented: $showSheet) {
-            if isCamera {
-                CodeScannerView(codeTypes: [.qr], simulatedData: "") { result in
-                    self.showSheet = false
-                    switch result {
-                    case .success(let code):
-                        moerailData.postTrackingURL(url: code) {
+            #if !targetEnvironment(macCatalyst)
+                if isCamera {
+                    CodeScannerView(codeTypes: [.qr], simulatedData: "") { result in
+                        self.showSheet = false
+                        switch result {
+                        case .success(let code):
+                            moerailData.postTrackingURL(url: code) {
+                                self.showResultAlert = true
+                                self.reportResult = nil
+                            }
+                        case .failure(let error):
                             self.showResultAlert = true
-                            self.reportResult = nil
-                        }
-                    case .failure(let error):
-                        self.showResultAlert = true
-                        self.reportResult = error.localizedDescription
-                }}
-            } else {
-                ImagePickerView(sourceType: .photoLibrary) { image in
-                    if let ciImage = CIImage.init(image: image) {
-                        var options: [String: Any]
-                        let context = CIContext()
-                        options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
-                        let qrDetector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: options)
-                        if ciImage.properties.keys.contains((kCGImagePropertyOrientation as String)){
-                            options = [CIDetectorImageOrientation: ciImage.properties[(kCGImagePropertyOrientation as String)] ?? 1]
-                        } else {
-                            options = [CIDetectorImageOrientation: 1]
-                        }
-                        let features = qrDetector?.features(in: ciImage, options: options)
-                        
-                        if let features = features, !features.isEmpty {
-                            for case let row as CIQRCodeFeature in features {
-                                if let message = row.messageString {
-                                    moerailData.postTrackingURL(url: message) {
-                                        self.reportResult =  nil
-                                        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
-                                            self.showResultAlert = true
+                            self.reportResult = error.localizedDescription
+                    }}
+                } else {
+                    ImagePickerView(sourceType: .photoLibrary) { image in
+                        if let ciImage = CIImage.init(image: image) {
+                            var options: [String: Any]
+                            let context = CIContext()
+                            options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
+                            let qrDetector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: options)
+                            if ciImage.properties.keys.contains((kCGImagePropertyOrientation as String)){
+                                options = [CIDetectorImageOrientation: ciImage.properties[(kCGImagePropertyOrientation as String)] ?? 1]
+                            } else {
+                                options = [CIDetectorImageOrientation: 1]
+                            }
+                            let features = qrDetector?.features(in: ciImage, options: options)
+                            
+                            if let features = features, !features.isEmpty {
+                                for case let row as CIQRCodeFeature in features {
+                                    if let message = row.messageString {
+                                        moerailData.postTrackingURL(url: message) {
+                                            self.reportResult =  nil
+                                            DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+                                                self.showResultAlert = true
+                                            }
                                         }
                                     }
                                 }
+                            } else {
+                                self.reportResult = "未能识别到二维码，请重新选择照片。"
+                                DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+                                    self.showResultAlert = true
+                                }
                             }
-                        } else {
-                            self.reportResult = "未能识别到二维码，请重新选择照片。"
-                            DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
-                                self.showResultAlert = true
-                            }
+                            
+                            
                         }
                         
-                        
                     }
-                    
                 }
-                
-            }
+            #endif
+            
             
         }
         .alert(isPresented: $showResultAlert, content: {
