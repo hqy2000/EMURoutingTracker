@@ -31,9 +31,7 @@ struct SingleEMUListView: View {
             }
         }
         .navigationBarItems(trailing: HStack {
-//            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-//                Image(systemName: "qrcode.viewfinder")
-//            })
+            QRView().environmentObject(self.moerailData)
             Button(action: {
                 if !FavoritesProvider.shared.contains(emu: self.moerailData.emuList.first?.emu ?? "") {
                     FavoritesProvider.shared.add(emu: self.moerailData.emuList.first?.emu ?? "")

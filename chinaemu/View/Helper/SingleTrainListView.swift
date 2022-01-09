@@ -29,30 +29,34 @@ struct SingleTrainListView: View {
                 }
             }
         }
-        .navigationBarItems(trailing: Button(action: {
-            if !FavoritesProvider.shared.contains(train: self.moerailData.emuList.first?.singleTrain ?? "") {
-                FavoritesProvider.shared.add(train: self.moerailData.emuList.first?.singleTrain ?? "")
-                overrideState = true
-            } else {
-                FavoritesProvider.shared.delete(train: self.moerailData.emuList.first?.singleTrain ?? "")
-                overrideState = false
-            }
-        }, label: {
-            if let state = self.overrideState {
-                if !state {
-                    Image(systemName: "star")
-                } else {
-                    Image(systemName: "star.fill")
-                }
-            } else {
+        .navigationBarItems(trailing: HStack{
+            QRView().environmentObject(self.moerailData)
+            Button(action: {
                 if !FavoritesProvider.shared.contains(train: self.moerailData.emuList.first?.singleTrain ?? "") {
-                    Image(systemName: "star")
+                    FavoritesProvider.shared.add(train: self.moerailData.emuList.first?.singleTrain ?? "")
+                    overrideState = true
                 } else {
-                    Image(systemName: "star.fill")
+                    FavoritesProvider.shared.delete(train: self.moerailData.emuList.first?.singleTrain ?? "")
+                    overrideState = false
                 }
-            }
-            
-        }))
+            }, label: {
+                if let state = self.overrideState {
+                    if !state {
+                        Image(systemName: "star")
+                    } else {
+                        Image(systemName: "star.fill")
+                    }
+                } else {
+                    if !FavoritesProvider.shared.contains(train: self.moerailData.emuList.first?.singleTrain ?? "") {
+                        Image(systemName: "star")
+                    } else {
+                        Image(systemName: "star.fill")
+                    }
+                }
+                
+            })
+        }
+        )
     }
 }
 

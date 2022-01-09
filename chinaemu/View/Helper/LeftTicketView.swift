@@ -19,8 +19,9 @@ struct LeftTicketView: View {
     }
     
     var body: some View {
-        HStack {
-            Image(emu?.image ?? "").resizable().scaledToFit().frame(width: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        HStack(spacing: 0) {
+            Image(emu?.image ?? "").resizable().scaledToFit().frame(width: 20, alignment: .leading)
+            Spacer(minLength: 3)
             VStack(alignment: .leading) {
                 Text(leftTicket.trainNo)
                     .font(.system(.title3, design: .monospaced))
@@ -99,7 +100,7 @@ struct LeftTicketView_Previews: PreviewProvider {
     static var previews: some View {
         List {
             LeftTicketView(LeftTicket(departureTime: "12:00", departureStation: "南京南", arrivalTime: "12:59", arrivalStation: "上海虹桥", trainNo: "G1245", softSeat: "--", hardSeat: "--", softSleeper: "--", hardSleeper: "--", specialClass: "--", businessClass: "0", firstClass: "10", secondClass: "324", noSeat: "12"), EMU(emu: "CRH2A2001325", train: "G123", date: "2020-12-21"))
-            LeftTicketView(LeftTicket(departureTime: "06:00", departureStation: "南京fh  南", arrivalTime: "12:59", arrivalStation: "上海  虹桥", trainNo: "Z1245", softSeat: "--", hardSeat: "--", softSleeper: "--", hardSleeper: "--", specialClass: "--", businessClass: "0", firstClass: "10", secondClass: "324", noSeat: "12"))
+            LeftTicketView(LeftTicket(departureTime: "06:00", departureStation: "南京南", arrivalTime: "12:59", arrivalStation: "上海  虹桥", trainNo: "Z1245", softSeat: "--", hardSeat: "--", softSleeper: "--", hardSleeper: "--", specialClass: "--", businessClass: "0", firstClass: "10", secondClass: "324", noSeat: "12"))
         }
     
     }

@@ -27,6 +27,7 @@
 		518DFA55255A9F3C00B29703 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA54255A9F3C00B29703 /* Timetable.swift */; };
 		518DFA58255A9FEE00B29703 /* CRResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA57255A9FEE00B29703 /* CRResponse.swift */; };
 		518DFA5B255AEC0000B29703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA5A255AEC0000B29703 /* AppDelegate.swift */; };
+		51D880DD278B7FA100A96834 /* QRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D880DC278B7FA100A96834 /* QRView.swift */; };
 		51E2087C25678BA5001D91D2 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2087B25678BA5001D91D2 /* StationProvider.swift */; };
 		51E2087F25678BC5001D91D2 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2087E25678BC5001D91D2 /* Station.swift */; };
 		51E20883256797EB001D91D2 /* LeftTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E20882256797EB001D91D2 /* LeftTicket.swift */; };
@@ -162,6 +163,7 @@
 		518DFA54255A9F3C00B29703 /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
 		518DFA57255A9FEE00B29703 /* CRResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRResponse.swift; sourceTree = "<group>"; };
 		518DFA5A255AEC0000B29703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		51D880DC278B7FA100A96834 /* QRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRView.swift; sourceTree = "<group>"; };
 		51E2087B25678BA5001D91D2 /* StationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationProvider.swift; sourceTree = "<group>"; };
 		51E2087E25678BC5001D91D2 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		51E20882256797EB001D91D2 /* LeftTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftTicket.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				518B988625675DC3005FBB54 /* TrainView.swift */,
 				518B988925675E07005FBB54 /* GeneralView.swift */,
 				51FAEC5E26BE840100A84AC8 /* SearchListView.swift */,
+				51D880DC278B7FA100A96834 /* QRView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				510CC5F22560C9F300853E56 /* MultipleEMUsListView.swift in Sources */,
 				518DFA55255A9F3C00B29703 /* Timetable.swift in Sources */,
 				518DFA3E25581D7A00B29703 /* AbstractProvider.swift in Sources */,
+				51D880DD278B7FA100A96834 /* QRView.swift in Sources */,
 				518DFA52255A97FB00B29703 /* CRRequest.swift in Sources */,
 				51E2087C25678BA5001D91D2 /* StationProvider.swift in Sources */,
 				51E208862567D90C001D91D2 /* LeftTicketView.swift in Sources */,
@@ -906,18 +910,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 60;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = chinaemu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -935,18 +939,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 60;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = chinaemu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -963,16 +967,16 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = chinaemuWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 60;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				INFOPLIST_FILE = chinaemuWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.chinaemuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -990,16 +994,16 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = chinaemuWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 60;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				INFOPLIST_FILE = chinaemuWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.chinaemuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1014,7 +1018,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 60;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1022,13 +1026,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = chinaemuFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.hqy.chinaemuFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1044,7 +1048,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 52;
+				CURRENT_PROJECT_VERSION = 60;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1052,13 +1056,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = chinaemuFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.hqy.chinaemuFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
