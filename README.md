@@ -24,11 +24,6 @@ The app relies on the backend from [MoeRail](https://moerail.ml). You can check 
 
 本 app 数据来自 [MoeRail](https://moerail.ml)。 其源码开放于 [Arnie97/emu-log](https://github.com/Arnie97/emu-log)。
 
-<div class="row" style="display: flex;">
-    <img style="max-width: 50%; padding: 5px;" src="https://user-images.githubusercontent.com/12138874/148732779-38ef27ff-f9f1-42bd-a5da-7414bae21530.png">
-    <img style="max-width: 50%; padding: 5px;" src="https://user-images.githubusercontent.com/12138874/148732799-8b738924-53bd-4f37-8c8b-8140288d893d.png">
-</div>
-<div class="row" style="display: flex;">
-    <img style="max-width: 50%; padding: 5px;" src="https://user-images.githubusercontent.com/12138874/148732811-c392cd59-40af-400b-9b8c-96ae9936969f.png">
-    <img style="max-width: 50%; padding: 5px;" src="https://user-images.githubusercontent.com/12138874/148732818-d017da06-4053-457b-ad4f-f8f21b90d887.png">
-</div>
+![](https://user-images.githubusercontent.com/12138874/148732779-38ef27ff-f9f1-42bd-a5da-7414bae21530.png)  |  ![](https://user-images.githubusercontent.com/12138874/148732799-8b738924-53bd-4f37-8c8b-8140288d893d.png)
+:-------------------------:|:-------------------------:
+![](https://user-images.githubusercontent.com/12138874/148732811-c392cd59-40af-400b-9b8c-96ae9936969f.png)  |  ![](https://user-images.githubusercontent.com/12138874/148732818-d017da06-4053-457b-ad4f-f8f21b90d887.png)
