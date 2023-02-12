@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3050BEC6CE07A4E0D1450DE0 /* Pods_chinaemuWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF39866C806A1E778D6DCE8 /* Pods_chinaemuWidgetExtension.framework */; };
 		510CC5EC2560C8DC00853E56 /* SingleEMUListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5EB2560C8DC00853E56 /* SingleEMUListView.swift */; };
 		510CC5EF2560C9D100853E56 /* SingleTrainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5EE2560C9D100853E56 /* SingleTrainListView.swift */; };
 		510CC5F22560C9F300853E56 /* MultipleEMUsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F12560C9F300853E56 /* MultipleEMUsListView.swift */; };
@@ -47,7 +46,7 @@
 		51FAEC6E26BEB7D500A84AC8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518001C1256A1550003624A5 /* SwiftUI.framework */; };
 		51FAEC7126BEB7D500A84AC8 /* chinaemuWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAEC7026BEB7D500A84AC8 /* chinaemuWidget.swift */; };
 		51FAEC7426BEB7D600A84AC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51FAEC7326BEB7D600A84AC8 /* Assets.xcassets */; };
-		51FAEC7A26BEB7D600A84AC8 /* chinaemuWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 51FAEC6C26BEB7D500A84AC8 /* chinaemuWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		51FAEC7A26BEB7D600A84AC8 /* chinaemuWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 51FAEC6C26BEB7D500A84AC8 /* chinaemuWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		51FAEC8E26BEB90400A84AC8 /* chinaemuFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51FAEC8526BEB90400A84AC8 /* chinaemuFramework.framework */; };
 		51FAEC9526BEB90400A84AC8 /* chinaemuFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAEC9426BEB90400A84AC8 /* chinaemuFrameworkTests.swift */; };
 		51FAEC9726BEB90400A84AC8 /* chinaemuFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 51FAEC8726BEB90400A84AC8 /* chinaemuFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,7 +70,16 @@
 		51FAECB826BEBBBF00A84AC8 /* CRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA51255A97FB00B29703 /* CRRequest.swift */; };
 		51FAECBA26BFB87800A84AC8 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAECB926BFB87800A84AC8 /* AboutView.swift */; };
 		51FF3529255C07C300EC6B8A /* TimetableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF3528255C07C300EC6B8A /* TimetableProvider.swift */; };
-		BA8185EA8F8A902BA66E3DFA /* Pods_chinaemu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84F1E3D8D1155B8A2CC8B0F /* Pods_chinaemu.framework */; };
+		78BE2CBF29998CFC0014F3DE /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CBE29998CFC0014F3DE /* SFSafeSymbols */; };
+		78BE2CC129998D070014F3DE /* AlamofireNetworkActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CC029998D070014F3DE /* AlamofireNetworkActivityIndicator */; };
+		78BE2CC329998DCA0014F3DE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CC229998DCA0014F3DE /* Moya */; };
+		78BE2CC529998DCA0014F3DE /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CC429998DCA0014F3DE /* Cache */; };
+		78BE2CC729998DCA0014F3DE /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CC629998DCA0014F3DE /* SwiftyUserDefaults */; };
+		78BE2CC929998DCA0014F3DE /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CC829998DCA0014F3DE /* Sentry */; };
+		78BE2CCB29998DDA0014F3DE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CCA29998DDA0014F3DE /* Moya */; };
+		78BE2CCD29998DDA0014F3DE /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CCC29998DDA0014F3DE /* Cache */; };
+		78BE2CCF29998DDA0014F3DE /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CCE29998DDA0014F3DE /* SwiftyUserDefaults */; };
+		78BE2CD129998DDA0014F3DE /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CD029998DDA0014F3DE /* Sentry */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,15 +121,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		51FAEC7F26BEB7D600A84AC8 /* Embed App Extensions */ = {
+		51FAEC7F26BEB7D600A84AC8 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				51FAEC7A26BEB7D600A84AC8 /* chinaemuWidgetExtension.appex in Embed App Extensions */,
+				51FAEC7A26BEB7D600A84AC8 /* chinaemuWidgetExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		51FAEC9F26BEB90400A84AC8 /* Embed Frameworks */ = {
@@ -138,8 +146,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		13B3A50F49A59A7CCFE80229 /* Pods-chinaemuWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chinaemuWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-chinaemuWidgetExtension/Pods-chinaemuWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
-		435AFF417935338C557353ED /* Pods-chinaemu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chinaemu.release.xcconfig"; path = "Target Support Files/Pods-chinaemu/Pods-chinaemu.release.xcconfig"; sourceTree = "<group>"; };
 		510CC5EB2560C8DC00853E56 /* SingleEMUListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEMUListView.swift; sourceTree = "<group>"; };
 		510CC5EE2560C9D100853E56 /* SingleTrainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTrainListView.swift; sourceTree = "<group>"; };
 		510CC5F12560C9F300853E56 /* MultipleEMUsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleEMUsListView.swift; sourceTree = "<group>"; };
@@ -192,10 +198,6 @@
 		51FAEC9626BEB90400A84AC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51FAECB926BFB87800A84AC8 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		51FF3528255C07C300EC6B8A /* TimetableProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableProvider.swift; sourceTree = "<group>"; };
-		91C7A24E24E46B3C39F8A8EB /* Pods-chinaemu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chinaemu.debug.xcconfig"; path = "Target Support Files/Pods-chinaemu/Pods-chinaemu.debug.xcconfig"; sourceTree = "<group>"; };
-		B1675CF3307EAC9C36FCBEBE /* Pods-chinaemuWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chinaemuWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-chinaemuWidgetExtension/Pods-chinaemuWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		BCF39866C806A1E778D6DCE8 /* Pods_chinaemuWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chinaemuWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C84F1E3D8D1155B8A2CC8B0F /* Pods_chinaemu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chinaemu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,10 +205,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78BE2CBF29998CFC0014F3DE /* SFSafeSymbols in Frameworks */,
+				78BE2CCD29998DDA0014F3DE /* Cache in Frameworks */,
+				78BE2CD129998DDA0014F3DE /* Sentry in Frameworks */,
 				51FAEC6726BEB1BC00A84AC8 /* ImagePickerView in Frameworks */,
+				78BE2CCB29998DDA0014F3DE /* Moya in Frameworks */,
+				78BE2CC129998D070014F3DE /* AlamofireNetworkActivityIndicator in Frameworks */,
 				51FAEC6426BEADFB00A84AC8 /* CodeScanner in Frameworks */,
-				BA8185EA8F8A902BA66E3DFA /* Pods_chinaemu.framework in Frameworks */,
 				51FAEC9A26BEB90400A84AC8 /* chinaemuFramework.framework in Frameworks */,
+				78BE2CCF29998DDA0014F3DE /* SwiftyUserDefaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,9 +222,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				51FAEC6E26BEB7D500A84AC8 /* SwiftUI.framework in Frameworks */,
+				78BE2CC729998DCA0014F3DE /* SwiftyUserDefaults in Frameworks */,
 				51FAEC6D26BEB7D500A84AC8 /* WidgetKit.framework in Frameworks */,
+				78BE2CC329998DCA0014F3DE /* Moya in Frameworks */,
 				51FAECA326BEBA9500A84AC8 /* chinaemuFramework.framework in Frameworks */,
-				3050BEC6CE07A4E0D1450DE0 /* Pods_chinaemuWidgetExtension.framework in Frameworks */,
+				78BE2CC929998DCA0014F3DE /* Sentry in Frameworks */,
+				78BE2CC529998DCA0014F3DE /* Cache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,10 +422,6 @@
 		5313E480D042225F5514ECD0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				91C7A24E24E46B3C39F8A8EB /* Pods-chinaemu.debug.xcconfig */,
-				435AFF417935338C557353ED /* Pods-chinaemu.release.xcconfig */,
-				B1675CF3307EAC9C36FCBEBE /* Pods-chinaemuWidgetExtension.debug.xcconfig */,
-				13B3A50F49A59A7CCFE80229 /* Pods-chinaemuWidgetExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -423,10 +429,8 @@
 		7CD611A66570102CFA262B40 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C84F1E3D8D1155B8A2CC8B0F /* Pods_chinaemu.framework */,
 				518001BF256A1550003624A5 /* WidgetKit.framework */,
 				518001C1256A1550003624A5 /* SwiftUI.framework */,
-				BCF39866C806A1E778D6DCE8 /* Pods_chinaemuWidgetExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -449,12 +453,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51EFCC4D25273DE200EA9D54 /* Build configuration list for PBXNativeTarget "chinaemu" */;
 			buildPhases = (
-				8091438D14725354C16C6D3B /* [CP] Check Pods Manifest.lock */,
 				51EFCC3A25273DE200EA9D54 /* Sources */,
 				51EFCC3B25273DE200EA9D54 /* Frameworks */,
 				51EFCC3C25273DE200EA9D54 /* Resources */,
-				97F48056F6AD74ED3E93CFA5 /* [CP] Embed Pods Frameworks */,
-				51FAEC7F26BEB7D600A84AC8 /* Embed App Extensions */,
+				51FAEC7F26BEB7D600A84AC8 /* Embed Foundation Extensions */,
 				51FAEC9F26BEB90400A84AC8 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -467,6 +469,12 @@
 			packageProductDependencies = (
 				51FAEC6326BEADFB00A84AC8 /* CodeScanner */,
 				51FAEC6626BEB1BC00A84AC8 /* ImagePickerView */,
+				78BE2CBE29998CFC0014F3DE /* SFSafeSymbols */,
+				78BE2CC029998D070014F3DE /* AlamofireNetworkActivityIndicator */,
+				78BE2CCA29998DDA0014F3DE /* Moya */,
+				78BE2CCC29998DDA0014F3DE /* Cache */,
+				78BE2CCE29998DDA0014F3DE /* SwiftyUserDefaults */,
+				78BE2CD029998DDA0014F3DE /* Sentry */,
 			);
 			productName = chinaemu;
 			productReference = 51EFCC3E25273DE200EA9D54 /* chinaemu.app */;
@@ -476,7 +484,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51FAEC7C26BEB7D600A84AC8 /* Build configuration list for PBXNativeTarget "chinaemuWidgetExtension" */;
 			buildPhases = (
-				13B14B418138C2A1473DFFA7 /* [CP] Check Pods Manifest.lock */,
 				51FAEC6826BEB7D500A84AC8 /* Sources */,
 				51FAEC6926BEB7D500A84AC8 /* Frameworks */,
 				51FAEC6A26BEB7D500A84AC8 /* Resources */,
@@ -487,6 +494,12 @@
 				51FAECA626BEBA9500A84AC8 /* PBXTargetDependency */,
 			);
 			name = chinaemuWidgetExtension;
+			packageProductDependencies = (
+				78BE2CC229998DCA0014F3DE /* Moya */,
+				78BE2CC429998DCA0014F3DE /* Cache */,
+				78BE2CC629998DCA0014F3DE /* SwiftyUserDefaults */,
+				78BE2CC829998DCA0014F3DE /* Sentry */,
+			);
 			productName = chinaemuWidgetExtension;
 			productReference = 51FAEC6C26BEB7D500A84AC8 /* chinaemuWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -505,6 +518,8 @@
 			dependencies = (
 			);
 			name = chinaemuFramework;
+			packageProductDependencies = (
+			);
 			productName = chinaemuFramework;
 			productReference = 51FAEC8526BEB90400A84AC8 /* chinaemuFramework.framework */;
 			productType = "com.apple.product-type.framework";
@@ -535,7 +550,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					51EFCC3D25273DE200EA9D54 = {
 						CreatedOnToolsVersion = 12.0;
@@ -564,6 +579,12 @@
 			packageReferences = (
 				51FAEC6226BEADFB00A84AC8 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 				51FAEC6526BEB1BC00A84AC8 /* XCRemoteSwiftPackageReference "ImagePickerView" */,
+				783305AC29998AAE00181F32 /* XCRemoteSwiftPackageReference "Moya" */,
+				783305AF29998AF600181F32 /* XCRemoteSwiftPackageReference "Cache" */,
+				783305B229998B2600181F32 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */,
+				783305B529998B4600181F32 /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
+				783305B829998BBE00181F32 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				783305BB29998BD000181F32 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */,
 			);
 			productRefGroup = 51EFCC3F25273DE200EA9D54 /* Products */;
 			projectDirPath = "";
@@ -610,70 +631,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		13B14B418138C2A1473DFFA7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-chinaemuWidgetExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8091438D14725354C16C6D3B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-chinaemu-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		97F48056F6AD74ED3E93CFA5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-chinaemu/Pods-chinaemu-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-chinaemu/Pods-chinaemu-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-chinaemu/Pods-chinaemu-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		51EFCC3A25273DE200EA9D54 /* Sources */ = {
@@ -903,7 +860,6 @@
 		};
 		51EFCC4E25273DE200EA9D54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91C7A24E24E46B3C39F8A8EB /* Pods-chinaemu.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -932,7 +888,6 @@
 		};
 		51EFCC4F25273DE200EA9D54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 435AFF417935338C557353ED /* Pods-chinaemu.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -961,7 +916,6 @@
 		};
 		51FAEC7D26BEB7D600A84AC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1675CF3307EAC9C36FCBEBE /* Pods-chinaemuWidgetExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -988,7 +942,6 @@
 		};
 		51FAEC7E26BEB7D600A84AC8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13B3A50F49A59A7CCFE80229 /* Pods-chinaemuWidgetExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -1182,6 +1135,54 @@
 				kind = branch;
 			};
 		};
+		783305AC29998AAE00181F32 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+		783305AF29998AF600181F32 /* XCRemoteSwiftPackageReference "Cache" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hyperoslo/Cache";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		783305B229998B2600181F32 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sunshinejr/SwiftyUserDefaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		783305B529998B4600181F32 /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsentry/sentry-cocoa";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
+		783305B829998BBE00181F32 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 4.1.1;
+			};
+		};
+		783305BB29998BD000181F32 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireNetworkActivityIndicator";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1194,6 +1195,56 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 51FAEC6526BEB1BC00A84AC8 /* XCRemoteSwiftPackageReference "ImagePickerView" */;
 			productName = ImagePickerView;
+		};
+		78BE2CBE29998CFC0014F3DE /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 783305B829998BBE00181F32 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
+		};
+		78BE2CC029998D070014F3DE /* AlamofireNetworkActivityIndicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 783305BB29998BD000181F32 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */;
+			productName = AlamofireNetworkActivityIndicator;
+		};
+		78BE2CC229998DCA0014F3DE /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 783305AC29998AAE00181F32 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		78BE2CC429998DCA0014F3DE /* Cache */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 783305AF29998AF600181F32 /* XCRemoteSwiftPackageReference "Cache" */;
+			productName = Cache;
+		};
+		78BE2CC629998DCA0014F3DE /* SwiftyUserDefaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 783305B229998B2600181F32 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
+			productName = SwiftyUserDefaults;
+		};
+		78BE2CC829998DCA0014F3DE /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 783305B529998B4600181F32 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
+		};
+		78BE2CCA29998DDA0014F3DE /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 783305AC29998AAE00181F32 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		78BE2CCC29998DDA0014F3DE /* Cache */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 783305AF29998AF600181F32 /* XCRemoteSwiftPackageReference "Cache" */;
+			productName = Cache;
+		};
+		78BE2CCE29998DDA0014F3DE /* SwiftyUserDefaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 783305B229998B2600181F32 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
+			productName = SwiftyUserDefaults;
+		};
+		78BE2CD029998DDA0014F3DE /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 783305B529998B4600181F32 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

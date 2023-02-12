@@ -75,7 +75,7 @@ struct EmptyView: View {
                         self.showSheet = false
                         switch result {
                         case .success(let code):
-                            moerailData.postTrackingURL(url: code) {
+                            moerailData.postTrackingURL(url: code.string) {
                                 self.showResultAlert = true
                                 self.reportResult = nil
                             }
