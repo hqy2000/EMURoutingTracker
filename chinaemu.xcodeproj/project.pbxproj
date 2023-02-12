@@ -71,7 +71,7 @@
 		51FAECBA26BFB87800A84AC8 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAECB926BFB87800A84AC8 /* AboutView.swift */; };
 		51FF3529255C07C300EC6B8A /* TimetableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF3528255C07C300EC6B8A /* TimetableProvider.swift */; };
 		78BE2CBF29998CFC0014F3DE /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CBE29998CFC0014F3DE /* SFSafeSymbols */; };
-		78BE2CC129998D070014F3DE /* AlamofireNetworkActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CC029998D070014F3DE /* AlamofireNetworkActivityIndicator */; };
+		78BE2CC129998D070014F3DE /* AlamofireNetworkActivityIndicator in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 78BE2CC029998D070014F3DE /* AlamofireNetworkActivityIndicator */; };
 		78BE2CC329998DCA0014F3DE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CC229998DCA0014F3DE /* Moya */; };
 		78BE2CC529998DCA0014F3DE /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CC429998DCA0014F3DE /* Cache */; };
 		78BE2CC729998DCA0014F3DE /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CC629998DCA0014F3DE /* SwiftyUserDefaults */; };
@@ -866,7 +866,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 60;
+				CURRENT_PROJECT_VERSION = 61;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
@@ -877,10 +877,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.1;
+				MARKETING_VERSION = 2.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -894,7 +896,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = chinaemu/chinaemu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 60;
+				CURRENT_PROJECT_VERSION = 61;
 				DEVELOPMENT_ASSET_PATHS = "\"chinaemu/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
@@ -905,10 +907,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.1;
+				MARKETING_VERSION = 2.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -921,7 +925,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = chinaemuWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 60;
+				CURRENT_PROJECT_VERSION = 61;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				INFOPLIST_FILE = chinaemuWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -930,7 +934,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.3.1;
+				MARKETING_VERSION = 2.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.chinaemuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -947,7 +951,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = chinaemuWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 60;
+				CURRENT_PROJECT_VERSION = 61;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				INFOPLIST_FILE = chinaemuWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -956,7 +960,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.3.1;
+				MARKETING_VERSION = 2.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.chinaemuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
