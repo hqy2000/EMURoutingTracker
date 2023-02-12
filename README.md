@@ -11,7 +11,7 @@ An app that tracks the routing of the electric multiple unit trains in China. It
 
 The app relies on the backend from [MoeRail](https://moerail.ml). You can check the source code of the backend at [Arnie97/emu-log](https://github.com/Arnie97/emu-log).
 
-# 交路查询
+# 交路查询 
 
 一款关于中国铁路动车组列车交路的 app。基于 SwiftUI 开发。现已上架 [App Store](https://apps.apple.com/cn/app/%E5%8A%A8%E8%BD%A6%E7%BB%84%E4%BA%A4%E8%B7%AF%E6%9F%A5%E8%AF%A2/id1471687297)，可用于 iPhone、iPad，及 Mac。
 
