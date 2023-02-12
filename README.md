@@ -1,6 +1,6 @@
-# EMU Tracker
+# EMU Routing Tracker
 
-An app that tracks China's Electric Multiple Unit trains. It allows users to query realtime information about the EMUs, for example the detailed assignment of fleets (including history up to 1 month). Built with SwiftUI. Now avaialble in [App Store](https://apps.apple.com/us/app/%E5%8A%A8%E8%BD%A6%E7%BB%84%E4%BA%A4%E8%B7%AF%E6%9F%A5%E8%AF%A2/id1471687297) for iPhone, iPad, and Mac. Features:
+An app that tracks the routing of the electric multiple unit trains in China. It allows users to query realtime information about the EMUs, for example the detailed assignment of fleets (including history up to 1 month). Built with SwiftUI. Now avaialble in [App Store](https://apps.apple.com/us/app/%E5%8A%A8%E8%BD%A6%E7%BB%84%E4%BA%A4%E8%B7%AF%E6%9F%A5%E8%AF%A2/id1471687297) for iPhone, iPad, and Mac. Features:
 
 - You can search the realtime information of trains by train numbers (e.g. G2), and that of EMUs by fleet number (e.g. CRH2A-2001).
 - You can look up multiple records with fuzzy search (e.g CRH2A would give you the results for all trains belonging to CRH2A series).
