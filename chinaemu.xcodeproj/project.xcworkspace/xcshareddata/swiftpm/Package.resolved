@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hyperoslo/Cache",
       "state" : {
-        "revision" : "c7f4d633049c3bd649a353bad36f6c17e9df085f",
-        "version" : "6.0.0"
+        "branch" : "master",
+        "revision" : "eeaf771d8d2e8247fbd6da2e27c986d99803fb1f"
       }
     },
     {
