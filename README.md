@@ -1,4 +1,4 @@
-# ChinaEMU Tracker
+# EMU Tracker
 
 An app that tracks China's Electric Multiple Unit trains. It allows users to query realtime information about the EMUs, for example the detailed assignment of fleets (including history up to 1 month). Built with SwiftUI. Now avaialble in [App Store](https://apps.apple.com/us/app/%E5%8A%A8%E8%BD%A6%E7%BB%84%E4%BA%A4%E8%B7%AF%E6%9F%A5%E8%AF%A2/id1471687297) for iPhone, iPad, and Mac. Features:
 
