@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "78424be314842833c04bc3bef5b72e85fff99204",
-        "version" : "5.6.4"
+        "revision" : "bc268c28fb170f494de9e9927c371b8342979ece",
+        "version" : "5.7.1"
       }
     },
     {
@@ -24,7 +24,7 @@
       "location" : "https://github.com/hyperoslo/Cache",
       "state" : {
         "branch" : "master",
-        "revision" : "eeaf771d8d2e8247fbd6da2e27c986d99803fb1f"
+        "revision" : "d048bf404a5c8362c6cf840c2096d5777975cd27"
       }
     },
     {
@@ -33,7 +33,7 @@
       "location" : "git@github.com:twostraws/CodeScanner.git",
       "state" : {
         "branch" : "main",
-        "revision" : "88a61323cae0aa4e7056f122600e5d38fd305a77"
+        "revision" : "bf5d7087015620b250ee6c865b3c9039fc159d1a"
       }
     },
     {
@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ReactiveX/RxSwift.git",
       "state" : {
-        "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
-        "version" : "6.5.0"
+        "revision" : "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
+        "version" : "6.6.0"
       }
     },
     {
