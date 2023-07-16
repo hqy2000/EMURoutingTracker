@@ -8,11 +8,8 @@
 import SwiftUI
 import SFSafeSymbols
 import AVFoundation
-#if !targetEnvironment(macCatalyst)
 import CodeScanner
 import ImagePickerView
-#endif
-
 
 struct QRView: View {
     @State var showSheet = false
@@ -51,7 +48,6 @@ struct QRView: View {
                 }
             ])
         }).sheet(isPresented: $showSheet) {
-            #if !targetEnvironment(macCatalyst)
                 if isCamera {
                     CodeScannerView(codeTypes: [.qr], simulatedData: "") { result in
                         self.showSheet = false
@@ -102,9 +98,6 @@ struct QRView: View {
                         
                     }
                 }
-            #endif
-            
-            
         }
         .alert(isPresented: $showResultAlert, content: {
             Alert(title: Text(self.reportResult == nil ? "上报成功" : "上报失败"), message: Text(self.reportResult ?? "感谢您的支持，我们将尽快根据您反馈的信息，更新我们的数据！"), dismissButton: .default(Text("好的")))

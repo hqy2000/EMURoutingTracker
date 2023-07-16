@@ -40,8 +40,8 @@
 		51EFCC4625273DE200EA9D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4525273DE200EA9D54 /* Assets.xcassets */; };
 		51EFCC4925273DE200EA9D54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4825273DE200EA9D54 /* Preview Assets.xcassets */; };
 		51FAEC5F26BE840100A84AC8 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAEC5E26BE840100A84AC8 /* SearchListView.swift */; };
-		51FAEC6426BEADFB00A84AC8 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 51FAEC6326BEADFB00A84AC8 /* CodeScanner */; };
-		51FAEC6726BEB1BC00A84AC8 /* ImagePickerView in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 51FAEC6626BEB1BC00A84AC8 /* ImagePickerView */; };
+		51FAEC6426BEADFB00A84AC8 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 51FAEC6326BEADFB00A84AC8 /* CodeScanner */; };
+		51FAEC6726BEB1BC00A84AC8 /* ImagePickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 51FAEC6626BEB1BC00A84AC8 /* ImagePickerView */; };
 		51FAEC6D26BEB7D500A84AC8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518001BF256A1550003624A5 /* WidgetKit.framework */; };
 		51FAEC6E26BEB7D500A84AC8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518001C1256A1550003624A5 /* SwiftUI.framework */; };
 		51FAEC7126BEB7D500A84AC8 /* chinaemuWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAEC7026BEB7D500A84AC8 /* chinaemuWidget.swift */; };

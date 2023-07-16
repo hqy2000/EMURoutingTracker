@@ -8,10 +8,8 @@
 import SwiftUI
 import SFSafeSymbols
 import AVFoundation
-#if !targetEnvironment(macCatalyst)
 import CodeScanner
 import ImagePickerView
-#endif
 
 struct EmptyView: View {
     @State var query = ""
@@ -28,11 +26,9 @@ struct EmptyView: View {
             case .emptyEmu:
                 Image(systemSymbol: .tram).resizable().aspectRatio(contentMode: .fit).frame(width: 30, height: 30, alignment: .center)
                 Text("暂未收录\"\(moerailData.query)\"").foregroundColor(.gray)
-                #if !targetEnvironment(macCatalyst)
                 Button("上报相关信息") {
                     self.showActionSheet = true
                 }
-                #endif
             case .emptyTrain:
                 Image(systemSymbol: .tram).resizable().aspectRatio(contentMode: .fit).frame(width: 30, height: 30, alignment: .center)
                 Text("暂未收录\"\(moerailData.query)\"\n可尝试搜索相关车组号").foregroundColor(.gray).multilineTextAlignment(.center)
@@ -69,7 +65,6 @@ struct EmptyView: View {
                 }
             ])
         }).sheet(isPresented: $showSheet) {
-            #if !targetEnvironment(macCatalyst)
                 if isCamera {
                     CodeScannerView(codeTypes: [.qr], simulatedData: "") { result in
                         self.showSheet = false
@@ -120,9 +115,6 @@ struct EmptyView: View {
                         
                     }
                 }
-            #endif
-            
-            
         }
         .alert(isPresented: $showResultAlert, content: {
             Alert(title: Text(self.reportResult == nil ? "上报成功" : "上报失败"), message: Text(self.reportResult ?? "感谢您的支持，我们将尽快根据您反馈的信息，更新我们的数据！"), dismissButton: .default(Text("好的")))
