@@ -10,7 +10,7 @@ import SwiftUI
 
 struct EMU: Codable, Hashable, Identifiable {
     var id: Int {
-        return (emu + train + date + (timetable.first?.station ?? "")).hash
+        return (emu + train + date + (trainInfo?.from ?? "")).hash
     }
     
     let emu: String
@@ -19,7 +19,7 @@ struct EMU: Codable, Hashable, Identifiable {
         return  String(train.prefix(train.firstIndex(of: "/")?.encodedOffset ?? train.count))
     }
     let date: String
-    var timetable: [Timetable] = []
+    var trainInfo: TrainInfo? = nil
     
     var image: String {
         var filename = ""

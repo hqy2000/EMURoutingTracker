@@ -14,24 +14,26 @@ enum CRRequest {
     case train(trainNo: String, date: String)
     case stations
     case leftTicketPrice(from: String, to: String, date: String)
-    case station(name: String, code: String, date: String)
 }
 
 extension CRRequest: TargetType {
     var baseURL: URL {
-        return URL(string: "https://kyfw.12306.cn/")!
+        switch self {
+        case .train(_, _):
+            return URL(string: "https://search.12306.cn")!
+        default:
+            return URL(string: "https://kyfw.12306.cn/")!
+        }
     }
     
     var path: String {
         switch self {
         case .train(_,_):
-            return "kfzmpt/queryTrainInfo/query/"
+            return "search/v1/train/search"
         case .stations:
             return "otn/resources/js/framework/station_name.js"
         case .leftTicketPrice(_, _, _):
             return "otn/leftTicketPrice/queryAllPublicPrice"
-        case .station(_, _, _):
-            return "kfzmpt/czxx/query"
         }
     }
     
@@ -47,8 +49,8 @@ extension CRRequest: TargetType {
         switch self {
         case .train(let trainNo, let date):
             return .requestParameters(parameters: [
-                "leftTicketDTO.train_no": trainNo,
-                "leftTicketDTO.train_date": date
+                "keyword": trainNo,
+                "date": date
             ], encoding: URLEncoding.default)
         case .stations:
             return .requestPlain
@@ -60,15 +62,7 @@ extension CRRequest: TargetType {
                 "leftTicketDTO.ticket_type": 1,
                 "randCode": ""
             ], encoding: URLEncoding.default)
-        case .station(let name, let code, let date):
-            return .requestParameters(parameters: [
-                "0train_start_date": date,
-                "1train_station_name": name,
-                "2train_station_code": code,
-                "3randCode": ""
-            ], encoding: CRURLEncoding())
         }
-        
     }
     
     var headers: [String : String]? {

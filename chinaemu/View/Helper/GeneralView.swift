@@ -48,7 +48,7 @@ struct GeneralView: View {
                 }
                 HStack {
                     Spacer()
-                    Text("\(emu.timetable.first?.station ?? "") ⇀ \(emu.timetable.last?.station ?? "")").font(.system(.caption2, design: .monospaced))
+                    Text("\(emu.trainInfo?.from ?? "") ⇀ \(emu.trainInfo?.to ?? "")").font(.system(.caption2, design: .monospaced))
                 }
             }.onTapGesture {
                 self.activeLink = 2

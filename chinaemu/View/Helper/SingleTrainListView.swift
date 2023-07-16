@@ -20,9 +20,9 @@ struct SingleTrainListView: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 VStack {
-                    if self.moerailData.emuList.first?.timetable.first?.station != nil {
+                    if self.moerailData.emuList.first?.trainInfo?.from != nil {
                         Text("\(self.moerailData.query)").font(.headline)
-                        Text("\(self.moerailData.emuList.first?.timetable.first?.station ?? "") ⇀ \(self.moerailData.emuList.first?.timetable.last?.station ?? "")").font(.caption2)
+                        Text("\(self.moerailData.emuList.first?.trainInfo?.from ?? "") ⇀ \(self.moerailData.emuList.first?.trainInfo?.to ?? "")").font(.caption2)
                     } else {
                         Text(self.moerailData.query).font(.headline)
                     }

@@ -42,7 +42,7 @@ class MoerailData: ObservableObject {
     }
     
     public func getTrackingRecord(keyword: String) {
-        TimetableProvider.shared.cancelAll()
+        TrainInfoProvider.shared.cancelAll()
         self.query = keyword
         self.mode = .loading
         if (keyword.trimmingCharacters(in: .whitespaces).isEmpty) {
@@ -52,9 +52,9 @@ class MoerailData: ObservableObject {
             self.moerailProvider.request(target: .train(keyword: keyword), type: [EMU].self) { results in
                 self.emuList = results
                 for (index, emu) in self.emuList.enumerated() {
-                    TimetableProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (timetable) in
+                    TrainInfoProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (trainInfo) in
                         if self.emuList.count > index {
-                            self.emuList[index].timetable = timetable
+                            self.emuList[index].trainInfo = trainInfo
                         }
                     }
                 }
@@ -77,9 +77,9 @@ class MoerailData: ObservableObject {
                     if index > 0 && self.emuList[index].emu != self.emuList[index - 1].emu {
                         self.mode = .multipleEmus
                     }
-                    TimetableProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (timetable) in
+                    TrainInfoProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (trainInfo) in
                         if self.emuList.count > index {
-                            self.emuList[index].timetable = timetable
+                            self.emuList[index].trainInfo = trainInfo
                         }
                     }
                 }

@@ -58,8 +58,8 @@ class FavoritesData: ObservableObject {
                 self.favoriteTrains = result
                 if completion == nil {
                     for (index, emu) in result.enumerated() {
-                        TimetableProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (timetable) in
-                            self.favoriteTrains[index].timetable = timetable
+                        TrainInfoProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (trainInfo) in
+                            self.favoriteTrains[index].trainInfo = trainInfo
                         }
                     }
                 }
@@ -80,8 +80,8 @@ class FavoritesData: ObservableObject {
                 self.favoriteEMUs = result
                 if completion == nil {
                     for (index, emu) in result.enumerated() {
-                        TimetableProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (timetable) in
-                            self.favoriteEMUs[index].timetable = timetable
+                        TrainInfoProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (trainInfo) in
+                            self.favoriteEMUs[index].trainInfo = trainInfo
                         }
                     }
                 }

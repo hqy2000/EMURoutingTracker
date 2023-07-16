@@ -30,8 +30,8 @@ struct EMUView: View {
                 }
             Spacer()
             
-            if emu.timetable.first?.station != nil {
-                Text("\(emu.timetable.first?.station ?? "") ⇀ \(emu.timetable.last?.station ?? "")")
+            if emu.trainInfo?.from != nil {
+                Text("\(emu.trainInfo?.from ?? "") ⇀ \(emu.trainInfo?.to ?? "")")
             } else {
                 ProgressView()
             }
