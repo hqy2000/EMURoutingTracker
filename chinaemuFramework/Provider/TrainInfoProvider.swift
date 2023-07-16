@@ -12,7 +12,7 @@ import Sentry
 internal class TrainInfoProvider: AbstractProvider<CRRequest> {
     public static let shared = TrainInfoProvider()
     private let storage: Storage<String, TrainInfo>
-    private var queue: [(String, String, (TrainInfo) -> Void)] = []
+    private var queue: [(String, (TrainInfo) -> Void)] = []
     private var lock: Bool = false
     
     override private init() {
@@ -28,11 +28,11 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
         super.init()
     }
 
-    internal func get(forTrain train: String, onDate date: String, completion: @escaping (TrainInfo) -> Void) {
+    internal func get(forTrain train: String, completion: @escaping (TrainInfo) -> Void) {
         do {
             completion(try storage.object(forKey: train))
         } catch {
-            self.queue.append((train, date, completion))
+            self.queue.append((train, completion))
             self.run()
         }
     }
@@ -42,7 +42,7 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
             if !lock && queue.count > 0{
                 lock = true
                 let top = self.queue.removeFirst()
-                self.execute(train: top.0, date: top.1, completion: top.2)
+                self.execute(train: top.0, completion: top.1)
                 
             }
         }
@@ -54,8 +54,8 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
         }
     }
     
-    private func execute(train: String, date: String, completion: @escaping (TrainInfo) -> Void) {
-        debugPrint("[Timetable Queue] \(train) @ \(date)")
+    private func execute(train: String, completion: @escaping (TrainInfo) -> Void) {
+        debugPrint("[Timetable Queue] \(train)")
         debugPrint("[Timetable Queue] Remain count: \(self.queue.count).")
         if let timetable = try? storage.object(forKey: train) {
             completion(timetable)
@@ -64,7 +64,10 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
                 self.run()
             }
         } else {
-            self.request(target: .train(trainNo: train, date: date.components(separatedBy: " ")[0].replacingOccurrences(of: "-", with: "")), type: CRResponse<[TrainInfo]>.self) { (info) in
+            let df = DateFormatter()
+            df.dateFormat = "yyyyMMdd"
+            
+            self.request(target: .train(trainNo: train, date: df.string(from: Date())), type: CRResponse<[TrainInfo]>.self) { (info) in
                 for entry in info.data {
                     if entry.station_train_code == train {
                         try? self.storage.setObject(entry, forKey: train, expiry: .date(Date().addingTimeInterval(60 * 60 * 24 * 2)))

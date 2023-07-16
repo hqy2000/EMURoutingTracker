@@ -52,7 +52,7 @@ class MoerailData: ObservableObject {
             self.moerailProvider.request(target: .train(keyword: keyword), type: [EMU].self) { results in
                 self.emuList = results
                 for (index, emu) in self.emuList.enumerated() {
-                    TrainInfoProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (trainInfo) in
+                    TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { (trainInfo) in
                         if self.emuList.count > index {
                             self.emuList[index].trainInfo = trainInfo
                         }
@@ -77,7 +77,7 @@ class MoerailData: ObservableObject {
                     if index > 0 && self.emuList[index].emu != self.emuList[index - 1].emu {
                         self.mode = .multipleEmus
                     }
-                    TrainInfoProvider.shared.get(forTrain: emu.singleTrain, onDate: emu.date) { (trainInfo) in
+                    TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { (trainInfo) in
                         if self.emuList.count > index {
                             self.emuList[index].trainInfo = trainInfo
                         }
