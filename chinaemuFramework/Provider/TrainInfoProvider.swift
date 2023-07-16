@@ -82,6 +82,10 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
                 }
                 
                 debugPrint("Unable to find: \(train).")
+                let entry = TrainInfo(from: "未知", to: "未知", train_no: "", date: "", station_train_code: "")
+                try? self.storage.setObject(entry, forKey: train, expiry: .date(Date().addingTimeInterval(20)))
+                completion(entry)
+                
                 DispatchQueue.global().sync {
                     self.lock = false
                     self.run()
