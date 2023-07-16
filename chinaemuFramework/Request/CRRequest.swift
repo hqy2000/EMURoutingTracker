@@ -19,7 +19,7 @@ enum CRRequest {
 
 extension CRRequest: TargetType {
     var baseURL: URL {
-        return URL(string: "https://www.12306.cn/")!
+        return URL(string: "https://kyfw.12306.cn/")!
     }
     
     var path: String {
@@ -27,9 +27,9 @@ extension CRRequest: TargetType {
         case .train(_,_):
             return "kfzmpt/queryTrainInfo/query/"
         case .stations:
-            return "kfzmpt/resources/js/framework/station_name.js"
+            return "otn/resources/js/framework/station_name.js"
         case .leftTicketPrice(_, _, _):
-            return "kfzmpt/leftTicketPrice/query"
+            return "otn/leftTicketPrice/queryAllPublicPrice"
         case .station(_, _, _):
             return "kfzmpt/czxx/query"
         }
@@ -72,7 +72,7 @@ extension CRRequest: TargetType {
     }
     
     var headers: [String : String]? {
-        return ["User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36"]
+        return ["User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"]
     }
 }
 

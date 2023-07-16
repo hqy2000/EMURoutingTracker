@@ -99,8 +99,8 @@ struct LeftTicketView: View {
 struct LeftTicketView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            LeftTicketView(LeftTicket(departureTime: "12:00", departureStation: "南京南", arrivalTime: "12:59", arrivalStation: "上海虹桥", trainNo: "G1245", softSeat: "--", hardSeat: "--", softSleeper: "--", hardSleeper: "--", specialClass: "--", businessClass: "0", firstClass: "10", secondClass: "324", noSeat: "12"), EMU(emu: "CRH2A2001325", train: "G123", date: "2020-12-21"))
-            LeftTicketView(LeftTicket(departureTime: "06:00", departureStation: "南京南", arrivalTime: "12:59", arrivalStation: "上海  虹桥", trainNo: "Z1245", softSeat: "--", hardSeat: "--", softSleeper: "--", hardSleeper: "--", specialClass: "--", businessClass: "0", firstClass: "10", secondClass: "324", noSeat: "12"))
+            LeftTicketView(LeftTicket(departureTime: "12:00", departureStation: "南京南", arrivalTime: "12:59", arrivalStation: "上海虹桥", trainNo: "G1245"/*, softSeat: "--", hardSeat: "--", softSleeper: "--", hardSleeper: "--", specialClass: "--", businessClass: "0", firstClass: "10", secondClass: "324", noSeat: "12"*/), EMU(emu: "CRH2A2001325", train: "G123", date: "2020-12-21"))
+            LeftTicketView(LeftTicket(departureTime: "06:00", departureStation: "南京南", arrivalTime: "12:59", arrivalStation: "上海  虹桥", trainNo: "Z1245"/*, softSeat: "--", hardSeat: "--", softSleeper: "--", hardSleeper: "--", specialClass: "--", businessClass: "0", firstClass: "10", secondClass: "324", noSeat: "12"*/))
         }
     
     }

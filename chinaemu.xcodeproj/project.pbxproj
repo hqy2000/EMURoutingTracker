@@ -335,7 +335,6 @@
 				51FAEC8626BEB90400A84AC8 /* chinaemuFramework */,
 				51FAEC9326BEB90400A84AC8 /* chinaemuFrameworkTests */,
 				51EFCC3F25273DE200EA9D54 /* Products */,
-				5313E480D042225F5514ECD0 /* Pods */,
 				7CD611A66570102CFA262B40 /* Frameworks */,
 				518001AB25691384003624A5 /* Recovered References */,
 			);
@@ -417,13 +416,6 @@
 				51E2087B25678BA5001D91D2 /* StationProvider.swift */,
 			);
 			path = Provider;
-			sourceTree = "<group>";
-		};
-		5313E480D042225F5514ECD0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		7CD611A66570102CFA262B40 /* Frameworks */ = {
