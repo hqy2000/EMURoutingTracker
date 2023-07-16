@@ -21,7 +21,7 @@ struct LeftTicketView: View {
     var body: some View {
         HStack(spacing: 0) {
             Image(emu?.image ?? "").resizable().scaledToFit().frame(width: 20, alignment: .leading)
-            Spacer(minLength: 3)
+            Spacer().frame(minWidth: 3, maxWidth: 20)
             VStack(alignment: .leading) {
                 Text(leftTicket.trainNo)
                     .font(.system(.title3, design: .monospaced))
