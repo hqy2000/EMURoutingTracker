@@ -25,7 +25,7 @@ struct AboutView: View {
                 }
                 
                 Button(action: {
-                    guard let url = URL(string: "https://moerail.ml") else { return }
+                    guard let url = URL(string: "https://moerail.mirrors.tk") else { return }
                     UIApplication.shared.open(url)
                 })
                 {
@@ -38,7 +38,7 @@ struct AboutView: View {
                 }
                 
                 Button(action: {
-                    guard let url = URL(string: "https://moerail.ml/links/#changelog") else { return }
+                    guard let url = URL(string: "https://moerail.mirrors.tk/links/#changelog") else { return }
                     UIApplication.shared.open(url)
                 })
                 {
