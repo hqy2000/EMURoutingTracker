@@ -25,20 +25,20 @@ struct AboutView: View {
                 }
                 
                 Button(action: {
-                    guard let url = URL(string: "https://moerail.mirrors.tk") else { return }
+                    guard let url = URL(string: "https://rail.re") else { return }
                     UIApplication.shared.open(url)
                 })
                 {
                     HStack {
                         Text("数据来源").font(.footnote)
                         Spacer()
-                        Text("moerail.ml").font(.footnote)
+                        Text("rail.rl").font(.footnote)
                     }
                     
                 }
                 
                 Button(action: {
-                    guard let url = URL(string: "https://moerail.mirrors.tk/links/#changelog") else { return }
+                    guard let url = URL(string: "https://rail.re/links/#changelog") else { return }
                     UIApplication.shared.open(url)
                 })
                 {

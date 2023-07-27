@@ -19,7 +19,7 @@ enum MoerailRequest {
 
 extension MoerailRequest: TargetType {
     var baseURL: URL {
-        return URL(string: "https://moerail-api.mirrors.tk/")!
+        return URL(string: "https://api.rail.re/")!
     }
     
     var path: String {
