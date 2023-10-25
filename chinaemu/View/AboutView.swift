@@ -32,7 +32,7 @@ struct AboutView: View {
                     HStack {
                         Text("数据来源").font(.footnote)
                         Spacer()
-                        Text("rail.rl").font(.footnote)
+                        Text("rail.re").font(.footnote)
                     }
                     
                 }
