@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "bc268c28fb170f494de9e9927c371b8342979ece",
-        "version" : "5.7.1"
+        "revision" : "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
+        "version" : "5.8.1"
       }
     },
     {
@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "git@github.com:twostraws/CodeScanner.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "bf5d7087015620b250ee6c865b3c9039fc159d1a"
+        "revision" : "bf5d7087015620b250ee6c865b3c9039fc159d1a",
+        "version" : "2.3.3"
       }
     },
     {
@@ -77,8 +77,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/getsentry/sentry-cocoa",
       "state" : {
-        "revision" : "24fa90aa4ef8f81c65eb5803e40875f685de0dcd",
-        "version" : "8.1.0"
+        "revision" : "008325304ada69fa32aa7aeba967b65984f30569",
+        "version" : "8.14.2"
       }
     },
     {

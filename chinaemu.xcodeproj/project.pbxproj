@@ -1119,8 +1119,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:twostraws/CodeScanner.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 		51FAEC6526BEB1BC00A84AC8 /* XCRemoteSwiftPackageReference "ImagePickerView" */ = {
@@ -1159,7 +1159,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/getsentry/sentry-cocoa";
 			requirement = {
-				kind = upToNextMinorVersion;
+				kind = upToNextMajorVersion;
 				minimumVersion = 8.1.0;
 			};
 		};
@@ -1167,7 +1167,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols.git";
 			requirement = {
-				kind = upToNextMinorVersion;
+				kind = upToNextMajorVersion;
 				minimumVersion = 4.1.1;
 			};
 		};
@@ -1175,7 +1175,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/AlamofireNetworkActivityIndicator";
 			requirement = {
-				kind = upToNextMinorVersion;
+				kind = upToNextMajorVersion;
 				minimumVersion = 3.1.0;
 			};
 		};
