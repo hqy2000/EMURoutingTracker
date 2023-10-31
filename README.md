@@ -9,7 +9,7 @@ An app that tracks the routing of the electric multiple unit trains in China. It
 - You can add a widget to your home screen for quick access to your favorites.
 - You can report inaccruate information by scanning the QR code in the train.
 
-The app relies on the backend from [MoeRail](https://moerail.ml). You can check the source code of the backend at [Arnie97/emu-log](https://github.com/Arnie97/emu-log).
+The app relies on the backend from [MoeRail](https://rail.re). You can check the source code of the backend at [Arnie97/emu-log](https://github.com/Arnie97/emu-log).
 
 # 交路查询 
 
@@ -22,7 +22,7 @@ The app relies on the backend from [MoeRail](https://moerail.ml). You can check 
 - 支持桌面小组件，方便查看收藏列车的相关信息。
 - 支持通过扫描点餐二维码自动上报不准确的信息。
 
-本 app 数据来自 [MoeRail](https://moerail.ml)。 其源码开放于 [Arnie97/emu-log](https://github.com/Arnie97/emu-log)。
+本 app 数据来自 [MoeRail](https://rail.re)。 其源码开放于 [Arnie97/emu-log](https://github.com/Arnie97/emu-log)。
 
 ![](https://user-images.githubusercontent.com/12138874/148732779-38ef27ff-f9f1-42bd-a5da-7414bae21530.png)  |  ![](https://user-images.githubusercontent.com/12138874/148732799-8b738924-53bd-4f37-8c8b-8140288d893d.png)
 :-------------------------:|:-------------------------:
