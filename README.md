@@ -1,13 +1,13 @@
 # EMU Routing Tracker
 
-An app that tracks the routing of the electric multiple unit trains in China. It allows users to query realtime information about the EMUs, for example the detailed assignment of fleets (including history up to 1 month). Built with SwiftUI. Now avaialble in [App Store](https://apps.apple.com/us/app/%E5%8A%A8%E8%BD%A6%E7%BB%84%E4%BA%A4%E8%B7%AF%E6%9F%A5%E8%AF%A2/id1471687297) for iPhone, iPad, and Mac. Features:
+An app that tracks the routing of Electric Multiple Unit (EMU) trains in China. It allows users to query real-time information about the EMUs, including detailed assignment of fleets (with history up to one month). Built with SwiftUI, the app is now available on the [App Store](https://apps.apple.com/us/app/%E5%8A%A8%E8%BD%A6%E7%BB%84%E4%BA%A4%E8%B7%AF%E6%9F%A5%E8%AF%A2/id1471687297) for iPhone, iPad, and Mac. 
 
-- You can search the realtime information of trains by train numbers (e.g. G2), and that of EMUs by fleet number (e.g. CRH2A-2001).
-- You can look up multiple records with fuzzy search (e.g CRH2A would give you the results for all trains belonging to CRH2A series).
-- You can check the realtime information along with the timetable by providing the from and the to station.
-- You can favorite a train or EMU and it will show up in the favorite tab.
-- You can add a widget to your home screen for quick access to your favorites.
-- You can report inaccruate information by scanning the QR code in the train.
+- Search for real-time information on trains by train numbers (e.g., G2) and on EMUs by fleet number (e.g., CRH2A-2001).
+- Look up multiple records with fuzzy search (e.g., CRH2A will give you the results for all trains belonging to the CRH2A series).
+- Check real-time information along with the timetable by providing both the "from" and "to" stations.
+- Favorite a train or EMU, which will then appear in the "Favorites" tab.
+- Add a widget to your home screen for quick access to your favorites.
+- Report inaccurate information by scanning the QR code inside the train.
 
 The app relies on the backend from [MoeRail](https://rail.re). You can check the source code of the backend at [Arnie97/emu-log](https://github.com/Arnie97/emu-log).
 
