@@ -25,6 +25,19 @@ struct AboutView: View {
                 }
                 
                 Button(action: {
+                    guard let url = URL(string: "https://github.com/hqy2000/EMURoutingTracker") else { return }
+                    UIApplication.shared.open(url)
+                })
+                {
+                    HStack {
+                        Text("源代码").font(.footnote)
+                        Spacer()
+                        Text("GitHub").font(.footnote)
+                    }
+                    
+                }
+                
+                Button(action: {
                     guard let url = URL(string: "https://rail.re/links/#changelog") else { return }
                     UIApplication.shared.open(url)
                 })
@@ -38,16 +51,13 @@ struct AboutView: View {
                 }
                 
                 Button(action: {
-                    guard let url = URL(string: "https://github.com/hqy2000/EMURoutingTracker") else { return }
+                    guard let url = URL(string: "https://testflight.apple.com/join/lB9yDHcd") else { return }
                     UIApplication.shared.open(url)
                 })
                 {
                     HStack {
-                        Text("项目源代码").font(.footnote)
-                        Spacer()
-                        Text("GitHub").font(.footnote)
+                        Text("TestFlight").font(.footnote)
                     }
-                    
                 }
                
                 
@@ -56,7 +66,7 @@ struct AboutView: View {
                 })
                 {
                     HStack {
-                        Text("开源组件许可证").font(.footnote)
+                        Text("开源组件许可").font(.footnote)
                     }
                     
                 }
