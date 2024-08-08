@@ -1,21 +1,13 @@
 {
+  "originHash" : "47af5e1d5b916b68bd82afe6722e15f17dc7a85f3fb286f050fb1e7b625e69b4",
   "pins" : [
     {
       "identity" : "alamofire",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
-        "version" : "5.8.1"
-      }
-    },
-    {
-      "identity" : "alamofirenetworkactivityindicator",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Alamofire/AlamofireNetworkActivityIndicator",
-      "state" : {
-        "revision" : "392bed083e8d193aca16bfa684ee24e4bcff0510",
-        "version" : "3.1.0"
+        "revision" : "f455c2975872ccd2d9c81594c658af65716e9b9a",
+        "version" : "5.9.1"
       }
     },
     {
@@ -23,26 +15,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hyperoslo/Cache",
       "state" : {
-        "branch" : "master",
-        "revision" : "d048bf404a5c8362c6cf840c2096d5777975cd27"
+        "revision" : "fd97438a85d44aa4f7186145cdba90e3c36f1c94",
+        "version" : "7.2.0"
       }
     },
     {
       "identity" : "codescanner",
       "kind" : "remoteSourceControl",
-      "location" : "git@github.com:twostraws/CodeScanner.git",
+      "location" : "https://github.com/twostraws/CodeScanner",
       "state" : {
-        "revision" : "bf5d7087015620b250ee6c865b3c9039fc159d1a",
-        "version" : "2.3.3"
-      }
-    },
-    {
-      "identity" : "imagepickerview",
-      "kind" : "remoteSourceControl",
-      "location" : "git@github.com:ralfebert/ImagePickerView.git",
-      "state" : {
-        "branch" : "master",
-        "revision" : "b84dd1c85a65cddba40c89699cd63ba0cb248dbd"
+        "revision" : "34da57fb63b47add20de8a85da58191523ccce57",
+        "version" : "2.5.0"
       }
     },
     {
@@ -77,8 +60,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/getsentry/sentry-cocoa",
       "state" : {
-        "revision" : "008325304ada69fa32aa7aeba967b65984f30569",
-        "version" : "8.14.2"
+        "revision" : "5421f94cc859eb65f5ae3866165a053aa634431e",
+        "version" : "8.32.0"
       }
     },
     {
@@ -86,8 +69,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SFSafeSymbols/SFSafeSymbols.git",
       "state" : {
-        "revision" : "7cca2d60925876b5953a2cf7341cd80fbeac983c",
-        "version" : "4.1.1"
+        "revision" : "e2e28f4e56e1769c2ec3c61c9355fc64eb7a535a",
+        "version" : "5.3.0"
       }
     },
     {
@@ -100,5 +83,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

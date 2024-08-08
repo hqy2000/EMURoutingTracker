@@ -40,8 +40,6 @@
 		51EFCC4625273DE200EA9D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4525273DE200EA9D54 /* Assets.xcassets */; };
 		51EFCC4925273DE200EA9D54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4825273DE200EA9D54 /* Preview Assets.xcassets */; };
 		51FAEC5F26BE840100A84AC8 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAEC5E26BE840100A84AC8 /* SearchListView.swift */; };
-		51FAEC6426BEADFB00A84AC8 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 51FAEC6326BEADFB00A84AC8 /* CodeScanner */; };
-		51FAEC6726BEB1BC00A84AC8 /* ImagePickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 51FAEC6626BEB1BC00A84AC8 /* ImagePickerView */; };
 		51FAEC6D26BEB7D500A84AC8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518001BF256A1550003624A5 /* WidgetKit.framework */; };
 		51FAEC6E26BEB7D500A84AC8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518001C1256A1550003624A5 /* SwiftUI.framework */; };
 		51FAEC7126BEB7D500A84AC8 /* chinaemuWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAEC7026BEB7D500A84AC8 /* chinaemuWidget.swift */; };
@@ -70,16 +68,12 @@
 		51FAECB826BEBBBF00A84AC8 /* CRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA51255A97FB00B29703 /* CRRequest.swift */; };
 		51FAECBA26BFB87800A84AC8 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAECB926BFB87800A84AC8 /* AboutView.swift */; };
 		51FF3529255C07C300EC6B8A /* TrainInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF3528255C07C300EC6B8A /* TrainInfoProvider.swift */; };
-		78BE2CBF29998CFC0014F3DE /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CBE29998CFC0014F3DE /* SFSafeSymbols */; };
-		78BE2CC129998D070014F3DE /* AlamofireNetworkActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CC029998D070014F3DE /* AlamofireNetworkActivityIndicator */; };
-		78BE2CC329998DCA0014F3DE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CC229998DCA0014F3DE /* Moya */; };
-		78BE2CC529998DCA0014F3DE /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CC429998DCA0014F3DE /* Cache */; };
-		78BE2CC729998DCA0014F3DE /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CC629998DCA0014F3DE /* SwiftyUserDefaults */; };
-		78BE2CC929998DCA0014F3DE /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CC829998DCA0014F3DE /* Sentry */; };
-		78BE2CCB29998DDA0014F3DE /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CCA29998DDA0014F3DE /* Moya */; };
-		78BE2CCD29998DDA0014F3DE /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CCC29998DDA0014F3DE /* Cache */; };
-		78BE2CCF29998DDA0014F3DE /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CCE29998DDA0014F3DE /* SwiftyUserDefaults */; };
-		78BE2CD129998DDA0014F3DE /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 78BE2CD029998DDA0014F3DE /* Sentry */; };
+		784A4FE52C64C3990045B791 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FE42C64C3990045B791 /* Sentry */; };
+		784A4FE72C64C39C0045B791 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FE62C64C39C0045B791 /* Cache */; };
+		784A4FEA2C64C3D10045B791 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FE92C64C3D10045B791 /* Moya */; };
+		784A4FED2C64C3EE0045B791 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FEC2C64C3EE0045B791 /* SwiftyUserDefaults */; };
+		784A4FEF2C64C4300045B791 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FEE2C64C4300045B791 /* SFSafeSymbols */; };
+		784A4FF12C64C4410045B791 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FF02C64C4410045B791 /* CodeScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,15 +199,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78BE2CBF29998CFC0014F3DE /* SFSafeSymbols in Frameworks */,
-				78BE2CCD29998DDA0014F3DE /* Cache in Frameworks */,
-				78BE2CD129998DDA0014F3DE /* Sentry in Frameworks */,
-				51FAEC6726BEB1BC00A84AC8 /* ImagePickerView in Frameworks */,
-				78BE2CCB29998DDA0014F3DE /* Moya in Frameworks */,
-				78BE2CC129998D070014F3DE /* AlamofireNetworkActivityIndicator in Frameworks */,
-				51FAEC6426BEADFB00A84AC8 /* CodeScanner in Frameworks */,
+				784A4FEF2C64C4300045B791 /* SFSafeSymbols in Frameworks */,
 				51FAEC9A26BEB90400A84AC8 /* chinaemuFramework.framework in Frameworks */,
-				78BE2CCF29998DDA0014F3DE /* SwiftyUserDefaults in Frameworks */,
+				784A4FF12C64C4410045B791 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,12 +210,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				51FAEC6E26BEB7D500A84AC8 /* SwiftUI.framework in Frameworks */,
-				78BE2CC729998DCA0014F3DE /* SwiftyUserDefaults in Frameworks */,
 				51FAEC6D26BEB7D500A84AC8 /* WidgetKit.framework in Frameworks */,
-				78BE2CC329998DCA0014F3DE /* Moya in Frameworks */,
 				51FAECA326BEBA9500A84AC8 /* chinaemuFramework.framework in Frameworks */,
-				78BE2CC929998DCA0014F3DE /* Sentry in Frameworks */,
-				78BE2CC529998DCA0014F3DE /* Cache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +219,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784A4FE52C64C3990045B791 /* Sentry in Frameworks */,
+				784A4FE72C64C39C0045B791 /* Cache in Frameworks */,
+				784A4FEA2C64C3D10045B791 /* Moya in Frameworks */,
+				784A4FED2C64C3EE0045B791 /* SwiftyUserDefaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,14 +447,8 @@
 			);
 			name = chinaemu;
 			packageProductDependencies = (
-				51FAEC6326BEADFB00A84AC8 /* CodeScanner */,
-				51FAEC6626BEB1BC00A84AC8 /* ImagePickerView */,
-				78BE2CBE29998CFC0014F3DE /* SFSafeSymbols */,
-				78BE2CC029998D070014F3DE /* AlamofireNetworkActivityIndicator */,
-				78BE2CCA29998DDA0014F3DE /* Moya */,
-				78BE2CCC29998DDA0014F3DE /* Cache */,
-				78BE2CCE29998DDA0014F3DE /* SwiftyUserDefaults */,
-				78BE2CD029998DDA0014F3DE /* Sentry */,
+				784A4FEE2C64C4300045B791 /* SFSafeSymbols */,
+				784A4FF02C64C4410045B791 /* CodeScanner */,
 			);
 			productName = chinaemu;
 			productReference = 51EFCC3E25273DE200EA9D54 /* chinaemu.app */;
@@ -487,10 +469,6 @@
 			);
 			name = chinaemuWidgetExtension;
 			packageProductDependencies = (
-				78BE2CC229998DCA0014F3DE /* Moya */,
-				78BE2CC429998DCA0014F3DE /* Cache */,
-				78BE2CC629998DCA0014F3DE /* SwiftyUserDefaults */,
-				78BE2CC829998DCA0014F3DE /* Sentry */,
 			);
 			productName = chinaemuWidgetExtension;
 			productReference = 51FAEC6C26BEB7D500A84AC8 /* chinaemuWidgetExtension.appex */;
@@ -511,6 +489,10 @@
 			);
 			name = chinaemuFramework;
 			packageProductDependencies = (
+				784A4FE42C64C3990045B791 /* Sentry */,
+				784A4FE62C64C39C0045B791 /* Cache */,
+				784A4FE92C64C3D10045B791 /* Moya */,
+				784A4FEC2C64C3EE0045B791 /* SwiftyUserDefaults */,
 			);
 			productName = chinaemuFramework;
 			productReference = 51FAEC8526BEB90400A84AC8 /* chinaemuFramework.framework */;
@@ -541,8 +523,9 @@
 		51EFCC3625273DE200EA9D54 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					51EFCC3D25273DE200EA9D54 = {
 						CreatedOnToolsVersion = 12.0;
@@ -569,14 +552,12 @@
 			);
 			mainGroup = 51EFCC3525273DE200EA9D54;
 			packageReferences = (
-				51FAEC6226BEADFB00A84AC8 /* XCRemoteSwiftPackageReference "CodeScanner" */,
-				51FAEC6526BEB1BC00A84AC8 /* XCRemoteSwiftPackageReference "ImagePickerView" */,
-				783305AC29998AAE00181F32 /* XCRemoteSwiftPackageReference "Moya" */,
 				783305AF29998AF600181F32 /* XCRemoteSwiftPackageReference "Cache" */,
-				783305B229998B2600181F32 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */,
-				783305B529998B4600181F32 /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
 				783305B829998BBE00181F32 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
-				783305BB29998BD000181F32 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */,
+				784A4FDE2C64C1070045B791 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				784A4FE12C64C3320045B791 /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
+				784A4FE82C64C3C90045B791 /* XCRemoteSwiftPackageReference "Moya" */,
+				784A4FEB2C64C3E70045B791 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */,
 			);
 			productRefGroup = 51EFCC3F25273DE200EA9D54 /* Products */;
 			projectDirPath = "";
@@ -738,6 +719,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -771,6 +753,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -799,6 +782,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -832,6 +816,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -863,13 +848,12 @@
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = chinaemu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.6;
+				MARKETING_VERSION = 2.3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -893,13 +877,12 @@
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = chinaemu/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.6;
+				MARKETING_VERSION = 2.3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -920,13 +903,13 @@
 				CURRENT_PROJECT_VERSION = 62;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				INFOPLIST_FILE = chinaemuWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.3.6;
+				MARKETING_VERSION = 2.3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.chinaemuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -946,13 +929,13 @@
 				CURRENT_PROJECT_VERSION = 62;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				INFOPLIST_FILE = chinaemuWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.3.6;
+				MARKETING_VERSION = 2.3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.chinaemuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -966,6 +949,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 60;
 				DEFINES_MODULE = YES;
@@ -973,15 +957,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				INFOPLIST_FILE = chinaemuFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.1;
+				MARKETING_VERSION = 2.3.7;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				PRODUCT_BUNDLE_IDENTIFIER = moe.hqy.chinaemuFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -996,6 +982,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 60;
 				DEFINES_MODULE = YES;
@@ -1003,15 +990,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				INFOPLIST_FILE = chinaemuFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.1;
+				MARKETING_VERSION = 2.3.7;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				PRODUCT_BUNDLE_IDENTIFIER = moe.hqy.chinaemuFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1029,7 +1018,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				INFOPLIST_FILE = chinaemuFrameworkTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1050,7 +1039,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				INFOPLIST_FILE = chinaemuFrameworkTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1115,52 +1104,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		51FAEC6226BEADFB00A84AC8 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:twostraws/CodeScanner.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		51FAEC6526BEB1BC00A84AC8 /* XCRemoteSwiftPackageReference "ImagePickerView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:ralfebert/ImagePickerView.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		783305AC29998AAE00181F32 /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.0;
-			};
-		};
 		783305AF29998AF600181F32 /* XCRemoteSwiftPackageReference "Cache" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hyperoslo/Cache";
 			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		783305B229998B2600181F32 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sunshinejr/SwiftyUserDefaults";
-			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		783305B529998B4600181F32 /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/getsentry/sentry-cocoa";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.1.0;
+				minimumVersion = 7.0.0;
 			};
 		};
 		783305B829998BBE00181F32 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
@@ -1168,79 +1117,73 @@
 			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.1.1;
+				minimumVersion = 5.0.0;
 			};
 		};
-		783305BB29998BD000181F32 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */ = {
+		784A4FDE2C64C1070045B791 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/AlamofireNetworkActivityIndicator";
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.1.0;
+				minimumVersion = 2.5.0;
+			};
+		};
+		784A4FE12C64C3320045B791 /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsentry/sentry-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.32.0;
+			};
+		};
+		784A4FE82C64C3C90045B791 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+		784A4FEB2C64C3E70045B791 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sunshinejr/SwiftyUserDefaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		51FAEC6326BEADFB00A84AC8 /* CodeScanner */ = {
+		784A4FE42C64C3990045B791 /* Sentry */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 51FAEC6226BEADFB00A84AC8 /* XCRemoteSwiftPackageReference "CodeScanner" */;
-			productName = CodeScanner;
+			package = 784A4FE12C64C3320045B791 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
 		};
-		51FAEC6626BEB1BC00A84AC8 /* ImagePickerView */ = {
+		784A4FE62C64C39C0045B791 /* Cache */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 51FAEC6526BEB1BC00A84AC8 /* XCRemoteSwiftPackageReference "ImagePickerView" */;
-			productName = ImagePickerView;
+			package = 783305AF29998AF600181F32 /* XCRemoteSwiftPackageReference "Cache" */;
+			productName = Cache;
 		};
-		78BE2CBE29998CFC0014F3DE /* SFSafeSymbols */ = {
+		784A4FE92C64C3D10045B791 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 784A4FE82C64C3C90045B791 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		784A4FEC2C64C3EE0045B791 /* SwiftyUserDefaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 784A4FEB2C64C3E70045B791 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
+			productName = SwiftyUserDefaults;
+		};
+		784A4FEE2C64C4300045B791 /* SFSafeSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 783305B829998BBE00181F32 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
 			productName = SFSafeSymbols;
 		};
-		78BE2CC029998D070014F3DE /* AlamofireNetworkActivityIndicator */ = {
+		784A4FF02C64C4410045B791 /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 783305BB29998BD000181F32 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */;
-			productName = AlamofireNetworkActivityIndicator;
-		};
-		78BE2CC229998DCA0014F3DE /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 783305AC29998AAE00181F32 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		78BE2CC429998DCA0014F3DE /* Cache */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 783305AF29998AF600181F32 /* XCRemoteSwiftPackageReference "Cache" */;
-			productName = Cache;
-		};
-		78BE2CC629998DCA0014F3DE /* SwiftyUserDefaults */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 783305B229998B2600181F32 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
-			productName = SwiftyUserDefaults;
-		};
-		78BE2CC829998DCA0014F3DE /* Sentry */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 783305B529998B4600181F32 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
-			productName = Sentry;
-		};
-		78BE2CCA29998DDA0014F3DE /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 783305AC29998AAE00181F32 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		78BE2CCC29998DDA0014F3DE /* Cache */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 783305AF29998AF600181F32 /* XCRemoteSwiftPackageReference "Cache" */;
-			productName = Cache;
-		};
-		78BE2CCE29998DDA0014F3DE /* SwiftyUserDefaults */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 783305B229998B2600181F32 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
-			productName = SwiftyUserDefaults;
-		};
-		78BE2CD029998DDA0014F3DE /* Sentry */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 783305B529998B4600181F32 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
-			productName = Sentry;
+			package = 784A4FDE2C64C1070045B791 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
