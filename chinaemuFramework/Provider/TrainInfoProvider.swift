@@ -22,6 +22,7 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
         self.storage = try! Storage(
           diskConfig: diskConfig,
           memoryConfig: memoryConfig,
+          fileManager: FileManager.default,
           transformer: TransformerFactory.forCodable(ofType: TrainInfo.self)
         )
         

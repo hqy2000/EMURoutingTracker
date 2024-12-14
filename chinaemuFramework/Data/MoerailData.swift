@@ -33,11 +33,10 @@ class MoerailData: ObservableObject {
         return Dictionary(grouping: self.emuList, by: { $0.date })
     }
     
-    public func postTrackingURL(url: String, completion: @escaping () -> Void) {
+    public func postTrackingURL(url: String, completion: (() -> Void)? = nil) {
         self.moerailProvider.request(target: .qr(emu: self.query, url: url), type: [EMU].self) { (results) in
             print(url)
-            dump(results)
-            completion()
+            completion?()
         }
     }
     
