@@ -80,6 +80,8 @@
 		78C4BDFA2D0E3DFC00EA4D53 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF92D0E3DF900EA4D53 /* Query.swift */; };
 		78C4BDFC2D0E76F200EA4D53 /* FavoriteStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDFB2D0E76EC00EA4D53 /* FavoriteStarView.swift */; };
 		78C4BDFE2D0E7FC100EA4D53 /* QueryNavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDFD2D0E7FA600EA4D53 /* QueryNavigationModifier.swift */; };
+		78C4BE022D0E827500EA4D53 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BE012D0E827200EA4D53 /* DateFormatter.swift */; };
+		78C4BE032D0E827500EA4D53 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BE012D0E827200EA4D53 /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +205,7 @@
 		78C4BDF92D0E3DF900EA4D53 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		78C4BDFB2D0E76EC00EA4D53 /* FavoriteStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStarView.swift; sourceTree = "<group>"; };
 		78C4BDFD2D0E7FA600EA4D53 /* QueryNavigationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryNavigationModifier.swift; sourceTree = "<group>"; };
+		78C4BE012D0E827200EA4D53 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +312,7 @@
 		51E27DB02561142E00B22289 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				78C4BE012D0E827200EA4D53 /* DateFormatter.swift */,
 				78C4BDF22D0D7D9700EA4D53 /* UIImage.swift */,
 				51E27DB12561143E00B22289 /* UserDefaults.swift */,
 			);
@@ -656,6 +660,7 @@
 				51EFCC4225273DE200EA9D54 /* ChinaEMU.swift in Sources */,
 				51E2087F25678BC5001D91D2 /* Station.swift in Sources */,
 				510CC5EF2560C9D100853E56 /* SingleTrainListView.swift in Sources */,
+				78C4BE032D0E827500EA4D53 /* DateFormatter.swift in Sources */,
 				51E27DB22561143E00B22289 /* UserDefaults.swift in Sources */,
 				518B988A25675E07005FBB54 /* GeneralView.swift in Sources */,
 				518DFA4F255A97ED00B29703 /* CRData.swift in Sources */,
@@ -671,6 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C4BE022D0E827500EA4D53 /* DateFormatter.swift in Sources */,
 				51FAECAC26BEBBA600A84AC8 /* TrainInfoProvider.swift in Sources */,
 				51FAECB726BEBBBF00A84AC8 /* MoerailRequest.swift in Sources */,
 				51FAECAA26BEBB9C00A84AC8 /* FavoritesProvider.swift in Sources */,
