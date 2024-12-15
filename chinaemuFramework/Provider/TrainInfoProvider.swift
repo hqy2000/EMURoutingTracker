@@ -56,8 +56,6 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
     }
     
     private func execute(train: String, completion: @escaping (TrainInfo) -> Void) {
-        debugPrint("[Timetable Queue] \(train)")
-        debugPrint("[Timetable Queue] Remain count: \(self.queue.count).")
         if let timetable = try? storage.object(forKey: train) {
             completion(timetable)
             DispatchQueue.global().sync {

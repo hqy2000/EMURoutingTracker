@@ -22,7 +22,6 @@ class FavoritesData: ObservableObject {
     private func completionCheck(count: inout Int, completion: (() -> Void)?) {
         DispatchQueue.global().sync {
             count -= 1
-            print(count)
             if count == 0 {
                 completion?()
             }
@@ -65,7 +64,7 @@ class FavoritesData: ObservableObject {
                 }
                 self.completionCheck(count: &taskCount, completion: completion)
             } failure: { (error) in
-                print(error)
+                debugPrint(error)
                 self.completionCheck(count: &taskCount, completion: completion)
             }
         } else {
@@ -87,7 +86,7 @@ class FavoritesData: ObservableObject {
                 }
                 self.completionCheck(count: &taskCount, completion: completion)
             } failure: { (error) in
-                print(error)
+                debugPrint(error)
                 self.completionCheck(count: &taskCount, completion: completion)
             }
         } else {

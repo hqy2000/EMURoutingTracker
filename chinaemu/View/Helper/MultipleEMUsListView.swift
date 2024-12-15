@@ -9,17 +9,18 @@ import SwiftUI
 
 struct MultipleEMUsListView: View {
     @EnvironmentObject var moerailData: MoerailData
+    @Binding var path: NavigationPath
+    
     var body: some View {
         List {
             ForEach(moerailData.groupByDay.keys.sorted().reversed(), id: \.self) { key in
                 Section(header: Text(key)) {
                     ForEach(moerailData.groupByDay[key] ?? [], id: \.id) { emu in
-                        GeneralView(emu)
-                        }
+                        GeneralView(emu: emu, path: $path)
                     }
                 }
             }
-        
+        }
         .listStyle(InsetGroupedListStyle())
         .toolbar {
             ToolbarItem(placement: .principal) {
@@ -33,6 +34,6 @@ struct MultipleEMUsListView: View {
 
 struct MultipleEMUsView_Previews: PreviewProvider {
     static var previews: some View {
-        MultipleEMUsListView()
+        MultipleEMUsListView(path: Binding.constant(NavigationPath()))
     }
 }

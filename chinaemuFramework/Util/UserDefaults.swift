@@ -29,7 +29,7 @@ var Defaults = DefaultsAdapter<DefaultsKeys>(defaults: UserDefaults(suiteName: "
 
 class UserDefaultsMigrater {
     static public func migrate() {
-        var oldDefaults = DefaultsAdapter<DefaultsKeys>(defaults: UserDefaults.standard, keyStore: .init())
+        let oldDefaults = DefaultsAdapter<DefaultsKeys>(defaults: UserDefaults.standard, keyStore: .init())
         if !oldDefaults[\.favoriteEMUs].isEmpty {
             Defaults[\.favoriteEMUs] = oldDefaults[\.favoriteEMUs]
             oldDefaults[\.favoriteEMUs] = []

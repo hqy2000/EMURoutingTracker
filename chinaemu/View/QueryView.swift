@@ -15,16 +15,18 @@ struct QueryView: View {
     @State var arrival: Station = Defaults[\.lastArrival]
     @State var date = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
     @ObservedObject var provider = StationProvider.shared
+    @State private var path = NavigationPath()
+    
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $path) {
             List {
                 Section(header: Text("车组/车次查询")) {
                     TextField("G2/380/CRH2A2001", text: $query).keyboardType(.asciiCapable)
-                    NavigationLink(
-                        destination: MoerailView(query),
-                        label: {
-                            Text("查询")
-                        })
+                    Button {
+                        path.append(Query.trainOrEmu(trainOrEmu: query))
+                    } label: {
+                        Text("查询")
+                    }
                 }
                 Section(header: Text("发着查询")) {
                     NavigationLink(
@@ -36,7 +38,7 @@ struct QueryView: View {
                             HStack {
                                 Text("出发地")
                                 Spacer()
-                                Text(self.departure.name ?? "")
+                                Text(self.departure.name)
                             }
                         })
                     NavigationLink(
@@ -48,15 +50,23 @@ struct QueryView: View {
                             HStack{
                                 Text("目的地")
                                 Spacer()
-                                Text(self.arrival.name ?? "")
+                                Text(self.arrival.name)
                             }
-                            
                         })
                     DatePicker("出发日期", selection: $date, displayedComponents: .date)
-                    NavigationLink("查询", destination: LeftTicketsView(departure: self.departure.code, arrival: self.arrival.code, date: self.date))
-                    
+                    Button("查询") {
+                        path.append(Query.tickets(depature: self.departure, arrival: self.arrival, date: self.date))
+                    }
                 }
             }.listStyle(InsetGroupedListStyle())
+            .navigationDestination(for: Query.self) { query in
+                switch query {
+                case .tickets(let departure, let arrival, let date):
+                    LeftTicketsView(path: $path, departure: departure.code, arrival: arrival.code, date: date)
+                case .trainOrEmu(let trainOrEmu):
+                    MoerailView(query: trainOrEmu, path: $path)
+                }
+            }
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

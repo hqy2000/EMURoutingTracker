@@ -28,8 +28,8 @@ struct ContentView: View {
                     Image(systemName: "info")
                     Text("更多")
                 }
-        }.navigationTitle("交路查询")
-            
+        
+        }
     }
 }
 

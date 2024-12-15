@@ -9,11 +9,12 @@ import SwiftUI
 
 struct SingleTrainListView: View {
     @EnvironmentObject var moerailData: MoerailData
+    @Binding var path: NavigationPath
     @State var overrideState: Bool? = nil
     var body: some View {
         List {
             ForEach(moerailData.emuList, id: \.id) { emu in
-                TrainView(emu)
+                TrainView(emu: emu, path: $path)
             }
         }
         .listStyle(PlainListStyle())
@@ -62,6 +63,6 @@ struct SingleTrainListView: View {
 
 struct SingleTrainView_Previews: PreviewProvider {
     static var previews: some View {
-        SingleTrainListView()
+        SingleTrainListView(path: Binding.constant(NavigationPath()))
     }
 }

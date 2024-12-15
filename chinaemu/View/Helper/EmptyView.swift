@@ -14,6 +14,7 @@ import PhotosUI
 struct EmptyView: View {
     @State var query = ""
     @State var showActionSheet = false
+    @Binding var path: NavigationPath
     @EnvironmentObject var moerailData: MoerailData
     
     var body: some View {
@@ -44,6 +45,6 @@ struct EmptyView: View {
 
 struct EmptyView_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyView()
+        EmptyView(path: Binding.constant(NavigationPath()))
     }
 } 

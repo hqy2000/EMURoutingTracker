@@ -11,21 +11,18 @@ struct MoerailView: View {
     @ObservedObject var moerailData = MoerailData()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let query: String
-    init(_ query: String = "") {
-        let query = query.uppercased()
-        self.query = query
-    }
+    @Binding var path: NavigationPath
     
     var body: some View {
         HStack {
             if moerailData.mode == .singleEmu {
-                SingleEMUListView().environmentObject(moerailData)
+                SingleEMUListView(path: $path).environmentObject(moerailData)
             } else if moerailData.mode == .singleTrain {
-                SingleTrainListView().environmentObject(moerailData)
+                SingleTrainListView(path: $path).environmentObject(moerailData)
             } else if moerailData.mode == .multipleEmus {
-                MultipleEMUsListView().environmentObject(moerailData)
+                MultipleEMUsListView(path: $path).environmentObject(moerailData)
             } else {
-                EmptyView().environmentObject(moerailData)
+                EmptyView(path: $path).environmentObject(moerailData)
             }
         }
         .navigationBarTitleDisplayMode(.inline)
@@ -38,6 +35,6 @@ struct MoerailView: View {
 
 struct MoerailView_Previews: PreviewProvider {
     static var previews: some View {
-        MoerailView()
+        MoerailView(query: "380", path: Binding.constant(NavigationPath()))
     }
 }

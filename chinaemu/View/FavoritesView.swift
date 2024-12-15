@@ -9,9 +9,10 @@ import SwiftUI
 
 struct FavoritesView: View {
     @ObservedObject var favoritesData = FavoritesData()
+    @State private var path = NavigationPath()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 
                 Section(header: Text("车次")) {
@@ -19,7 +20,7 @@ struct FavoritesView: View {
                         Text("您可以在查询时选择收藏某一特定车次（例如G2）。收藏后的车次将在这里显示其最新的运用信息。").font(.caption)
                     } else {
                         ForEach(favoritesData.favoriteTrains, id: \.self) { emu in
-                            GeneralView(emu)
+                            GeneralView(emu: emu, path: $path)
                         }
                     }
                 }
@@ -28,7 +29,7 @@ struct FavoritesView: View {
                         Text("您可以在查询时选择收藏某一特定动车组（例如CRH2A2001）。收藏后的动车组将在这里显示其最新的运用信息。").font(.caption)
                     } else {
                         ForEach(favoritesData.favoriteEMUs, id: \.self) { emu in
-                            GeneralView(emu)
+                            GeneralView(emu: emu, path: $path)
                         }
                     }
                 }
@@ -38,6 +39,14 @@ struct FavoritesView: View {
                 self.favoritesData.refresh()
             })
         }.navigationViewStyle(StackNavigationViewStyle())
+            .navigationDestination(for: Query.self) { query in
+                switch query {
+                case .tickets(let departure, let arrival, let date):
+                    LeftTicketsView(path: $path, departure: departure.code, arrival: arrival.code, date: date)
+                case .trainOrEmu(let trainOrEmu):
+                    MoerailView(query: trainOrEmu, path: $path)
+                }
+            }
     }
         
 }

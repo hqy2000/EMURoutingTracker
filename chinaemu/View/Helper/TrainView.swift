@@ -8,28 +8,21 @@
 import SwiftUI
 
 struct TrainView: View {
-    @State var activeLink: Int? = nil
     let emu: EMU
-    
-    init(_ emu: EMU) {
-        self.emu = emu
-    }
+    @Binding var path: NavigationPath
     
     var body: some View {
+       
+
         HStack {
-            NavigationLink(
-                destination: MoerailView(emu.emu),
-                tag: 1,
-                selection: $activeLink) {}
-                .frame(width: 0)
-                .hidden()
             Image(emu.image)
-            Text(emu.emu)
-                .foregroundColor(emu.color)
-                .font(.system(.body, design: .monospaced))
-                .onTapGesture {
-                    self.activeLink = 1
-                }
+            Button {
+                path.append(Query.trainOrEmu(trainOrEmu: emu.emu))
+            } label: {
+                Text(emu.emu)
+                    .foregroundColor(emu.color)
+                    .font(.system(.body, design: .monospaced))
+            }
             Spacer()
             Text(emu.date)
                 .font(Font.caption.monospacedDigit())
@@ -39,6 +32,6 @@ struct TrainView: View {
 
 struct TrainView_Previews: PreviewProvider {
     static var previews: some View {
-        TrainView(EMU(emu: "CRH2A2001", train: "G2", date: "2020-12-01"))
+        TrainView(emu: EMU(emu: "CRH2A2001", train: "G2", date: "2020-12-01"), path: Binding.constant(NavigationPath()))
     }
 }

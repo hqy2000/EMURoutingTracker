@@ -19,8 +19,6 @@ struct Provider: TimelineProvider {
 
     func getSnapshot(in context: Context, completion: @escaping (FavoritesEntry) -> ()) {
         favoriteData.refresh {
-            debugPrint("snapshot")
-            dump(favoriteData.favoriteTrains)
             let entry = FavoritesEntry(date: Date(), favoriteTrains: favoriteData.favoriteTrains, favoriteEmus: favoriteData.favoriteEMUs)
             completion(entry)
         }
@@ -28,7 +26,6 @@ struct Provider: TimelineProvider {
 
     func getTimeline( in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         favoriteData.refresh {
-            debugPrint("timeline")
             let entry = FavoritesEntry(date: Date(), favoriteTrains: favoriteData.favoriteTrains, favoriteEmus: favoriteData.favoriteEMUs)
             let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
 

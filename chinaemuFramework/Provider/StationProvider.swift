@@ -28,8 +28,6 @@ internal class StationProvider: AbstractProvider<CRRequest>, ObservableObject {
                 let stations: [Station] = raw.split(separator: "@").map { (raw) in
                     let info = raw.split(separator: "|")
                     if info.count < 5 {
-                        
-                        print("Station name is having some issues: \(raw).")
                         return Station(name: "", code: "", pinyin: "", abbreviation: "")
                     } else {
                         return Station(name: String(info[1]), code: String(info[2]), pinyin: String(info[3]), abbreviation: String(info[4]))

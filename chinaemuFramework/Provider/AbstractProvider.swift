@@ -20,21 +20,14 @@ class AbstractProvider<T: TargetType> {
                         let decoder = JSONDecoder()
                         let result = try decoder.decode(R.self, from: response.data)
                         success(result)
-                        
                     } catch {
-                        debugPrint(response.request?.url?.absoluteString ?? "Empty URL")
-                        debugPrint(String(data: response.data, encoding: .utf8))
-                        debugPrint(error.localizedDescription)
                         failure?(error)
                     }
 
                 } else {
-                    debugPrint(response.request?.url?.absoluteString ?? "Empty URL")
-                    debugPrint("Status Code: \(response.statusCode)")
                     failure?(NetworkError(response.statusCode, response.request?.url?.absoluteString ?? "Empty URL", String(data: response.data, encoding: .utf8) ?? "Empty Content"))
                 }
             case let .failure(error):
-                debugPrint(error)
                 failure?(error)
             }
         }
@@ -47,12 +40,9 @@ class AbstractProvider<T: TargetType> {
                 if (response.statusCode == 200) {
                     success(String(data: response.data, encoding: .utf8) ?? "")
                 } else {
-                    debugPrint(response.request?.url?.absoluteString ?? "Empty URL")
-                    debugPrint("Status Code: \(response.statusCode)")
                     failure?(NetworkError(response.statusCode, response.request?.url?.absoluteString ?? "Empty URL", String(data: response.data, encoding: .utf8) ?? "Empty Content"))
                 }
             case let .failure(error):
-                debugPrint(error)
                 failure?(error)
             }
         }

@@ -8,7 +8,6 @@
 import Foundation
 import Moya
 
-@frozen
 enum MoerailRequest {
     case train(keyword: String)
     case trains(keywords: [String])

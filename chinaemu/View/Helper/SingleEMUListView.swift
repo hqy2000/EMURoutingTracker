@@ -10,13 +10,14 @@ import UIKit
 
 struct SingleEMUListView: View {
     @EnvironmentObject var moerailData: MoerailData
+    @Binding var path: NavigationPath
     @State var overrideState: Bool? = nil
     var body: some View {
         List {
             ForEach(moerailData.groupByDay.keys.sorted().reversed(), id: \.self) { key in
                 Section(header: Text(key)) {
                     ForEach(moerailData.groupByDay[key] ?? [], id: \.id) { emu in
-                        EMUView(emu)
+                        EMUView(path: $path, emu: emu)
                     }
                 }
             }
@@ -62,6 +63,6 @@ struct SingleEMUListView: View {
 
 struct SingleEMUView_Previews: PreviewProvider {
     static var previews: some View {
-        SingleEMUListView()
+        SingleEMUListView(path: Binding.constant(NavigationPath()))
     }
 }

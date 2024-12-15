@@ -16,7 +16,7 @@ struct EMU: Codable, Hashable, Identifiable {
     let emu: String
     let train: String
     var singleTrain: String {
-        return  String(train.prefix(train.firstIndex(of: "/")?.encodedOffset ?? train.count))
+        return String(train[..<(train.firstIndex(of: "/") ?? train.endIndex)])
     }
     let date: String
     var trainInfo: TrainInfo? = nil

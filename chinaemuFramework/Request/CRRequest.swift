@@ -9,7 +9,6 @@ import Foundation
 import Moya
 import Alamofire
 
-@frozen
 enum CRRequest {
     case train(trainNo: String, date: String)
     case stations
@@ -66,7 +65,7 @@ extension CRRequest: TargetType {
     }
     
     var headers: [String : String]? {
-        return ["User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"]
+        return ["User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"]
     }
 }
 

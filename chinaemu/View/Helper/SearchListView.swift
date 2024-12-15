@@ -22,8 +22,6 @@ struct SearchListView: View {
 
                         TextField("站名/拼音/拼音首字母", text: $searchText, onEditingChanged: { isEditing in
                             self.showCancelButton = true
-                        }, onCommit: {
-                            print("onCommit")
                         }).foregroundColor(.primary)
 
                         Button(action: {
@@ -82,7 +80,7 @@ struct SearchListView: View {
 struct SearchListView_Previews: PreviewProvider {
     static var previews: some View {
         SearchListView([Station(name: "南京南", code: "NJN", pinyin: "nanjingnan", abbreviation: "NJN")], completion: { station in
-            print(station.code)
+
         })
            .environment(\.colorScheme, .light)
     }
