@@ -271,7 +271,6 @@
 		518DFA3325581BFC00B29703 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				78C4BDF92D0E3DF900EA4D53 /* Query.swift */,
 				518DFA3425581C2000B29703 /* EMUTrainAssociation.swift */,
 				518DFA54255A9F3C00B29703 /* Train.swift */,
 				518DFA57255A9FEE00B29703 /* CRResponse.swift */,
@@ -281,14 +280,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		518DFA3925581CC500B29703 /* Data */ = {
+		518DFA3925581CC500B29703 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				518B988C2567655A005FBB54 /* FavoritesViewModel.swift */,
 				518DFA3A25581CD300B29703 /* EMUTrainViewModel.swift */,
 				518DFA4E255A97ED00B29703 /* DepartureArrivalViewModel.swift */,
 			);
-			path = Data;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		518DFA412558229500B29703 /* View */ = {
@@ -351,8 +350,9 @@
 			isa = PBXGroup;
 			children = (
 				518DFA472558332D00B29703 /* chinaemu.entitlements */,
-				51E27DBF256116BE00B22289 /* ViewModifier */,
+				78C4BE0B2D0EC31D00EA4D53 /* Util */,
 				518DFA412558229500B29703 /* View */,
+				51E27DBF256116BE00B22289 /* ViewModifier */,
 				51EFCC4125273DE200EA9D54 /* ChinaEMU.swift */,
 				51EFCC4325273DE200EA9D54 /* ContentView.swift */,
 				51EFCC4525273DE200EA9D54 /* Assets.xcassets */,
@@ -384,7 +384,7 @@
 		51FAEC8626BEB90400A84AC8 /* chinaemuFramework */ = {
 			isa = PBXGroup;
 			children = (
-				518DFA3925581CC500B29703 /* Data */,
+				518DFA3925581CC500B29703 /* ViewModel */,
 				51E27DB02561142E00B22289 /* Util */,
 				51FF3527255C07AF00EC6B8A /* Provider */,
 				518DFA3325581BFC00B29703 /* Model */,
@@ -464,6 +464,14 @@
 				51E27DB92561163000B22289 /* FavoritesView.swift */,
 			);
 			path = Tab;
+			sourceTree = "<group>";
+		};
+		78C4BE0B2D0EC31D00EA4D53 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				78C4BDF92D0E3DF900EA4D53 /* Query.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		7CD611A66570102CFA262B40 /* Frameworks */ = {

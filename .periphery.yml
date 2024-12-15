@@ -1,0 +1,9 @@
+project: chinaemu.xcodeproj
+schemes:
+- chinaemu
+- chinaemuFramework
+- chinaemuWidgetExtension
+targets:
+- chinaemu
+- chinaemuFramework
+- chinaemuWidgetExtension

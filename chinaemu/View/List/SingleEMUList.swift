@@ -11,7 +11,7 @@ import UIKit
 struct SingleEMUList: View {
     @EnvironmentObject var vm: EMUTrainViewModel
     @Binding var path: NavigationPath
-    @State var overrideState: Bool? = nil
+
     var body: some View {
         List {
             ForEach(vm.groupedByDay.keys.sorted().reversed(), id: \.self) { key in
