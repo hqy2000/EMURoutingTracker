@@ -31,7 +31,7 @@ struct ScanQRCodeActionSheetModifier: ViewModifier {
                         if case .permissionDenied = error {
                             self.result = "您没有开启相机权限，请至 系统设置 - 隐私 中开启。"
                         } else {
-                            self.result = error.localizedDescription
+                            self.result = error.localizedDescription + "请确认您扫描的二维码为点餐码。"
                         }
                         
                     }
