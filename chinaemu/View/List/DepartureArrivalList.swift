@@ -7,18 +7,19 @@
 
 import SwiftUI
 
-struct LeftTicketsView: View {
+struct DepartureArrivalList: View {
     @ObservedObject var crData = CRData()
-    @Binding var path: NavigationPath
     
     let departure: String
     let arrival: String
     let date: Date
     
+    @Binding var path: NavigationPath
+    
     var body: some View {
         List {
             ForEach(crData.leftTickets, id: \.id) { (leftTicket) in
-                LeftTicketView(path: $path, leftTicket: leftTicket.leftTicket, emu: crData.emus.first(where: {$0.train == leftTicket.leftTicket.trainNo}))
+                RemaingTicketRowView(path: $path, leftTicket: leftTicket.leftTicket, emu: crData.emus.first(where: {$0.train == leftTicket.leftTicket.trainNo}))
             }
         }.onAppear(perform: {
             if self.crData.leftTickets.isEmpty {
@@ -30,6 +31,6 @@ struct LeftTicketsView: View {
 
 struct LeftTicketsView_Previews: PreviewProvider {
     static var previews: some View {
-        LeftTicketsView(path: Binding.constant(NavigationPath()), departure: "BJP", arrival: "SHH", date: Date())
+        DepartureArrivalList(departure: "BJP", arrival: "SHH", date: Date(), path: Binding.constant(NavigationPath()))
     }
 }

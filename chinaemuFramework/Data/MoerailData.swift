@@ -14,7 +14,7 @@ class MoerailData: ObservableObject {
     let moerailProvider = AbstractProvider<MoerailRequest>();
     let crProvider = AbstractProvider<CRRequest>();
     
-    @Published var emuList = [EMU]()
+    @Published var emuList = [EMUTrainAssociation]()
     @Published var mode: Mode = .loading
     @Published var query = ""
     @Published var errorMessage = ""
@@ -29,12 +29,12 @@ class MoerailData: ObservableObject {
         case multipleEmus
     }
     
-    var groupByDay: [String: [EMU]] {
+    var groupByDay: [String: [EMUTrainAssociation]] {
         return Dictionary(grouping: self.emuList, by: { $0.date })
     }
     
     public func postTrackingURL(url: String, completion: (() -> Void)? = nil) {
-        self.moerailProvider.request(target: .qr(emu: self.query, url: url), type: [EMU].self) { (results) in
+        self.moerailProvider.request(target: .qr(emu: self.query, url: url), type: [EMUTrainAssociation].self) { (results) in
             debugPrint(url)
             completion?()
         }
@@ -48,7 +48,7 @@ class MoerailData: ObservableObject {
             self.emuList = []
             self.mode = .emptyTrain
         } else if (keyword.starts(with: "C") && !keyword.starts(with: "CR")) || keyword.starts(with: "G") || keyword.starts(with: "D") {
-            self.moerailProvider.request(target: .train(keyword: keyword), type: [EMU].self) { results in
+            self.moerailProvider.request(target: .train(keyword: keyword), type: [EMUTrainAssociation].self) { results in
                 self.emuList = results
                 for (index, emu) in self.emuList.enumerated() {
                     TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { (trainInfo) in
@@ -69,7 +69,7 @@ class MoerailData: ObservableObject {
             
         } else {
             self.emuList = []
-            self.moerailProvider.request(target: .emu(keyword: keyword), type: [EMU].self) { results in
+            self.moerailProvider.request(target: .emu(keyword: keyword), type: [EMUTrainAssociation].self) { results in
                 self.emuList = results
                 
                 for (index, emu) in self.emuList.enumerated() {

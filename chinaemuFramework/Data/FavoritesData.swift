@@ -11,8 +11,8 @@ import SwiftyUserDefaults
 
 class FavoritesData: ObservableObject {
     let moerailProvider = AbstractProvider<MoerailRequest>();
-    @Published var favoriteEMUs: [EMU] = []
-    @Published var favoriteTrains: [EMU] = []
+    @Published var favoriteEMUs: [EMUTrainAssociation] = []
+    @Published var favoriteTrains: [EMUTrainAssociation] = []
     private var lastRefresh: Date? = nil
     
     init() {
@@ -32,13 +32,13 @@ class FavoritesData: ObservableObject {
         var taskCount = 2
         if self.favoriteTrains.isEmpty {
             self.favoriteTrains = FavoritesProvider.trains.favorites.map({ (favorite) in
-                return EMU(emu: "", train: favorite.name, date: "")
+                return EMUTrainAssociation(emu: "", train: favorite.name, date: "")
             })
         }
         
         if self.favoriteEMUs.isEmpty {
             self.favoriteEMUs = FavoritesProvider.EMUs.favorites.map({ (favorite) in
-                return EMU(emu: favorite.name, train: "", date: "")
+                return EMUTrainAssociation(emu: favorite.name, train: "", date: "")
             })
         }
         
@@ -53,7 +53,7 @@ class FavoritesData: ObservableObject {
         if !FavoritesProvider.trains.favorites.isEmpty {
             moerailProvider.request(target: .trains(keywords: FavoritesProvider.trains.favorites.map({ favorite in
                 return favorite.name
-            })), type: [EMU].self) { (result) in
+            })), type: [EMUTrainAssociation].self) { (result) in
                 self.favoriteTrains = result
                 if completion == nil {
                     for (index, emu) in result.enumerated() {
@@ -75,7 +75,7 @@ class FavoritesData: ObservableObject {
         if !FavoritesProvider.EMUs.favorites.isEmpty {
             moerailProvider.request(target: .emus(keywords: FavoritesProvider.EMUs.favorites.map({ favorite in
                 return favorite.name
-            })), type: [EMU].self) { (result) in
+            })), type: [EMUTrainAssociation].self) { (result) in
                 self.favoriteEMUs = result
                 if completion == nil {
                     for (index, emu) in result.enumerated() {

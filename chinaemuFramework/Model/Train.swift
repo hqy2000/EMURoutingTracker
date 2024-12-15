@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TrainInfo: Codable, Hashable {
+struct Train: Codable, Hashable {
     let from: String
     let to: String
     let train_no: String

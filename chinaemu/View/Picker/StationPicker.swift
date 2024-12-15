@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SearchListView: View {
+struct StationPicker: View {
     let stations: [Station]
     let completion: (Station) -> Void
     @State private var searchText = ""
@@ -43,7 +43,7 @@ struct SearchListView: View {
 
 struct SearchListView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchListView([Station(name: "南京南", code: "NJN", pinyin: "nanjingnan", abbreviation: "NJN")], completion: { station in
+        StationPicker([Station(name: "南京南", code: "NJN", pinyin: "nanjingnan", abbreviation: "NJN")], completion: { station in
             
         })
         .environment(\.colorScheme, .light)

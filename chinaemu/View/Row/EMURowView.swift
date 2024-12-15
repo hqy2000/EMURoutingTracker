@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct EMUView: View {
+struct EMURowView: View {
     @State var activeLink: Int? = nil
-    let emu: EMU
+    let emu: EMUTrainAssociation
     @Binding var path: NavigationPath
     
     var body: some View {
@@ -22,8 +22,8 @@ struct EMUView: View {
 
             Spacer()
             
-            if emu.trainInfo?.from != nil {
-                Text("\(emu.trainInfo?.from ?? "") ⇀ \(emu.trainInfo?.to ?? "")")
+            if let trainInfo = emu.trainInfo {
+                Text("\(trainInfo.from) ⇀ \(trainInfo.to)")
             } else {
                 ProgressView()
             }
@@ -33,6 +33,6 @@ struct EMUView: View {
 
 struct EMUView_Previews: PreviewProvider {
     static var previews: some View {
-        EMUView(emu: EMU(emu: "a", train: "a", date: "a"), path: Binding.constant(NavigationPath()))
+        EMURowView(emu: EMUTrainAssociation(emu: "a", train: "a", date: "a"), path: Binding.constant(NavigationPath()))
     }
 }

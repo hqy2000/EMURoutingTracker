@@ -1,5 +1,5 @@
 //
-//  Train.swift
+//  EMU.swift
 //  chinaemu
 //
 //  Created by Qingyang Hu on 11/8/20.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct EMU: Codable, Hashable, Identifiable {
+struct EMUTrainAssociation: Codable, Hashable, Identifiable {
     var id: Int {
         return (emu + train + date + (trainInfo?.from ?? "")).hash
     }
@@ -19,7 +19,7 @@ struct EMU: Codable, Hashable, Identifiable {
         return String(train[..<(train.firstIndex(of: "/") ?? train.endIndex)])
     }
     let date: String
-    var trainInfo: TrainInfo? = nil
+    var trainInfo: Train? = nil
     
     var image: String {
         var filename = ""
@@ -101,7 +101,7 @@ struct EMU: Codable, Hashable, Identifiable {
         case date = "date"
     }
     
-    static func == (lhs: EMU, rhs: EMU) -> Bool {
+    static func == (lhs: EMUTrainAssociation, rhs: EMUTrainAssociation) -> Bool {
         return lhs.hashValue == rhs.hashValue
     }
 }

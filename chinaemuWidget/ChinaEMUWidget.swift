@@ -1,6 +1,6 @@
 //
-//  widget.swift
-//  widget
+//  ChinaEMUWidget.swift
+//  ChinaEMUWidget
 //
 //  Created by Qingyang Hu on 11/22/20.
 //
@@ -112,7 +112,7 @@ struct TrainView: View {
 
 
 @main
-struct widget: Widget {
+struct ChinaEMUWidget: Widget {
     let kind: String = "widget"
 
     var body: some WidgetConfiguration {
@@ -125,7 +125,7 @@ struct widget: Widget {
     }
 }
 
-struct widget_Previews: PreviewProvider {
+struct ChinaEMUWidget_Previews: PreviewProvider {
     static var previews: some View {
         WidgetSingleColumnEntryView(entry: FavoritesEntry(date: Date(), favoriteTrains: [EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"),EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"),EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"),EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101")], favoriteEmus: [EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"),EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"),EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"),EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"),EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101")]))
             .previewContext(WidgetPreviewContext(family: .systemSmall))

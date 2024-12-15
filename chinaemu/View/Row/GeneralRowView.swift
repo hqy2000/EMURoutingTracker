@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct GeneralView: View {
+struct GeneralRowView: View {
     @State var activeLink: Int? = nil
-    let emu: EMU
+    let emu: EMUTrainAssociation
     @Binding var path: NavigationPath
     
     var body: some View {
         HStack {
-            Image(emu.image).resizable().scaledToFit().frame(height: 32)
+            Image(emu.image).resizable().scaledToFit().frame(height: 28)
             
             Button {
                 path.append(Query.trainOrEmu(trainOrEmu: emu.emu))
@@ -38,7 +38,9 @@ struct GeneralView: View {
                 }
                 HStack {
                     Spacer()
-                    Text("\(emu.trainInfo?.from ?? "") ⇀ \(emu.trainInfo?.to ?? "")").font(.system(.caption2, design: .monospaced))
+                    if let trainInfo = emu.trainInfo {
+                        Text("\(trainInfo.from) ⇀ \(trainInfo.to)").font(.system(.caption2, design: .monospaced))
+                    }
                 }
             }
         }
@@ -47,6 +49,6 @@ struct GeneralView: View {
 
 struct GeneralView_Previews: PreviewProvider {
     static var previews: some View {
-        GeneralView(emu: EMU(emu: "CRH2A2001", train: "G2", date: "2020-12-01"), path: Binding.constant(NavigationPath()))
+        GeneralRowView(emu: EMUTrainAssociation(emu: "CRH2A2001", train: "G2", date: "2020-12-01"), path: Binding.constant(NavigationPath()))
     }
 }

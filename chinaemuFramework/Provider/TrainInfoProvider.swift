@@ -11,8 +11,8 @@ import Sentry
 
 internal class TrainInfoProvider: AbstractProvider<CRRequest> {
     public static let shared = TrainInfoProvider()
-    private let storage: Storage<String, TrainInfo>
-    private var queue: [(String, (TrainInfo) -> Void)] = []
+    private let storage: Storage<String, Train>
+    private var queue: [(String, (Train) -> Void)] = []
     private var lock: Bool = false
     
     override private init() {
@@ -23,13 +23,13 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
           diskConfig: diskConfig,
           memoryConfig: memoryConfig,
           fileManager: FileManager.default,
-          transformer: TransformerFactory.forCodable(ofType: TrainInfo.self)
+          transformer: TransformerFactory.forCodable(ofType: Train.self)
         )
         
         super.init()
     }
 
-    internal func get(forTrain train: String, completion: @escaping (TrainInfo) -> Void) {
+    internal func get(forTrain train: String, completion: @escaping (Train) -> Void) {
         do {
             completion(try storage.object(forKey: train))
         } catch {
@@ -55,7 +55,7 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
         }
     }
     
-    private func execute(train: String, completion: @escaping (TrainInfo) -> Void) {
+    private func execute(train: String, completion: @escaping (Train) -> Void) {
         if let timetable = try? storage.object(forKey: train) {
             completion(timetable)
             DispatchQueue.global().sync {
@@ -66,7 +66,7 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
             let df = DateFormatter()
             df.dateFormat = "yyyyMMdd"
             
-            self.request(target: .train(trainNo: train, date: df.string(from: Date())), type: CRResponse<[TrainInfo]>.self) { (info) in
+            self.request(target: .train(trainNo: train, date: df.string(from: Date())), type: CRResponse<[Train]>.self) { (info) in
                 for entry in info.data {
                     if entry.station_train_code == train {
                         try? self.storage.setObject(entry, forKey: train, expiry: .date(Date().addingTimeInterval(60 * 60 * 24 * 2)))
@@ -81,7 +81,7 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
                 }
                 
                 debugPrint("Unable to find: \(train).")
-                let entry = TrainInfo(from: "未知", to: "未知", train_no: "", date: "", station_train_code: "")
+                let entry = Train(from: "未知", to: "未知", train_no: "", date: "", station_train_code: "")
                 try? self.storage.setObject(entry, forKey: train, expiry: .date(Date().addingTimeInterval(20)))
                 completion(entry)
                 

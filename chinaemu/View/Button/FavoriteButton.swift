@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavoriteStarView: View {
+struct FavoriteButton: View {
     @State var selected: Bool
     let trainOrEMU: String
     let provider: FavoritesProvider

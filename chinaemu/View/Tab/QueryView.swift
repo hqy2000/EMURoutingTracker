@@ -30,7 +30,7 @@ struct QueryView: View {
                 }
                 Section(header: Text("发着查询")) {
                     NavigationLink(
-                        destination: SearchListView(provider.stations, completion: { station in
+                        destination: StationPicker(provider.stations, completion: { station in
                             Defaults[\.lastDeparture] = station
                             self.departure = station
                         }),
@@ -42,7 +42,7 @@ struct QueryView: View {
                             }
                         })
                     NavigationLink(
-                        destination: SearchListView(provider.stations, completion: { station in
+                        destination: StationPicker(provider.stations, completion: { station in
                             Defaults[\.lastArrival] = station
                             self.arrival = station
                         }),
@@ -55,7 +55,7 @@ struct QueryView: View {
                         })
                     DatePicker("出发日期", selection: $date, displayedComponents: .date)
                     Button {
-                        path.append(Query.tickets(depature: self.departure, arrival: self.arrival, date: self.date))
+                        path.append(Query.remainingTickets(depature: self.departure, arrival: self.arrival, date: self.date))
                     } label: {
                         Text("查询").frame(maxWidth: .infinity, alignment: .center)
                     }
@@ -64,6 +64,6 @@ struct QueryView: View {
             }
             .listStyle(InsetGroupedListStyle())
             .queryNavigation(path: $path)
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }
     }
 }

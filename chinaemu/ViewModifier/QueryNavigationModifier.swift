@@ -14,10 +14,10 @@ struct QueryNavigationModifier: ViewModifier {
         content
             .navigationDestination(for: Query.self) { query in
                 switch query {
-                case .tickets(let departure, let arrival, let date):
-                    LeftTicketsView(path: $path, departure: departure.code, arrival: arrival.code, date: date)
+                case .remainingTickets(let departure, let arrival, let date):
+                    DepartureArrivalList(departure: departure.code, arrival: arrival.code, date: date, path: $path)
                 case .trainOrEmu(let trainOrEmu):
-                    MoerailView(query: trainOrEmu, path: $path)
+                    TrainOrEMUView(query: trainOrEmu, path: $path)
                 }
             }
     }

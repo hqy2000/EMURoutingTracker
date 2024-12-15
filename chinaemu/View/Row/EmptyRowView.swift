@@ -6,12 +6,8 @@
 //
 
 import SwiftUI
-import SFSafeSymbols
-import AVFoundation
-import CodeScanner
-import PhotosUI
 
-struct EmptyView: View {
+struct EmptyRowView: View {
     @State var query = ""
     @State var showActionSheet = false
     @Binding var path: NavigationPath
@@ -26,7 +22,7 @@ struct EmptyView: View {
                 Button("上报相关信息") {
                     self.showActionSheet = true
                 }
-                .qrCodeActionSheet(showActionSheet: $showActionSheet) { url in
+                .scanQrCodeActionSheet(isPresented: $showActionSheet) { url in
                     moerailData.postTrackingURL(url: url)
                 }
             case .emptyTrain:
@@ -45,6 +41,6 @@ struct EmptyView: View {
 
 struct EmptyView_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyView(path: Binding.constant(NavigationPath()))
+        EmptyRowView(path: Binding.constant(NavigationPath()))
     }
 } 

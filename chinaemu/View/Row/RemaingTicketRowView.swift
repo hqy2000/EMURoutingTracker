@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct LeftTicketView: View {
+struct RemaingTicketRowView: View {
     @State var showDetails: Bool = false
     
     @Binding var path: NavigationPath
-    let leftTicket: LeftTicket
-    let emu: EMU?
+    let leftTicket: DepartureArrival
+    let emu: EMUTrainAssociation?
 
     var body: some View {
         HStack(spacing: 0) {
@@ -79,8 +79,8 @@ struct LeftTicketView: View {
 struct LeftTicketView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            LeftTicketView(path: Binding.constant(NavigationPath()), leftTicket: LeftTicket(departureTime: "12:00", departureStation: "南京南", arrivalTime: "12:59", arrivalStation: "上海虹桥", trainNo: "G1245"), emu: EMU(emu: "CRH2A2001325", train: "G123", date: "2020-12-21"))
-            LeftTicketView(path: Binding.constant(NavigationPath()), leftTicket: LeftTicket(departureTime: "06:00", departureStation: "南京南", arrivalTime: "12:59", arrivalStation: "上海  虹桥", trainNo: "Z1245"), emu: nil)
+            RemaingTicketRowView(path: Binding.constant(NavigationPath()), leftTicket: DepartureArrival(departureTime: "12:00", departureStation: "南京南", arrivalTime: "12:59", arrivalStation: "上海虹桥", trainNo: "G1245"), emu: EMUTrainAssociation(emu: "CRH2A2001325", train: "G123", date: "2020-12-21"))
+            RemaingTicketRowView(path: Binding.constant(NavigationPath()), leftTicket: DepartureArrival(departureTime: "06:00", departureStation: "南京南", arrivalTime: "12:59", arrivalStation: "上海  虹桥", trainNo: "Z1245"), emu: nil)
         }
     }
 }

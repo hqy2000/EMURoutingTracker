@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MoerailView: View {
+struct TrainOrEMUView: View {
     @ObservedObject var moerailData = MoerailData()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let query: String
@@ -16,13 +16,13 @@ struct MoerailView: View {
     var body: some View {
         HStack {
             if moerailData.mode == .singleEmu {
-                SingleEMUListView(path: $path).environmentObject(moerailData)
+                SingleEMUList(path: $path).environmentObject(moerailData)
             } else if moerailData.mode == .singleTrain {
-                SingleTrainListView(path: $path).environmentObject(moerailData)
+                TrainList(path: $path).environmentObject(moerailData)
             } else if moerailData.mode == .multipleEmus {
-                MultipleEMUsListView(path: $path).environmentObject(moerailData)
+                MultipleEMUList(path: $path).environmentObject(moerailData)
             } else {
-                EmptyView(path: $path).environmentObject(moerailData)
+                EmptyRowView(path: $path).environmentObject(moerailData)
             }
         }
         .navigationBarTitleDisplayMode(.inline)
@@ -35,6 +35,6 @@ struct MoerailView: View {
 
 struct MoerailView_Previews: PreviewProvider {
     static var previews: some View {
-        MoerailView(query: "380", path: Binding.constant(NavigationPath()))
+        TrainOrEMUView(query: "380", path: Binding.constant(NavigationPath()))
     }
 }

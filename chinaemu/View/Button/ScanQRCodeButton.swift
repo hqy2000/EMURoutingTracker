@@ -10,7 +10,7 @@ import SFSafeSymbols
 import AVFoundation
 import CodeScanner
 
-struct QRView: View {
+struct ScanQRCodeButton: View {
     @State var showSheet = false
     @EnvironmentObject var moerailData: MoerailData
     
@@ -19,7 +19,7 @@ struct QRView: View {
             self.showSheet = true
         }, label: {
            Image(systemName: "qrcode.viewfinder")
-        }).qrCodeActionSheet(showActionSheet: $showSheet) { message in
+        }).scanQrCodeActionSheet(isPresented: $showSheet) { message in
             moerailData.postTrackingURL(url: message)
         }
     }
@@ -27,6 +27,6 @@ struct QRView: View {
 
 struct QRView_Previews: PreviewProvider {
     static var previews: some View {
-        QRView()
+        ScanQRCodeButton()
     }
 }
