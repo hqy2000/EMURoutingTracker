@@ -21,11 +21,11 @@ struct QueryView: View {
         NavigationStack(path: $path) {
             List {
                 Section(header: Text("车组/车次查询")) {
-                    TextField("G2/380/CRH2A2001", text: $query).keyboardType(.asciiCapable)
+                    TextField("G2/380/CRH2A2001", text: $query).keyboardType(.asciiCapable).textCase(.uppercase)
                     Button {
                         path.append(Query.trainOrEmu(trainOrEmu: query))
                     } label: {
-                        Text("查询")
+                        Text("查询").frame(maxWidth: .infinity, alignment: .center)
                     }
                 }
                 Section(header: Text("发着查询")) {
@@ -54,9 +54,12 @@ struct QueryView: View {
                             }
                         })
                     DatePicker("出发日期", selection: $date, displayedComponents: .date)
-                    Button("查询") {
+                    Button {
                         path.append(Query.tickets(depature: self.departure, arrival: self.arrival, date: self.date))
+                    } label: {
+                        Text("查询").frame(maxWidth: .infinity, alignment: .center)
                     }
+                    
                 }
             }
             .listStyle(InsetGroupedListStyle())

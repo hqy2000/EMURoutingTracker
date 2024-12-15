@@ -13,7 +13,7 @@ struct TrainView: View {
     
     var body: some View {
         HStack {
-            Image(emu.image)
+            Image(emu.image).resizable().scaledToFit().frame(height: 32)
             Button {
                 path.append(Query.trainOrEmu(trainOrEmu: emu.emu))
             } label: {

@@ -14,7 +14,7 @@ struct GeneralView: View {
     
     var body: some View {
         HStack {
-            Image(emu.image)
+            Image(emu.image).resizable().scaledToFit().frame(height: 32)
             
             Button {
                 path.append(Query.trainOrEmu(trainOrEmu: emu.emu))
@@ -29,8 +29,12 @@ struct GeneralView: View {
             VStack(spacing: 4) {
                 HStack {
                     Spacer()
-                    Text(emu.train)
-                        .font(.system(.callout, design: .monospaced))
+                    Button {
+                        path.append(Query.trainOrEmu(trainOrEmu: emu.train))
+                    } label: {
+                        Text(emu.train)
+                            .font(.system(.callout, design: .monospaced))
+                    }
                 }
                 HStack {
                     Spacer()

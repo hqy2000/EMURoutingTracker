@@ -24,7 +24,7 @@ struct LeftTicketsView: View {
             if self.crData.leftTickets.isEmpty {
                 self.crData.getLeftTickets(from: self.departure, to: self.arrival, date: date)
             }
-        })
+        }).navigationTitle("发着查询")
     }
 }
 

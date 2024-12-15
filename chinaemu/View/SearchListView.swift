@@ -34,7 +34,8 @@ struct SearchListView: View {
                     }
                 }
         }
-        .searchable(text: $searchText, prompt: "站名/拼音/拼音首字母")
+        .navigationTitle("车站选择")
+        .searchable(text: $searchText, placement: UIDevice.current.userInterfaceIdiom == .phone ? .navigationBarDrawer(displayMode: .always) : .automatic, prompt: "站名/拼音/拼音首字母")
     }
 }
 

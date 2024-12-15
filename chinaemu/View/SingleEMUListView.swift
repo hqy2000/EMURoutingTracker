@@ -26,7 +26,7 @@ struct SingleEMUListView: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack {
-                    Image(moerailData.emuList.first?.image ?? "")
+                    Image(moerailData.emuList.first?.image ?? "").resizable().scaledToFit().frame(height: 32)
                     Text(moerailData.query).font(.headline)
                 }
             }
