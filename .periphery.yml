@@ -1,9 +1,9 @@
-project: chinaemu.xcodeproj
+project: EMURoutingTracker.xcodeproj
 schemes:
-- chinaemu
-- chinaemuFramework
-- chinaemuWidgetExtension
+- EMURoutingTracker
+- EMURoutingTrackerFramework
+- EMURoutingTrackerWidgetExtension
 targets:
-- chinaemu
-- chinaemuFramework
-- chinaemuWidgetExtension
+- EMURoutingTracker
+- EMURoutingTrackerFramework
+- EMURoutingTrackerWidgetExtension

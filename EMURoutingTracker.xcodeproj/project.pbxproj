@@ -311,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				518DFA472558332D00B29703 /* EMURoutingTracker.entitlements */,
+				51EFCC4725273DE200EA9D54 /* Preview Content */,
 				78C4BE0B2D0EC31D00EA4D53 /* Util */,
 				518DFA412558229500B29703 /* View */,
 				51E27DBF256116BE00B22289 /* ViewModifier */,
@@ -318,7 +319,6 @@
 				51EFCC4325273DE200EA9D54 /* ContentView.swift */,
 				51EFCC4525273DE200EA9D54 /* Assets.xcassets */,
 				51EFCC4A25273DE200EA9D54 /* Info.plist */,
-				51EFCC4725273DE200EA9D54 /* Preview Content */,
 				518DFA5A255AEC0000B29703 /* AppDelegate.swift */,
 			);
 			path = EMURoutingTracker;
@@ -345,11 +345,11 @@
 		51FAEC8626BEB90400A84AC8 /* EMURoutingTrackerFramework */ = {
 			isa = PBXGroup;
 			children = (
-				518DFA3925581CC500B29703 /* ViewModel */,
-				51E27DB02561142E00B22289 /* Util */,
-				51FF3527255C07AF00EC6B8A /* Provider */,
 				518DFA3325581BFC00B29703 /* Model */,
+				51FF3527255C07AF00EC6B8A /* Provider */,
 				518DFA2E2557E3D300B29703 /* Request */,
+				51E27DB02561142E00B22289 /* Util */,
+				518DFA3925581CC500B29703 /* ViewModel */,
 				51FAEC8726BEB90400A84AC8 /* EMURoutingTrackerFramework.h */,
 				51FAEC8826BEB90400A84AC8 /* Info.plist */,
 			);
@@ -822,7 +822,7 @@
 				CODE_SIGN_ENTITLEMENTS = EMURoutingTracker/EMURoutingTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 100;
-				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_ASSET_PATHS = "\"EMURoutingTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = EMURoutingTracker/Info.plist;
@@ -850,7 +850,7 @@
 				CODE_SIGN_ENTITLEMENTS = EMURoutingTracker/EMURoutingTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 100;
-				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_ASSET_PATHS = "\"EMURoutingTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = K2P3533G4D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = EMURoutingTracker/Info.plist;

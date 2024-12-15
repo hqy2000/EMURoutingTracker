@@ -10,8 +10,8 @@ import SwiftUI
 import Cache
 
 class DepartureArrivalViewModel: ObservableObject {
-    let crProvider =  AbstractProvider<CRRequest>();
-    let moeRailProvider = AbstractProvider<MoerailRequest>();
+    let crProvider =  AbstractProvider<CRRequest>()
+    let moeRailProvider = AbstractProvider<MoerailRequest>()
     @Published var departureArrivals: [DepartureArrivalV2] = []
     @Published var emuTrainAssocs: [EMUTrainAssociation] = []
     

@@ -68,22 +68,3 @@ extension CRRequest: TargetType {
         return ["User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"]
     }
 }
-
-
-// 用法：在Key之前加上数字表示顺序。
-struct CRURLEncoding: ParameterEncoding {
-    func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
-        var urlRequest = urlRequest.urlRequest!
-        var urlString = urlRequest.url!.absoluteString
-        
-        if let parameters = parameters {
-            urlString += "?"
-            Array(parameters.keys.sorted()).forEach { (key) in
-                urlString += String(key.suffix(key.count - 1)) + "=" + (parameters[key] as! String) + "&"
-            }
-            urlString = String(urlString.prefix(urlString.count - 1))
-        }
-        urlRequest.url = URL(string: urlString)!
-        return urlRequest
-    }
-}

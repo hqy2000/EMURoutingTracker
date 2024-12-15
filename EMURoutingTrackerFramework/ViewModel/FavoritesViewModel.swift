@@ -10,7 +10,7 @@ import SwiftUI
 import SwiftyUserDefaults
 
 class FavoritesViewModel: ObservableObject {
-    let moerailProvider = AbstractProvider<MoerailRequest>();
+    let moerailProvider = AbstractProvider<MoerailRequest>()
     @Published var favoriteEMUs: [EMUTrainAssociation] = []
     @Published var favoriteTrains: [EMUTrainAssociation] = []
     private var lastRefresh: Date? = nil

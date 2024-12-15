@@ -11,8 +11,7 @@ import BackgroundTasks
 import UserNotifications
 
 class EMUTrainViewModel: ObservableObject {
-    let moerailProvider = AbstractProvider<MoerailRequest>();
-    let crProvider = AbstractProvider<CRRequest>();
+    let moerailProvider = AbstractProvider<MoerailRequest>()
     
     @Published var emuTrainAssocList = [EMUTrainAssociation]()
     @Published var mode: Mode = .loading
