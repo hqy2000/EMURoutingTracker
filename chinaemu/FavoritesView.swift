@@ -38,15 +38,9 @@ struct FavoritesView: View {
             .onAppear(perform: {
                 self.favoritesData.refresh()
             })
-        }.navigationViewStyle(StackNavigationViewStyle())
-            .navigationDestination(for: Query.self) { query in
-                switch query {
-                case .tickets(let departure, let arrival, let date):
-                    LeftTicketsView(path: $path, departure: departure.code, arrival: arrival.code, date: date)
-                case .trainOrEmu(let trainOrEmu):
-                    MoerailView(query: trainOrEmu, path: $path)
-                }
-            }
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .queryNavigation(path: $path)
     }
         
 }

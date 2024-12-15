@@ -59,7 +59,7 @@ struct AboutView: View {
                         Text("TestFlight").font(.footnote)
                     }
                 }
-               
+                
                 
                 Button(action: {
                     self.showOpenSourceLicense = true
@@ -72,36 +72,36 @@ struct AboutView: View {
                 }
             }
         }.listStyle(InsetGroupedListStyle())
-        .sheet(isPresented: self.$showOpenSourceLicense, content: {
-            ScrollView {
-            Text(
-"""
+            .sheet(isPresented: self.$showOpenSourceLicense, content: {
+                ScrollView {
+                    Text(
+                """
                 ----------------------------
                 https://github.com/hyperoslo/Cache
                 
                 Copyright (c) 2015 Hyper Interaktiv AS
-
+                
                 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
+                
                 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
+                
                 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                 
                 ----------------------------
                 https://github.com/sunshinejr/SwiftyUserDefaults
                 
                 Copyright (c) 2015-present Radosław Pietruszewski, Łukasz Mróz
-
+                
                 Permission is hereby granted, free of charge, to any person obtaining a copy
                 of this software and associated documentation files (the "Software"), to deal
                 in the Software without restriction, including without limitation the rights
                 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
                 copies of the Software, and to permit persons to whom the Software is
                 furnished to do so, subject to the following conditions:
-
+                
                 The above copyright notice and this permission notice shall be included in all
                 copies or substantial portions of the Software.
-
+                
                 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
                 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
                 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -109,34 +109,34 @@ struct AboutView: View {
                 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
                 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
                 SOFTWARE.
-
+                
                 
                 ----------------------------
                 https://github.com/getsentry/sentry-cocoa
                 
                 Copyright (c) 2015 Sentry
-
+                
                 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
+                
                 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
+                
                 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                 
                 ----------------------------
                 https://github.com/Alamofire/AlamofireNetworkActivityIndicator
                 
                 Copyright (c) 2016 Alamofire Software Foundation (http://alamofire.org/)
-
+                
                 Permission is hereby granted, free of charge, to any person obtaining a copy
                 of this software and associated documentation files (the "Software"), to deal
                 in the Software without restriction, including without limitation the rights
                 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
                 copies of the Software, and to permit persons to whom the Software is
                 furnished to do so, subject to the following conditions:
-
+                
                 The above copyright notice and this permission notice shall be included in
                 all copies or substantial portions of the Software.
-
+                
                 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
                 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
                 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -160,17 +160,17 @@ struct AboutView: View {
                 https://github.com/twostraws/CodeScanner
                 
                 Copyright (c) 2019 Paul Hudson
-
+                
                 Permission is hereby granted, free of charge, to any person obtaining a copy
                 of this software and associated documentation files (the "Software"), to deal
                 in the Software without restriction, including without limitation the rights
                 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
                 copies of the Software, and to permit persons to whom the Software is
                 furnished to do so, subject to the following conditions:
-
+                
                 The above copyright notice and this permission notice shall be included in all
                 copies or substantial portions of the Software.
-
+                
                 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
                 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
                 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -179,8 +179,8 @@ struct AboutView: View {
                 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
                 SOFTWARE.
                 """).padding().font(.system(.caption, design: .monospaced))
-            }
-        })
+                }
+            })
     }
 }
 

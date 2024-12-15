@@ -10,7 +10,7 @@ import PhotosUI
 import AVFoundation
 import CodeScanner
 
-struct QRCodeActionSheet: ViewModifier {
+struct QRCodeActionSheetModifier: ViewModifier {
     @Binding var showActionSheet: Bool
     @State var showResultAlert: Bool = false
     @State var reportResult: String? = nil
@@ -45,7 +45,7 @@ extension View {
         showActionSheet: Binding<Bool>,
         postTrackingURL: @escaping (String) -> Void
     ) -> some View {
-        self.modifier(QRCodeActionSheet(
+        self.modifier(QRCodeActionSheetModifier(
             showActionSheet: showActionSheet,
             postTrackingURL: postTrackingURL
         ))

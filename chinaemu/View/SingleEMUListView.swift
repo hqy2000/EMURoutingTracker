@@ -17,7 +17,7 @@ struct SingleEMUListView: View {
             ForEach(moerailData.groupByDay.keys.sorted().reversed(), id: \.self) { key in
                 Section(header: Text(key)) {
                     ForEach(moerailData.groupByDay[key] ?? [], id: \.id) { emu in
-                        EMUView(path: $path, emu: emu)
+                        EMUView(emu: emu, path: $path)
                     }
                 }
             }

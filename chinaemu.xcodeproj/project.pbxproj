@@ -76,9 +76,10 @@
 		784A4FF12C64C4410045B791 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FF02C64C4410045B791 /* CodeScanner */; };
 		78C4BDF32D0D7D9C00EA4D53 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF22D0D7D9700EA4D53 /* UIImage.swift */; };
 		78C4BDF42D0D7D9C00EA4D53 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF22D0D7D9700EA4D53 /* UIImage.swift */; };
-		78C4BDF62D0D82B800EA4D53 /* QRCodeActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF52D0D82B300EA4D53 /* QRCodeActionSheet.swift */; };
+		78C4BDF62D0D82B800EA4D53 /* QRCodeActionSheetModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF52D0D82B300EA4D53 /* QRCodeActionSheetModifier.swift */; };
 		78C4BDFA2D0E3DFC00EA4D53 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF92D0E3DF900EA4D53 /* Query.swift */; };
 		78C4BDFC2D0E76F200EA4D53 /* FavoriteStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDFB2D0E76EC00EA4D53 /* FavoriteStarView.swift */; };
+		78C4BDFE2D0E7FC100EA4D53 /* QueryNavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDFD2D0E7FA600EA4D53 /* QueryNavigationModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,9 +199,10 @@
 		51FAECB926BFB87800A84AC8 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		51FF3528255C07C300EC6B8A /* TrainInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainInfoProvider.swift; sourceTree = "<group>"; };
 		78C4BDF22D0D7D9700EA4D53 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		78C4BDF52D0D82B300EA4D53 /* QRCodeActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeActionSheet.swift; sourceTree = "<group>"; };
+		78C4BDF52D0D82B300EA4D53 /* QRCodeActionSheetModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeActionSheetModifier.swift; sourceTree = "<group>"; };
 		78C4BDF92D0E3DF900EA4D53 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		78C4BDFB2D0E76EC00EA4D53 /* FavoriteStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStarView.swift; sourceTree = "<group>"; };
+		78C4BDFD2D0E7FA600EA4D53 /* QueryNavigationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryNavigationModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,7 +318,8 @@
 		51E27DBF256116BE00B22289 /* ViewModifier */ = {
 			isa = PBXGroup;
 			children = (
-				78C4BDF52D0D82B300EA4D53 /* QRCodeActionSheet.swift */,
+				78C4BDFD2D0E7FA600EA4D53 /* QueryNavigationModifier.swift */,
+				78C4BDF52D0D82B300EA4D53 /* QRCodeActionSheetModifier.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				518DFA55255A9F3C00B29703 /* TrainInfo.swift in Sources */,
 				518DFA3E25581D7A00B29703 /* AbstractProvider.swift in Sources */,
 				51D880DD278B7FA100A96834 /* QRView.swift in Sources */,
+				78C4BDFE2D0E7FC100EA4D53 /* QueryNavigationModifier.swift in Sources */,
 				518DFA52255A97FB00B29703 /* CRRequest.swift in Sources */,
 				51E2087C25678BA5001D91D2 /* StationProvider.swift in Sources */,
 				51E208862567D90C001D91D2 /* LeftTicketView.swift in Sources */,
@@ -657,7 +661,7 @@
 				518DFA4F255A97ED00B29703 /* CRData.swift in Sources */,
 				518DFA302557E3E200B29703 /* MoerailRequest.swift in Sources */,
 				51FF3529255C07C300EC6B8A /* TrainInfoProvider.swift in Sources */,
-				78C4BDF62D0D82B800EA4D53 /* QRCodeActionSheet.swift in Sources */,
+				78C4BDF62D0D82B800EA4D53 /* QRCodeActionSheetModifier.swift in Sources */,
 				51E27DBA2561163000B22289 /* FavoritesView.swift in Sources */,
 				78C4BDFC2D0E76F200EA4D53 /* FavoriteStarView.swift in Sources */,
 			);

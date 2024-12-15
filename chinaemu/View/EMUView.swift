@@ -9,8 +9,8 @@ import SwiftUI
 
 struct EMUView: View {
     @State var activeLink: Int? = nil
-    @Binding var path: NavigationPath
     let emu: EMU
+    @Binding var path: NavigationPath
     
     var body: some View {
         HStack {
@@ -33,6 +33,6 @@ struct EMUView: View {
 
 struct EMUView_Previews: PreviewProvider {
     static var previews: some View {
-        EMUView(path: Binding.constant(NavigationPath()), emu: EMU(emu: "a", train: "a", date: "a"))
+        EMUView(emu: EMU(emu: "a", train: "a", date: "a"), path: Binding.constant(NavigationPath()))
     }
 }

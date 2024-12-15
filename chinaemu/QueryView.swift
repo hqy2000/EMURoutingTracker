@@ -58,15 +58,9 @@ struct QueryView: View {
                         path.append(Query.tickets(depature: self.departure, arrival: self.arrival, date: self.date))
                     }
                 }
-            }.listStyle(InsetGroupedListStyle())
-            .navigationDestination(for: Query.self) { query in
-                switch query {
-                case .tickets(let departure, let arrival, let date):
-                    LeftTicketsView(path: $path, departure: departure.code, arrival: arrival.code, date: date)
-                case .trainOrEmu(let trainOrEmu):
-                    MoerailView(query: trainOrEmu, path: $path)
-                }
             }
+            .listStyle(InsetGroupedListStyle())
+            .queryNavigation(path: $path)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
