@@ -3,9 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
-	<array>
-		<string>moe.hqy.chinaemu.push</string>
-	</array>
+	<array/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -32,8 +30,6 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>我们需要使用您的相机扫描二维码。</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>上传点餐二维码需要访问您的相册。</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

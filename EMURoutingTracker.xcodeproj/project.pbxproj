@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -188,6 +188,10 @@
 		78C4BE012D0E827200EA4D53 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		78C4BE0C2D0ECEA300EA4D53 /* ci_scripts */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ci_scripts; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		51EFCC3B25273DE200EA9D54 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -288,6 +292,7 @@
 		51EFCC3525273DE200EA9D54 = {
 			isa = PBXGroup;
 			children = (
+				78C4BE0C2D0ECEA300EA4D53 /* ci_scripts */,
 				51FAEC7B26BEB7D600A84AC8 /* EMURoutingTrackerWidgetExtension.entitlements */,
 				51EFCC4025273DE200EA9D54 /* EMURoutingTracker */,
 				51FAEC6F26BEB7D500A84AC8 /* EMURoutingTrackerWidget */,
