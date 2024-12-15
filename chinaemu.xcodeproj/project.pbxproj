@@ -35,7 +35,7 @@
 		51E27DB22561143E00B22289 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DB12561143E00B22289 /* UserDefaults.swift */; };
 		51E27DBA2561163000B22289 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DB92561163000B22289 /* FavoritesView.swift */; };
 		51E27DC1256116D100B22289 /* EMUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DC0256116D100B22289 /* EMUView.swift */; };
-		51EFCC4225273DE200EA9D54 /* chinaemuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFCC4125273DE200EA9D54 /* chinaemuApp.swift */; };
+		51EFCC4225273DE200EA9D54 /* ChinaEMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFCC4125273DE200EA9D54 /* ChinaEMU.swift */; };
 		51EFCC4425273DE200EA9D54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFCC4325273DE200EA9D54 /* ContentView.swift */; };
 		51EFCC4625273DE200EA9D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4525273DE200EA9D54 /* Assets.xcassets */; };
 		51EFCC4925273DE200EA9D54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4825273DE200EA9D54 /* Preview Assets.xcassets */; };
@@ -77,8 +77,8 @@
 		78C4BDF32D0D7D9C00EA4D53 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF22D0D7D9700EA4D53 /* UIImage.swift */; };
 		78C4BDF42D0D7D9C00EA4D53 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF22D0D7D9700EA4D53 /* UIImage.swift */; };
 		78C4BDF62D0D82B800EA4D53 /* QRCodeActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF52D0D82B300EA4D53 /* QRCodeActionSheet.swift */; };
-		78C4BDF82D0E3D6600EA4D53 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF72D0E3D6000EA4D53 /* Router.swift */; };
 		78C4BDFA2D0E3DFC00EA4D53 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF92D0E3DF900EA4D53 /* Query.swift */; };
+		78C4BDFC2D0E76F200EA4D53 /* FavoriteStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDFB2D0E76EC00EA4D53 /* FavoriteStarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,7 +178,7 @@
 		51E27DB92561163000B22289 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		51E27DC0256116D100B22289 /* EMUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMUView.swift; sourceTree = "<group>"; };
 		51EFCC3E25273DE200EA9D54 /* chinaemu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chinaemu.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		51EFCC4125273DE200EA9D54 /* chinaemuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chinaemuApp.swift; sourceTree = "<group>"; };
+		51EFCC4125273DE200EA9D54 /* ChinaEMU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinaEMU.swift; sourceTree = "<group>"; };
 		51EFCC4325273DE200EA9D54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		51EFCC4525273DE200EA9D54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51EFCC4825273DE200EA9D54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -199,8 +199,8 @@
 		51FF3528255C07C300EC6B8A /* TrainInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainInfoProvider.swift; sourceTree = "<group>"; };
 		78C4BDF22D0D7D9700EA4D53 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		78C4BDF52D0D82B300EA4D53 /* QRCodeActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeActionSheet.swift; sourceTree = "<group>"; };
-		78C4BDF72D0E3D6000EA4D53 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		78C4BDF92D0E3DF900EA4D53 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		78C4BDFB2D0E76EC00EA4D53 /* FavoriteStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +266,7 @@
 		518DFA3325581BFC00B29703 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				78C4BDF92D0E3DF900EA4D53 /* Query.swift */,
 				518DFA3425581C2000B29703 /* EMU.swift */,
 				518DFA54255A9F3C00B29703 /* TrainInfo.swift */,
 				518DFA57255A9FEE00B29703 /* CRResponse.swift */,
@@ -288,12 +289,17 @@
 		518DFA412558229500B29703 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				51E27DBF256116BE00B22289 /* Helper */,
-				518DFA42255832B800B29703 /* MoerailView.swift */,
-				518B989E25676ED5005FBB54 /* QueryView.swift */,
-				51E27DB92561163000B22289 /* FavoritesView.swift */,
-				51E208882567E3F5001D91D2 /* LeftTicketsView.swift */,
-				51FAECB926BFB87800A84AC8 /* AboutView.swift */,
+				510CC5F42560CC9A00853E56 /* EmptyView.swift */,
+				51E27DC0256116D100B22289 /* EMUView.swift */,
+				78C4BDFB2D0E76EC00EA4D53 /* FavoriteStarView.swift */,
+				518B988925675E07005FBB54 /* GeneralView.swift */,
+				51E208852567D90C001D91D2 /* LeftTicketView.swift */,
+				510CC5F12560C9F300853E56 /* MultipleEMUsListView.swift */,
+				51D880DC278B7FA100A96834 /* QRView.swift */,
+				51FAEC5E26BE840100A84AC8 /* SearchListView.swift */,
+				510CC5EB2560C8DC00853E56 /* SingleEMUListView.swift */,
+				510CC5EE2560C9D100853E56 /* SingleTrainListView.swift */,
+				518B988625675DC3005FBB54 /* TrainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -307,24 +313,12 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		51E27DBF256116BE00B22289 /* Helper */ = {
+		51E27DBF256116BE00B22289 /* ViewModifier */ = {
 			isa = PBXGroup;
 			children = (
-				78C4BDF92D0E3DF900EA4D53 /* Query.swift */,
-				78C4BDF72D0E3D6000EA4D53 /* Router.swift */,
 				78C4BDF52D0D82B300EA4D53 /* QRCodeActionSheet.swift */,
-				51E208852567D90C001D91D2 /* LeftTicketView.swift */,
-				510CC5EB2560C8DC00853E56 /* SingleEMUListView.swift */,
-				510CC5EE2560C9D100853E56 /* SingleTrainListView.swift */,
-				510CC5F12560C9F300853E56 /* MultipleEMUsListView.swift */,
-				510CC5F42560CC9A00853E56 /* EmptyView.swift */,
-				51E27DC0256116D100B22289 /* EMUView.swift */,
-				518B988625675DC3005FBB54 /* TrainView.swift */,
-				518B988925675E07005FBB54 /* GeneralView.swift */,
-				51FAEC5E26BE840100A84AC8 /* SearchListView.swift */,
-				51D880DC278B7FA100A96834 /* QRView.swift */,
 			);
-			path = Helper;
+			path = ViewModifier;
 			sourceTree = "<group>";
 		};
 		51EFCC3525273DE200EA9D54 = {
@@ -356,9 +350,15 @@
 			isa = PBXGroup;
 			children = (
 				518DFA472558332D00B29703 /* chinaemu.entitlements */,
+				51E27DBF256116BE00B22289 /* ViewModifier */,
 				518DFA412558229500B29703 /* View */,
-				51EFCC4125273DE200EA9D54 /* chinaemuApp.swift */,
+				51FAECB926BFB87800A84AC8 /* AboutView.swift */,
+				51EFCC4125273DE200EA9D54 /* ChinaEMU.swift */,
 				51EFCC4325273DE200EA9D54 /* ContentView.swift */,
+				51E27DB92561163000B22289 /* FavoritesView.swift */,
+				51E208882567E3F5001D91D2 /* LeftTicketsView.swift */,
+				518DFA42255832B800B29703 /* MoerailView.swift */,
+				518B989E25676ED5005FBB54 /* QueryView.swift */,
 				51EFCC4525273DE200EA9D54 /* Assets.xcassets */,
 				51EFCC4A25273DE200EA9D54 /* Info.plist */,
 				51EFCC4725273DE200EA9D54 /* Preview Content */,
@@ -649,17 +649,17 @@
 				510CC5EC2560C8DC00853E56 /* SingleEMUListView.swift in Sources */,
 				78C4BDF42D0D7D9C00EA4D53 /* UIImage.swift in Sources */,
 				51EFCC4425273DE200EA9D54 /* ContentView.swift in Sources */,
-				51EFCC4225273DE200EA9D54 /* chinaemuApp.swift in Sources */,
+				51EFCC4225273DE200EA9D54 /* ChinaEMU.swift in Sources */,
 				51E2087F25678BC5001D91D2 /* Station.swift in Sources */,
 				510CC5EF2560C9D100853E56 /* SingleTrainListView.swift in Sources */,
 				51E27DB22561143E00B22289 /* UserDefaults.swift in Sources */,
 				518B988A25675E07005FBB54 /* GeneralView.swift in Sources */,
-				78C4BDF82D0E3D6600EA4D53 /* Router.swift in Sources */,
 				518DFA4F255A97ED00B29703 /* CRData.swift in Sources */,
 				518DFA302557E3E200B29703 /* MoerailRequest.swift in Sources */,
 				51FF3529255C07C300EC6B8A /* TrainInfoProvider.swift in Sources */,
 				78C4BDF62D0D82B800EA4D53 /* QRCodeActionSheet.swift in Sources */,
 				51E27DBA2561163000B22289 /* FavoritesView.swift in Sources */,
+				78C4BDFC2D0E76F200EA4D53 /* FavoriteStarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

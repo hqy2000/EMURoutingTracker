@@ -33,30 +33,9 @@ struct SingleEMUListView: View {
         }
         .navigationBarItems(trailing: HStack {
             QRView().environmentObject(self.moerailData)
-            Button(action: {
-                if !FavoritesProvider.shared.contains(emu: self.moerailData.emuList.first?.emu ?? "") {
-                    FavoritesProvider.shared.add(emu: self.moerailData.emuList.first?.emu ?? "")
-                    overrideState = true
-                } else {
-                    FavoritesProvider.shared.delete(emu: self.moerailData.emuList.first?.emu ?? "")
-                    overrideState = false
-                }
-            }, label: {
-                if let state = self.overrideState {
-                    if !state {
-                        Image(systemName: "star")
-                    } else {
-                        Image(systemName: "star.fill")
-                    }
-                } else {
-                    if !FavoritesProvider.shared.contains(emu: self.moerailData.emuList.first?.emu ?? "") {
-                        Image(systemName: "star")
-                    } else {
-                        Image(systemName: "star.fill")
-                    }
-                }
-                
-            })
+            if let emu = moerailData.emuList.first?.emu {
+                FavoriteStarView(trainOrEMU: emu, provider: FavoritesProvider.EMUs)
+            }
         })
     }
 }

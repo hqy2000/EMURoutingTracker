@@ -31,13 +31,13 @@ class FavoritesData: ObservableObject {
     public func refresh(completion: (() -> Void)? = nil) {
         var taskCount = 2
         if self.favoriteTrains.isEmpty {
-            self.favoriteTrains = FavoritesProvider.shared.favoriteTrains.map({ (favorite) in
+            self.favoriteTrains = FavoritesProvider.trains.favorites.map({ (favorite) in
                 return EMU(emu: "", train: favorite.name, date: "")
             })
         }
         
         if self.favoriteEMUs.isEmpty {
-            self.favoriteEMUs = FavoritesProvider.shared.favoriteEMUs.map({ (favorite) in
+            self.favoriteEMUs = FavoritesProvider.EMUs.favorites.map({ (favorite) in
                 return EMU(emu: favorite.name, train: "", date: "")
             })
         }
@@ -50,8 +50,8 @@ class FavoritesData: ObservableObject {
         }
         lastRefresh = Date()
         
-        if !FavoritesProvider.shared.favoriteTrains.isEmpty {
-            moerailProvider.request(target: .trains(keywords: FavoritesProvider.shared.favoriteTrains.map({ favorite in
+        if !FavoritesProvider.trains.favorites.isEmpty {
+            moerailProvider.request(target: .trains(keywords: FavoritesProvider.trains.favorites.map({ favorite in
                 return favorite.name
             })), type: [EMU].self) { (result) in
                 self.favoriteTrains = result
@@ -72,8 +72,8 @@ class FavoritesData: ObservableObject {
         }
        
         
-        if !FavoritesProvider.shared.favoriteEMUs.isEmpty {
-            moerailProvider.request(target: .emus(keywords: FavoritesProvider.shared.favoriteEMUs.map({ favorite in
+        if !FavoritesProvider.EMUs.favorites.isEmpty {
+            moerailProvider.request(target: .emus(keywords: FavoritesProvider.EMUs.favorites.map({ favorite in
                 return favorite.name
             })), type: [EMU].self) { (result) in
                 self.favoriteEMUs = result

@@ -1,6 +1,6 @@
 //
-//  chinaemuApp.swift
-//  chinaemu
+//  ChinaEMU.swift
+//  ChinaEMU
 //
 //  Created by Qingyang Hu on 10/2/20.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct chinaemuApp: App {
+struct ChinaEMU: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
