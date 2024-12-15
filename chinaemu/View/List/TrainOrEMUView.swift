@@ -8,26 +8,27 @@
 import SwiftUI
 
 struct TrainOrEMUView: View {
-    @ObservedObject var moerailData = MoerailData()
+    @ObservedObject var vm = EMUTrainViewModel()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let query: String
     @Binding var path: NavigationPath
     
     var body: some View {
         HStack {
-            if moerailData.mode == .singleEmu {
-                SingleEMUList(path: $path).environmentObject(moerailData)
-            } else if moerailData.mode == .singleTrain {
-                TrainList(path: $path).environmentObject(moerailData)
-            } else if moerailData.mode == .multipleEmus {
-                MultipleEMUList(path: $path).environmentObject(moerailData)
-            } else {
-                EmptyRowView(path: $path).environmentObject(moerailData)
+            switch vm.mode {
+            case .singleEmu:
+                SingleEMUList(path: $path).environmentObject(vm)
+            case .singleTrain:
+                TrainList(path: $path).environmentObject(vm)
+            case .multipleEmus:
+                MultipleEMUList(path: $path).environmentObject(vm)
+            default:
+                EmptyRow(path: $path).environmentObject(vm)
             }
         }
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: {
-            self.moerailData.getTrackingRecord(keyword: query)
+            self.vm.getTrackingRecord(keyword: query)
         })
         
     }

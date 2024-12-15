@@ -12,7 +12,7 @@ import CodeScanner
 
 struct ScanQRCodeButton: View {
     @State var showSheet = false
-    @EnvironmentObject var moerailData: MoerailData
+    @EnvironmentObject var vm: EMUTrainViewModel
     
     var body: some View {
         Button(action: {
@@ -20,7 +20,7 @@ struct ScanQRCodeButton: View {
         }, label: {
            Image(systemName: "qrcode.viewfinder")
         }).scanQrCodeActionSheet(isPresented: $showSheet) { message in
-            moerailData.postTrackingURL(url: message)
+            vm.postTrackingURL(url: message)
         }
     }
 }

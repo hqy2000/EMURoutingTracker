@@ -8,31 +8,31 @@
 import SwiftUI
 
 struct TrainList: View {
-    @EnvironmentObject var moerailData: MoerailData
+    @EnvironmentObject var vm: EMUTrainViewModel
     @Binding var path: NavigationPath
     @State var overrideState: Bool? = nil
     var body: some View {
         List {
-            ForEach(moerailData.emuList, id: \.id) { emu in
-                TrainRowView(emu: emu, path: $path)
+            ForEach(vm.emuTrainAssocList, id: \.id) { emu in
+                TrainRow(train: emu, path: $path)
             }
         }
         .listStyle(PlainListStyle())
         .toolbar {
             ToolbarItem(placement: .principal) {
                 VStack {
-                    if let trainInfo = self.moerailData.emuList.first?.trainInfo {
-                        Text("\(self.moerailData.query)").font(.headline)
+                    if let trainInfo = self.vm.emuTrainAssocList.first?.trainInfo {
+                        Text("\(self.vm.query)").font(.headline)
                         Text("\(trainInfo.from) ⇀ \(trainInfo.to)").font(.caption2)
                     } else {
-                        Text(self.moerailData.query).font(.headline)
+                        Text(self.vm.query).font(.headline)
                     }
                 }
             }
         }
         .navigationBarItems(trailing: HStack {
-            ScanQRCodeButton().environmentObject(self.moerailData)
-            if let train = self.moerailData.emuList.first?.singleTrain {
+            ScanQRCodeButton().environmentObject(self.vm)
+            if let train = self.vm.emuTrainAssocList.first?.singleTrain {
                 FavoriteButton(trainOrEMU: train, provider: FavoritesProvider.trains)
             }
             

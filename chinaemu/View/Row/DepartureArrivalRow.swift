@@ -1,5 +1,5 @@
 //
-//  LeftTicketView.swift
+//  DepartureArrivalRow.swift
 //  chinaemu
 //
 //  Created by Qingyang Hu on 11/20/20.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct RemaingTicketRowView: View {
+struct DepartureArrivalRow: View {
     @State var showDetails: Bool = false
     
     @Binding var path: NavigationPath
-    let leftTicket: DepartureArrival
+    let departureArrival: DepartureArrival
     let emu: EMUTrainAssociation?
 
     var body: some View {
@@ -20,14 +20,14 @@ struct RemaingTicketRowView: View {
             Spacer().frame(minWidth: 3, maxWidth: 20)
             VStack(alignment: .leading) {
                 Button {
-                    path.append(Query.trainOrEmu(trainOrEmu: leftTicket.trainNo))
+                    path.append(Query.trainOrEmu(trainOrEmu: departureArrival.trainNo))
                 } label: {
-                    Text(leftTicket.trainNo)
+                    Text(departureArrival.trainNo)
                         .font(.system(.title3, design: .monospaced))
                 }.buttonStyle(.borderless)
                 .frame(width: 100, alignment: .leading)
 
-                if !leftTicket.isEMU {
+                if !departureArrival.isEMU {
                     Text("非动车组")
                         .foregroundColor(.gray)
                         .font(Font.caption)
@@ -53,10 +53,10 @@ struct RemaingTicketRowView: View {
             }
             
             VStack(alignment: .leading) {
-                Text(leftTicket.departureStation)
+                Text(departureArrival.departureStation)
                     .font(.callout)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Text(leftTicket.departureTime)
+                Text(departureArrival.departureTime)
                     .font(.system(.callout, design: .monospaced))
             }.frame(width: 90)
             
@@ -64,11 +64,11 @@ struct RemaingTicketRowView: View {
             Image(systemName: "arrow.right")
             Spacer(minLength: 3)
             VStack(alignment: .trailing) {
-                Text(leftTicket.arrivalStation)
+                Text(departureArrival.arrivalStation)
                     .font(.callout)
                     .fixedSize()
                     .frame(maxWidth: .infinity, alignment: .trailing)
-                Text(leftTicket.arrivalTime)
+                Text(departureArrival.arrivalTime)
                     .font(.system(.callout, design: .monospaced))
                     .fixedSize()
             }.frame(width: 90)
@@ -76,11 +76,11 @@ struct RemaingTicketRowView: View {
     }
 }
 
-struct LeftTicketView_Previews: PreviewProvider {
+struct DepartureArrivalRow_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            RemaingTicketRowView(path: Binding.constant(NavigationPath()), leftTicket: DepartureArrival(departureTime: "12:00", departureStation: "南京南", arrivalTime: "12:59", arrivalStation: "上海虹桥", trainNo: "G1245"), emu: EMUTrainAssociation(emu: "CRH2A2001325", train: "G123", date: "2020-12-21"))
-            RemaingTicketRowView(path: Binding.constant(NavigationPath()), leftTicket: DepartureArrival(departureTime: "06:00", departureStation: "南京南", arrivalTime: "12:59", arrivalStation: "上海  虹桥", trainNo: "Z1245"), emu: nil)
+            DepartureArrivalRow(path: Binding.constant(NavigationPath()), departureArrival: DepartureArrival(departureTime: "12:00", departureStation: "南京南", arrivalTime: "12:59", arrivalStation: "上海虹桥", trainNo: "G1245"), emu: EMUTrainAssociation(emu: "CRH2A2001325", train: "G123", date: "2020-12-21"))
+            DepartureArrivalRow(path: Binding.constant(NavigationPath()), departureArrival: DepartureArrival(departureTime: "06:00", departureStation: "南京南", arrivalTime: "12:59", arrivalStation: "上海  虹桥", trainNo: "Z1245"), emu: nil)
         }
     }
 }

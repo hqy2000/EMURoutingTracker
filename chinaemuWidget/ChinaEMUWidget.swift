@@ -11,22 +11,22 @@ import Intents
 import chinaemuFramework
 
 struct Provider: TimelineProvider {
-    let favoriteData = FavoritesData()
+    let vm = FavoritesViewModel()
     func placeholder(in context: Context) -> FavoritesEntry {
-        let entry = FavoritesEntry(date: Date(), favoriteTrains: [EMU(emu: "CRH2C2001", train: "D0001", date: "20210102")], favoriteEmus: [EMU(emu: "CR400AF0001", train: "G1", date: "20210102")])
+        let entry = FavoritesEntry(date: Date(), favoriteTrains: [EMUTrainAssociation(emu: "CRH2C2001", train: "D0001", date: "20210102")], favoriteEmus: [EMUTrainAssociation(emu: "CR400AF0001", train: "G1", date: "20210102")])
         return entry
     }
 
     func getSnapshot(in context: Context, completion: @escaping (FavoritesEntry) -> ()) {
-        favoriteData.refresh {
-            let entry = FavoritesEntry(date: Date(), favoriteTrains: favoriteData.favoriteTrains, favoriteEmus: favoriteData.favoriteEMUs)
+        vm.refresh {
+            let entry = FavoritesEntry(date: Date(), favoriteTrains: vm.favoriteTrains, favoriteEmus: vm.favoriteEMUs)
             completion(entry)
         }
     }
 
     func getTimeline( in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        favoriteData.refresh {
-            let entry = FavoritesEntry(date: Date(), favoriteTrains: favoriteData.favoriteTrains, favoriteEmus: favoriteData.favoriteEMUs)
+        vm.refresh {
+            let entry = FavoritesEntry(date: Date(), favoriteTrains: vm.favoriteTrains, favoriteEmus: vm.favoriteEMUs)
             let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
 
             let timeline = Timeline(
@@ -42,8 +42,8 @@ struct Provider: TimelineProvider {
 
 struct FavoritesEntry: TimelineEntry {
     var date: Date
-    var favoriteTrains: [EMU]
-    var favoriteEmus: [EMU]
+    var favoriteTrains: [EMUTrainAssociation]
+    var favoriteEmus: [EMUTrainAssociation]
 }
 
 struct WidgetSingleColumnEntryView : View {
@@ -71,9 +71,9 @@ struct WidgetSingleColumnEntryView : View {
 
 
 struct EMUView: View {
-    let emu: EMU
+    let emu: EMUTrainAssociation
     
-    init(_ emu: EMU) {
+    init(_ emu: EMUTrainAssociation) {
         self.emu = emu
     }
     var body: some View {
@@ -90,19 +90,19 @@ struct EMUView: View {
 }
 
 struct TrainView: View {
-    let emu: EMU
+    let train: EMUTrainAssociation
     
-    init(_ emu: EMU) {
-        self.emu = emu
+    init(_ train: EMUTrainAssociation) {
+        self.train = train
     }
     var body: some View {
         HStack {
-            Image(emu.image).resizable().scaledToFit().frame(height: 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding(.leading, 1).padding(.trailing, -6)
-            Text(emu.shortTrain)
+            Image(train.image).resizable().scaledToFit().frame(height: 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding(.leading, 1).padding(.trailing, -6)
+            Text(train.shortTrain)
                 .font(.system(.caption2, design: .monospaced))
             Spacer()
-            Text(emu.shortName)
-                .foregroundColor(emu.color)
+            Text(train.shortName)
+                .foregroundColor(train.color)
                 .font(.system(.caption2, design: .monospaced))
         }
     }
@@ -127,7 +127,7 @@ struct ChinaEMUWidget: Widget {
 
 struct ChinaEMUWidget_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetSingleColumnEntryView(entry: FavoritesEntry(date: Date(), favoriteTrains: [EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"),EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"),EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"),EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101")], favoriteEmus: [EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"),EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"),EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"),EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"),EMU(emu: "CRH2A0000", train: "D1323/1231", date: "20210101")]))
+        WidgetSingleColumnEntryView(entry: FavoritesEntry(date: Date(), favoriteTrains: [EMUTrainAssociation(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"), EMUTrainAssociation(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"), EMUTrainAssociation(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"), EMUTrainAssociation(emu: "CRH2A0000", train: "D1323/1231", date: "20210101")], favoriteEmus: [EMUTrainAssociation(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"), EMUTrainAssociation(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"), EMUTrainAssociation(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"), EMUTrainAssociation(emu: "CRH2A0000", train: "D1323/1231", date: "20210101"), EMUTrainAssociation(emu: "CRH2A0000", train: "D1323/1231", date: "20210101")]))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

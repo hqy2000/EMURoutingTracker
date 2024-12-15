@@ -7,30 +7,30 @@
 
 import SwiftUI
 
-struct EmptyRowView: View {
+struct EmptyRow: View {
     @State var query = ""
     @State var showActionSheet = false
     @Binding var path: NavigationPath
-    @EnvironmentObject var moerailData: MoerailData
+    @EnvironmentObject var vm: EMUTrainViewModel
     
     var body: some View {
         VStack(spacing: 10) {
-            switch moerailData.mode {
+            switch vm.mode {
             case .emptyEmu:
                 Image(systemSymbol: .tram).resizable().aspectRatio(contentMode: .fit).frame(width: 30, height: 30, alignment: .center)
-                Text("暂未收录\"\(moerailData.query)\"").foregroundColor(.gray)
+                Text("暂未收录\"\(vm.query)\"").foregroundColor(.gray)
                 Button("上报相关信息") {
                     self.showActionSheet = true
                 }
                 .scanQrCodeActionSheet(isPresented: $showActionSheet) { url in
-                    moerailData.postTrackingURL(url: url)
+                    vm.postTrackingURL(url: url)
                 }
             case .emptyTrain:
                 Image(systemSymbol: .tram).resizable().aspectRatio(contentMode: .fit).frame(width: 30, height: 30, alignment: .center)
-                Text("暂未收录\"\(moerailData.query)\"\n可尝试搜索相关车组号").foregroundColor(.gray).multilineTextAlignment(.center)
+                Text("暂未收录\"\(vm.query)\"\n可尝试搜索相关车组号").foregroundColor(.gray).multilineTextAlignment(.center)
             case .error:
                 Image(systemSymbol: .multiply).resizable().aspectRatio(contentMode: .fit).frame(width: 30, height: 30, alignment: .center)
-                Text(moerailData.errorMessage).foregroundColor(.gray)
+                Text(vm.errorMessage).foregroundColor(.gray)
             default:
                 Image(systemSymbol: .magnifyingglass).resizable().aspectRatio(contentMode: .fit).frame(width: 30, height: 30, alignment: .center)
                 Text("加载中")
@@ -41,6 +41,6 @@ struct EmptyRowView: View {
 
 struct EmptyView_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyRowView(path: Binding.constant(NavigationPath()))
+        EmptyRow(path: Binding.constant(NavigationPath()))
     }
 } 

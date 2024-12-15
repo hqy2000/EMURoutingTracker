@@ -1,5 +1,5 @@
 //
-//  LeftTicket.swift
+//  DepartureArrival.swift
 //  chinaemu
 //
 //  Created by Qingyang Hu on 11/20/20.
@@ -9,13 +9,13 @@ import Foundation
 
 struct DepartureArrivalV2: Codable, Hashable, Identifiable {
     var id: String {
-        return leftTicket.id
+        return v1.id
     }
     
-    let leftTicket: DepartureArrival
+    let v1: DepartureArrival
     
     enum CodingKeys: String, CodingKey {
-        case leftTicket = "queryLeftNewDTO"
+        case v1 = "queryLeftNewDTO"
     }
 }
 

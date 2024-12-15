@@ -1,5 +1,5 @@
 //
-//  LeftTicketsView.swift
+//  DepartureArrivalList.swift
 //  chinaemu
 //
 //  Created by Qingyang Hu on 11/20/20.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DepartureArrivalList: View {
-    @ObservedObject var crData = CRData()
+    @ObservedObject var vm = DepartureArrivalViewModel()
     
     let departure: String
     let arrival: String
@@ -18,12 +18,12 @@ struct DepartureArrivalList: View {
     
     var body: some View {
         List {
-            ForEach(crData.leftTickets, id: \.id) { (leftTicket) in
-                RemaingTicketRowView(path: $path, leftTicket: leftTicket.leftTicket, emu: crData.emus.first(where: {$0.train == leftTicket.leftTicket.trainNo}))
+            ForEach(vm.departureArrivals, id: \.id) { (departureArrival) in
+                DepartureArrivalRow(path: $path, departureArrival: departureArrival.v1, emu: vm.emuTrainAssocs.first(where: {$0.train == departureArrival.v1.trainNo}))
             }
         }.onAppear(perform: {
-            if self.crData.leftTickets.isEmpty {
-                self.crData.getLeftTickets(from: self.departure, to: self.arrival, date: date)
+            if self.vm.departureArrivals.isEmpty {
+                self.vm.getLeftTickets(from: self.departure, to: self.arrival, date: date)
             }
         }).navigationTitle("发着查询")
     }

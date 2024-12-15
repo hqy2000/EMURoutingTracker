@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct MultipleEMUList: View {
-    @EnvironmentObject var moerailData: MoerailData
+    @EnvironmentObject var vm: EMUTrainViewModel
     @Binding var path: NavigationPath
     
     var body: some View {
         List {
-            ForEach(moerailData.groupByDay.keys.sorted().reversed(), id: \.self) { key in
+            ForEach(vm.groupedByDay.keys.sorted().reversed(), id: \.self) { key in
                 Section(header: Text(key)) {
-                    ForEach(moerailData.groupByDay[key] ?? [], id: \.id) { emu in
-                        GeneralRowView(emu: emu, path: $path)
+                    ForEach(vm.groupedByDay[key] ?? [], id: \.id) { emu in
+                        EMUAndTrainRow(emuTrainAssoc: emu, path: $path)
                     }
                 }
             }
@@ -25,7 +25,7 @@ struct MultipleEMUList: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack {
-                    Text(moerailData.query).font(.headline)
+                    Text(vm.query).font(.headline)
                 }
             }
         }

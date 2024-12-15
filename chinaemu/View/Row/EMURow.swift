@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EMURowView: View {
+struct EMURow: View {
     @State var activeLink: Int? = nil
     let emu: EMUTrainAssociation
     @Binding var path: NavigationPath
@@ -33,6 +33,6 @@ struct EMURowView: View {
 
 struct EMUView_Previews: PreviewProvider {
     static var previews: some View {
-        EMURowView(emu: EMUTrainAssociation(emu: "a", train: "a", date: "a"), path: Binding.constant(NavigationPath()))
+        EMURow(emu: EMUTrainAssociation(emu: "a", train: "a", date: "a"), path: Binding.constant(NavigationPath()))
     }
 }

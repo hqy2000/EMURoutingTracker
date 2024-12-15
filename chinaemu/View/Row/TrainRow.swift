@@ -7,22 +7,22 @@
 
 import SwiftUI
 
-struct TrainRowView: View {
-    let emu: EMUTrainAssociation
+struct TrainRow: View {
+    let train: EMUTrainAssociation
     @Binding var path: NavigationPath
     
     var body: some View {
         HStack {
-            Image(emu.image).resizable().scaledToFit().frame(height: 28)
+            Image(train.image).resizable().scaledToFit().frame(height: 28)
             Button {
-                path.append(Query.trainOrEmu(trainOrEmu: emu.emu))
+                path.append(Query.trainOrEmu(trainOrEmu: train.emu))
             } label: {
-                Text(emu.emu)
-                    .foregroundColor(emu.color)
+                Text(train.emu)
+                    .foregroundColor(train.color)
                     .font(.system(.body, design: .monospaced))
             }
             Spacer()
-            Text(emu.date)
+            Text(train.date)
                 .font(Font.caption.monospacedDigit())
         }
     }
@@ -30,6 +30,6 @@ struct TrainRowView: View {
 
 struct TrainView_Previews: PreviewProvider {
     static var previews: some View {
-        TrainRowView(emu: EMUTrainAssociation(emu: "CRH2A2001", train: "G2", date: "2020-12-01"), path: Binding.constant(NavigationPath()))
+        TrainRow(train: EMUTrainAssociation(emu: "CRH2A2001", train: "G2", date: "2020-12-01"), path: Binding.constant(NavigationPath()))
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import SwiftyUserDefaults
 
-class FavoritesData: ObservableObject {
+class FavoritesViewModel: ObservableObject {
     let moerailProvider = AbstractProvider<MoerailRequest>();
     @Published var favoriteEMUs: [EMUTrainAssociation] = []
     @Published var favoriteTrains: [EMUTrainAssociation] = []

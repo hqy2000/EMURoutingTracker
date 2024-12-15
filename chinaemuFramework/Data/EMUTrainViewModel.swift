@@ -10,11 +10,11 @@ import SwiftUI
 import BackgroundTasks
 import UserNotifications
 
-class MoerailData: ObservableObject {
+class EMUTrainViewModel: ObservableObject {
     let moerailProvider = AbstractProvider<MoerailRequest>();
     let crProvider = AbstractProvider<CRRequest>();
     
-    @Published var emuList = [EMUTrainAssociation]()
+    @Published var emuTrainAssocList = [EMUTrainAssociation]()
     @Published var mode: Mode = .loading
     @Published var query = ""
     @Published var errorMessage = ""
@@ -29,8 +29,8 @@ class MoerailData: ObservableObject {
         case multipleEmus
     }
     
-    var groupByDay: [String: [EMUTrainAssociation]] {
-        return Dictionary(grouping: self.emuList, by: { $0.date })
+    var groupedByDay: [String: [EMUTrainAssociation]] {
+        return Dictionary(grouping: self.emuTrainAssocList, by: { $0.date })
     }
     
     public func postTrackingURL(url: String, completion: (() -> Void)? = nil) {
@@ -45,20 +45,20 @@ class MoerailData: ObservableObject {
         self.query = keyword
         self.mode = .loading
         if (keyword.trimmingCharacters(in: .whitespaces).isEmpty) {
-            self.emuList = []
+            self.emuTrainAssocList = []
             self.mode = .emptyTrain
         } else if (keyword.starts(with: "C") && !keyword.starts(with: "CR")) || keyword.starts(with: "G") || keyword.starts(with: "D") {
             self.moerailProvider.request(target: .train(keyword: keyword), type: [EMUTrainAssociation].self) { results in
-                self.emuList = results
-                for (index, emu) in self.emuList.enumerated() {
+                self.emuTrainAssocList = results
+                for (index, emu) in self.emuTrainAssocList.enumerated() {
                     TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { (trainInfo) in
-                        if self.emuList.count > index {
-                            self.emuList[index].trainInfo = trainInfo
+                        if self.emuTrainAssocList.count > index {
+                            self.emuTrainAssocList[index].trainInfo = trainInfo
                         }
                     }
                 }
                 
-                if self.emuList.isEmpty {
+                if self.emuTrainAssocList.isEmpty {
                     self.mode = .emptyTrain
                 } else {
                     self.mode = .singleTrain
@@ -68,22 +68,22 @@ class MoerailData: ObservableObject {
             }
             
         } else {
-            self.emuList = []
+            self.emuTrainAssocList = []
             self.moerailProvider.request(target: .emu(keyword: keyword), type: [EMUTrainAssociation].self) { results in
-                self.emuList = results
+                self.emuTrainAssocList = results
                 
-                for (index, emu) in self.emuList.enumerated() {
-                    if index > 0 && self.emuList[index].emu != self.emuList[index - 1].emu {
+                for (index, emu) in self.emuTrainAssocList.enumerated() {
+                    if index > 0 && self.emuTrainAssocList[index].emu != self.emuTrainAssocList[index - 1].emu {
                         self.mode = .multipleEmus
                     }
                     TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { (trainInfo) in
-                        if self.emuList.count > index {
-                            self.emuList[index].trainInfo = trainInfo
+                        if self.emuTrainAssocList.count > index {
+                            self.emuTrainAssocList[index].trainInfo = trainInfo
                         }
                     }
                 }
                 
-                if self.emuList.isEmpty {
+                if self.emuTrainAssocList.isEmpty {
                     self.mode = .emptyEmu
                 } else if self.mode == .loading {
                     self.mode = .singleEmu

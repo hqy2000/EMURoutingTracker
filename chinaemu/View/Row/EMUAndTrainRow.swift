@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct GeneralRowView: View {
+struct EMUAndTrainRow: View {
     @State var activeLink: Int? = nil
-    let emu: EMUTrainAssociation
+    let emuTrainAssoc: EMUTrainAssociation
     @Binding var path: NavigationPath
     
     var body: some View {
         HStack {
-            Image(emu.image).resizable().scaledToFit().frame(height: 28)
+            Image(emuTrainAssoc.image).resizable().scaledToFit().frame(height: 28)
             
             Button {
-                path.append(Query.trainOrEmu(trainOrEmu: emu.emu))
+                path.append(Query.trainOrEmu(trainOrEmu: emuTrainAssoc.emu))
             } label: {
-                Text(emu.emu)
-                    .foregroundColor(emu.color)
+                Text(emuTrainAssoc.emu)
+                    .foregroundColor(emuTrainAssoc.color)
                     .font(.system(.body, design: .monospaced))
             }
             
@@ -30,15 +30,15 @@ struct GeneralRowView: View {
                 HStack {
                     Spacer()
                     Button {
-                        path.append(Query.trainOrEmu(trainOrEmu: emu.train))
+                        path.append(Query.trainOrEmu(trainOrEmu: emuTrainAssoc.train))
                     } label: {
-                        Text(emu.train)
+                        Text(emuTrainAssoc.train)
                             .font(.system(.callout, design: .monospaced))
                     }
                 }
                 HStack {
                     Spacer()
-                    if let trainInfo = emu.trainInfo {
+                    if let trainInfo = emuTrainAssoc.trainInfo {
                         Text("\(trainInfo.from) ⇀ \(trainInfo.to)").font(.system(.caption2, design: .monospaced))
                     }
                 }
@@ -49,6 +49,6 @@ struct GeneralRowView: View {
 
 struct GeneralView_Previews: PreviewProvider {
     static var previews: some View {
-        GeneralRowView(emu: EMUTrainAssociation(emu: "CRH2A2001", train: "G2", date: "2020-12-01"), path: Binding.constant(NavigationPath()))
+        EMUAndTrainRow(emuTrainAssoc: EMUTrainAssociation(emu: "CRH2A2001", train: "G2", date: "2020-12-01"), path: Binding.constant(NavigationPath()))
     }
 }

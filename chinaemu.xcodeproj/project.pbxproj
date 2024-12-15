@@ -10,18 +10,18 @@
 		510CC5EC2560C8DC00853E56 /* SingleEMUList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5EB2560C8DC00853E56 /* SingleEMUList.swift */; };
 		510CC5EF2560C9D100853E56 /* TrainList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5EE2560C9D100853E56 /* TrainList.swift */; };
 		510CC5F22560C9F300853E56 /* MultipleEMUList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F12560C9F300853E56 /* MultipleEMUList.swift */; };
-		510CC5F52560CC9A00853E56 /* EmptyRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F42560CC9A00853E56 /* EmptyRowView.swift */; };
-		518B988725675DC3005FBB54 /* TrainRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988625675DC3005FBB54 /* TrainRowView.swift */; };
-		518B988A25675E07005FBB54 /* GeneralRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988925675E07005FBB54 /* GeneralRowView.swift */; };
-		518B988D2567655A005FBB54 /* FavoritesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988C2567655A005FBB54 /* FavoritesData.swift */; };
+		510CC5F52560CC9A00853E56 /* EmptyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510CC5F42560CC9A00853E56 /* EmptyRow.swift */; };
+		518B988725675DC3005FBB54 /* TrainRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988625675DC3005FBB54 /* TrainRow.swift */; };
+		518B988A25675E07005FBB54 /* EMUAndTrainRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988925675E07005FBB54 /* EMUAndTrainRow.swift */; };
+		518B988D2567655A005FBB54 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988C2567655A005FBB54 /* FavoritesViewModel.swift */; };
 		518B98932567664A005FBB54 /* FavoritesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B98922567664A005FBB54 /* FavoritesProvider.swift */; };
 		518B989F25676ED5005FBB54 /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B989E25676ED5005FBB54 /* QueryView.swift */; };
 		518DFA302557E3E200B29703 /* MoerailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA2F2557E3E200B29703 /* MoerailRequest.swift */; };
 		518DFA3525581C2000B29703 /* EMUTrainAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3425581C2000B29703 /* EMUTrainAssociation.swift */; };
-		518DFA3B25581CD300B29703 /* MoerailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3A25581CD300B29703 /* MoerailData.swift */; };
+		518DFA3B25581CD300B29703 /* EMUTrainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3A25581CD300B29703 /* EMUTrainViewModel.swift */; };
 		518DFA3E25581D7A00B29703 /* AbstractProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3D25581D7A00B29703 /* AbstractProvider.swift */; };
 		518DFA43255832B800B29703 /* TrainOrEMUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA42255832B800B29703 /* TrainOrEMUView.swift */; };
-		518DFA4F255A97ED00B29703 /* CRData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA4E255A97ED00B29703 /* CRData.swift */; };
+		518DFA4F255A97ED00B29703 /* DepartureArrivalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA4E255A97ED00B29703 /* DepartureArrivalViewModel.swift */; };
 		518DFA52255A97FB00B29703 /* CRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA51255A97FB00B29703 /* CRRequest.swift */; };
 		518DFA55255A9F3C00B29703 /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA54255A9F3C00B29703 /* Train.swift */; };
 		518DFA58255A9FEE00B29703 /* CRResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA57255A9FEE00B29703 /* CRResponse.swift */; };
@@ -30,11 +30,11 @@
 		51E2087C25678BA5001D91D2 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2087B25678BA5001D91D2 /* StationProvider.swift */; };
 		51E2087F25678BC5001D91D2 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2087E25678BC5001D91D2 /* Station.swift */; };
 		51E20883256797EB001D91D2 /* DepartureArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E20882256797EB001D91D2 /* DepartureArrival.swift */; };
-		51E208862567D90C001D91D2 /* RemaingTicketRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E208852567D90C001D91D2 /* RemaingTicketRowView.swift */; };
+		51E208862567D90C001D91D2 /* DepartureArrivalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E208852567D90C001D91D2 /* DepartureArrivalRow.swift */; };
 		51E208892567E3F5001D91D2 /* DepartureArrivalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E208882567E3F5001D91D2 /* DepartureArrivalList.swift */; };
 		51E27DB22561143E00B22289 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DB12561143E00B22289 /* UserDefaults.swift */; };
 		51E27DBA2561163000B22289 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DB92561163000B22289 /* FavoritesView.swift */; };
-		51E27DC1256116D100B22289 /* EMURowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DC0256116D100B22289 /* EMURowView.swift */; };
+		51E27DC1256116D100B22289 /* EMURow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DC0256116D100B22289 /* EMURow.swift */; };
 		51EFCC4225273DE200EA9D54 /* ChinaEMU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFCC4125273DE200EA9D54 /* ChinaEMU.swift */; };
 		51EFCC4425273DE200EA9D54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFCC4325273DE200EA9D54 /* ContentView.swift */; };
 		51EFCC4625273DE200EA9D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4525273DE200EA9D54 /* Assets.xcassets */; };
@@ -56,9 +56,9 @@
 		51FAECAC26BEBBA600A84AC8 /* TrainInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF3528255C07C300EC6B8A /* TrainInfoProvider.swift */; };
 		51FAECAD26BEBBA900A84AC8 /* AbstractProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3D25581D7A00B29703 /* AbstractProvider.swift */; };
 		51FAECAE26BEBBAC00A84AC8 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27DB12561143E00B22289 /* UserDefaults.swift */; };
-		51FAECAF26BEBBAF00A84AC8 /* MoerailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3A25581CD300B29703 /* MoerailData.swift */; };
-		51FAECB026BEBBB100A84AC8 /* CRData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA4E255A97ED00B29703 /* CRData.swift */; };
-		51FAECB126BEBBB400A84AC8 /* FavoritesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988C2567655A005FBB54 /* FavoritesData.swift */; };
+		51FAECAF26BEBBAF00A84AC8 /* EMUTrainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3A25581CD300B29703 /* EMUTrainViewModel.swift */; };
+		51FAECB026BEBBB100A84AC8 /* DepartureArrivalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA4E255A97ED00B29703 /* DepartureArrivalViewModel.swift */; };
+		51FAECB126BEBBB400A84AC8 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B988C2567655A005FBB54 /* FavoritesViewModel.swift */; };
 		51FAECB226BEBBBC00A84AC8 /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA54255A9F3C00B29703 /* Train.swift */; };
 		51FAECB326BEBBBC00A84AC8 /* DepartureArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E20882256797EB001D91D2 /* DepartureArrival.swift */; };
 		51FAECB426BEBBBC00A84AC8 /* EMUTrainAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA3425581C2000B29703 /* EMUTrainAssociation.swift */; };
@@ -151,22 +151,22 @@
 		510CC5EB2560C8DC00853E56 /* SingleEMUList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEMUList.swift; sourceTree = "<group>"; };
 		510CC5EE2560C9D100853E56 /* TrainList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainList.swift; sourceTree = "<group>"; };
 		510CC5F12560C9F300853E56 /* MultipleEMUList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleEMUList.swift; sourceTree = "<group>"; };
-		510CC5F42560CC9A00853E56 /* EmptyRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyRowView.swift; sourceTree = "<group>"; };
+		510CC5F42560CC9A00853E56 /* EmptyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyRow.swift; sourceTree = "<group>"; };
 		5144910A2567EA3500D199EB /* ios-quickEMU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "ios-quickEMU.app"; path = "/Users/qingyanghu/Documents/Github/moerail-ios/build/Debug-iphoneos/ios-quickEMU.app"; sourceTree = "<absolute>"; };
 		518001BF256A1550003624A5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		518001C1256A1550003624A5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		518B988625675DC3005FBB54 /* TrainRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainRowView.swift; sourceTree = "<group>"; };
-		518B988925675E07005FBB54 /* GeneralRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRowView.swift; sourceTree = "<group>"; };
-		518B988C2567655A005FBB54 /* FavoritesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesData.swift; sourceTree = "<group>"; };
+		518B988625675DC3005FBB54 /* TrainRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainRow.swift; sourceTree = "<group>"; };
+		518B988925675E07005FBB54 /* EMUAndTrainRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMUAndTrainRow.swift; sourceTree = "<group>"; };
+		518B988C2567655A005FBB54 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		518B98922567664A005FBB54 /* FavoritesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesProvider.swift; sourceTree = "<group>"; };
 		518B989E25676ED5005FBB54 /* QueryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
 		518DFA2F2557E3E200B29703 /* MoerailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoerailRequest.swift; sourceTree = "<group>"; };
 		518DFA3425581C2000B29703 /* EMUTrainAssociation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMUTrainAssociation.swift; sourceTree = "<group>"; };
-		518DFA3A25581CD300B29703 /* MoerailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoerailData.swift; sourceTree = "<group>"; };
+		518DFA3A25581CD300B29703 /* EMUTrainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMUTrainViewModel.swift; sourceTree = "<group>"; };
 		518DFA3D25581D7A00B29703 /* AbstractProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractProvider.swift; sourceTree = "<group>"; };
 		518DFA42255832B800B29703 /* TrainOrEMUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainOrEMUView.swift; sourceTree = "<group>"; };
 		518DFA472558332D00B29703 /* chinaemu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = chinaemu.entitlements; sourceTree = "<group>"; };
-		518DFA4E255A97ED00B29703 /* CRData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRData.swift; sourceTree = "<group>"; };
+		518DFA4E255A97ED00B29703 /* DepartureArrivalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureArrivalViewModel.swift; sourceTree = "<group>"; };
 		518DFA51255A97FB00B29703 /* CRRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRRequest.swift; sourceTree = "<group>"; };
 		518DFA54255A9F3C00B29703 /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
 		518DFA57255A9FEE00B29703 /* CRResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRResponse.swift; sourceTree = "<group>"; };
@@ -175,11 +175,11 @@
 		51E2087B25678BA5001D91D2 /* StationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationProvider.swift; sourceTree = "<group>"; };
 		51E2087E25678BC5001D91D2 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		51E20882256797EB001D91D2 /* DepartureArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureArrival.swift; sourceTree = "<group>"; };
-		51E208852567D90C001D91D2 /* RemaingTicketRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemaingTicketRowView.swift; sourceTree = "<group>"; };
+		51E208852567D90C001D91D2 /* DepartureArrivalRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureArrivalRow.swift; sourceTree = "<group>"; };
 		51E208882567E3F5001D91D2 /* DepartureArrivalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureArrivalList.swift; sourceTree = "<group>"; };
 		51E27DB12561143E00B22289 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		51E27DB92561163000B22289 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
-		51E27DC0256116D100B22289 /* EMURowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMURowView.swift; sourceTree = "<group>"; };
+		51E27DC0256116D100B22289 /* EMURow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMURow.swift; sourceTree = "<group>"; };
 		51EFCC3E25273DE200EA9D54 /* chinaemu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chinaemu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51EFCC4125273DE200EA9D54 /* ChinaEMU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinaEMU.swift; sourceTree = "<group>"; };
 		51EFCC4325273DE200EA9D54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -284,9 +284,9 @@
 		518DFA3925581CC500B29703 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				518B988C2567655A005FBB54 /* FavoritesData.swift */,
-				518DFA3A25581CD300B29703 /* MoerailData.swift */,
-				518DFA4E255A97ED00B29703 /* CRData.swift */,
+				518B988C2567655A005FBB54 /* FavoritesViewModel.swift */,
+				518DFA3A25581CD300B29703 /* EMUTrainViewModel.swift */,
+				518DFA4E255A97ED00B29703 /* DepartureArrivalViewModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -418,11 +418,11 @@
 		78C4BE042D0EBACD00EA4D53 /* Row */ = {
 			isa = PBXGroup;
 			children = (
-				510CC5F42560CC9A00853E56 /* EmptyRowView.swift */,
-				51E208852567D90C001D91D2 /* RemaingTicketRowView.swift */,
-				51E27DC0256116D100B22289 /* EMURowView.swift */,
-				518B988625675DC3005FBB54 /* TrainRowView.swift */,
-				518B988925675E07005FBB54 /* GeneralRowView.swift */,
+				51E208852567D90C001D91D2 /* DepartureArrivalRow.swift */,
+				510CC5F42560CC9A00853E56 /* EmptyRow.swift */,
+				51E27DC0256116D100B22289 /* EMURow.swift */,
+				518B988925675E07005FBB54 /* EMUAndTrainRow.swift */,
+				518B988625675DC3005FBB54 /* TrainRow.swift */,
 			);
 			path = Row;
 			sourceTree = "<group>";
@@ -673,7 +673,7 @@
 				51FAECBA26BFB87800A84AC8 /* AboutView.swift in Sources */,
 				518B98932567664A005FBB54 /* FavoritesProvider.swift in Sources */,
 				518DFA5B255AEC0000B29703 /* AppDelegate.swift in Sources */,
-				518DFA3B25581CD300B29703 /* MoerailData.swift in Sources */,
+				518DFA3B25581CD300B29703 /* EMUTrainViewModel.swift in Sources */,
 				510CC5F22560C9F300853E56 /* MultipleEMUList.swift in Sources */,
 				518DFA55255A9F3C00B29703 /* Train.swift in Sources */,
 				518DFA3E25581D7A00B29703 /* AbstractProvider.swift in Sources */,
@@ -681,19 +681,19 @@
 				78C4BDFE2D0E7FC100EA4D53 /* QueryNavigationModifier.swift in Sources */,
 				518DFA52255A97FB00B29703 /* CRRequest.swift in Sources */,
 				51E2087C25678BA5001D91D2 /* StationProvider.swift in Sources */,
-				51E208862567D90C001D91D2 /* RemaingTicketRowView.swift in Sources */,
+				51E208862567D90C001D91D2 /* DepartureArrivalRow.swift in Sources */,
 				518DFA58255A9FEE00B29703 /* CRResponse.swift in Sources */,
-				518B988725675DC3005FBB54 /* TrainRowView.swift in Sources */,
+				518B988725675DC3005FBB54 /* TrainRow.swift in Sources */,
 				51E20883256797EB001D91D2 /* DepartureArrival.swift in Sources */,
-				510CC5F52560CC9A00853E56 /* EmptyRowView.swift in Sources */,
+				510CC5F52560CC9A00853E56 /* EmptyRow.swift in Sources */,
 				51E208892567E3F5001D91D2 /* DepartureArrivalList.swift in Sources */,
 				518DFA3525581C2000B29703 /* EMUTrainAssociation.swift in Sources */,
 				518B989F25676ED5005FBB54 /* QueryView.swift in Sources */,
 				518DFA43255832B800B29703 /* TrainOrEMUView.swift in Sources */,
-				51E27DC1256116D100B22289 /* EMURowView.swift in Sources */,
+				51E27DC1256116D100B22289 /* EMURow.swift in Sources */,
 				51FAEC5F26BE840100A84AC8 /* StationPicker.swift in Sources */,
 				78C4BDFA2D0E3DFC00EA4D53 /* Query.swift in Sources */,
-				518B988D2567655A005FBB54 /* FavoritesData.swift in Sources */,
+				518B988D2567655A005FBB54 /* FavoritesViewModel.swift in Sources */,
 				510CC5EC2560C8DC00853E56 /* SingleEMUList.swift in Sources */,
 				78C4BDF42D0D7D9C00EA4D53 /* UIImage.swift in Sources */,
 				51EFCC4425273DE200EA9D54 /* ContentView.swift in Sources */,
@@ -702,8 +702,8 @@
 				510CC5EF2560C9D100853E56 /* TrainList.swift in Sources */,
 				78C4BE032D0E827500EA4D53 /* DateFormatter.swift in Sources */,
 				51E27DB22561143E00B22289 /* UserDefaults.swift in Sources */,
-				518B988A25675E07005FBB54 /* GeneralRowView.swift in Sources */,
-				518DFA4F255A97ED00B29703 /* CRData.swift in Sources */,
+				518B988A25675E07005FBB54 /* EMUAndTrainRow.swift in Sources */,
+				518DFA4F255A97ED00B29703 /* DepartureArrivalViewModel.swift in Sources */,
 				518DFA302557E3E200B29703 /* MoerailRequest.swift in Sources */,
 				51FF3529255C07C300EC6B8A /* TrainInfoProvider.swift in Sources */,
 				78C4BDF62D0D82B800EA4D53 /* ScanQRCodeActionSheetModifier.swift in Sources */,
@@ -720,12 +720,12 @@
 				51FAECAC26BEBBA600A84AC8 /* TrainInfoProvider.swift in Sources */,
 				51FAECB726BEBBBF00A84AC8 /* MoerailRequest.swift in Sources */,
 				51FAECAA26BEBB9C00A84AC8 /* FavoritesProvider.swift in Sources */,
-				51FAECB026BEBBB100A84AC8 /* CRData.swift in Sources */,
+				51FAECB026BEBBB100A84AC8 /* DepartureArrivalViewModel.swift in Sources */,
 				51FAECAB26BEBBA300A84AC8 /* StationProvider.swift in Sources */,
 				51FAECB426BEBBBC00A84AC8 /* EMUTrainAssociation.swift in Sources */,
 				78C4BDF32D0D7D9C00EA4D53 /* UIImage.swift in Sources */,
 				51FAECB526BEBBBC00A84AC8 /* Station.swift in Sources */,
-				51FAECB126BEBBB400A84AC8 /* FavoritesData.swift in Sources */,
+				51FAECB126BEBBB400A84AC8 /* FavoritesViewModel.swift in Sources */,
 				51FAECB626BEBBBC00A84AC8 /* CRResponse.swift in Sources */,
 				51FAECB226BEBBBC00A84AC8 /* Train.swift in Sources */,
 				51FAECAD26BEBBA900A84AC8 /* AbstractProvider.swift in Sources */,
@@ -733,7 +733,7 @@
 				51FAECB826BEBBBF00A84AC8 /* CRRequest.swift in Sources */,
 				51FAEC7126BEB7D500A84AC8 /* ChinaEMUWidget.swift in Sources */,
 				51FAECB326BEBBBC00A84AC8 /* DepartureArrival.swift in Sources */,
-				51FAECAF26BEBBAF00A84AC8 /* MoerailData.swift in Sources */,
+				51FAECAF26BEBBAF00A84AC8 /* EMUTrainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
