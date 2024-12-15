@@ -28,10 +28,15 @@ struct ScanQRCodeActionSheetModifier: ViewModifier {
                         self.result = nil
                     case .failure(let error):
                         SentrySDK.capture(error: error)
-                        self.result = error.localizedDescription
+                        if case .permissionDenied = error {
+                            self.result = "您没有开启相机权限，请至 系统设置 - 隐私 中开启。"
+                        } else {
+                            self.result = error.localizedDescription
+                        }
+                        
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                         self.showAlert = true
                     }
                 }
