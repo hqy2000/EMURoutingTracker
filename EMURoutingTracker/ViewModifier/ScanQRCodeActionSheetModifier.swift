@@ -9,6 +9,7 @@ import SwiftUI
 import PhotosUI
 import AVFoundation
 import CodeScanner
+import Sentry
 
 struct ScanQRCodeActionSheetModifier: ViewModifier {
     @Binding var isPresented: Bool
@@ -26,6 +27,7 @@ struct ScanQRCodeActionSheetModifier: ViewModifier {
                         self.onCompletion(code.string)
                         self.result = nil
                     case .failure(let error):
+                        SentrySDK.capture(error: error)
                         self.result = error.localizedDescription
                     }
                     

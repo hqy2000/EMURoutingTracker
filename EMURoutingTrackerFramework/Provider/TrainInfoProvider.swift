@@ -33,6 +33,7 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
         do {
             completion(try storage.object(forKey: train))
         } catch {
+            SentrySDK.capture(error: error)
             self.queue.append((train, completion))
             self.run()
         }

@@ -7,6 +7,7 @@
 
 import Foundation
 import Moya
+import Sentry
 
 class AbstractProvider<T: TargetType> {
     let provider = MoyaProvider<T>(plugins: [])
@@ -21,13 +22,17 @@ class AbstractProvider<T: TargetType> {
                         let result = try decoder.decode(R.self, from: response.data)
                         success(result)
                     } catch {
+                        SentrySDK.capture(error: error)
                         failure?(error)
                     }
 
                 } else {
-                    failure?(NetworkError(response.statusCode, response.request?.url?.absoluteString ?? "Empty URL", String(data: response.data, encoding: .utf8) ?? "Empty Content"))
+                    let error = NetworkError(response.statusCode, response.request?.url?.absoluteString ?? "<Empty URL>", String(data: response.data, encoding: .utf8) ?? "<Empty Content>")
+                    SentrySDK.capture(error: error)
+                    failure?(error)
                 }
             case let .failure(error):
+                SentrySDK.capture(error: error)
                 failure?(error)
             }
         }
@@ -40,9 +45,12 @@ class AbstractProvider<T: TargetType> {
                 if (response.statusCode == 200) {
                     success(String(data: response.data, encoding: .utf8) ?? "")
                 } else {
-                    failure?(NetworkError(response.statusCode, response.request?.url?.absoluteString ?? "Empty URL", String(data: response.data, encoding: .utf8) ?? "Empty Content"))
+                    let error = NetworkError(response.statusCode, response.request?.url?.absoluteString ?? "<Empty URL>", String(data: response.data, encoding: .utf8) ?? "<Empty Content>")
+                    SentrySDK.capture(error: error)
+                    failure?(error)
                 }
             case let .failure(error):
+                SentrySDK.capture(error: error)
                 failure?(error)
             }
         }
