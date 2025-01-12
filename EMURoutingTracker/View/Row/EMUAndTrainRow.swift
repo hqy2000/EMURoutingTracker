@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct EMUAndTrainRow: View {
-    @State var activeLink: Int? = nil
     let emuTrainAssoc: EMUTrainAssociation
     @Binding var path: NavigationPath
     
@@ -24,31 +23,25 @@ struct EMUAndTrainRow: View {
                     .font(.system(.body, design: .monospaced))
             }
             
-            
             Spacer(minLength: 0)
-            VStack(spacing: 4) {
-                HStack {
-                    Spacer()
-                    Button {
-                        path.append(Query.trainOrEmu(trainOrEmu: emuTrainAssoc.train))
-                    } label: {
-                        Text(emuTrainAssoc.train)
-                            .font(.system(.callout, design: .monospaced))
-                    }
+            
+            VStack(alignment: .trailing, spacing: 4) {
+                Button {
+                    path.append(Query.trainOrEmu(trainOrEmu: emuTrainAssoc.train))
+                } label: {
+                    Text(emuTrainAssoc.train)
+                        .font(.system(.callout, design: .monospaced))
                 }
-                HStack {
-                    Spacer()
-                    if let trainInfo = emuTrainAssoc.trainInfo {
-                        Text("\(trainInfo.from) ⇀ \(trainInfo.to)").font(.system(.caption2, design: .monospaced))
-                    }
+                if let trainInfo = emuTrainAssoc.trainInfo {
+                    Text("\(trainInfo.from) ⇀ \(trainInfo.to)").font(.system(.caption2, design: .monospaced))
+                } else {
+                    ProgressView()
                 }
             }
         }
     }
 }
 
-struct GeneralView_Previews: PreviewProvider {
-    static var previews: some View {
-        EMUAndTrainRow(emuTrainAssoc: EMUTrainAssociation(emu: "CRH2A2001", train: "G2", date: "2020-12-01"), path: Binding.constant(NavigationPath()))
-    }
+#Preview {
+    EMUAndTrainRow(emuTrainAssoc: EMUTrainAssociation(emu: "CRH2A2001", train: "G2", date: "2020-12-01"), path: Binding.constant(NavigationPath()))
 }

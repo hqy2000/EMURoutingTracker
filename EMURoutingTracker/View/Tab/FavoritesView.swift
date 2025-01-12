@@ -12,14 +12,14 @@ struct FavoritesView: View {
     @State private var path = NavigationPath()
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             List {
                 Section(header: Text("车次")) {
                     if vm.favoriteTrains.isEmpty {
                         Text("您可以在查询时选择收藏某一特定车次（例如G2）。收藏后的车次将在这里显示其最新的运用信息。").font(.caption)
                     } else {
                         ForEach(vm.favoriteTrains, id: \.self) { emu in
-                            EMUAndTrainRow(emuTrainAssoc: emu, path: $path)
+                            TrainAndEMUView(emuTrainAssoc: emu, path: $path)
                         }
                     }
                 }
