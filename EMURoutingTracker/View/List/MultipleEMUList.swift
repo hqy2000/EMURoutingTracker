@@ -16,7 +16,7 @@ struct MultipleEMUList: View {
             ForEach(vm.groupedByDay.keys.sorted().reversed(), id: \.self) { key in
                 Section(header: Text(key)) {
                     ForEach(vm.groupedByDay[key] ?? [], id: \.id) { emu in
-                        EMUAndTrainRow(emuTrainAssoc: emu, path: $path)
+                        EMUAndTrainRow(emuTrainAssoc: emu, path: $path, layoutStyle: .emuFirst)
                     }
                 }
             }

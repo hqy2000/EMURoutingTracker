@@ -19,7 +19,7 @@ struct FavoritesView: View {
                         Text("您可以在查询时选择收藏某一特定车次（例如G2）。收藏后的车次将在这里显示其最新的运用信息。").font(.caption)
                     } else {
                         ForEach(vm.favoriteTrains, id: \.self) { emu in
-                            TrainAndEMUView(emuTrainAssoc: emu, path: $path)
+                            EMUAndTrainRow(emuTrainAssoc: emu, path: $path, layoutStyle: .trainFirst)
                         }
                     }
                 }
@@ -28,7 +28,7 @@ struct FavoritesView: View {
                         Text("您可以在查询时选择收藏某一特定动车组（例如CRH2A2001）。收藏后的动车组将在这里显示其最新的运用信息。").font(.caption)
                     } else {
                         ForEach(vm.favoriteEMUs, id: \.self) { emu in
-                            EMUAndTrainRow(emuTrainAssoc: emu, path: $path)
+                            EMUAndTrainRow(emuTrainAssoc: emu, path: $path, layoutStyle: .emuFirst)
                         }
                     }
                 }

@@ -35,7 +35,6 @@ struct TrainList: View {
             if let train = self.vm.emuTrainAssocList.first?.singleTrain {
                 FavoriteButton(trainOrEMU: train, provider: FavoritesProvider.trains)
             }
-            
         })
     }
 }

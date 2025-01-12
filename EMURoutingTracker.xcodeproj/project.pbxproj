@@ -73,7 +73,6 @@
 		784A4FEF2C64C4300045B791 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FEE2C64C4300045B791 /* SFSafeSymbols */; };
 		784A4FF12C64C4410045B791 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FF02C64C4410045B791 /* CodeScanner */; };
 		785E57872D348356006FD00D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 785E57862D348356006FD00D /* RxSwift */; };
-		785E57892D3486CB006FD00D /* TrainAndEMUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E57882D3486CB006FD00D /* TrainAndEMUView.swift */; };
 		78C4BDF32D0D7D9C00EA4D53 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF22D0D7D9700EA4D53 /* UIImage.swift */; };
 		78C4BDF42D0D7D9C00EA4D53 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF22D0D7D9700EA4D53 /* UIImage.swift */; };
 		78C4BDF62D0D82B800EA4D53 /* ScanQRCodeActionSheetModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF52D0D82B300EA4D53 /* ScanQRCodeActionSheetModifier.swift */; };
@@ -182,7 +181,6 @@
 		51FAEC8826BEB90400A84AC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51FAECB926BFB87800A84AC8 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		51FF3528255C07C300EC6B8A /* TrainInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainInfoProvider.swift; sourceTree = "<group>"; };
-		785E57882D3486CB006FD00D /* TrainAndEMUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAndEMUView.swift; sourceTree = "<group>"; };
 		78C4BDF22D0D7D9700EA4D53 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		78C4BDF52D0D82B300EA4D53 /* ScanQRCodeActionSheetModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRCodeActionSheetModifier.swift; sourceTree = "<group>"; };
 		78C4BDF92D0E3DF900EA4D53 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
@@ -383,7 +381,6 @@
 				510CC5F42560CC9A00853E56 /* EmptyRow.swift */,
 				51E27DC0256116D100B22289 /* EMURow.swift */,
 				518B988925675E07005FBB54 /* EMUAndTrainRow.swift */,
-				785E57882D3486CB006FD00D /* TrainAndEMUView.swift */,
 				518B988625675DC3005FBB54 /* TrainRow.swift */,
 			);
 			path = Row;
@@ -630,7 +627,6 @@
 				51E208892567E3F5001D91D2 /* DepartureArrivalList.swift in Sources */,
 				518DFA3525581C2000B29703 /* EMUTrainAssociation.swift in Sources */,
 				518B989F25676ED5005FBB54 /* QueryView.swift in Sources */,
-				785E57892D3486CB006FD00D /* TrainAndEMUView.swift in Sources */,
 				518DFA43255832B800B29703 /* TrainOrEMUView.swift in Sources */,
 				51E27DC1256116D100B22289 /* EMURow.swift in Sources */,
 				51FAEC5F26BE840100A84AC8 /* StationPicker.swift in Sources */,
