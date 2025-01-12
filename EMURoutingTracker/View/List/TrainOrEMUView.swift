@@ -28,9 +28,11 @@ struct TrainOrEMUView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: {
-            self.vm.getTrackingRecord(keyword: query)
+            if self.vm.mode == .loading {
+                self.vm.getTrackingRecord(keyword: query)
+            }
         })
-        
+        .navigationTitle(query)
     }
 }
 
