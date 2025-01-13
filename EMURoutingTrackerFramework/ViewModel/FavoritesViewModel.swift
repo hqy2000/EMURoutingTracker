@@ -31,12 +31,18 @@ class FavoritesViewModel: ObservableObject {
         }
         lastRefresh = Date()
         
-        favoriteTrains = FavoritesProvider.trains.favorites.map { favorite in
-            EMUTrainAssociation(emu: "", train: favorite.name, date: "")
+        if favoriteTrains.isEmpty {
+            favoriteTrains = FavoritesProvider.trains.favorites.map { favorite in
+                EMUTrainAssociation(emu: "", train: favorite.name, date: "")
+            }
         }
-        favoriteEMUs = FavoritesProvider.EMUs.favorites.map { favorite in
-            EMUTrainAssociation(emu: favorite.name, train: "", date: "")
+        
+        if favoriteEMUs.isEmpty {
+            favoriteEMUs = FavoritesProvider.EMUs.favorites.map { favorite in
+                EMUTrainAssociation(emu: favorite.name, train: "", date: "")
+            }
         }
+        
         
         let trainsSingle = queryInBatches(
             items: FavoritesProvider.trains.favorites.map { $0.name },
