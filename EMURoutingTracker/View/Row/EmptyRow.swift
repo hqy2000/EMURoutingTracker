@@ -20,7 +20,7 @@ struct EmptyRow: View {
                 Image(systemSymbol: .tram).resizable().aspectRatio(contentMode: .fit).frame(width: 30, height: 30, alignment: .center)
                 Text("暂未收录\"\(vm.query)\"").foregroundColor(.gray)
                 Button("扫描点餐二维码，上报车辆信息") {
-                    self.showActionSheet = true
+                    showActionSheet = true
                 }
                 .scanQrCodeActionSheet(isPresented: $showActionSheet) { url in
                     vm.postTrackingURL(url: url)

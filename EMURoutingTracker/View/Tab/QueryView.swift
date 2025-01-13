@@ -32,30 +32,30 @@ struct QueryView: View {
                     NavigationLink(
                         destination: StationPicker(provider.stations, completion: { station in
                             Defaults[\.lastDeparture] = station
-                            self.departure = station
+                            departure = station
                         }),
                         label: {
                             HStack {
                                 Text("出发地")
                                 Spacer()
-                                Text(self.departure.name)
+                                Text(departure.name)
                             }
                         })
                     NavigationLink(
                         destination: StationPicker(provider.stations, completion: { station in
                             Defaults[\.lastArrival] = station
-                            self.arrival = station
+                            arrival = station
                         }),
                         label: {
                             HStack{
                                 Text("目的地")
                                 Spacer()
-                                Text(self.arrival.name)
+                                Text(arrival.name)
                             }
                         })
                     DatePicker("出发日期", selection: $date, displayedComponents: .date)
                     Button {
-                        path.append(Query.remainingTickets(depature: self.departure, arrival: self.arrival, date: self.date))
+                        path.append(Query.remainingTickets(depature: departure, arrival: arrival, date: date))
                     } label: {
                         Text("查询").frame(maxWidth: .infinity, alignment: .center)
                     }

@@ -21,7 +21,10 @@ class DepartureArrivalViewModel: ObservableObject {
     public func getLeftTickets(from: String, to: String, date: Date) {
         crProvider.request(target: .leftTicketPrice(from: from, to: to, date: DateFormatter.standard.string(from: date)), type: CRResponse<[DepartureArrivalV2]>.self)
             .map { $0.data }
-            .flatMap { departureArrivals -> Single<[EMUTrainAssociation]> in
+            .flatMap { [weak self] departureArrivals -> Single<[EMUTrainAssociation]> in
+                guard let self else {
+                    return Single.just([])
+                }
                 self.departureArrivals = departureArrivals
                 let trainNumbers = departureArrivals.map { $0.v1.trainNo }
                 return self.moeRailProvider.request(target: .trains(keywords: trainNumbers), type: [EMUTrainAssociation].self)

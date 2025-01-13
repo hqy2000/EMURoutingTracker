@@ -22,12 +22,12 @@ struct DepartureArrivalList: View {
                 DepartureArrivalRow(path: $path, departureArrival: departureArrival.v1, emu: vm.emuTrainAssocs.first(where: {$0.train == departureArrival.v1.trainNo}))
             }
         }.onAppear(perform: {
-            if self.vm.departureArrivals.isEmpty {
-                self.vm.getLeftTickets(from: self.departure, to: self.arrival, date: date)
+            if vm.departureArrivals.isEmpty {
+                vm.getLeftTickets(from: departure, to: arrival, date: date)
             }
         })
         .overlay(content: {
-            if self.vm.departureArrivals.isEmpty && self.vm.isLoading {
+            if vm.departureArrivals.isEmpty && vm.isLoading {
                 ProgressView()
             }
         }).navigationTitle("发着查询")

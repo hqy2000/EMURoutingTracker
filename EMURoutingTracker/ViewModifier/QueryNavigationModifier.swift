@@ -25,6 +25,6 @@ struct QueryNavigationModifier: ViewModifier {
 
 extension View {
     func queryNavigation(path: Binding<NavigationPath>) -> some View {
-        self.modifier(QueryNavigationModifier(path: path))
+        modifier(QueryNavigationModifier(path: path))
     }
 }

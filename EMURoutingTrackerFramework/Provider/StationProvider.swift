@@ -37,14 +37,13 @@ internal class StationProvider: AbstractProvider<CRRequest>, ObservableObject {
                             return Station(name: String(info[1]), code: String(info[2]), pinyin: String(info[3]), abbreviation: String(info[4]))
                         }
                     }
-                    debugPrint("Station list ready.")
                     self?.stations = stations
                 } else {
-                    dump(result)
+                    SentrySDK.capture(message: "Error decoding stations: \(result)")
                 }
             }, onFailure: { error in
-                debugPrint("Error fetching stations: \(error.localizedDescription)")
-                
+                SentrySDK.capture(message: "Error fetching stations: \(error.localizedDescription)")
+    
             })
             .disposed(by: disposeBag)
     }

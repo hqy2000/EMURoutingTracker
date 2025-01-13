@@ -32,7 +32,7 @@ struct SingleEMUList: View {
             }
         }
         .navigationBarItems(trailing: HStack {
-            ScanQRCodeButton().environmentObject(self.vm)
+            ScanQRCodeButton().environmentObject(vm)
             if let emu = vm.emuTrainAssocList.first?.emu {
                 FavoriteButton(trainOrEMU: emu, provider: FavoritesProvider.EMUs)
             }

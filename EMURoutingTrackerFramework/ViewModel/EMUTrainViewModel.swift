@@ -31,11 +31,11 @@ class EMUTrainViewModel: ObservableObject {
     }
     
     var groupedByDay: [String: [EMUTrainAssociation]] {
-        return Dictionary(grouping: self.emuTrainAssocList, by: { $0.date })
+        return Dictionary(grouping: emuTrainAssocList, by: { $0.date })
     }
     
     public func postTrackingURL(url: String, completion: (() -> Void)? = nil) {
-        self.moerailProvider.request(target: .qr(emu: self.query, url: url), type: [EMUTrainAssociation].self)
+        moerailProvider.request(target: .qr(emu: query, url: url), type: [EMUTrainAssociation].self)
             .observe(on: MainScheduler.instance)
             .subscribe({ _ in
                 debugPrint(url)
@@ -46,74 +46,74 @@ class EMUTrainViewModel: ObservableObject {
     
     public func getTrackingRecord(keyword: String) {
         TrainInfoProvider.shared.cancelAll()
-        self.query = keyword
-        self.mode = .loading
+        query = keyword
+        mode = .loading
         if (keyword.trimmingCharacters(in: .whitespaces).isEmpty) {
-            self.emuTrainAssocList = []
-            self.mode = .emptyTrain
+            emuTrainAssocList = []
+            mode = .emptyTrain
         } else if (keyword.starts(with: "C") && !keyword.starts(with: "CR")) || keyword.starts(with: "G") || keyword.starts(with: "D") {
-            self.moerailProvider.request(target: .train(keyword: keyword), type: [EMUTrainAssociation].self)
+            moerailProvider.request(target: .train(keyword: keyword), type: [EMUTrainAssociation].self)
                 .observe(on: MainScheduler.instance)
-                .subscribe(onSuccess: { results in
-                    self.emuTrainAssocList = results
-                    for (index, emu) in self.emuTrainAssocList.enumerated() {
+                .subscribe(onSuccess: { [weak self] results in
+                    self?.emuTrainAssocList = results
+                    for (index, emu) in results.enumerated() {
                         TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { (trainInfo) in
-                            if self.emuTrainAssocList.count > index {
-                                self.emuTrainAssocList[index].trainInfo = trainInfo
+                            if let emuTrainAssocList = self?.emuTrainAssocList, emuTrainAssocList.count > index {
+                                self?.emuTrainAssocList[index].trainInfo = trainInfo
                             }
                         }
                     }
                     
-                    if self.emuTrainAssocList.isEmpty {
-                        self.mode = .emptyTrain
+                    if self?.emuTrainAssocList.isEmpty ?? true {
+                        self?.mode = .emptyTrain
                     } else {
-                        self.mode = .singleTrain
+                        self?.mode = .singleTrain
                     }
-                }, onFailure: { (error) in
-                    self.handleError(error)
+                }, onFailure: { [weak self] error in
+                    self?.handleError(error)
                 }).disposed(by: disposeBag)
             
         } else {
-            self.emuTrainAssocList = []
-            self.moerailProvider.request(target: .emu(keyword: keyword), type: [EMUTrainAssociation].self)
+            emuTrainAssocList = []
+            moerailProvider.request(target: .emu(keyword: keyword), type: [EMUTrainAssociation].self)
                 .observe(on: MainScheduler.instance)
-                .subscribe(onSuccess: { results in
-                    self.emuTrainAssocList = results
+                .subscribe(onSuccess: { [weak self] results in
+                    self?.emuTrainAssocList = results
                     
-                    for (index, emu) in self.emuTrainAssocList.enumerated() {
-                        if index > 0 && self.emuTrainAssocList[index].emu != self.emuTrainAssocList[index - 1].emu {
-                            self.mode = .multipleEmus
+                    for (index, emu) in results.enumerated() {
+                        if index > 0 && self?.emuTrainAssocList[index].emu != self?.emuTrainAssocList[index - 1].emu {
+                            self?.mode = .multipleEmus
                         }
                         TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { (trainInfo) in
-                            if self.emuTrainAssocList.count > index {
-                                self.emuTrainAssocList[index].trainInfo = trainInfo
+                            if let emuTrainAssocList = self?.emuTrainAssocList, emuTrainAssocList.count > index {
+                                self?.emuTrainAssocList[index].trainInfo = trainInfo
                             }
                         }
                     }
                     
-                    if self.emuTrainAssocList.isEmpty {
-                        self.mode = .emptyEmu
-                    } else if self.mode == .loading {
-                        self.mode = .singleEmu
+                    if self?.emuTrainAssocList.isEmpty ?? true {
+                        self?.mode = .emptyEmu
+                    } else if self?.mode == .loading {
+                        self?.mode = .singleEmu
                     }
-                }, onFailure: { (error) in
-                    self.handleError(error)
+                }, onFailure: { [weak self] error in
+                    self?.handleError(error)
                 }).disposed(by: disposeBag)
         }
     }
     
     public func handleError(_ error: Error) {
-        self.mode = .error
+        mode = .error
         if let error = error as? NetworkError {
             if error.code == 503 {
-                self.errorMessage = "服务暂时不可用，请稍后再试"
+                errorMessage = "服务暂时不可用，请稍后再试"
             } else if error.code == 404 {
-                self.errorMessage = "\"\(query)\"不是一个正确的车次或车组。"
+                errorMessage = "\"\(query)\"不是一个正确的车次或车组。"
             } else {
-                self.errorMessage = error.localizedDescription
+                errorMessage = error.localizedDescription
             }
         } else {
-            self.errorMessage = error.localizedDescription
+            errorMessage = error.localizedDescription
         }
     }
     

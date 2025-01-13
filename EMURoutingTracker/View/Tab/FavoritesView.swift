@@ -35,7 +35,7 @@ struct FavoritesView: View {
             }
             .listStyle(InsetGroupedListStyle())
             .onAppear(perform: {
-                self.vm.refresh()
+                vm.refresh()
             })
             .queryNavigation(path: $path)
         }

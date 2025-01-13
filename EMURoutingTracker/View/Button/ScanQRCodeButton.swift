@@ -16,7 +16,7 @@ struct ScanQRCodeButton: View {
     
     var body: some View {
         Button(action: {
-            self.showSheet = true
+            showSheet = true
         }, label: {
            Image(systemName: "qrcode.viewfinder")
         }).scanQrCodeActionSheet(isPresented: $showSheet) { message in

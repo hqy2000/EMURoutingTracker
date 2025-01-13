@@ -35,7 +35,7 @@ internal enum FavoritesProvider {
     }
     
     @discardableResult public func add(_ item: String) -> Bool {
-        if !self.contains(item) {
+        if !contains(item) {
             Defaults[key: defaultsKey].append(Favorite(item))
             WidgetCenter.shared.reloadAllTimelines()
             return true

@@ -87,11 +87,11 @@ struct EMUTrainAssociation: Codable, Hashable, Identifiable {
     }
     
     var shortName: String {
-        return self.emu.starts(with: "CRH") ? self.emu.replacingOccurrences(of: "CRH", with: "") : self.emu.replacingOccurrences(of: "CR", with: "")
+        return emu.starts(with: "CRH") ? emu.replacingOccurrences(of: "CRH", with: "") : emu.replacingOccurrences(of: "CR", with: "")
     }
     
     var shortTrain: String {
-        return self.train.contains("/") ? String(self.train[..<self.train.firstIndex(of: "/")!]) : self.train
+        return train.contains("/") ? String(train[..<train.firstIndex(of: "/")!]) : train
     }
     
     

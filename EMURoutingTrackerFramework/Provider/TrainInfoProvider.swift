@@ -21,7 +21,7 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
         let diskConfig = DiskConfig(name: "TrainInfo")
         let memoryConfig = MemoryConfig(expiry: .never, countLimit: 30, totalCostLimit: 50)
         
-        self.storage = try! Storage(
+        storage = try! Storage(
             diskConfig: diskConfig,
             memoryConfig: memoryConfig,
             fileManager: FileManager.default,
@@ -36,8 +36,8 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
             completion(try storage.object(forKey: train))
         } catch {
             SentrySDK.capture(error: error)
-            self.queue.append((train, completion))
-            self.run()
+            queue.append((train, completion))
+            run()
         }
     }
     
@@ -45,16 +45,15 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
         DispatchQueue.global().sync {
             if !lock && queue.count > 0{
                 lock = true
-                let top = self.queue.removeFirst()
-                self.execute(train: top.0, completion: top.1)
-                
+                let top = queue.removeFirst()
+                execute(train: top.0, completion: top.1)
             }
         }
     }
     
     public func cancelAll() {
         DispatchQueue.global().sync {
-            self.queue = []
+            queue = []
         }
     }
     
@@ -62,14 +61,14 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
         if let timetable = try? storage.object(forKey: train) {
             completion(timetable)
             DispatchQueue.global().sync {
-                self.lock = false
-                self.run()
+                lock = false
+                run()
             }
         } else {
             let df = DateFormatter()
             df.dateFormat = "yyyyMMdd"
             
-            self.request(target: .train(trainNo: train, date: df.string(from: Date())), type: CRResponse<[Train]>.self)
+            request(target: .train(trainNo: train, date: df.string(from: Date())), type: CRResponse<[Train]>.self)
                 .observe(on: MainScheduler.instance)
                 .subscribe(onSuccess: { info in
                     for entry in info.data {
@@ -85,7 +84,7 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
                         }
                     }
                     
-                    debugPrint("Unable to find: \(train).")
+                    SentrySDK.capture(message: "Unable to find: \(train).")
                     let entry = Train(from: "未知", to: "未知", train_no: "", date: "", station_train_code: "")
                     try? self.storage.setObject(entry, forKey: train, expiry: .date(Date().addingTimeInterval(20)))
                     completion(entry)
@@ -96,7 +95,6 @@ internal class TrainInfoProvider: AbstractProvider<CRRequest> {
                     }
                     
                 }, onFailure: { error in
-                    debugPrint("Error with: \(train).")
                     DispatchQueue.global().sync {
                         self.lock = false
                         self.run()

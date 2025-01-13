@@ -20,8 +20,8 @@ struct StationPicker: View {
                 $0.code.contains(searchText.replacingOccurrences(of: " ", with: "").uppercased()) ||
                 searchText == ""}, id: \.code) { station in
                     Button(action: {
-                        self.completion(station)
-                        self.presentationMode.wrappedValue.dismiss()
+                        completion(station)
+                        presentationMode.wrappedValue.dismiss()
                     }) {
                         HStack {
                             VStack(alignment: .leading) {

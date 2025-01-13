@@ -24,7 +24,7 @@ struct ScanQRCodeActionSheetModifier: ViewModifier {
                     isPresented = false
                     switch result {
                     case .success(let code):
-                        self.onCompletion(code.string)
+                        onCompletion(code.string)
                         self.result = nil
                     case .failure(let error):
                         SentrySDK.capture(error: error)
@@ -33,7 +33,6 @@ struct ScanQRCodeActionSheetModifier: ViewModifier {
                         } else {
                             self.result = error.localizedDescription + "请确认您扫描的二维码为点餐码。"
                         }
-                        
                     }
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -42,7 +41,7 @@ struct ScanQRCodeActionSheetModifier: ViewModifier {
                 }
             }
             .alert(isPresented: $showAlert, content: {
-                Alert(title: Text(self.result == nil ? "上报成功" : "上报失败"), message: Text(self.result ?? "感谢您的支持，我们将尽快根据您反馈的信息，更新我们的数据！"), dismissButton: .default(Text("好的")))
+                Alert(title: Text(result == nil ? "上报成功" : "上报失败"), message: Text(result ?? "感谢您的支持，我们将尽快根据您反馈的信息，更新我们的数据！"), dismissButton: .default(Text("好的")))
             })
     }
 }

@@ -21,18 +21,18 @@ struct TrainList: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 VStack {
-                    if let trainInfo = self.vm.emuTrainAssocList.first?.trainInfo {
-                        Text("\(self.vm.query)").font(.headline)
+                    if let trainInfo = vm.emuTrainAssocList.first?.trainInfo {
+                        Text("\(vm.query)").font(.headline)
                         Text("\(trainInfo.from) ⇀ \(trainInfo.to)").font(.caption2)
                     } else {
-                        Text(self.vm.query).font(.headline)
+                        Text(vm.query).font(.headline)
                     }
                 }
             }
         }
         .navigationBarItems(trailing: HStack {
-            ScanQRCodeButton().environmentObject(self.vm)
-            if let train = self.vm.emuTrainAssocList.first?.singleTrain {
+            ScanQRCodeButton().environmentObject(vm)
+            if let train = vm.emuTrainAssocList.first?.singleTrain {
                 FavoriteButton(trainOrEMU: train, provider: FavoritesProvider.trains)
             }
         })

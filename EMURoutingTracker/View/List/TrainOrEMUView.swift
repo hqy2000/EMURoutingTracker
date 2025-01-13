@@ -28,8 +28,8 @@ struct TrainOrEMUView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: {
-            if self.vm.mode == .loading {
-                self.vm.getTrackingRecord(keyword: query)
+            if vm.mode == .loading {
+                vm.getTrackingRecord(keyword: query)
             }
         })
         .navigationTitle(query)

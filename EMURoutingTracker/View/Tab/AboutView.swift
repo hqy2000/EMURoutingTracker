@@ -62,7 +62,7 @@ struct AboutView: View {
                 
                 
                 Button(action: {
-                    self.showOpenSourceLicense = true
+                    showOpenSourceLicense = true
                 })
                 {
                     HStack {
@@ -72,7 +72,7 @@ struct AboutView: View {
                 }
             }
         }.listStyle(InsetGroupedListStyle())
-            .sheet(isPresented: self.$showOpenSourceLicense, content: {
+            .sheet(isPresented: $showOpenSourceLicense, content: {
                 ScrollView {
                     Text(
                 """

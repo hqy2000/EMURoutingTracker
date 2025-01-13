@@ -10,11 +10,6 @@ import SwiftUI
 import SwiftyUserDefaults
 import RxSwift
 
-import Foundation
-import SwiftUI
-import SwiftyUserDefaults
-import RxSwift
-
 class FavoritesViewModel: ObservableObject {
     let moerailProvider = AbstractProvider<MoerailRequest>()
     @Published var favoriteEMUs: [EMUTrainAssociation] = []
@@ -24,7 +19,7 @@ class FavoritesViewModel: ObservableObject {
     private let batchSize = 20
     
     init() {
-        self.refresh()
+        refresh()
     }
     
     public func refresh(completion: (() -> Void)? = nil) {
@@ -69,10 +64,7 @@ class FavoritesViewModel: ObservableObject {
         
         Single.zip(trainsSingle, emusSingle)
             .observe(on: MainScheduler.instance)
-            .subscribe(onSuccess: { _ in
-                completion?()
-            }, onFailure: { error in
-                debugPrint(error)
+            .subscribe({ _ in
                 completion?()
             })
             .disposed(by: disposeBag)
@@ -87,8 +79,11 @@ class FavoritesViewModel: ObservableObject {
         }
         
         let batches = items.chunked(into: batchSize)
-        let observables = batches.map { batch in
-            self.moerailProvider.request(target: associationTypeGenerator(batch), type: [EMUTrainAssociation].self).asObservable()
+        let observables = batches.map { [weak self] batch -> Observable<[EMUTrainAssociation]> in
+            guard let self else {
+                return Observable.just([])
+            }
+            return self.moerailProvider.request(target: associationTypeGenerator(batch), type: [EMUTrainAssociation].self).asObservable()
         }
         
         return Observable.concat(observables)
