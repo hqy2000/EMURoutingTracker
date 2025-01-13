@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct DepartureArrivalRow: View {
-    @State var showDetails: Bool = false
-    
     @Binding var path: NavigationPath
     let departureArrival: DepartureArrival
     let emu: EMUTrainAssociation?
@@ -42,13 +40,11 @@ struct DepartureArrivalRow: View {
                             .font(.system(.caption, design: .monospaced))
                     }.buttonStyle(.borderless)
                 } else {
-                    HStack {
-                        Text("未知")
-                            .lineLimit(1)
-                            .foregroundColor(.gray)
-                            .fixedSize()
-                            .font(.system(.caption, design: .monospaced))
-                    }
+                    Text("未知")
+                        .lineLimit(1)
+                        .foregroundColor(.gray)
+                        .fixedSize()
+                        .font(.system(.caption))
                 }
             }
             

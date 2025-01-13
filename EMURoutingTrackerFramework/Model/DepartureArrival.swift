@@ -21,7 +21,7 @@ struct DepartureArrivalV2: Codable, Hashable, Identifiable {
 
 struct DepartureArrival: Codable, Hashable, Identifiable {
     var id: String {
-        return trainNo
+        return trainNo + departureStation + arrivalStation
     }
     
     let departureTime: String

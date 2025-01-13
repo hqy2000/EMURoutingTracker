@@ -25,6 +25,11 @@ struct DepartureArrivalList: View {
             if self.vm.departureArrivals.isEmpty {
                 self.vm.getLeftTickets(from: self.departure, to: self.arrival, date: date)
             }
+        })
+        .overlay(content: {
+            if self.vm.departureArrivals.isEmpty && self.vm.isLoading {
+                ProgressView()
+            }
         }).navigationTitle("发着查询")
     }
 }

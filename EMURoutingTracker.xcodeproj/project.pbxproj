@@ -73,6 +73,7 @@
 		784A4FEF2C64C4300045B791 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FEE2C64C4300045B791 /* SFSafeSymbols */; };
 		784A4FF12C64C4410045B791 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FF02C64C4410045B791 /* CodeScanner */; };
 		785E57872D348356006FD00D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 785E57862D348356006FD00D /* RxSwift */; };
+		785E578B2D348E2B006FD00D /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 785E578A2D348E2B006FD00D /* RxMoya */; };
 		78C4BDF32D0D7D9C00EA4D53 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF22D0D7D9700EA4D53 /* UIImage.swift */; };
 		78C4BDF42D0D7D9C00EA4D53 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF22D0D7D9700EA4D53 /* UIImage.swift */; };
 		78C4BDF62D0D82B800EA4D53 /* ScanQRCodeActionSheetModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF52D0D82B300EA4D53 /* ScanQRCodeActionSheetModifier.swift */; };
@@ -218,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				785E578B2D348E2B006FD00D /* RxMoya in Frameworks */,
 				784A4FE52C64C3990045B791 /* Sentry in Frameworks */,
 				784A4FE72C64C39C0045B791 /* Cache in Frameworks */,
 				785E57872D348356006FD00D /* RxSwift in Frameworks */,
@@ -521,6 +523,7 @@
 				784A4FE92C64C3D10045B791 /* Moya */,
 				784A4FEC2C64C3EE0045B791 /* SwiftyUserDefaults */,
 				785E57862D348356006FD00D /* RxSwift */,
+				785E578A2D348E2B006FD00D /* RxMoya */,
 			);
 			productName = chinaemuFramework;
 			productReference = 51FAEC8526BEB90400A84AC8 /* EMURoutingTrackerFramework.framework */;
@@ -1132,6 +1135,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 785E57852D34832F006FD00D /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		785E578A2D348E2B006FD00D /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 784A4FE82C64C3C90045B791 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

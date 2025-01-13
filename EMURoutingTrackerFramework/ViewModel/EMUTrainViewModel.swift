@@ -9,15 +9,17 @@ import Foundation
 import SwiftUI
 import BackgroundTasks
 import UserNotifications
+import RxSwift
 
 class EMUTrainViewModel: ObservableObject {
     let moerailProvider = AbstractProvider<MoerailRequest>()
+    private let disposeBag = DisposeBag()
     
     @Published var emuTrainAssocList = [EMUTrainAssociation]()
     @Published var mode: Mode = .loading
     @Published var query = ""
     @Published var errorMessage = ""
-
+    
     enum Mode {
         case loading
         case emptyTrain
@@ -33,10 +35,13 @@ class EMUTrainViewModel: ObservableObject {
     }
     
     public func postTrackingURL(url: String, completion: (() -> Void)? = nil) {
-        self.moerailProvider.request(target: .qr(emu: self.query, url: url), type: [EMUTrainAssociation].self) { (results) in
-            debugPrint(url)
-            completion?()
-        }
+        self.moerailProvider.request(target: .qr(emu: self.query, url: url), type: [EMUTrainAssociation].self)
+            .observe(on: MainScheduler.instance)
+            .subscribe({ _ in
+                debugPrint(url)
+            })
+            .disposed(by: disposeBag)
+        
     }
     
     public func getTrackingRecord(keyword: String) {
@@ -47,49 +52,53 @@ class EMUTrainViewModel: ObservableObject {
             self.emuTrainAssocList = []
             self.mode = .emptyTrain
         } else if (keyword.starts(with: "C") && !keyword.starts(with: "CR")) || keyword.starts(with: "G") || keyword.starts(with: "D") {
-            self.moerailProvider.request(target: .train(keyword: keyword), type: [EMUTrainAssociation].self) { results in
-                self.emuTrainAssocList = results
-                for (index, emu) in self.emuTrainAssocList.enumerated() {
-                    TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { (trainInfo) in
-                        if self.emuTrainAssocList.count > index {
-                            self.emuTrainAssocList[index].trainInfo = trainInfo
+            self.moerailProvider.request(target: .train(keyword: keyword), type: [EMUTrainAssociation].self)
+                .observe(on: MainScheduler.instance)
+                .subscribe(onSuccess: { results in
+                    self.emuTrainAssocList = results
+                    for (index, emu) in self.emuTrainAssocList.enumerated() {
+                        TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { (trainInfo) in
+                            if self.emuTrainAssocList.count > index {
+                                self.emuTrainAssocList[index].trainInfo = trainInfo
+                            }
                         }
                     }
-                }
-                
-                if self.emuTrainAssocList.isEmpty {
-                    self.mode = .emptyTrain
-                } else {
-                    self.mode = .singleTrain
-                }
-            } failure: { (error) in
-                self.handleError(error)
-            }
+                    
+                    if self.emuTrainAssocList.isEmpty {
+                        self.mode = .emptyTrain
+                    } else {
+                        self.mode = .singleTrain
+                    }
+                }, onFailure: { (error) in
+                    self.handleError(error)
+                }).disposed(by: disposeBag)
             
         } else {
             self.emuTrainAssocList = []
-            self.moerailProvider.request(target: .emu(keyword: keyword), type: [EMUTrainAssociation].self) { results in
-                self.emuTrainAssocList = results
-                
-                for (index, emu) in self.emuTrainAssocList.enumerated() {
-                    if index > 0 && self.emuTrainAssocList[index].emu != self.emuTrainAssocList[index - 1].emu {
-                        self.mode = .multipleEmus
-                    }
-                    TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { (trainInfo) in
-                        if self.emuTrainAssocList.count > index {
-                            self.emuTrainAssocList[index].trainInfo = trainInfo
+            self.moerailProvider.request(target: .emu(keyword: keyword), type: [EMUTrainAssociation].self)
+                .observe(on: MainScheduler.instance)
+                .subscribe(onSuccess: { results in
+                    self.emuTrainAssocList = results
+                    
+                    for (index, emu) in self.emuTrainAssocList.enumerated() {
+                        if index > 0 && self.emuTrainAssocList[index].emu != self.emuTrainAssocList[index - 1].emu {
+                            self.mode = .multipleEmus
+                        }
+                        TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { (trainInfo) in
+                            if self.emuTrainAssocList.count > index {
+                                self.emuTrainAssocList[index].trainInfo = trainInfo
+                            }
                         }
                     }
-                }
-                
-                if self.emuTrainAssocList.isEmpty {
-                    self.mode = .emptyEmu
-                } else if self.mode == .loading {
-                    self.mode = .singleEmu
-                }
-            } failure: { (error) in
-                self.handleError(error)
-            }
+                    
+                    if self.emuTrainAssocList.isEmpty {
+                        self.mode = .emptyEmu
+                    } else if self.mode == .loading {
+                        self.mode = .singleEmu
+                    }
+                }, onFailure: { (error) in
+                    self.handleError(error)
+                }).disposed(by: disposeBag)
         }
     }
     
@@ -107,5 +116,5 @@ class EMUTrainViewModel: ObservableObject {
             self.errorMessage = error.localizedDescription
         }
     }
-       
+    
 }

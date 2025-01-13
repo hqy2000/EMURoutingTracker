@@ -43,10 +43,10 @@ class FavoritesViewModel: ObservableObject {
             EMUTrainAssociation(emu: favorite.name, train: "", date: "")
         }
         
-        let trainsObservable = queryInBatches(
+        let trainsSingle = queryInBatches(
             items: FavoritesProvider.trains.favorites.map { $0.name },
             associationTypeGenerator: { .trains(keywords: $0) }
-        ).do(onNext: { [weak self] result in
+        ).do(onSuccess: { [weak self] result in
             self?.favoriteTrains = result
             result.enumerated().forEach { index, emu in
                 TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { trainInfo in
@@ -55,10 +55,10 @@ class FavoritesViewModel: ObservableObject {
             }
         })
         
-        let emusObservable = queryInBatches(
+        let emusSingle = queryInBatches(
             items: FavoritesProvider.EMUs.favorites.map { $0.name },
             associationTypeGenerator: { .emus(keywords: $0) }
-        ).do(onNext: { [weak self] result in
+        ).do(onSuccess: { [weak self] result in
             self?.favoriteEMUs = result
             result.enumerated().forEach { index, emu in
                 TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { trainInfo in
@@ -67,12 +67,12 @@ class FavoritesViewModel: ObservableObject {
             }
         })
         
-        Observable.zip(trainsObservable, emusObservable)
+        Single.zip(trainsSingle, emusSingle)
             .observe(on: MainScheduler.instance)
-            .subscribe(onError: { error in
-                debugPrint(error)
+            .subscribe(onSuccess: { _ in
                 completion?()
-            }, onCompleted: {
+            }, onFailure: { error in
+                debugPrint(error)
                 completion?()
             })
             .disposed(by: disposeBag)
@@ -81,36 +81,21 @@ class FavoritesViewModel: ObservableObject {
     private func queryInBatches(
         items: [String],
         associationTypeGenerator: ([String]) -> MoerailRequest
-    ) -> Observable<[EMUTrainAssociation]> {
+    ) -> Single<[EMUTrainAssociation]> {
         guard !items.isEmpty else {
-            return Observable.just([]) // Return an empty observable if the list is empty
+            return Single.just([]) // Return an empty observable if the list is empty
         }
         
         let batches = items.chunked(into: batchSize)
         let observables = batches.map { batch in
-            fetchTrainAssociations(associationType: associationTypeGenerator(batch))
+            self.moerailProvider.request(target: associationTypeGenerator(batch), type: [EMUTrainAssociation].self).asObservable()
         }
         
         return Observable.concat(observables)
-            .reduce([]) { $0 + $1 } // Combine all results into a single array
+            .reduce([]) { $0 + $1 }
+            .asSingle()
     }
     
-    private func fetchTrainAssociations(
-        associationType: MoerailRequest
-    ) -> Observable<[EMUTrainAssociation]> {
-        return Observable.create { observer in
-            self.moerailProvider.request(
-                target: associationType,
-                type: [EMUTrainAssociation].self
-            ) { result in
-                observer.onNext(result)
-                observer.onCompleted()
-            } failure: { error in
-                observer.onError(error)
-            }
-            return Disposables.create()
-        }
-    }
 }
 
 private extension Array {
