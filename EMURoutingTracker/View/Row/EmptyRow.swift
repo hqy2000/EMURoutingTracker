@@ -32,8 +32,7 @@ struct EmptyRow: View {
                 Image(systemSymbol: .multiply).resizable().aspectRatio(contentMode: .fit).frame(width: 30, height: 30, alignment: .center)
                 Text(vm.errorMessage).foregroundColor(.gray)
             default:
-                Image(systemSymbol: .magnifyingglass).resizable().aspectRatio(contentMode: .fit).frame(width: 30, height: 30, alignment: .center)
-                Text("加载中")
+                ProgressView()
             }
         }
     }

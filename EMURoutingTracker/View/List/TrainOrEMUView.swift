@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TrainOrEMUView: View {
-    @ObservedObject var vm = EMUTrainViewModel()
+    @StateObject var vm = EMUTrainViewModel()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let query: String
     @Binding var path: NavigationPath
