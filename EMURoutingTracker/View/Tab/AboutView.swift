@@ -43,7 +43,10 @@ struct AboutView: View {
                 })
                 {
                     HStack {
-                        Text("源代码").font(.footnote)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("源代码").font(.footnote).foregroundColor(.blue)
+                            Text("欢迎在 GitHub 上加星支持 ⭐️").font(.caption2).foregroundColor(.secondary)
+                        }
                         Spacer()
                         Text("GitHub").font(.footnote)
                     }
