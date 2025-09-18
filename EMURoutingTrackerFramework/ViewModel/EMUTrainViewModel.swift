@@ -35,13 +35,13 @@ class EMUTrainViewModel: ObservableObject {
     }
     
     public func postTrackingURL(url: String, completion: (() -> Void)? = nil) {
+        guard !url.isEmpty else { return }
         moerailProvider.request(target: .qr(emu: query, url: url), type: [EMUTrainAssociation].self)
             .observe(on: MainScheduler.instance)
             .subscribe({ _ in
                 debugPrint(url)
             })
             .disposed(by: disposeBag)
-        
     }
     
     public func getTrackingRecord(keyword: String) {
