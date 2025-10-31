@@ -11,32 +11,35 @@ import Intents
 import EMURoutingTrackerFramework
 
 struct Provider: TimelineProvider {
-    let vm = FavoritesViewModel()
     func placeholder(in context: Context) -> FavoritesEntry {
         let entry = FavoritesEntry(date: Date(), favoriteTrains: [EMUTrainAssociation(emu: "CRH2C2001", train: "D0001", date: "20210102")], favoriteEmus: [EMUTrainAssociation(emu: "CR400AF0001", train: "G1", date: "20210102")])
         return entry
     }
 
     func getSnapshot(in context: Context, completion: @escaping (FavoritesEntry) -> ()) {
-        vm.refresh {
-            let entry = FavoritesEntry(date: Date(), favoriteTrains: vm.favoriteTrains, favoriteEmus: vm.favoriteEMUs)
+        Task {
+            let entry = await loadEntry()
             completion(entry)
         }
     }
 
     func getTimeline( in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        vm.refresh {
-            let entry = FavoritesEntry(date: Date(), favoriteTrains: vm.favoriteTrains, favoriteEmus: vm.favoriteEMUs)
+        Task {
+            let entry = await loadEntry()
             let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
-
             let timeline = Timeline(
-               entries: [entry],
-               policy: .after(nextUpdateDate)
+                entries: [entry],
+                policy: .after(nextUpdateDate)
             )
-
             completion(timeline)
         }
-        
+    }
+    
+    private func loadEntry() async -> FavoritesEntry {
+        let viewModel = await MainActor.run { FavoritesViewModel() }
+        await viewModel.refreshAsync()
+        let favorites = await MainActor.run { (viewModel.favoriteTrains, viewModel.favoriteEMUs) }
+        return FavoritesEntry(date: Date(), favoriteTrains: favorites.0, favoriteEmus: favorites.1)
     }
 }
 

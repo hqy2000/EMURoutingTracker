@@ -7,13 +7,11 @@
 
 import Foundation
 import SwiftUI
-import BackgroundTasks
-import UserNotifications
-import RxSwift
 
+@MainActor
 class EMUTrainViewModel: ObservableObject {
     let moerailProvider = AbstractProvider<MoerailRequest>()
-    private let disposeBag = DisposeBag()
+    private var fetchTask: Task<Void, Never>?
     
     @Published var emuTrainAssocList = [EMUTrainAssociation]()
     @Published var mode: Mode = .loading
@@ -36,73 +34,92 @@ class EMUTrainViewModel: ObservableObject {
     
     public func postTrackingURL(url: String, completion: (() -> Void)? = nil) {
         guard !url.isEmpty else { return }
-        moerailProvider.request(target: .qr(emu: query, url: url), type: [EMUTrainAssociation].self)
-            .observe(on: MainScheduler.instance)
-            .subscribe({ _ in
-                debugPrint(url)
-            })
-            .disposed(by: disposeBag)
-    }
-    
-    public func getTrackingRecord(keyword: String) {
-        TrainInfoProvider.shared.cancelAll()
-        query = keyword
-        mode = .loading
-        if (keyword.trimmingCharacters(in: .whitespaces).isEmpty) {
-            emuTrainAssocList = []
-            mode = .emptyTrain
-        } else if (keyword.starts(with: "C") && !keyword.starts(with: "CR")) || keyword.starts(with: "G") || keyword.starts(with: "D") {
-            moerailProvider.request(target: .train(keyword: keyword), type: [EMUTrainAssociation].self)
-                .observe(on: MainScheduler.instance)
-                .subscribe(onSuccess: { [weak self] results in
-                    self?.emuTrainAssocList = results
-                    for (index, emu) in results.enumerated() {
-                        TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { (trainInfo) in
-                            if let emuTrainAssocList = self?.emuTrainAssocList, emuTrainAssocList.count > index {
-                                self?.emuTrainAssocList[index].trainInfo = trainInfo
-                            }
-                        }
-                    }
-                    
-                    if self?.emuTrainAssocList.isEmpty ?? true {
-                        self?.mode = .emptyTrain
-                    } else {
-                        self?.mode = .singleTrain
-                    }
-                }, onFailure: { [weak self] error in
-                    self?.handleError(error)
-                }).disposed(by: disposeBag)
-            
-        } else {
-            emuTrainAssocList = []
-            moerailProvider.request(target: .emu(keyword: keyword), type: [EMUTrainAssociation].self)
-                .observe(on: MainScheduler.instance)
-                .subscribe(onSuccess: { [weak self] results in
-                    self?.emuTrainAssocList = results
-                    
-                    for (index, emu) in results.enumerated() {
-                        if index > 0 && self?.emuTrainAssocList[index].emu != self?.emuTrainAssocList[index - 1].emu {
-                            self?.mode = .multipleEmus
-                        }
-                        TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { (trainInfo) in
-                            if let emuTrainAssocList = self?.emuTrainAssocList, emuTrainAssocList.count > index {
-                                self?.emuTrainAssocList[index].trainInfo = trainInfo
-                            }
-                        }
-                    }
-                    
-                    if self?.emuTrainAssocList.isEmpty ?? true {
-                        self?.mode = .emptyEmu
-                    } else if self?.mode == .loading {
-                        self?.mode = .singleEmu
-                    }
-                }, onFailure: { [weak self] error in
-                    self?.handleError(error)
-                }).disposed(by: disposeBag)
+        let currentQuery = query
+        let provider = moerailProvider
+        Task {
+            do {
+                _ = try await provider.request(target: .qr(emu: currentQuery, url: url), as: [EMUTrainAssociation].self)
+                completion?()
+            } catch {
+                // Ignore errors for QR submissions to retain previous behaviour.
+            }
         }
     }
     
-    public func handleError(_ error: Error) {
+    public func getTrackingRecord(keyword: String) {
+        fetchTask?.cancel()
+        fetchTask = Task {
+            await handleGetTrackingRecord(keyword: keyword)
+        }
+    }
+    
+    deinit {
+        fetchTask?.cancel()
+    }
+    
+    private func handleGetTrackingRecord(keyword: String) async {
+        await TrainInfoProvider.shared.cancelAll()
+        query = keyword
+        mode = .loading
+        let trimmed = keyword.trimmingCharacters(in: .whitespaces)
+        guard !trimmed.isEmpty else {
+            emuTrainAssocList = []
+            mode = .emptyTrain
+            return
+        }
+        
+        do {
+            if (keyword.starts(with: "C") && !keyword.starts(with: "CR")) || keyword.starts(with: "G") || keyword.starts(with: "D") {
+                let results = try await moerailProvider.request(target: .train(keyword: keyword), as: [EMUTrainAssociation].self)
+                try Task.checkCancellation()
+                emuTrainAssocList = results
+                mode = emuTrainAssocList.isEmpty ? .emptyTrain : .singleTrain
+                await populateTrainInfo()
+            } else {
+                emuTrainAssocList = []
+                let results = try await moerailProvider.request(target: .emu(keyword: keyword), as: [EMUTrainAssociation].self)
+                try Task.checkCancellation()
+                emuTrainAssocList = results
+                updateModeForEmuResults()
+                await populateTrainInfo()
+            }
+        } catch is CancellationError {
+            // Ignore cancellations.
+        } catch {
+            await handleError(error)
+        }
+    }
+    
+    private func updateModeForEmuResults() {
+        if emuTrainAssocList.isEmpty {
+            mode = .emptyEmu
+        } else if mode == .loading {
+            mode = .singleEmu
+        }
+        for index in emuTrainAssocList.indices where index > 0 {
+            if emuTrainAssocList[index].emu != emuTrainAssocList[index - 1].emu {
+                mode = .multipleEmus
+                return
+            }
+        }
+    }
+    
+    private func populateTrainInfo() async {
+        for (index, emu) in emuTrainAssocList.enumerated() {
+            if Task.isCancelled { return }
+            do {
+                let trainInfo = try await TrainInfoProvider.shared.get(forTrain: emu.singleTrain)
+                if Task.isCancelled { return }
+                if emuTrainAssocList.indices.contains(index) {
+                    emuTrainAssocList[index].trainInfo = trainInfo
+                }
+            } catch {
+                // Ignore failures retrieving individual train info to match previous silent failure behaviour.
+            }
+        }
+    }
+    
+    public func handleError(_ error: Error) async {
         mode = .error
         if let error = error as? NetworkError {
             if error.code == 503 {

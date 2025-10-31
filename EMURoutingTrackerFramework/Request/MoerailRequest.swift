@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import Moya
-
 enum MoerailRequest {
     case train(keyword: String)
     case trains(keywords: [String])
@@ -16,7 +14,7 @@ enum MoerailRequest {
     case qr(emu: String, url: String)
 }
 
-extension MoerailRequest: TargetType {
+extension MoerailRequest: APIRequest {
     var baseURL: URL {
         return URL(string: "https://api.rail.re/")!
     }
@@ -41,7 +39,7 @@ extension MoerailRequest: TargetType {
         
     }
     
-    var method: Moya.Method {
+    var method: HTTPMethod {
         switch self {
         case .qr(_, _):
             return .post
@@ -50,23 +48,26 @@ extension MoerailRequest: TargetType {
         }
     }
     
-    var sampleData: Data {
-        return Data()
+    var queryItems: [URLQueryItem]? {
+        return nil
     }
-    
-    var task: Task {
+
+    var body: Data? {
         switch self {
         case .qr(_, let url):
-            return .requestParameters(parameters: [
-                "url": url
-            ], encoding: JSONEncoding.default)
+            return try? JSONSerialization.data(withJSONObject: ["url": url])
         default:
-            return .requestPlain
+            return nil
         }
     }
     
     var headers: [String : String]? {
-        return nil
+        switch self {
+        case .qr:
+            return ["Content-Type": "application/json"]
+        default:
+            return nil
+        }
     }
     
     

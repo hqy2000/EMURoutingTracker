@@ -10,41 +10,43 @@ import Cache
 import JavaScriptCore
 import Sentry
 import SwiftUI
-import RxSwift
 
-internal class StationProvider: AbstractProvider<CRRequest>, ObservableObject {
+@MainActor
+internal class StationProvider: ObservableObject {
     public static let shared = StationProvider()
+    private let provider = AbstractProvider<CRRequest>()
     @Published public private(set) var stations: [Station] = []
-    private let disposeBag = DisposeBag()
     
-    override private init() {
-        super.init()
-        self.get()
+    private init() {
+        Task { [weak self] in
+            await self?.fetchStations()
+        }
     }
     
-    private func get() {
-        self.requestRaw(target: .stations)
-            .observe(on: MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] result in
-                let context = JSContext()
-                context?.evaluateScript(result)
-                if let raw = context?.objectForKeyedSubscript("station_names")?.toString() {
-                    let stations: [Station] = raw.split(separator: "@").map { (raw) in
-                        let info = raw.split(separator: "|")
-                        if info.count < 5 {
-                            return Station(name: "", code: "", pinyin: "", abbreviation: "")
-                        } else {
-                            return Station(name: String(info[1]), code: String(info[2]), pinyin: String(info[3]), abbreviation: String(info[4]))
-                        }
+    private func fetchStations() async {
+        do {
+            let result = try await provider.requestRaw(target: .stations)
+            let context = JSContext()
+            context?.evaluateScript(result)
+            if let raw = context?.objectForKeyedSubscript("station_names")?.toString() {
+                let stations: [Station] = raw.split(separator: "@").map { rawStation in
+                    let info = rawStation.split(separator: "|")
+                    guard info.count >= 5 else {
+                        return Station(name: "", code: "", pinyin: "", abbreviation: "")
                     }
-                    self?.stations = stations
-                } else {
-                    SentrySDK.capture(message: "Error decoding stations: \(result)")
+                    return Station(
+                        name: String(info[1]),
+                        code: String(info[2]),
+                        pinyin: String(info[3]),
+                        abbreviation: String(info[4])
+                    )
                 }
-            }, onFailure: { error in
-                SentrySDK.capture(message: "Error fetching stations: \(error.localizedDescription)")
-    
-            })
-            .disposed(by: disposeBag)
+                self.stations = stations
+            } else {
+                SentrySDK.capture(message: "Error decoding stations: \(result)")
+            }
+        } catch {
+            SentrySDK.capture(message: "Error fetching stations: \(error.localizedDescription)")
+        }
     }
 }

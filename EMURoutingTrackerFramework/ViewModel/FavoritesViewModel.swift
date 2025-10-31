@@ -8,18 +8,25 @@
 import Foundation
 import SwiftUI
 import SwiftyUserDefaults
-import RxSwift
 
+@MainActor
 class FavoritesViewModel: ObservableObject {
     let moerailProvider = AbstractProvider<MoerailRequest>()
     @Published var favoriteEMUs: [EMUTrainAssociation] = []
     @Published var favoriteTrains: [EMUTrainAssociation] = []
     private var lastRefresh: Date? = nil
-    private let disposeBag = DisposeBag()
     private let batchSize = 20
+    private var refreshTask: Task<Void, Never>?
     
     init() {
-        refresh()
+    }
+    
+    public func refreshAsync() async {
+        await withCheckedContinuation { continuation in
+            refresh {
+                continuation.resume()
+            }
+        }
     }
     
     public func refresh(completion: (() -> Void)? = nil) {
@@ -31,6 +38,13 @@ class FavoritesViewModel: ObservableObject {
         }
         lastRefresh = Date()
         
+        refreshTask?.cancel()
+        refreshTask = Task {
+            await performRefresh(completion: completion)
+        }
+    }
+    
+    private func performRefresh(completion: (() -> Void)?) async {
         if favoriteTrains.isEmpty {
             favoriteTrains = FavoritesProvider.trains.favorites.map { favorite in
                 EMUTrainAssociation(emu: "", train: favorite.name, date: "")
@@ -43,58 +57,74 @@ class FavoritesViewModel: ObservableObject {
             }
         }
         
+        do {
+            let trainsResult = try await queryInBatches(
+                items: FavoritesProvider.trains.favorites.map { $0.name },
+                associationTypeGenerator: { .trains(keywords: $0) }
+            )
+            try Task.checkCancellation()
+            favoriteTrains = trainsResult
+            await populateTrainInfo(for: \.favoriteTrains)
+        } catch is CancellationError {
+            completion?()
+            return
+        } catch {
+            // Preserve previous behaviour by silently ignoring failures.
+        }
         
-        let trainsSingle = queryInBatches(
-            items: FavoritesProvider.trains.favorites.map { $0.name },
-            associationTypeGenerator: { .trains(keywords: $0) }
-        ).do(onSuccess: { [weak self] result in
-            self?.favoriteTrains = result
-            result.enumerated().forEach { index, emu in
-                TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { trainInfo in
-                    self?.favoriteTrains[index].trainInfo = trainInfo
+        do {
+            let emusResult = try await queryInBatches(
+                items: FavoritesProvider.EMUs.favorites.map { $0.name },
+                associationTypeGenerator: { .emus(keywords: $0) }
+            )
+            try Task.checkCancellation()
+            favoriteEMUs = emusResult
+            await populateTrainInfo(for: \.favoriteEMUs)
+        } catch is CancellationError {
+            completion?()
+            return
+        } catch {
+            // Preserve previous behaviour by silently ignoring failures.
+        }
+        
+        completion?()
+    }
+    
+    private func populateTrainInfo(for keyPath: ReferenceWritableKeyPath<FavoritesViewModel, [EMUTrainAssociation]>) async {
+        for index in self[keyPath: keyPath].indices {
+            if Task.isCancelled { return }
+            let trainCode = self[keyPath: keyPath][index].singleTrain
+            guard !trainCode.isEmpty else { continue }
+            if let trainInfo = try? await TrainInfoProvider.shared.get(forTrain: trainCode) {
+                if Task.isCancelled { return }
+                if self[keyPath: keyPath].indices.contains(index) {
+                    self[keyPath: keyPath][index].trainInfo = trainInfo
                 }
             }
-        })
-        
-        let emusSingle = queryInBatches(
-            items: FavoritesProvider.EMUs.favorites.map { $0.name },
-            associationTypeGenerator: { .emus(keywords: $0) }
-        ).do(onSuccess: { [weak self] result in
-            self?.favoriteEMUs = result
-            result.enumerated().forEach { index, emu in
-                TrainInfoProvider.shared.get(forTrain: emu.singleTrain) { trainInfo in
-                    self?.favoriteEMUs[index].trainInfo = trainInfo
-                }
-            }
-        })
-        
-        Single.zip(trainsSingle, emusSingle)
-            .observe(on: MainScheduler.instance)
-            .subscribe({ _ in
-                completion?()
-            })
-            .disposed(by: disposeBag)
+        }
     }
     
     private func queryInBatches(
         items: [String],
         associationTypeGenerator: ([String]) -> MoerailRequest
-    ) -> Single<[EMUTrainAssociation]> {
+    ) async throws -> [EMUTrainAssociation] {
         guard !items.isEmpty else {
-            return Single.just([]) // Return an empty observable if the list is empty
+            return []
         }
+        
+        var results: [EMUTrainAssociation] = []
         
         let batches = items.chunked(into: batchSize)
-        let observables = batches.map { [weak self] batch -> Observable<[EMUTrainAssociation]> in
-            guard let self else {
-                return Observable.just([])
-            }
-            return self.moerailProvider.request(target: associationTypeGenerator(batch), type: [EMUTrainAssociation].self).asObservable()
+        for batch in batches {
+            try Task.checkCancellation()
+            let result = try await moerailProvider.request(target: associationTypeGenerator(batch), as: [EMUTrainAssociation].self)
+            results.append(contentsOf: result)
         }
-        
-        return Observable.concat(observables)
-            .reduce([]) { $0 + $1 }
-            .asSingle()
+        return results
+    }
+    
+    deinit {
+        refreshTask?.cancel()
     }
     
 }

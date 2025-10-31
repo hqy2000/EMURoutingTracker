@@ -6,16 +6,13 @@
 //
 
 import Foundation
-import Moya
-import Alamofire
-
 enum CRRequest {
     case train(trainNo: String, date: String)
     case stations
     case leftTicketPrice(from: String, to: String, date: String)
 }
 
-extension CRRequest: TargetType {
+extension CRRequest: APIRequest {
     var baseURL: URL {
         switch self {
         case .train(_, _):
@@ -36,32 +33,32 @@ extension CRRequest: TargetType {
         }
     }
     
-    var method: Moya.Method {
+    var method: HTTPMethod {
         return .get
     }
     
-    var sampleData: Data {
-        return Data()
-    }
-    
-    var task: Task {
+    var queryItems: [URLQueryItem]? {
         switch self {
         case .train(let trainNo, let date):
-            return .requestParameters(parameters: [
-                "keyword": trainNo,
-                "date": date
-            ], encoding: URLEncoding.default)
+            return [
+                URLQueryItem(name: "keyword", value: trainNo),
+                URLQueryItem(name: "date", value: date)
+            ]
         case .stations:
-            return .requestPlain
+            return nil
         case .leftTicketPrice(let from, let to, let date):
-            return .requestParameters(parameters: [
-                "leftTicketDTO.train_date": date,
-                "leftTicketDTO.from_station": from,
-                "leftTicketDTO.to_station": to,
-                "leftTicketDTO.ticket_type": 1,
-                "randCode": ""
-            ], encoding: URLEncoding.default)
+            return [
+                URLQueryItem(name: "leftTicketDTO.train_date", value: date),
+                URLQueryItem(name: "leftTicketDTO.from_station", value: from),
+                URLQueryItem(name: "leftTicketDTO.to_station", value: to),
+                URLQueryItem(name: "leftTicketDTO.ticket_type", value: "1"),
+                URLQueryItem(name: "randCode", value: "")
+            ]
         }
+    }
+    
+    var body: Data? {
+        return nil
     }
     
     var headers: [String : String]? {

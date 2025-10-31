@@ -66,14 +66,13 @@
 		51FAECB826BEBBBF00A84AC8 /* CRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA51255A97FB00B29703 /* CRRequest.swift */; };
 		51FAECBA26BFB87800A84AC8 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAECB926BFB87800A84AC8 /* AboutView.swift */; };
 		51FF3529255C07C300EC6B8A /* TrainInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF3528255C07C300EC6B8A /* TrainInfoProvider.swift */; };
+		78D6A1A82D4F5C6400AA7B01 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D6A1A72D4F5C6400AA7B01 /* APIRequest.swift */; };
+		78D6A1A92D4F5C6400AA7B01 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D6A1A72D4F5C6400AA7B01 /* APIRequest.swift */; };
 		784A4FE52C64C3990045B791 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FE42C64C3990045B791 /* Sentry */; };
 		784A4FE72C64C39C0045B791 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FE62C64C39C0045B791 /* Cache */; };
-		784A4FEA2C64C3D10045B791 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FE92C64C3D10045B791 /* Moya */; };
 		784A4FED2C64C3EE0045B791 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FEC2C64C3EE0045B791 /* SwiftyUserDefaults */; };
 		784A4FEF2C64C4300045B791 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FEE2C64C4300045B791 /* SFSafeSymbols */; };
 		784A4FF12C64C4410045B791 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FF02C64C4410045B791 /* CodeScanner */; };
-		785E57872D348356006FD00D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 785E57862D348356006FD00D /* RxSwift */; };
-		785E578B2D348E2B006FD00D /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 785E578A2D348E2B006FD00D /* RxMoya */; };
 		78C4BDF62D0D82B800EA4D53 /* ScanQRCodeActionSheetModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF52D0D82B300EA4D53 /* ScanQRCodeActionSheetModifier.swift */; };
 		78C4BDFA2D0E3DFC00EA4D53 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF92D0E3DF900EA4D53 /* Query.swift */; };
 		78C4BDFC2D0E76F200EA4D53 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDFB2D0E76EC00EA4D53 /* FavoriteButton.swift */; };
@@ -151,6 +150,7 @@
 		518DFA472558332D00B29703 /* EMURoutingTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EMURoutingTracker.entitlements; sourceTree = "<group>"; };
 		518DFA4E255A97ED00B29703 /* DepartureArrivalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureArrivalViewModel.swift; sourceTree = "<group>"; };
 		518DFA51255A97FB00B29703 /* CRRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRRequest.swift; sourceTree = "<group>"; };
+		78D6A1A72D4F5C6400AA7B01 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		518DFA54255A9F3C00B29703 /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
 		518DFA57255A9FEE00B29703 /* CRResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRResponse.swift; sourceTree = "<group>"; };
 		518DFA5A255AEC0000B29703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,11 +216,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				785E578B2D348E2B006FD00D /* RxMoya in Frameworks */,
 				784A4FE52C64C3990045B791 /* Sentry in Frameworks */,
 				784A4FE72C64C39C0045B791 /* Cache in Frameworks */,
-				785E57872D348356006FD00D /* RxSwift in Frameworks */,
-				784A4FEA2C64C3D10045B791 /* Moya in Frameworks */,
 				784A4FED2C64C3EE0045B791 /* SwiftyUserDefaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +228,7 @@
 		518DFA2E2557E3D300B29703 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				78D6A1A72D4F5C6400AA7B01 /* APIRequest.swift */,
 				518DFA2F2557E3E200B29703 /* MoerailRequest.swift */,
 				518DFA51255A97FB00B29703 /* CRRequest.swift */,
 			);
@@ -516,10 +514,7 @@
 			packageProductDependencies = (
 				784A4FE42C64C3990045B791 /* Sentry */,
 				784A4FE62C64C39C0045B791 /* Cache */,
-				784A4FE92C64C3D10045B791 /* Moya */,
 				784A4FEC2C64C3EE0045B791 /* SwiftyUserDefaults */,
-				785E57862D348356006FD00D /* RxSwift */,
-				785E578A2D348E2B006FD00D /* RxMoya */,
 			);
 			productName = chinaemuFramework;
 			productReference = 51FAEC8526BEB90400A84AC8 /* EMURoutingTrackerFramework.framework */;
@@ -560,9 +555,7 @@
 				783305B829998BBE00181F32 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 				784A4FDE2C64C1070045B791 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 				784A4FE12C64C3320045B791 /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
-				784A4FE82C64C3C90045B791 /* XCRemoteSwiftPackageReference "Moya" */,
 				784A4FEB2C64C3E70045B791 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */,
-				785E57852D34832F006FD00D /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 51EFCC3F25273DE200EA9D54 /* Products */;
 			projectDirPath = "";
@@ -616,6 +609,7 @@
 				518DFA3E25581D7A00B29703 /* AbstractProvider.swift in Sources */,
 				51D880DD278B7FA100A96834 /* ScanQRCodeButton.swift in Sources */,
 				78C4BDFE2D0E7FC100EA4D53 /* QueryNavigationModifier.swift in Sources */,
+				78D6A1A82D4F5C6400AA7B01 /* APIRequest.swift in Sources */,
 				518DFA52255A97FB00B29703 /* CRRequest.swift in Sources */,
 				51E2087C25678BA5001D91D2 /* StationProvider.swift in Sources */,
 				51E208862567D90C001D91D2 /* DepartureArrivalRow.swift in Sources */,
@@ -655,6 +649,7 @@
 				78C4BE022D0E827500EA4D53 /* DateFormatter.swift in Sources */,
 				51FAECAC26BEBBA600A84AC8 /* TrainInfoProvider.swift in Sources */,
 				51FAECB726BEBBBF00A84AC8 /* MoerailRequest.swift in Sources */,
+				78D6A1A92D4F5C6400AA7B01 /* APIRequest.swift in Sources */,
 				51FAECAA26BEBB9C00A84AC8 /* FavoritesProvider.swift in Sources */,
 				51FAECB026BEBBB100A84AC8 /* DepartureArrivalViewModel.swift in Sources */,
 				51FAECAB26BEBBA300A84AC8 /* StationProvider.swift in Sources */,
@@ -1068,28 +1063,12 @@
 				minimumVersion = 8.32.0;
 			};
 		};
-		784A4FE82C64C3C90045B791 /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.3;
-			};
-		};
 		784A4FEB2C64C3E70045B791 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sunshinejr/SwiftyUserDefaults";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.3.0;
-			};
-		};
-		785E57852D34832F006FD00D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.8.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1105,11 +1084,6 @@
 			package = 783305AF29998AF600181F32 /* XCRemoteSwiftPackageReference "Cache" */;
 			productName = Cache;
 		};
-		784A4FE92C64C3D10045B791 /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 784A4FE82C64C3C90045B791 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
 		784A4FEC2C64C3EE0045B791 /* SwiftyUserDefaults */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 784A4FEB2C64C3E70045B791 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
@@ -1124,16 +1098,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 784A4FDE2C64C1070045B791 /* XCRemoteSwiftPackageReference "CodeScanner" */;
 			productName = CodeScanner;
-		};
-		785E57862D348356006FD00D /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 785E57852D34832F006FD00D /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		785E578A2D348E2B006FD00D /* RxMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 784A4FE82C64C3C90045B791 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

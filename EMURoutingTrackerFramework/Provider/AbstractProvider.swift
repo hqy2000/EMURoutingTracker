@@ -6,55 +6,54 @@
 //
 
 import Foundation
-import Moya
 import Sentry
-import RxSwift
-import RxMoya
 
-class AbstractProvider<T: TargetType> {
-    let provider = MoyaProvider<T>()
+class AbstractProvider<T: APIRequest> {
+    private let session: URLSession
+    private let decoder: JSONDecoder
     
-    /// Makes a request and returns an observable of the decoded response
-    func request<R: Codable>(target: T, type: R.Type) -> Single<R> {
-        return provider.rx.request(target)
-            .flatMap { response -> Single<R> in
-                guard response.statusCode == 200 else {
-                    let error = NetworkError(
-                        response.statusCode,
-                        response.request?.url?.absoluteString ?? "<Empty URL>",
-                        String(data: response.data, encoding: .utf8) ?? "<Empty Content>"
-                    )
-                    SentrySDK.capture(error: error)
-                    return Single.error(error)
-                }
-                
-                do {
-                    let decoder = JSONDecoder()
-                    let result = try decoder.decode(R.self, from: response.data)
-                    return Single.just(result)
-                } catch {
-                    SentrySDK.capture(error: error)
-                    return Single.error(error)
-                }
-            }
+    init(session: URLSession = .shared, decoder: JSONDecoder = JSONDecoder()) {
+        self.session = session
+        self.decoder = decoder
     }
     
-    /// Makes a request and returns an observable of the raw response string
-    func requestRaw(target: T) -> Single<String> {
-        return provider.rx.request(target)
-            .flatMap { response -> Single<String> in
-                guard response.statusCode == 200 else {
-                    let error = NetworkError(
-                        response.statusCode,
-                        response.request?.url?.absoluteString ?? "<Empty URL>",
-                        String(data: response.data, encoding: .utf8) ?? "<Empty Content>"
-                    )
-                    SentrySDK.capture(error: error)
-                    return Single.error(error)
-                }
-                let rawString = String(data: response.data, encoding: .utf8) ?? ""
-                return Single.just(rawString)
-            }
+    /// Makes a request and returns the decoded response.
+    func request<R: Decodable>(target: T, as type: R.Type) async throws -> R {
+        let (data, _) = try await performRequest(target: target)
+        do {
+            return try decoder.decode(R.self, from: data)
+        } catch {
+            SentrySDK.capture(error: error)
+            throw error
+        }
+    }
+    
+    /// Makes a request and returns the raw response body as a string.
+    func requestRaw(target: T) async throws -> String {
+        let (data, _) = try await performRequest(target: target)
+        return String(data: data, encoding: .utf8) ?? ""
+    }
+    
+    private func performRequest(target: T) async throws -> (Data, HTTPURLResponse) {
+        let request = try target.makeURLRequest()
+        let (data, response) = try await session.data(for: request)
+        guard let httpResponse = response as? HTTPURLResponse else {
+            let error = URLError(.badServerResponse)
+            SentrySDK.capture(error: error)
+            throw error
+        }
+        
+        guard (200..<300).contains(httpResponse.statusCode) else {
+            let error = NetworkError(
+                httpResponse.statusCode,
+                request.url?.absoluteString ?? "<Empty URL>",
+                String(data: data, encoding: .utf8) ?? "<Empty Content>"
+            )
+            SentrySDK.capture(error: error)
+            throw error
+        }
+        
+        return (data, httpResponse)
     }
 }
 
