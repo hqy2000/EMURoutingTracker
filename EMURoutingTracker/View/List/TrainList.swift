@@ -29,13 +29,15 @@ struct TrainList: View {
                     }
                 }
             }
-        }
-        .navigationBarItems(trailing: HStack {
-            ScanQRCodeButton().environmentObject(vm)
-            if let train = vm.emuTrainAssocList.first?.singleTrain {
-                FavoriteButton(trainOrEMU: train, provider: FavoritesProvider.trains)
+            ToolbarItem(placement: .topBarLeading) {
+                ScanQRCodeButton().environmentObject(vm)
             }
-        })
+            ToolbarItem(placement: .topBarTrailing) {
+                if let train = vm.emuTrainAssocList.first?.singleTrain {
+                    FavoriteButton(trainOrEMU: train, provider: FavoritesProvider.trains)
+                }
+            }
+        }
     }
 }
 

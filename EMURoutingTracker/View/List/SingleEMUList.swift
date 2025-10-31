@@ -30,13 +30,15 @@ struct SingleEMUList: View {
                     Text(vm.query).font(.headline)
                 }
             }
-        }
-        .navigationBarItems(trailing: HStack {
-            ScanQRCodeButton().environmentObject(vm)
-            if let emu = vm.emuTrainAssocList.first?.emu {
-                FavoriteButton(trainOrEMU: emu, provider: FavoritesProvider.EMUs)
+            ToolbarItem(placement: .topBarLeading) {
+                ScanQRCodeButton().environmentObject(vm)
             }
-        })
+            ToolbarItem(placement: .topBarTrailing) {
+                if let emu = vm.emuTrainAssocList.first?.emu {
+                    FavoriteButton(trainOrEMU: emu, provider: FavoritesProvider.EMUs)
+                }
+            }
+        }
     }
 }
 

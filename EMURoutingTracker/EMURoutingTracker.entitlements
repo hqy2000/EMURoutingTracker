@@ -4,17 +4,9 @@
 <dict>
 	<key>com.apple.developer.associated-domains</key>
 	<array/>
-	<key>com.apple.security.app-sandbox</key>
-	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
 		<string>group.me.njliner.chinaemu</string>
 	</array>
-	<key>com.apple.security.device.camera</key>
-	<true/>
-	<key>com.apple.security.network.client</key>
-	<true/>
-	<key>com.apple.security.personal-information.photos-library</key>
-	<true/>
 </dict>
 </plist>
