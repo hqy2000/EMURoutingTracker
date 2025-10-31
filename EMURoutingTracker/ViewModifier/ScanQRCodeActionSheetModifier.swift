@@ -20,10 +20,11 @@ struct ScanQRCodeActionSheetModifier: ViewModifier {
             .sheet(isPresented: $isPresented) {
                 CodeScannerView(codeTypes: [.qr], manualSelect: true, simulatedData: "") { result in
                     isPresented = false
+                    let newOutcome: ScanOutcome
                     switch result {
                     case .success(let code):
                         onCompletion(code.string)
-                        outcome = ScanOutcome.success
+                        newOutcome = ScanOutcome.success()
                     case .failure(let error):
                         SentrySDK.capture(error: error)
                         let message: String
@@ -32,7 +33,10 @@ struct ScanQRCodeActionSheetModifier: ViewModifier {
                         } else {
                             message = error.localizedDescription + "请确认您扫描的二维码为点餐码。"
                         }
-                        outcome = ScanOutcome.failure(message: message)
+                        newOutcome = ScanOutcome.failure(message: message)
+                    }
+                    DispatchQueue.main.async {
+                        outcome = newOutcome
                     }
                 }
             }
@@ -63,10 +67,12 @@ private struct ScanOutcome: Identifiable {
     let title: String
     let message: String
     
-    static let success = ScanOutcome(
-        title: "上报成功",
-        message: "感谢您的支持，我们将尽快根据您反馈的信息，更新我们的数据！"
-    )
+    static func success() -> ScanOutcome {
+        ScanOutcome(
+            title: "上报成功",
+            message: "感谢您的支持，我们将尽快根据您反馈的信息，更新我们的数据！"
+        )
+    }
     
     static func failure(message: String) -> ScanOutcome {
         ScanOutcome(

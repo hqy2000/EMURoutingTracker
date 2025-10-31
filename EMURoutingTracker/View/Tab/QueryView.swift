@@ -21,10 +21,16 @@ struct QueryView: View {
         NavigationStack(path: $path) {
             List {
                 Section(header: Text("车组/车次查询")) {
-                    TextField("G2/380/CRH2A2001", text: $query).keyboardType(.asciiCapable).textCase(.uppercase)
+                    TextField("G2/380/CRH2A2001", text: Binding(
+                        get: { query },
+                        set: { query = $0.filter { $0.isLetter || $0.isNumber }.uppercased() }
+                    )).keyboardType(.asciiCapable).textInputAutocapitalization(.characters).onSubmit {
+                        guard !query.isEmpty else { return }
+                        path.append(Query.trainOrEmu(trainOrEmu: query))
+                    }
                     Button {
                         guard !query.isEmpty else { return }
-                        path.append(Query.trainOrEmu(trainOrEmu: query.filter { $0.isLetter || $0.isNumber }.uppercased()))
+                        path.append(Query.trainOrEmu(trainOrEmu: query))
                     } label: {
                         Text("查询").frame(maxWidth: .infinity, alignment: .center)
                     }
