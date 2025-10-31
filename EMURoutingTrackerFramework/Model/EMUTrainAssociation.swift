@@ -21,56 +21,54 @@ struct EMUTrainAssociation: Codable, Hashable, Identifiable {
     let date: String
     var trainInfo: Train? = nil
     
-    var image: String {
-        var filename = ""
+    var image: ImageResource {
         switch emu {
         case _ where emu.contains("CR400A"):
-            return "CR400A"
+            return .CR_400_A
         case _ where emu.contains("CR400B"):
-            return "CR400B"
+            return .CR_400_B
         case _ where emu.contains("CR300A"):
-            return "CR300A"
+            return .CR_300_A
         case _ where emu.contains("CR300B"):
-            return "CR300B"
+            return .CR_300_B
         case _ where emu.contains("CR200J"):
-            return "CR200J"
+            return .CR_200_J
         case _ where emu.contains("CRH1E"):
-            return "CRH1E"
+            return .CRH_1_E
         case _ where emu.contains("CRH1"):
-            filename = "CRH1"
+            return .CRH_1
         case _ where emu.contains("CRH2B"):
-            filename = "CRH2B"
+            return .CRH_2_B
         case _ where emu.contains("CRH2C"):
-            filename = "CRH2C"
+            return .CRH_2_C
         case _ where emu.contains("CRH2G"),
              _ where emu.contains("CRH2H"):
-            filename = "CRH2G"
+            return .CRH_2_H
         case _ where emu.contains("CRH2"):
-            filename = "CRH2"
+            return .CRH_2
         case _ where emu.contains("CRH380B"):
-            filename = "CRH380B"
+            return .CRH_380_B
         case _ where emu.contains("CRH380C"):
-            filename = "CRH380C"
+            return .CRH_380_C
         case _ where emu.contains("CRH380D"):
-            filename = "CRH380D"
+            return .CRH_380_D
         case _ where emu.contains("CRH380"):
-            filename = "CRH380"
+            return .CRH_380
         case _ where emu.contains("CRH3A"):
-            filename = "CRH3A"
+            return .CRH_3_A
         case _ where emu.contains("CRH3"):
-            filename = "CRH3"
+            return .CRH_3
         case _ where emu.contains("CRH5"):
-            filename = "CRH5"
+            return .CRH_5
         case _ where emu.contains("CRH6F"):
-            filename = "CRH6F"
+            return .CRH_6_F
         case _ where emu.contains("CRH6"):
-            filename = "CRH6"
+            return .CRH_6
         case _ where emu.contains("MTR"):
-            filename = "MTR"
+            return .MTR
         default:
-            filename = "CRH2"
+            return .CRH_2
         }
-        return filename
     }
     
     var color: Color {

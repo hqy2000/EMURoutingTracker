@@ -26,7 +26,7 @@ struct SingleEMUList: View {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack {
-                    Image(vm.emuTrainAssocList.first?.image ?? "").resizable().scaledToFit().frame(height: 28)
+                    Image(vm.emuTrainAssocList.first?.image ?? .empty).resizable().scaledToFit().frame(height: 28)
                     Text(vm.query).font(.headline)
                 }
             }

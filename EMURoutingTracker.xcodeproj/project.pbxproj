@@ -66,8 +66,6 @@
 		51FAECB826BEBBBF00A84AC8 /* CRRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DFA51255A97FB00B29703 /* CRRequest.swift */; };
 		51FAECBA26BFB87800A84AC8 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAECB926BFB87800A84AC8 /* AboutView.swift */; };
 		51FF3529255C07C300EC6B8A /* TrainInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FF3528255C07C300EC6B8A /* TrainInfoProvider.swift */; };
-		78D6A1A82D4F5C6400AA7B01 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D6A1A72D4F5C6400AA7B01 /* APIRequest.swift */; };
-		78D6A1A92D4F5C6400AA7B01 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D6A1A72D4F5C6400AA7B01 /* APIRequest.swift */; };
 		784A4FE52C64C3990045B791 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FE42C64C3990045B791 /* Sentry */; };
 		784A4FE72C64C39C0045B791 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FE62C64C39C0045B791 /* Cache */; };
 		784A4FED2C64C3EE0045B791 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FEC2C64C3EE0045B791 /* SwiftyUserDefaults */; };
@@ -80,6 +78,8 @@
 		78C4BE022D0E827500EA4D53 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BE012D0E827200EA4D53 /* DateFormatter.swift */; };
 		78C4BE032D0E827500EA4D53 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BE012D0E827200EA4D53 /* DateFormatter.swift */; };
 		78C4BF112D0F000000EA4D53 /* OpenSourceLicenses.md in Resources */ = {isa = PBXBuildFile; fileRef = 78C4BF102D0F000000EA4D53 /* OpenSourceLicenses.md */; };
+		78D6A1A82D4F5C6400AA7B01 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D6A1A72D4F5C6400AA7B01 /* APIRequest.swift */; };
+		78D6A1A92D4F5C6400AA7B01 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D6A1A72D4F5C6400AA7B01 /* APIRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,7 +151,6 @@
 		518DFA472558332D00B29703 /* EMURoutingTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EMURoutingTracker.entitlements; sourceTree = "<group>"; };
 		518DFA4E255A97ED00B29703 /* DepartureArrivalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureArrivalViewModel.swift; sourceTree = "<group>"; };
 		518DFA51255A97FB00B29703 /* CRRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRRequest.swift; sourceTree = "<group>"; };
-		78D6A1A72D4F5C6400AA7B01 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		518DFA54255A9F3C00B29703 /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
 		518DFA57255A9FEE00B29703 /* CRResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRResponse.swift; sourceTree = "<group>"; };
 		518DFA5A255AEC0000B29703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -161,7 +160,6 @@
 		51E20882256797EB001D91D2 /* DepartureArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureArrival.swift; sourceTree = "<group>"; };
 		51E208852567D90C001D91D2 /* DepartureArrivalRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureArrivalRow.swift; sourceTree = "<group>"; };
 		51E208882567E3F5001D91D2 /* DepartureArrivalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureArrivalList.swift; sourceTree = "<group>"; };
-		78C4BF102D0F000000EA4D53 /* OpenSourceLicenses.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = OpenSourceLicenses.md; sourceTree = "<group>"; };
 		51E27DB12561143E00B22289 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		51E27DB92561163000B22289 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		51E27DC0256116D100B22289 /* EMURow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMURow.swift; sourceTree = "<group>"; };
@@ -187,6 +185,8 @@
 		78C4BDFB2D0E76EC00EA4D53 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		78C4BDFD2D0E7FA600EA4D53 /* QueryNavigationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryNavigationModifier.swift; sourceTree = "<group>"; };
 		78C4BE012D0E827200EA4D53 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		78C4BF102D0F000000EA4D53 /* OpenSourceLicenses.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = OpenSourceLicenses.md; sourceTree = "<group>"; };
+		78D6A1A72D4F5C6400AA7B01 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -424,20 +424,20 @@
 			path = Tab;
 			sourceTree = "<group>";
 		};
-		78C4BF122D0F000000EA4D53 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				78C4BF102D0F000000EA4D53 /* OpenSourceLicenses.md */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		78C4BE0B2D0EC31D00EA4D53 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				78C4BDF92D0E3DF900EA4D53 /* Query.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		78C4BF122D0F000000EA4D53 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				78C4BF102D0F000000EA4D53 /* OpenSourceLicenses.md */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7CD611A66570102CFA262B40 /* Frameworks */ = {
@@ -844,7 +844,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.4;
+				MARKETING_VERSION = 2.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -872,7 +872,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.4;
+				MARKETING_VERSION = 2.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -899,7 +899,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.4.4;
+				MARKETING_VERSION = 2.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.chinaemuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -925,7 +925,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.4.4;
+				MARKETING_VERSION = 2.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.chinaemuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -956,7 +956,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.4;
+				MARKETING_VERSION = 2.5.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				PRODUCT_BUNDLE_IDENTIFIER = moe.hqy.chinaemuFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -989,7 +989,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.4;
+				MARKETING_VERSION = 2.5.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				PRODUCT_BUNDLE_IDENTIFIER = moe.hqy.chinaemuFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

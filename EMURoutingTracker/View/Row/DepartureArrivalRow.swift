@@ -14,7 +14,9 @@ struct DepartureArrivalRow: View {
 
     var body: some View {
         HStack(spacing: 0) {
-            Image(emu?.image ?? "").resizable().scaledToFit().frame(width: 20, alignment: .leading)
+            if let emu {
+                Image(emu.image).resizable().scaledToFit().frame(width: 20, alignment: .leading)
+            }
             Spacer().frame(minWidth: 3, maxWidth: 20)
             VStack(alignment: .leading) {
                 Button {
