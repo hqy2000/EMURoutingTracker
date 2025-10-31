@@ -59,7 +59,7 @@ struct DepartureArrivalRow: View {
             }.frame(width: 90)
             
             Spacer(minLength: 3)
-            Image(systemName: "arrow.right")
+            Image(systemSymbol: .arrowRight)
             Spacer(minLength: 3)
             VStack(alignment: .trailing) {
                 Text(departureArrival.arrivalStation)

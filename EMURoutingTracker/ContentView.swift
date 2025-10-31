@@ -13,19 +13,17 @@ struct ContentView: View {
         TabView {
             QueryView()
                 .tabItem {
-                    VStack {
-                        Image(systemName: "magnifyingglass")
-                        Text("查询")
-                    }
+                    Image(systemSymbol: .magnifyingglass)
+                    Text("查询")
                 }
             FavoritesView()
                 .tabItem {
-                    Image(systemName: "bookmark")
+                    Image(systemSymbol: .bookmark)
                     Text("收藏")
                 }
             AboutView()
                 .tabItem {
-                    Image(systemName: "info")
+                    Image(systemSymbol: .info)
                     Text("更多")
                 }
         

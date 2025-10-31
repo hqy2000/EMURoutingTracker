@@ -22,9 +22,9 @@ struct FavoriteButton: View {
             store.toggle(trainOrEMU, provider: provider)
         }, label: {
             if store.contains(trainOrEMU, provider: provider) {
-                Image(systemName: "star.fill")
+                Image(systemSymbol: .starFill)
             } else {
-                Image(systemName: "star")
+                Image(systemSymbol: .star)
             }
         })
         .onAppear {

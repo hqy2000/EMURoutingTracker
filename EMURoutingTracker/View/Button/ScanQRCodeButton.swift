@@ -18,7 +18,7 @@ struct ScanQRCodeButton: View {
         Button(action: {
             showSheet = true
         }, label: {
-           Image(systemName: "qrcode.viewfinder")
+            Image(systemSymbol: .qrcodeViewfinder)
         }).scanQrCodeActionSheet(isPresented: $showSheet) { message in
             vm.postTrackingURL(url: message)
         }
