@@ -24,7 +24,7 @@ struct QueryView: View {
                     TextField("G2/380/CRH2A2001", text: Binding(
                         get: { query },
                         set: { query = $0.filter { $0.isLetter || $0.isNumber }.uppercased() }
-                    )).keyboardType(.asciiCapable).textInputAutocapitalization(.characters).onSubmit {
+                    )).keyboardType(.asciiCapable).textInputAutocapitalization(.characters).autocorrectionDisabled().onSubmit {
                         guard !query.isEmpty else { return }
                         path.append(Query.trainOrEmu(trainOrEmu: query))
                     }
