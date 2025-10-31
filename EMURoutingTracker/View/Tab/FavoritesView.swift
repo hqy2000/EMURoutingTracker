@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    @ObservedObject var vm = FavoritesViewModel()
+    @StateObject private var vm = FavoritesViewModel()
     @State private var path = NavigationPath()
     
     var body: some View {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DepartureArrivalList: View {
-    @ObservedObject var vm = DepartureArrivalViewModel()
+    @StateObject private var vm = DepartureArrivalViewModel()
     
     let departure: String
     let arrival: String
