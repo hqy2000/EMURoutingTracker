@@ -16,6 +16,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         UserDefaultsMigrater.migrate()
         SentrySDK.start { options in
             options.dsn = "https://85987290d32948b7a5434c6604a8d283@sentry.io/1545955"
+            
+            options.configureProfiling = {
+                $0.lifecycle = .trace
+                $0.sessionSampleRate = 1
+            }
+            
+            options.experimental.enableLogs = true
         }
         return true
     }

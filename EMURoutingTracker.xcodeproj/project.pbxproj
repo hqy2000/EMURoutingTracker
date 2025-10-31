@@ -43,7 +43,6 @@
 		51FAEC6D26BEB7D500A84AC8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518001BF256A1550003624A5 /* WidgetKit.framework */; };
 		51FAEC6E26BEB7D500A84AC8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518001C1256A1550003624A5 /* SwiftUI.framework */; };
 		51FAEC7126BEB7D500A84AC8 /* ChinaEMUWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FAEC7026BEB7D500A84AC8 /* ChinaEMUWidget.swift */; };
-		51FAEC7426BEB7D600A84AC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51FAEC7326BEB7D600A84AC8 /* Assets.xcassets */; };
 		51FAEC7A26BEB7D600A84AC8 /* EMURoutingTrackerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 51FAEC6C26BEB7D500A84AC8 /* EMURoutingTrackerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		51FAEC9726BEB90400A84AC8 /* EMURoutingTrackerFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 51FAEC8726BEB90400A84AC8 /* EMURoutingTrackerFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51FAEC9A26BEB90400A84AC8 /* EMURoutingTrackerFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51FAEC8526BEB90400A84AC8 /* EMURoutingTrackerFramework.framework */; };
@@ -71,6 +70,9 @@
 		784A4FED2C64C3EE0045B791 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FEC2C64C3EE0045B791 /* SwiftyUserDefaults */; };
 		784A4FEF2C64C4300045B791 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FEE2C64C4300045B791 /* SFSafeSymbols */; };
 		784A4FF12C64C4410045B791 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 784A4FF02C64C4410045B791 /* CodeScanner */; };
+		78B417F22EB4A25C007B5C37 /* EMU.icon in Resources */ = {isa = PBXBuildFile; fileRef = 78B417F12EB4A25C007B5C37 /* EMU.icon */; };
+		78B417F32EB4A454007B5C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4525273DE200EA9D54 /* Assets.xcassets */; };
+		78B417F42EB4A454007B5C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFCC4525273DE200EA9D54 /* Assets.xcassets */; };
 		78C4BDF62D0D82B800EA4D53 /* ScanQRCodeActionSheetModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF52D0D82B300EA4D53 /* ScanQRCodeActionSheetModifier.swift */; };
 		78C4BDFA2D0E3DFC00EA4D53 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDF92D0E3DF900EA4D53 /* Query.swift */; };
 		78C4BDFC2D0E76F200EA4D53 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDFB2D0E76EC00EA4D53 /* FavoriteButton.swift */; };
@@ -172,7 +174,6 @@
 		51FAEC5E26BE840100A84AC8 /* StationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationPicker.swift; sourceTree = "<group>"; };
 		51FAEC6C26BEB7D500A84AC8 /* EMURoutingTrackerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EMURoutingTrackerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		51FAEC7026BEB7D500A84AC8 /* ChinaEMUWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChinaEMUWidget.swift; sourceTree = "<group>"; };
-		51FAEC7326BEB7D600A84AC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51FAEC7526BEB7D600A84AC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51FAEC7B26BEB7D600A84AC8 /* EMURoutingTrackerWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EMURoutingTrackerWidgetExtension.entitlements; sourceTree = "<group>"; };
 		51FAEC8526BEB90400A84AC8 /* EMURoutingTrackerFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EMURoutingTrackerFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +181,7 @@
 		51FAEC8826BEB90400A84AC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51FAECB926BFB87800A84AC8 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		51FF3528255C07C300EC6B8A /* TrainInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainInfoProvider.swift; sourceTree = "<group>"; };
+		78B417F12EB4A25C007B5C37 /* EMU.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = EMU.icon; sourceTree = "<group>"; };
 		78C4BDF52D0D82B300EA4D53 /* ScanQRCodeActionSheetModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRCodeActionSheetModifier.swift; sourceTree = "<group>"; };
 		78C4BDF92D0E3DF900EA4D53 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		78C4BDFB2D0E76EC00EA4D53 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				51E27DBF256116BE00B22289 /* ViewModifier */,
 				51EFCC4125273DE200EA9D54 /* EMURoutingTracker.swift */,
 				51EFCC4325273DE200EA9D54 /* ContentView.swift */,
+				78B417F12EB4A25C007B5C37 /* EMU.icon */,
 				51EFCC4525273DE200EA9D54 /* Assets.xcassets */,
 				51EFCC4A25273DE200EA9D54 /* Info.plist */,
 				518DFA5A255AEC0000B29703 /* AppDelegate.swift */,
@@ -342,7 +345,6 @@
 			isa = PBXGroup;
 			children = (
 				51FAEC7026BEB7D500A84AC8 /* ChinaEMUWidget.swift */,
-				51FAEC7326BEB7D600A84AC8 /* Assets.xcassets */,
 				51FAEC7526BEB7D600A84AC8 /* Info.plist */,
 			);
 			path = EMURoutingTrackerWidget;
@@ -586,6 +588,7 @@
 			files = (
 				51EFCC4925273DE200EA9D54 /* Preview Assets.xcassets in Resources */,
 				51EFCC4625273DE200EA9D54 /* Assets.xcassets in Resources */,
+				78B417F22EB4A25C007B5C37 /* EMU.icon in Resources */,
 				78C4BF112D0F000000EA4D53 /* OpenSourceLicenses.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,7 +597,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51FAEC7426BEB7D600A84AC8 /* Assets.xcassets in Resources */,
+				78B417F32EB4A454007B5C37 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +605,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B417F42EB4A454007B5C37 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -834,8 +838,9 @@
 		51EFCC4E25273DE200EA9D54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = EMU;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = EMURoutingTracker/EMURoutingTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 100;
@@ -865,8 +870,9 @@
 		51EFCC4F25273DE200EA9D54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = EMU;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = EMURoutingTracker/EMURoutingTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 100;

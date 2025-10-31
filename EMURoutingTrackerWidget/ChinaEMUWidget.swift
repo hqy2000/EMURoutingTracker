@@ -56,7 +56,7 @@ struct WidgetSingleColumnEntryView : View {
             if entry.favoriteTrains.isEmpty && entry.favoriteEmus.isEmpty {
                 Text("请先在 App 内添加相关收藏").padding().multilineTextAlignment(.center).foregroundColor(.gray).font(.caption)
             } else {
-                VStack(alignment: .leading, spacing: 3) {
+                VStack(alignment: .leading, spacing: 2) {
                     ForEach(entry.favoriteTrains.prefix(4), id: \.self) { emu in
                         EMUView(emu)
                     }

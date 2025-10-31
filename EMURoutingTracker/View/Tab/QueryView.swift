@@ -23,7 +23,7 @@ struct QueryView: View {
                 Section(header: Text("车组/车次查询")) {
                     TextField("G2/380/CRH2A2001", text: $query).keyboardType(.asciiCapable).textCase(.uppercase)
                     Button {
-                        path.append(Query.trainOrEmu(trainOrEmu: query))
+                        path.append(Query.trainOrEmu(trainOrEmu: query.filter { $0.isLetter || $0.isNumber }.uppercased()))
                     } label: {
                         Text("查询").frame(maxWidth: .infinity, alignment: .center)
                     }
