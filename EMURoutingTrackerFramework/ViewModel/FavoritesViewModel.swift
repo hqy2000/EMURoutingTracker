@@ -16,78 +16,52 @@ class FavoritesViewModel: ObservableObject {
     @Published var favoriteTrains: [EMUTrainAssociation] = []
     private var lastRefresh: Date? = nil
     private let batchSize = 20
-    private var refreshTask: Task<Void, Never>?
     
     init() {
     }
     
-    public func refreshAsync() async {
-        await withCheckedContinuation { continuation in
-            refresh {
-                continuation.resume()
-            }
+    public func refresh() {
+        Task {
+            await refreshIfNeeded()
         }
     }
     
-    public func refresh(completion: (() -> Void)? = nil) {
-        // Avoid 503 issues by skipping frequent requests
-        guard lastRefresh == nil || Date().timeIntervalSince(lastRefresh!) >= 15.0 else {
+    public func refreshIfNeeded(force: Bool = false) async {
+        guard force || shouldRefresh else {
             print("Too frequent, skip this request.")
-            completion?()
             return
         }
         lastRefresh = Date()
         
-        refreshTask?.cancel()
-        refreshTask = Task {
-            await performRefresh(completion: completion)
-        }
-    }
-    
-    private func performRefresh(completion: (() -> Void)?) async {
-        if favoriteTrains.isEmpty {
-            favoriteTrains = FavoritesProvider.trains.favorites.map { favorite in
-                EMUTrainAssociation(emu: "", train: favorite.name, date: "")
-            }
-        }
-        
-        if favoriteEMUs.isEmpty {
-            favoriteEMUs = FavoritesProvider.EMUs.favorites.map { favorite in
-                EMUTrainAssociation(emu: favorite.name, train: "", date: "")
-            }
-        }
-        
         do {
-            let trainsResult = try await queryInBatches(
-                items: FavoritesProvider.trains.favorites.map { $0.name },
-                associationTypeGenerator: { .trains(keywords: $0) }
+            try await fetchFavorites(
+                from: .trains,
+                keyPath: \.favoriteTrains,
+                placeholderBuilder: { favorite in
+                    EMUTrainAssociation(emu: "", train: favorite.name, date: "")
+                },
+                requestBuilder: { .trains(keywords: $0) }
             )
-            try Task.checkCancellation()
-            favoriteTrains = trainsResult
-            await populateTrainInfo(for: \.favoriteTrains)
         } catch is CancellationError {
-            completion?()
             return
         } catch {
             // Preserve previous behaviour by silently ignoring failures.
         }
         
         do {
-            let emusResult = try await queryInBatches(
-                items: FavoritesProvider.EMUs.favorites.map { $0.name },
-                associationTypeGenerator: { .emus(keywords: $0) }
+            try await fetchFavorites(
+                from: .EMUs,
+                keyPath: \.favoriteEMUs,
+                placeholderBuilder: { favorite in
+                    EMUTrainAssociation(emu: favorite.name, train: "", date: "")
+                },
+                requestBuilder: { .emus(keywords: $0) }
             )
-            try Task.checkCancellation()
-            favoriteEMUs = emusResult
-            await populateTrainInfo(for: \.favoriteEMUs)
         } catch is CancellationError {
-            completion?()
             return
         } catch {
             // Preserve previous behaviour by silently ignoring failures.
         }
-        
-        completion?()
     }
     
     private func populateTrainInfo(for keyPath: ReferenceWritableKeyPath<FavoritesViewModel, [EMUTrainAssociation]>) async {
@@ -123,8 +97,35 @@ class FavoritesViewModel: ObservableObject {
         return results
     }
     
-    deinit {
-        refreshTask?.cancel()
+    private func fetchFavorites(
+        from provider: FavoritesProvider,
+        keyPath: ReferenceWritableKeyPath<FavoritesViewModel, [EMUTrainAssociation]>,
+        placeholderBuilder: (Favorite) -> EMUTrainAssociation,
+        requestBuilder: ([String]) -> MoerailRequest
+    ) async throws {
+        let storedFavorites = provider.favorites
+        
+        if self[keyPath: keyPath].isEmpty && !storedFavorites.isEmpty {
+            self[keyPath: keyPath] = storedFavorites.map(placeholderBuilder)
+        }
+        
+        guard !storedFavorites.isEmpty else {
+            self[keyPath: keyPath] = []
+            return
+        }
+        
+        let result = try await queryInBatches(
+            items: storedFavorites.map(\.name),
+            associationTypeGenerator: requestBuilder
+        )
+        try Task.checkCancellation()
+        self[keyPath: keyPath] = result
+        await populateTrainInfo(for: keyPath)
+    }
+    
+    private var shouldRefresh: Bool {
+        guard let lastRefresh else { return true }
+        return Date().timeIntervalSince(lastRefresh) >= 15.0
     }
     
 }

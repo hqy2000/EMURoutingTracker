@@ -24,15 +24,11 @@ extension MoerailRequest: APIRequest {
         case .train(let keyword):
             return "train/" + keyword
         case .trains(let keywords):
-            return "train/" + keywords.reduce("", { prev, current in
-                return prev + "," + current
-            })
+            return joinedPath(prefix: "train", keywords: keywords)
         case .emu(let keyword):
             return "emu/\(keyword)"
         case .emus(let keywords):
-            return "emu/" + keywords.reduce("", { prev, current in
-                return prev + "," + current
-            })
+            return joinedPath(prefix: "emu", keywords: keywords)
         case .qr(let emu, _):
             return "emu/\(emu)/qr"
         }
@@ -71,4 +67,8 @@ extension MoerailRequest: APIRequest {
     }
     
     
+    private func joinedPath(prefix: String, keywords: [String]) -> String {
+        guard !keywords.isEmpty else { return "\(prefix)/" }
+        return "\(prefix)/" + keywords.joined(separator: ",")
+    }
 }

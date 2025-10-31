@@ -79,6 +79,7 @@
 		78C4BDFE2D0E7FC100EA4D53 /* QueryNavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BDFD2D0E7FA600EA4D53 /* QueryNavigationModifier.swift */; };
 		78C4BE022D0E827500EA4D53 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BE012D0E827200EA4D53 /* DateFormatter.swift */; };
 		78C4BE032D0E827500EA4D53 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4BE012D0E827200EA4D53 /* DateFormatter.swift */; };
+		78C4BF112D0F000000EA4D53 /* OpenSourceLicenses.md in Resources */ = {isa = PBXBuildFile; fileRef = 78C4BF102D0F000000EA4D53 /* OpenSourceLicenses.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		51E20882256797EB001D91D2 /* DepartureArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureArrival.swift; sourceTree = "<group>"; };
 		51E208852567D90C001D91D2 /* DepartureArrivalRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureArrivalRow.swift; sourceTree = "<group>"; };
 		51E208882567E3F5001D91D2 /* DepartureArrivalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureArrivalList.swift; sourceTree = "<group>"; };
+		78C4BF102D0F000000EA4D53 /* OpenSourceLicenses.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = OpenSourceLicenses.md; sourceTree = "<group>"; };
 		51E27DB12561143E00B22289 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		51E27DB92561163000B22289 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		51E27DC0256116D100B22289 /* EMURow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMURow.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 			children = (
 				518DFA472558332D00B29703 /* EMURoutingTracker.entitlements */,
 				51EFCC4725273DE200EA9D54 /* Preview Content */,
+				78C4BF122D0F000000EA4D53 /* Resources */,
 				78C4BE0B2D0EC31D00EA4D53 /* Util */,
 				518DFA412558229500B29703 /* View */,
 				51E27DBF256116BE00B22289 /* ViewModifier */,
@@ -419,6 +422,14 @@
 				51E27DB92561163000B22289 /* FavoritesView.swift */,
 			);
 			path = Tab;
+			sourceTree = "<group>";
+		};
+		78C4BF122D0F000000EA4D53 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				78C4BF102D0F000000EA4D53 /* OpenSourceLicenses.md */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		78C4BE0B2D0EC31D00EA4D53 /* Util */ = {
@@ -575,6 +586,7 @@
 			files = (
 				51EFCC4925273DE200EA9D54 /* Preview Assets.xcassets in Resources */,
 				51EFCC4625273DE200EA9D54 /* Assets.xcassets in Resources */,
+				78C4BF112D0F000000EA4D53 /* OpenSourceLicenses.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

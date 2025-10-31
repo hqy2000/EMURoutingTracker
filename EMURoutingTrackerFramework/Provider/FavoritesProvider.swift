@@ -23,34 +23,33 @@ internal enum FavoritesProvider {
     }
     
     public var favorites: [Favorite] {
-        return Defaults[key: defaultsKey]
+        Defaults[key: defaultsKey]
     }
     
     public func contains(_ item: String) -> Bool {
-        if Defaults[key: defaultsKey].contains(where: {$0.name == item}) {
-            return true
-        } else {
-            return false
-        }
+        favorites.contains { $0.name == item }
     }
     
     @discardableResult public func add(_ item: String) -> Bool {
-        if !contains(item) {
-            Defaults[key: defaultsKey].append(Favorite(item))
-            WidgetCenter.shared.reloadAllTimelines()
-            return true
-        } else {
-            return false
+        guard !contains(item) else { return false }
+        mutateFavorites {
+            $0.append(Favorite(item))
         }
+        return true
     }
     
     @discardableResult public func delete(_ item: String) -> Bool {
-        if let index = Defaults[key: defaultsKey].firstIndex(where: {$0.name == item}) {
-            Defaults[key: defaultsKey].remove(at: index)
-            WidgetCenter.shared.reloadAllTimelines()
-            return true
-        } else {
-            return false
+        guard contains(item) else { return false }
+        mutateFavorites {
+            $0.removeAll { $0.name == item }
         }
+        return true
+    }
+    
+    private func mutateFavorites(_ transform: (inout [Favorite]) -> Void) {
+        var entries = Defaults[key: defaultsKey]
+        transform(&entries)
+        Defaults[key: defaultsKey] = entries
+        WidgetCenter.shared.reloadAllTimelines()
     }
 }

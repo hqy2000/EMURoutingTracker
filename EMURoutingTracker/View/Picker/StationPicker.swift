@@ -4,7 +4,7 @@ struct StationPicker: View {
     let stations: [Station]
     let completion: (Station) -> Void
     @State private var searchText = ""
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) private var dismiss
     
     init(_ stations: [Station], completion: @escaping (Station) -> Void) {
         self.stations = stations
@@ -13,29 +13,44 @@ struct StationPicker: View {
     
     var body: some View {
         List {
-            ForEach(stations.filter{
-                $0.name.contains(searchText.replacingOccurrences(of: " ", with: "")) ||
-                $0.pinyin.contains(searchText.replacingOccurrences(of: " ", with: "").lowercased()) ||
-                $0.abbreviation.contains(searchText.replacingOccurrences(of: " ", with: "").lowercased()) ||
-                $0.code.contains(searchText.replacingOccurrences(of: " ", with: "").uppercased()) ||
-                searchText == ""}, id: \.code) { station in
-                    Button(action: {
-                        completion(station)
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(station.name)
-                                Text(station.pinyin).font(.system(.caption2, design: .monospaced))
-                            }
-                            Spacer()
-                            Text(station.code).font(.system(.body, design: .monospaced))
+            ForEach(filteredStations, id: \.code) { station in
+                Button {
+                    completion(station)
+                    dismiss()
+                } label: {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(station.name)
+                            Text(station.pinyin)
+                                .font(.system(.caption2, design: .monospaced))
                         }
+                        Spacer()
+                        Text(station.code)
+                            .font(.system(.body, design: .monospaced))
                     }
                 }
+            }
         }
         .navigationTitle("车站选择")
-        .searchable(text: $searchText, placement: UIDevice.current.userInterfaceIdiom == .phone ? .navigationBarDrawer(displayMode: .always) : .automatic, prompt: "站名/拼音/拼音首字母")
+        .searchable(
+            text: $searchText,
+            placement: UIDevice.current.userInterfaceIdiom == .phone ? .navigationBarDrawer(displayMode: .always) : .automatic,
+            prompt: "站名/拼音/拼音首字母"
+        )
+    }
+    
+    private var filteredStations: [Station] {
+        let trimmed = searchText.replacingOccurrences(of: " ", with: "")
+        guard !trimmed.isEmpty else { return stations }
+        let lowercase = trimmed.lowercased()
+        let uppercase = trimmed.uppercased()
+        
+        return stations.filter { station in
+            station.name.contains(trimmed)
+            || station.pinyin.contains(lowercase)
+            || station.abbreviation.contains(lowercase)
+            || station.code.contains(uppercase)
+        }
     }
 }
 

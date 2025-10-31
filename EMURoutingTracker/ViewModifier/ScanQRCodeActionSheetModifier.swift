@@ -6,15 +6,13 @@
 //
 
 import SwiftUI
-import PhotosUI
 import AVFoundation
 import CodeScanner
 import Sentry
 
 struct ScanQRCodeActionSheetModifier: ViewModifier {
     @Binding var isPresented: Bool
-    @State var showAlert: Bool = false
-    @State var result: String? = nil
+    @State private var outcome: ScanOutcome?
     var onCompletion: (String) -> Void
     
     func body(content: Content) -> some View {
@@ -25,24 +23,26 @@ struct ScanQRCodeActionSheetModifier: ViewModifier {
                     switch result {
                     case .success(let code):
                         onCompletion(code.string)
-                        self.result = nil
+                        outcome = ScanOutcome.success
                     case .failure(let error):
                         SentrySDK.capture(error: error)
+                        let message: String
                         if case .permissionDenied = error {
-                            self.result = "您没有开启相机权限，请至 系统设置 - 隐私 中开启。"
+                            message = "您没有开启相机权限，请至 系统设置 - 隐私 中开启。"
                         } else {
-                            self.result = error.localizedDescription + "请确认您扫描的二维码为点餐码。"
+                            message = error.localizedDescription + "请确认您扫描的二维码为点餐码。"
                         }
-                    }
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                        self.showAlert = true
+                        outcome = ScanOutcome.failure(message: message)
                     }
                 }
             }
-            .alert(isPresented: $showAlert, content: {
-                Alert(title: Text(result == nil ? "上报成功" : "上报失败"), message: Text(result ?? "感谢您的支持，我们将尽快根据您反馈的信息，更新我们的数据！"), dismissButton: .default(Text("好的")))
-            })
+            .alert(item: $outcome) { outcome in
+                Alert(
+                    title: Text(outcome.title),
+                    message: Text(outcome.message),
+                    dismissButton: .default(Text("好的"))
+                )
+            }
     }
 }
 
@@ -55,5 +55,23 @@ extension View {
             isPresented: isPresented,
             onCompletion: onCompletion
         ))
+    }
+}
+
+private struct ScanOutcome: Identifiable {
+    let id = UUID()
+    let title: String
+    let message: String
+    
+    static let success = ScanOutcome(
+        title: "上报成功",
+        message: "感谢您的支持，我们将尽快根据您反馈的信息，更新我们的数据！"
+    )
+    
+    static func failure(message: String) -> ScanOutcome {
+        ScanOutcome(
+            title: "上报失败",
+            message: message
+        )
     }
 }

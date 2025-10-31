@@ -37,7 +37,7 @@ struct Provider: TimelineProvider {
     
     private func loadEntry() async -> FavoritesEntry {
         let viewModel = await MainActor.run { FavoritesViewModel() }
-        await viewModel.refreshAsync()
+        await viewModel.refreshIfNeeded(force: true)
         let favorites = await MainActor.run { (viewModel.favoriteTrains, viewModel.favoriteEMUs) }
         return FavoritesEntry(date: Date(), favoriteTrains: favorites.0, favoriteEmus: favorites.1)
     }
