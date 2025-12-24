@@ -182,6 +182,7 @@
 		51FAECB926BFB87800A84AC8 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		51FF3528255C07C300EC6B8A /* TrainInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainInfoProvider.swift; sourceTree = "<group>"; };
 		78B417F12EB4A25C007B5C37 /* EMU.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = EMU.icon; sourceTree = "<group>"; };
+		78B418202EC955BD007B5C37 /* EMURoutingTracker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = EMURoutingTracker.xcodeproj; sourceTree = SOURCE_ROOT; };
 		78C4BDF52D0D82B300EA4D53 /* ScanQRCodeActionSheetModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRCodeActionSheetModifier.swift; sourceTree = "<group>"; };
 		78C4BDF92D0E3DF900EA4D53 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		78C4BDFB2D0E76EC00EA4D53 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
@@ -301,6 +302,7 @@
 				51FAEC8626BEB90400A84AC8 /* EMURoutingTrackerFramework */,
 				51EFCC3F25273DE200EA9D54 /* Products */,
 				7CD611A66570102CFA262B40 /* Frameworks */,
+				78B418202EC955BD007B5C37 /* EMURoutingTracker.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -373,6 +375,11 @@
 				51E2087B25678BA5001D91D2 /* StationProvider.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		7815D43F2EFBB9C800FAC898 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		78C4BE042D0EBACD00EA4D53 /* Row */ = {
@@ -572,6 +579,12 @@
 			);
 			productRefGroup = 51EFCC3F25273DE200EA9D54 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7815D43F2EFBB9C800FAC898 /* Products */;
+					ProjectRef = 78B418202EC955BD007B5C37 /* EMURoutingTracker.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				51EFCC3D25273DE200EA9D54 /* EMURoutingTracker */,
@@ -856,7 +869,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.0;
+				MARKETING_VERSION = 2.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -888,7 +901,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.0;
+				MARKETING_VERSION = 2.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -916,7 +929,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.5.0;
+				MARKETING_VERSION = 2.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.chinaemuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -943,7 +956,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.5.0;
+				MARKETING_VERSION = 2.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = moe.railway.ios.chinaemuWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -973,7 +986,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.0;
+				MARKETING_VERSION = 2.5.1;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				PRODUCT_BUNDLE_IDENTIFIER = moe.hqy.chinaemuFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1003,7 +1016,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.0;
+				MARKETING_VERSION = 2.5.1;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				PRODUCT_BUNDLE_IDENTIFIER = moe.hqy.chinaemuFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
