@@ -12,7 +12,7 @@ struct AboutView: View {
     private let licenseText = LicenseTextProvider.shared.text
     var body: some View {
         List {
-            Section(header: Text("关于")) {
+            Section {
                 Button(action: {
                     guard let url = URL(string: "https://space.bilibili.com/14289681") else { return }
                     UIApplication.shared.open(url)

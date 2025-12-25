@@ -27,7 +27,7 @@ private struct RootTabs_Modern: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            Tab("查询", systemImage: "magnifyingglass", value: .query, role: .search) {
+            Tab("查询", systemImage: "magnifyingglass", value: .query) {
                 QueryView()
             }
             
@@ -35,7 +35,7 @@ private struct RootTabs_Modern: View {
                 FavoritesView()
             }
             
-            Tab("更多", systemImage: "info", value: .about) {
+            Tab("关于", systemImage: "info", value: .about) {
                 AboutView()
             }
         }
@@ -70,7 +70,7 @@ private struct RootTabs_Legacy: View {
             AboutView()
                 .tabItem {
                     Image(systemSymbol: .info)
-                    Text("更多")
+                    Text("关于")
                 }
                 .tag(TabID.about)
         }
