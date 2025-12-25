@@ -20,6 +20,7 @@ struct EMUTrainAssociation: Codable, Hashable, Identifiable {
     }
     let date: String
     var trainInfo: Train? = nil
+    private(set) var parsedDate: Date? = nil
     
     var image: ImageResource {
         switch emu {
@@ -99,7 +100,88 @@ struct EMUTrainAssociation: Codable, Hashable, Identifiable {
         case date = "date"
     }
     
+    init(emu: String, train: String, date: String, trainInfo: Train? = nil) {
+        self.emu = emu
+        self.train = train
+        self.date = date
+        self.trainInfo = trainInfo
+        self.parsedDate = Self.parseDate(date)
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let emu = try container.decode(String.self, forKey: .emu)
+        let train = try container.decode(String.self, forKey: .train)
+        let date = try container.decode(String.self, forKey: .date)
+        self.init(emu: emu, train: train, date: date, trainInfo: nil)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(emu, forKey: .emu)
+        try container.encode(train, forKey: .train)
+        try container.encode(date, forKey: .date)
+    }
+    
     static func == (lhs: EMUTrainAssociation, rhs: EMUTrainAssociation) -> Bool {
         return lhs.hashValue == rhs.hashValue
+    }
+}
+
+extension EMUTrainAssociation {
+    enum Freshness {
+        case fresh
+        case stale
+        case old
+        case unknown
+    }
+    
+    var freshness: Freshness {
+        guard let dateValue = parsedDate else { return .unknown }
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(secondsFromGMT: 8 * 60 * 60) ?? .current
+        let now = Date()
+        if calendar.isDate(dateValue, inSameDayAs: now) {
+            return .fresh
+        }
+        if let yesterday = calendar.date(byAdding: .day, value: -1, to: now),
+           calendar.isDate(dateValue, inSameDayAs: yesterday) {
+            return .stale
+        }
+        return .old
+    }
+    
+    var freshnessColor: Color {
+        switch freshness {
+        case .fresh:
+            return .green
+        case .stale:
+            return .yellow
+        case .old:
+            return .red
+        case .unknown:
+            return .gray
+        }
+    }
+    
+    static func parseDate(_ value: String) -> Date? {
+        guard !value.isEmpty else { return nil }
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 8 * 60 * 60)
+        let formats = [
+            "yyyy-MM-dd HH:mm",
+            "yyyy-MM-dd HH:mm:ss",
+            "yyyy/MM/dd HH:mm",
+            "yyyy/MM/dd HH:mm:ss",
+            "yyyy-MM-dd"
+        ]
+        for format in formats {
+            formatter.dateFormat = format
+            if let date = formatter.date(from: value) {
+                return date
+            }
+        }
+        return nil
     }
 }

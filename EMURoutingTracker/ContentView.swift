@@ -23,6 +23,7 @@ struct ContentView: View {
 private struct RootTabs_Modern: View {
     enum TabID: Hashable { case query, favorites, about }
     @State private var selection: TabID = .query
+    @ObservedObject private var favoritesStore = FavoritesStore.shared
     
     var body: some View {
         TabView(selection: $selection) {
@@ -38,30 +39,43 @@ private struct RootTabs_Modern: View {
                 AboutView()
             }
         }
+        .onAppear {
+            selection = favoritesStore.trainFavorites.isEmpty && favoritesStore.emuFavorites.isEmpty ? .query : .favorites
+        }
     }
 }
 
 // MARK: - iOS 16-17 (classic .tabItem)
 private struct RootTabs_Legacy: View {
+    enum TabID: Hashable { case query, favorites, about }
+    @State private var selection: TabID = .query
+    @ObservedObject private var favoritesStore = FavoritesStore.shared
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selection) {
             QueryView()
                 .tabItem {
                     Image(systemSymbol: .magnifyingglass)
                     Text("查询")
                 }
+                .tag(TabID.query)
             
             FavoritesView()
                 .tabItem {
                     Image(systemSymbol: .bookmark)
                     Text("收藏")
                 }
+                .tag(TabID.favorites)
             
             AboutView()
                 .tabItem {
                     Image(systemSymbol: .info)
                     Text("更多")
                 }
+                .tag(TabID.about)
+        }
+        .onAppear {
+            selection = favoritesStore.trainFavorites.isEmpty && favoritesStore.emuFavorites.isEmpty ? .query : .favorites
         }
     }
 }
